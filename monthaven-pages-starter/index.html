@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Monthaven Capital</title>
+  <meta name="description" content="Monthaven Capital — disciplined, value‑add investing." />
+  <link rel="preload" href="assets/logo.svg" as="image" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Monthaven Capital",
+    "url": "https://monthavencapital.com",
+    "logo": "https://monthavencapital.com/assets/logo.svg",
+    "email": "info@monthavencapital.com"
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">
+        <img src="assets/logo.svg" alt="" class="logo" />
+        <span>Monthaven Capital</span>
+      </a>
+      <nav class="nav">
+        <a href="#strategy">Strategy</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#team">Team</a>
+        <a href="#contact" class="btn">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1>Disciplined, value‑add investing.</h1>
+        <p>We acquire and improve under‑loved assets with a rigorous focus on fundamentals, cash flow, and risk management.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#contact">Start a conversation</a>
+          <a class="btn ghost" href="#strategy">Our approach</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="strategy" class="section">
+      <div class="container grid-2">
+        <div>
+          <h2>Strategy</h2>
+          <p>We target value‑add opportunities where operational improvements and thoughtful capital programs unlock durable income growth.</p>
+          <ul class="bullets">
+            <li>Data‑driven acquisitions and underwriting</li>
+            <li>Practical capex &amp; operating playbooks</li>
+            <li>Alignment with investors and stakeholders</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Focus Areas</h3>
+          <div class="kv">
+            <div><span class="k">Type</span><span class="v">Value‑add real assets</span></div>
+            <div><span class="k">Hold</span><span class="v">3–7 years typical</span></div>
+            <div><span class="k">Profile</span><span class="v">Cash‑flow + growth</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="section muted">
+      <div class="container">
+        <h2>Selected Work</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Case study placeholder</h3>
+            <p>Swap this with a real asset or project once public. Focus on the operational thesis and outcomes.</p>
+          </article>
+          <article class="card">
+            <h3>Case study placeholder</h3>
+            <p>Highlight a second example showing a different playbook (leasing, expense control, repositioning, etc.).</p>
+          </article>
+          <article class="card">
+            <h3>Case study placeholder</h3>
+            <p>Include high‑level metrics and qualitative improvements.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="section">
+      <div class="container grid-2">
+        <div>
+          <h2>Team</h2>
+          <p>Short bios go here. Keep it concise: experience highlights, domains of expertise, prior track record.</p>
+        </div>
+        <div class="card">
+          <h3>Open to opportunities</h3>
+          <p>If you’re an operator or broker with a relevant opportunity, we’d love to hear from you.</p>
+          <a class="btn block" href="#contact">Share an opportunity</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section muted">
+      <div class="container grid-2">
+        <div>
+          <h2>Contact</h2>
+          <p>Email us with opportunities, co‑investment ideas, or to request an intro call.</p>
+          <p><a class="link" href="mailto:info@monthavencapital.com">info@monthavencapital.com</a></p>
+        </div>
+        <form class="card" onsubmit="window.location.href='mailto:info@monthavencapital.com'; return false;">
+          <h3>Lightweight reach‑out</h3>
+          <label>Name
+            <input type="text" placeholder="Your name" required>
+          </label>
+          <label>Email
+            <input type="email" placeholder="you@example.com" required>
+          </label>
+          <label>Message
+            <textarea placeholder="Tell us a bit about the opportunity"></textarea>
+          </label>
+          <button class="btn block primary" type="submit">Email us</button>
+          <p class="fineprint">This form opens your email client. Swap in a real form later if needed.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span id="year"></span> Monthaven Capital</span>
+      <a class="link" href="mailto:info@monthavencapital.com">info@monthavencapital.com</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
