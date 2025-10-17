@@ -116,6 +116,21 @@ textarea:focus-visible {
   color: color-mix(in oklab, var(--mh-charcoal-900) 60%, white);
 }
 
+.brand-mark {
+  height: 2.4rem;
+  width: auto;
+  display: block;
+}
+
+.site-header .site-tagline {
+  display: none;
+}
+
+.page-hero .hero-tagline,
+.hero .eyebrow {
+  display: block;
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -157,7 +172,7 @@ textarea:focus-visible {
 
 .btn-primary {
   background: var(--mh-accent);
-  color: var(--mh-cream);
+  color: #fff;
 }
 
 .btn-primary:hover {
