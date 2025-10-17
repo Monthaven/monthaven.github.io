@@ -6,8 +6,17 @@ This repository hosts the static site for Monthaven Capital and is configured to
 
 ```
 /
-├── index.html        # Landing page markup
-├── styles.css        # Global styles and layout primitives
+├── index.html        # Home (advisory positioning)
+├── why.html          # Why Monthaven overview
+├── services.html     # Advisory service lanes
+├── how.html          # Mandate process & NCNDA stepper
+├── intel.html        # Briefs, playbooks, and case studies
+├── team.html         # Leadership bios
+├── contact.html      # Request access / intake form
+├── legal/            # Terms, privacy, accessibility, SMS terms
+├── theme.css         # Design tokens (palette, typography)
+├── styles.css        # Global layout, “boxes” system, utilities
+├── scripts.js        # Navigation toggle + shared enhancements
 ├── assets/           # Images, icons, and other static assets
 └── .github/workflows # GitHub Pages deployment workflow
 ```
@@ -19,7 +28,7 @@ Because the site is a static HTML/CSS experience there is no build step required
 1. Open `index.html` directly in your browser, or
 2. Run a simple development server (for example `python -m http.server 8000`) and navigate to `http://localhost:8000`.
 
-Update the HTML and CSS files, refresh the browser, and you will see your changes immediately.
+Update the HTML, CSS, or JS files, refresh the browser, and you will see your changes immediately.
 
 ## Deployment workflow
 

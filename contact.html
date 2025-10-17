@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Request Access | Monthaven Advisory</title>
+  <meta name="description" content="Connect with Monthaven to request mandate access, submit opportunities, or coordinate diligence support." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/theme.css" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">Monthaven</a>
+      <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
+      <nav id="primary-navigation" class="nav" aria-label="Primary navigation">
+        <a href="/">About</a>
+        <a href="/why.html">Why Monthaven</a>
+        <a href="/services.html">Services</a>
+        <a href="/how.html">How We Work</a>
+        <a href="/intel.html">Intel</a>
+        <a href="/team.html">Team</a>
+        <a href="/contact.html">Contact</a>
+        <a class="btn btn-primary" href="/contact.html">Request Access</a>
+        <a class="btn btn-outline" href="/login">Client Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Contact</p>
+        <h1>Request access or introduce an opportunity.</h1>
+        <p>Submit your details to begin mandate intake, access data rooms, or coordinate diligence support. A Monthaven advisor will respond within one business day.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split-layout">
+        <div>
+          <form name="contact" method="post" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact" />
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+
+            <label for="organization">Organization</label>
+            <input id="organization" name="organization" type="text" />
+
+            <label for="mandate">Mandate focus</label>
+            <select id="mandate" name="mandate">
+              <option value="">Select</option>
+              <option>Buy-side advisory</option>
+              <option>Discreet disposition</option>
+              <option>Capital formation</option>
+              <option>Diligence support</option>
+              <option>Other / introduction</option>
+            </select>
+
+            <label for="message">Notes</label>
+            <textarea id="message" name="message" placeholder="Share mandate criteria, timelines, or opportunity highlights"></textarea>
+
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </form>
+        </div>
+        <div class="highlight">
+          <h3 style="font-family: var(--font-display); margin-top: 0;">Direct lines</h3>
+          <p style="color: var(--mh-charcoal); margin-bottom: 8px;">Mandate access: <a href="mailto:mandates@monthavencapital.com">mandates@monthavencapital.com</a></p>
+          <p style="color: var(--mh-charcoal); margin-bottom: 8px;">General inquiries: <a href="mailto:info@monthavencapital.com">info@monthavencapital.com</a></p>
+          <p style="color: var(--mh-charcoal);">Confidential fax / secure uploads available upon request.</p>
+          <hr style="margin: 24px 0; border: none; border-top: 1px solid var(--mh-sage);" />
+          <p style="color: var(--mh-charcoal); margin-bottom: 8px;">Office</p>
+          <p style="color: var(--mh-charcoal);">Monthaven Capital Group<br />1200 Broadway, Suite 2100<br />Nashville, TN 37203</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>© <span id="current-year"></span> Monthaven Capital Group.</div>
+      <div class="footer-links">
+        <a href="/legal/terms.html">Terms</a>
+        <a href="/legal/privacy.html">Privacy</a>
+        <a href="/legal/accessibility.html">Accessibility</a>
+        <a href="/legal/sms.html">SMS Terms</a>
+      </div>
+      <div class="footer-contacts">
+        <a href="https://www.linkedin.com/company/monthavencapital" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="mailto:info@monthavencapital.com">info@monthavencapital.com</a>
+        <a href="mailto:mandates@monthavencapital.com">mandates@monthavencapital.com</a>
+        <a href="/login">Client Login</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/scripts.js"></script>
+</body>
+</html>
