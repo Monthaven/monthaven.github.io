@@ -73,7 +73,7 @@ export default function ContactPage() {
             </label>
             <label className="flex items-center gap-3 text-sm">
               <input name="nda" type="checkbox" className="h-4 w-4 rounded border-[var(--mh-sage)]" />
-              <span>I am ready to execute an NCNDA to receive confidential materials.</span>
+            <span>I am ready to execute an NCNDA to receive confidential materials.</span>
             </label>
             <button
               type="submit"
@@ -86,18 +86,18 @@ export default function ContactPage() {
         <CalloutStrip>
           <span>
             Routing to CRM; auto-reply includes NCNDA steps. Direct questions can be sent to {" "}
-            <a className="underline" href={`mailto:${contactEmails.mandates}`}>
-              {contactEmails.mandates}
-            </a>{" "}
-            or {" "}
             <a className="underline" href={`mailto:${contactEmails.info}`}>
               {contactEmails.info}
+            </a>{" "}
+            or {" "}
+            <a className="underline" href={`mailto:${contactEmails.legal}`}>
+              {contactEmails.legal}
             </a>
             .
           </span>
         </CalloutStrip>
         <div className="flex flex-wrap gap-3">
-          <CTA href="mailto:mandates@monthaven.capital" label="Email mandates@" variant="secondary" />
+          <CTA href={`mailto:${contactEmails.info}`} label="Email info@" variant="secondary" />
           <CTA href="/request-access" label="Request Access" />
         </div>
       </div>

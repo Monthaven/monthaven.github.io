@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: ["/"],
       },
     ],
-    sitemap: "https://monthaven.capital/sitemap.xml",
+    sitemap: "https://www.monthavencapital.com/sitemap.xml",
   };
 }

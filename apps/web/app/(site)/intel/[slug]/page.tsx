@@ -4,6 +4,7 @@ import Box from "@/components/Box";
 import CalloutStrip from "@/components/CalloutStrip";
 import CTA from "@/components/CTA";
 import { intelEntries } from "@/content/intel";
+import { contactEmails } from "@/lib/seo";
 
 export function generateStaticParams() {
   return intelEntries.map((entry) => ({ slug: entry.slug }));
@@ -53,7 +54,11 @@ export default function IntelDetailPage({ params }: { params: { slug: string } }
           </div>
         </Box>
         <CalloutStrip>
-          Download tracking is logged for compliance. Questions? Contact mandates@monthaven.capital.
+          Download tracking is logged for compliance. Questions? Email {" "}
+          <a className="underline" href={`mailto:${contactEmails.legal}`}>
+            {contactEmails.legal}
+          </a>
+          .
         </CalloutStrip>
       </div>
     </div>

@@ -135,16 +135,20 @@ export default function HomePage() {
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <CTA href="/contact" label="Contact" />
-                <CTA href="mailto:info@monthaven.capital" label="info@monthaven.capital" variant="secondary" />
+                <CTA
+                  href="mailto:info@monthavencapital.com"
+                  label="info@monthavencapital.com"
+                  variant="secondary"
+                />
               </div>
             </Box>
             <Box title="Direct emails">
               <ul className="space-y-3 text-sm">
                 <li>
-                  <span className="font-semibold text-mh-charcoal900">Mandates:</span> mandates@monthaven.capital
+                  <span className="font-semibold text-mh-charcoal900">General inquiries:</span> info@monthavencapital.com
                 </li>
                 <li>
-                  <span className="font-semibold text-mh-charcoal900">General inquiries:</span> info@monthaven.capital
+                  <span className="font-semibold text-mh-charcoal900">Legal & compliance:</span> legal@monthavencapital.com
                 </li>
               </ul>
             </Box>

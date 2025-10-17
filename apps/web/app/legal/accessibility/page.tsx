@@ -1,7 +1,8 @@
 import Box from "@/components/Box";
 import CalloutStrip from "@/components/CalloutStrip";
+import { contactEmails } from "@/lib/seo";
 
-const updated = "March 31, 2024";
+const updated = "August 27, 2025";
 
 export default function AccessibilityPage() {
   return (
@@ -14,25 +15,32 @@ export default function AccessibilityPage() {
         </header>
         <Box title="Our commitment">
           <p>
-            Monthaven is committed to providing a website that is accessible to the widest possible audience, regardless of
-            technology or ability. We follow WCAG 2.1 AA guidelines where practicable and review our digital properties
-            regularly.
+            Monthaven Capital Inc. is committed to making our website accessible to everyone, including people with disabilities.
+            We continually invest in accessibility so that every visitor can review mandate information, request access, and
+            connect with our team without barriers.
           </p>
         </Box>
-        <Box title="Ongoing efforts">
-          <p>
-            Accessibility improvements include semantic markup, keyboard navigation support, alternative text for imagery, and
-            contrast ratios that meet or exceed AA thresholds. We welcome feedback to improve user experience.
-          </p>
+        <Box title="Our approach">
+          <ul className="list-disc space-y-2 pl-5">
+            <li>Aligning with the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA.</li>
+            <li>Using semantic HTML and ARIA roles to convey structure and navigation.</li>
+            <li>Providing alternative text for images and meaningful link descriptions.</li>
+            <li>Maintaining sufficient color contrast and scalable typography.</li>
+            <li>Ensuring the site is navigable by keyboard and assistive technologies.</li>
+          </ul>
         </Box>
-        <Box title="Contact">
+        <Box title="Feedback & support">
           <p>
-            If you experience difficulty accessing content, please email accessibility@monthaven.capital or call +1 (615)
-            555-0199. We will respond promptly to provide the requested information through an accessible channel.
+            If you encounter any accessibility barriers or have suggestions, please contact us at {" "}
+            <a className="underline" href={`mailto:${contactEmails.info}`}>
+              {contactEmails.info}
+            </a>
+            {" "}or mail Monthaven Capital Inc., 30 N Gould St Ste R, Sheridan, WY 82801. We aim to respond within two business
+            days.
           </p>
         </Box>
         <CalloutStrip>
-          Accessibility initiatives are reviewed at least annually and tracked as part of Monthaven&apos;s governance program.
+          Monthaven reviews accessibility initiatives at least annually and incorporates feedback into our governance program.
         </CalloutStrip>
       </div>
     </div>
