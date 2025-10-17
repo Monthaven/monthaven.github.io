@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title">
+  <title>Monthaven Capital monogram</title>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="68%">
+      <stop offset="0" stop-color="#1e2436" />
+      <stop offset="0.58" stop-color="#0f1320" />
+      <stop offset="1" stop-color="#05070c" />
+    </radialGradient>
+    <linearGradient id="ring" x1="16%" y1="14%" x2="88%" y2="90%">
+      <stop offset="0" stop-color="#f7e9c4" />
+      <stop offset="0.38" stop-color="#d8bb76" />
+      <stop offset="1" stop-color="#b7923c" />
+    </linearGradient>
+    <linearGradient id="stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0" stop-color="#f5f0e3" stop-opacity="0.9" />
+      <stop offset="1" stop-color="#d0b277" />
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#030406" flood-opacity="0.55" />
+    </filter>
+  </defs>
+  <rect width="160" height="160" rx="32" fill="url(#bg)" />
+  <g filter="url(#glow)">
+    <circle cx="80" cy="80" r="60" fill="none" stroke="url(#ring)" stroke-width="3.6" />
+    <path d="M54 102V56l26 25 26-25v46" fill="none" stroke="url(#stroke)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M112 80a32 32 0 1 1-15.6-27.6" fill="none" stroke="url(#stroke)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>

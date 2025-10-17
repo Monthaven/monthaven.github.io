@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>Monthaven Capital favicon</title>
+  <defs>
+    <radialGradient id="favicon-bg" cx="50%" cy="38%" r="70%">
+      <stop offset="0" stop-color="#1e2436" />
+      <stop offset="0.6" stop-color="#0f1320" />
+      <stop offset="1" stop-color="#05070c" />
+    </radialGradient>
+    <linearGradient id="favicon-stroke" x1="12%" y1="16%" x2="88%" y2="88%">
+      <stop offset="0" stop-color="#f7e9c4" />
+      <stop offset="0.4" stop-color="#d8bb76" />
+      <stop offset="1" stop-color="#b7923c" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#favicon-bg)" />
+  <g fill="none" stroke="url(#favicon-stroke)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 44V22l14 12 14-12v22" />
+    <path d="M46 32a14 14 0 1 1-8-12" stroke-width="5" />
+  </g>
+</svg>
