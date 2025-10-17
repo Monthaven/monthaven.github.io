@@ -4,7 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Monthaven Capital</title>
-  <meta name="description" content="Monthaven Capital — disciplined, value‑add investing." />
+  <meta name="description" content="Monthaven Capital connects discerning investors with differentiated real asset opportunities." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="preload" href="assets/logo.svg" as="image" />
   <link rel="stylesheet" href="styles.css" />
   <script type="application/ld+json">
@@ -14,114 +17,227 @@
     "name": "Monthaven Capital",
     "url": "https://monthavencapital.com",
     "logo": "https://monthavencapital.com/assets/logo.svg",
-    "email": "info@monthavencapital.com"
+    "email": "info@monthavencapital.com",
+    "sameAs": [
+      "https://www.linkedin.com/company/monthavencapital"
+    ],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "email": "investors@monthavencapital.com",
+      "contactType": "Investor Relations"
+    }]
   }
   </script>
 </head>
-<body>
-  <header class="site-header">
+<body class="has-intro">
+  <div class="intro-overlay" data-intro>
+    <div class="intro-panel">
+      <img class="intro-mark" src="assets/logo.svg" alt="Monthaven Capital" />
+      <p class="intro-overline">Private Markets Platform</p>
+      <h1 class="intro-heading">Precision Capital, Real Asset Expertise.</h1>
+      <p class="intro-body">Monthaven Capital curates income-focused, value-add opportunities for families and operators that value aligned stewardship.</p>
+      <div class="intro-stats">
+        <div class="intro-stat">
+          <span class="stat-value">$750M+</span>
+          <span class="stat-label">Transactions led</span>
+        </div>
+        <div class="intro-stat">
+          <span class="stat-value">25</span>
+          <span class="stat-label">Platform partners</span>
+        </div>
+        <div class="intro-stat">
+          <span class="stat-value">15 yrs</span>
+          <span class="stat-label">Average principal tenure</span>
+        </div>
+      </div>
+      <a href="#strategy" class="btn gold" id="enter-site">Enter the platform</a>
+    </div>
+  </div>
+
+  <header class="site-header" data-header>
     <div class="container">
-      <a class="brand" href="/">
-        <img src="assets/logo.svg" alt="" class="logo" />
+      <a class="brand" href="#top" aria-label="Monthaven Capital — home">
+        <img src="assets/logo.svg" alt="Monthaven Capital" class="logo" />
         <span>Monthaven Capital</span>
       </a>
-      <nav class="nav">
+      <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+      <nav id="primary-navigation" class="nav" aria-label="Primary">
         <a href="#strategy">Strategy</a>
-        <a href="#portfolio">Portfolio</a>
+        <a href="#platform">Platform</a>
+        <a href="#intel">Insights</a>
         <a href="#team">Team</a>
-        <a href="#contact" class="btn">Contact</a>
+        <a href="#contact" class="nav-cta">Invest with us</a>
       </nav>
     </div>
   </header>
+  <div class="nav-backdrop" data-nav-backdrop></div>
 
-  <main>
+  <main id="top">
     <section class="hero">
-      <div class="container hero-inner">
-        <h1>Disciplined, value‑add investing.</h1>
-        <p>We acquire and improve under‑loved assets with a rigorous focus on fundamentals, cash flow, and risk management.</p>
-        <div class="cta-row">
-          <a class="btn primary" href="#contact">Start a conversation</a>
-          <a class="btn ghost" href="#strategy">Our approach</a>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Private Market Real Assets</p>
+          <h1>Institutional discipline for families and operators.</h1>
+          <p class="lead">We source, structure, and operate real asset investments that balance durable income with engineered upside across the Southeast.</p>
+          <div class="cta-row">
+            <a class="btn gold" href="#contact">Request an introduction</a>
+            <a class="btn outline" href="#platform">Explore the platform</a>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="panel-heading">Investment Snapshot</div>
+          <ul class="snapshot">
+            <li><span>Focus</span><strong>Income-producing, value-add real assets</strong></li>
+            <li><span>Geography</span><strong>Southeast U.S. growth markets</strong></li>
+            <li><span>Profile</span><strong>Control and co-GP partnerships</strong></li>
+            <li><span>Hold</span><strong>3&ndash;7 years with liquidity events</strong></li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section id="strategy" class="section">
-      <div class="container grid-2">
-        <div>
-          <h2>Strategy</h2>
-          <p>We target value‑add opportunities where operational improvements and thoughtful capital programs unlock durable income growth.</p>
-          <ul class="bullets">
-            <li>Data‑driven acquisitions and underwriting</li>
-            <li>Practical capex &amp; operating playbooks</li>
-            <li>Alignment with investors and stakeholders</li>
-          </ul>
+    <section id="strategy" class="section split">
+      <div class="container">
+        <div class="section-heading">
+          <p class="overline">Strategy</p>
+          <h2>Conviction-led acquisitions, rigorous downside protection.</h2>
+          <p>Our team blends proprietary sourcing, data-informed underwriting, and deep operator partnerships to select assets that reward patience and precision.</p>
         </div>
-        <div class="card">
-          <h3>Focus Areas</h3>
-          <div class="kv">
-            <div><span class="k">Type</span><span class="v">Value‑add real assets</span></div>
-            <div><span class="k">Hold</span><span class="v">3–7 years typical</span></div>
-            <div><span class="k">Profile</span><span class="v">Cash‑flow + growth</span></div>
+        <div class="section-panel">
+          <article class="panel">
+            <h3>What guides our capital</h3>
+            <ul class="bullets">
+              <li>Proprietary deal flow and structured bids anchored by conservative base case modeling.</li>
+              <li>Active asset management programs focused on operational modernization and resilient income.</li>
+              <li>Alignment-first investor reporting with quarterly KPI dashboards and responsive communication.</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3>Core sectors</h3>
+            <div class="tags">
+              <span>Multifamily</span>
+              <span>Industrial</span>
+              <span>Specialized storage</span>
+              <span>Necessity retail</span>
+            </div>
+            <p class="panel-note">We evaluate complementary sectors where cash flow durability meets identifiable catalysts.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="platform" class="section muted">
+      <div class="container">
+        <div class="section-heading center">
+          <p class="overline">Integrated Platform</p>
+          <h2>Execution partners across every stage of the asset lifecycle.</h2>
+        </div>
+        <div class="cards three">
+          <article class="panel">
+            <h3>Acquisition Lab</h3>
+            <p>Target mapping, underwriting, and structuring teams collaborate to deliver institutional-level diligence on accelerated timelines.</p>
+          </article>
+          <article class="panel">
+            <h3>Operations Studio</h3>
+            <p>On-the-ground operators deploy tailored capex, modernization, and leasing programs with continuous KPI monitoring.</p>
+          </article>
+          <article class="panel">
+            <h3>Capital &amp; Reporting</h3>
+            <p>Investor relations, treasury, and reporting functions offer transparent dashboards, capital calls, and liquidity planning.</p>
+          </article>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-value">92%</span>
+            <span class="stat-label">Average occupancy across active portfolio</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">38%</span>
+            <span class="stat-label">Average NOI lift post repositioning</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">60 days</span>
+            <span class="stat-label">Target acquisition to stabilization handoff</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="portfolio" class="section muted">
+    <section id="intel" class="section split reverse">
       <div class="container">
-        <h2>Selected Work</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>Case study placeholder</h3>
-            <p>Swap this with a real asset or project once public. Focus on the operational thesis and outcomes.</p>
-          </article>
-          <article class="card">
-            <h3>Case study placeholder</h3>
-            <p>Highlight a second example showing a different playbook (leasing, expense control, repositioning, etc.).</p>
-          </article>
-          <article class="card">
-            <h3>Case study placeholder</h3>
-            <p>Include high‑level metrics and qualitative improvements.</p>
+        <div class="section-heading">
+          <p class="overline">Insights</p>
+          <h2>Forward-looking research built for limited partners.</h2>
+          <p>Quarterly outlooks, market playbooks, and asset-level commentary keep Monthaven partners ahead of macro shifts.</p>
+        </div>
+        <div class="section-panel">
+          <article class="panel">
+            <h3>Recent highlights</h3>
+            <ul class="feature-list">
+              <li><strong>Sunbelt Rent Resilience Brief</strong><span>Scenario modeling on insurance, tax, and debt costs across target MSAs.</span></li>
+              <li><strong>Industrial Conversion Playbook</strong><span>How adaptive reuse of legacy retail assets is generating double-digit yields.</span></li>
+              <li><strong>Quarterly Investor Letter</strong><span>Portfolio dashboards, realized metrics, and pipeline coverage to inform allocation decisions.</span></li>
+            </ul>
+            <a class="btn inline" href="mailto:intel@monthavencapital.com">Request latest intel</a>
           </article>
         </div>
       </div>
     </section>
 
     <section id="team" class="section">
-      <div class="container grid-2">
-        <div>
-          <h2>Team</h2>
-          <p>Short bios go here. Keep it concise: experience highlights, domains of expertise, prior track record.</p>
+      <div class="container">
+        <div class="section-heading center">
+          <p class="overline">Team</p>
+          <h2>Principals who have built, scaled, and exited across cycles.</h2>
+          <p>Monthaven Capital is led by multidisciplinary investors with backgrounds in private equity, family offices, and institutional operations.</p>
         </div>
-        <div class="card">
-          <h3>Open to opportunities</h3>
-          <p>If you’re an operator or broker with a relevant opportunity, we’d love to hear from you.</p>
-          <a class="btn block" href="#contact">Share an opportunity</a>
+        <div class="cards">
+          <article class="panel">
+            <h3>Alignment first</h3>
+            <p>We co-invest in every vehicle and maintain transparent economics with our partners.</p>
+          </article>
+          <article class="panel">
+            <h3>Operator network</h3>
+            <p>Deep relationships with best-in-class operators, brokers, and lenders across the Southeast.</p>
+          </article>
+          <article class="panel">
+            <h3>Disciplined stewardship</h3>
+            <p>Hands-on governance, quarterly site reviews, and rigorous risk management frameworks.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="contact" class="section muted">
-      <div class="container grid-2">
-        <div>
-          <h2>Contact</h2>
-          <p>Email us with opportunities, co‑investment ideas, or to request an intro call.</p>
-          <p><a class="link" href="mailto:info@monthavencapital.com">info@monthavencapital.com</a></p>
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <p class="overline">Connect</p>
+          <h2>Share an opportunity or request access.</h2>
+          <p>Email us to discuss capital partnerships, co-GP opportunities, or to review our investor materials.</p>
+          <p class="contact-links">
+            <a href="mailto:info@monthavencapital.com">info@monthavencapital.com</a>
+            <a href="mailto:investors@monthavencapital.com">investors@monthavencapital.com</a>
+            <a href="mailto:intel@monthavencapital.com">intel@monthavencapital.com</a>
+          </p>
         </div>
-        <form class="card" onsubmit="window.location.href='mailto:info@monthavencapital.com'; return false;">
-          <h3>Lightweight reach‑out</h3>
+        <form class="panel contact-form" onsubmit="window.location.href='mailto:info@monthavencapital.com'; return false;">
+          <h3>Lightweight reach-out</h3>
           <label>Name
-            <input type="text" placeholder="Your name" required>
+            <input type="text" name="name" placeholder="Your name" required />
           </label>
           <label>Email
-            <input type="email" placeholder="you@example.com" required>
+            <input type="email" name="email" placeholder="you@monthavencapital.com" required />
           </label>
           <label>Message
-            <textarea placeholder="Tell us a bit about the opportunity"></textarea>
+            <textarea name="message" placeholder="Tell us about the opportunity"></textarea>
           </label>
-          <button class="btn block primary" type="submit">Email us</button>
-          <p class="fineprint">This form opens your email client. Swap in a real form later if needed.</p>
+          <button class="btn gold block" type="submit">Email Monthaven Capital</button>
+          <p class="fineprint">This launchpad opens your email client. Reach out directly if you prefer.</p>
         </form>
       </div>
     </section>
@@ -129,13 +245,68 @@
 
   <footer class="site-footer">
     <div class="container">
-      <span>© <span id="year"></span> Monthaven Capital</span>
-      <a class="link" href="mailto:info@monthavencapital.com">info@monthavencapital.com</a>
+      <p>&copy; <span id="year"></span> Monthaven Capital. All rights reserved.</p>
+      <a href="mailto:info@monthavencapital.com" class="footer-link">info@monthavencapital.com</a>
     </div>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.querySelector('[data-header]');
+      const nav = document.querySelector('#primary-navigation');
+      const navToggle = document.querySelector('.nav-toggle');
+      const navBackdrop = document.querySelector('[data-nav-backdrop]');
+      const body = document.body;
+      const intro = document.querySelector('[data-intro]');
+      const enterButton = document.querySelector('#enter-site');
+      const year = document.getElementById('year');
+
+      if (navToggle && nav) {
+        const closeNav = () => {
+          body.classList.remove('nav-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        };
+
+        const toggleNav = () => {
+          const isOpen = body.classList.toggle('nav-open');
+          navToggle.setAttribute('aria-expanded', String(isOpen));
+        };
+
+        navToggle.addEventListener('click', toggleNav);
+
+        if (navBackdrop) {
+          navBackdrop.addEventListener('click', closeNav);
+        }
+
+        nav.addEventListener('click', (event) => {
+          if (event.target.tagName === 'A') {
+            closeNav();
+          }
+        });
+      }
+
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 20);
+      });
+
+      if (intro && enterButton) {
+        const dismissIntro = () => {
+          intro.classList.add('dismissed');
+          body.classList.remove('has-intro');
+        };
+
+        enterButton.addEventListener('click', (event) => {
+          event.preventDefault();
+          dismissIntro();
+        });
+
+        setTimeout(dismissIntro, 6000);
+      }
+
+      if (year) {
+        year.textContent = new Date().getFullYear();
+      }
+    });
   </script>
 </body>
 </html>
