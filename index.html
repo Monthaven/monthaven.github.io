@@ -31,22 +31,22 @@
 </head>
 <body class="has-intro">
   <div class="intro-overlay" data-intro>
-    <div class="intro-panel">
+    <div class="intro-panel" data-reveal="rise" data-reveal-immediate="true">
       <img class="intro-mark" src="assets/logo.svg" alt="Monthaven Capital" />
       <p class="intro-overline">Private Markets Platform</p>
       <h1 class="intro-heading">Precision Capital, Real Asset Expertise.</h1>
       <p class="intro-body">Monthaven Capital curates income-focused, value-add opportunities for families and operators that value aligned stewardship.</p>
       <div class="intro-stats">
         <div class="intro-stat">
-          <span class="stat-value">$750M+</span>
+          <span class="stat-value" data-count-target="750" data-count-prefix="$" data-count-suffix="M+" data-count-duration="2400">$750M+</span>
           <span class="stat-label">Transactions led</span>
         </div>
         <div class="intro-stat">
-          <span class="stat-value">25</span>
+          <span class="stat-value" data-count-target="25" data-count-duration="2000">25</span>
           <span class="stat-label">Platform partners</span>
         </div>
         <div class="intro-stat">
-          <span class="stat-value">15 yrs</span>
+          <span class="stat-value" data-count-target="15" data-count-suffix=" yrs" data-count-duration="2100">15 yrs</span>
           <span class="stat-label">Average principal tenure</span>
         </div>
       </div>
@@ -78,9 +78,15 @@
   <div class="nav-backdrop" data-nav-backdrop></div>
 
   <main id="top">
-    <section class="hero">
+    <section class="hero" data-hero>
+      <div class="hero-background" data-hero-background>
+        <span class="hero-orbit hero-orbit--one" data-orbit="20"></span>
+        <span class="hero-orbit hero-orbit--two" data-orbit="14"></span>
+        <span class="hero-orbit hero-orbit--three" data-orbit="28"></span>
+        <span class="hero-glow"></span>
+      </div>
       <div class="container hero-grid">
-        <div class="hero-copy">
+        <div class="hero-copy" data-reveal="rise" style="--reveal-delay: 0.1s;">
           <p class="eyebrow">Private Market Real Assets</p>
           <h1>Institutional discipline for families and operators.</h1>
           <p class="lead">We source, structure, and operate real asset investments that balance durable income with engineered upside across the Southeast.</p>
@@ -89,7 +95,7 @@
             <a class="btn outline" href="#platform">Explore the platform</a>
           </div>
         </div>
-        <div class="hero-panel">
+        <div class="hero-panel" data-reveal="slide-left" style="--reveal-delay: 0.25s;">
           <div class="panel-heading">Investment Snapshot</div>
           <ul class="snapshot">
             <li><span>Focus</span><strong>Income-producing, value-add real assets</strong></li>
@@ -103,13 +109,13 @@
 
     <section id="strategy" class="section split">
       <div class="container">
-        <div class="section-heading">
+        <div class="section-heading" data-reveal="rise">
           <p class="overline">Strategy</p>
           <h2>Conviction-led acquisitions, rigorous downside protection.</h2>
           <p>Our team blends proprietary sourcing, data-informed underwriting, and deep operator partnerships to select assets that reward patience and precision.</p>
         </div>
-        <div class="section-panel">
-          <article class="panel">
+        <div class="section-panel" data-reveal="slide-right" style="--reveal-delay: 0.2s;">
+          <article class="panel" data-reveal="rise" style="--reveal-delay: 0.2s;">
             <h3>What guides our capital</h3>
             <ul class="bullets">
               <li>Proprietary deal flow and structured bids anchored by conservative base case modeling.</li>
@@ -117,7 +123,7 @@
               <li>Alignment-first investor reporting with quarterly KPI dashboards and responsive communication.</li>
             </ul>
           </article>
-          <article class="panel">
+          <article class="panel" data-reveal="rise" style="--reveal-delay: 0.32s;">
             <h3>Core sectors</h3>
             <div class="tags">
               <span>Multifamily</span>
@@ -133,35 +139,35 @@
 
     <section id="platform" class="section muted">
       <div class="container">
-        <div class="section-heading center">
+        <div class="section-heading center" data-reveal="rise">
           <p class="overline">Integrated Platform</p>
           <h2>Execution partners across every stage of the asset lifecycle.</h2>
         </div>
         <div class="cards three">
-          <article class="panel">
+          <article class="panel" data-reveal="rise" style="--reveal-delay: 0.1s;">
             <h3>Acquisition Lab</h3>
             <p>Target mapping, underwriting, and structuring teams collaborate to deliver institutional-level diligence on accelerated timelines.</p>
           </article>
-          <article class="panel">
+          <article class="panel" data-reveal="rise" style="--reveal-delay: 0.22s;">
             <h3>Operations Studio</h3>
             <p>On-the-ground operators deploy tailored capex, modernization, and leasing programs with continuous KPI monitoring.</p>
           </article>
-          <article class="panel">
+          <article class="panel" data-reveal="rise" style="--reveal-delay: 0.34s;">
             <h3>Capital &amp; Reporting</h3>
             <p>Investor relations, treasury, and reporting functions offer transparent dashboards, capital calls, and liquidity planning.</p>
           </article>
         </div>
         <div class="stats">
-          <div class="stat">
-            <span class="stat-value">92%</span>
+          <div class="stat" data-reveal="rise" style="--reveal-delay: 0.18s;">
+            <span class="stat-value" data-count-target="92" data-count-suffix="%" data-count-duration="2000">92%</span>
             <span class="stat-label">Average occupancy across active portfolio</span>
           </div>
-          <div class="stat">
-            <span class="stat-value">38%</span>
+          <div class="stat" data-reveal="rise" style="--reveal-delay: 0.28s;">
+            <span class="stat-value" data-count-target="38" data-count-suffix="%" data-count-duration="2100">38%</span>
             <span class="stat-label">Average NOI lift post repositioning</span>
           </div>
-          <div class="stat">
-            <span class="stat-value">60 days</span>
+          <div class="stat" data-reveal="rise" style="--reveal-delay: 0.38s;">
+            <span class="stat-value" data-count-target="60" data-count-suffix=" days" data-count-duration="1900">60 days</span>
             <span class="stat-label">Target acquisition to stabilization handoff</span>
           </div>
         </div>
@@ -170,13 +176,13 @@
 
     <section id="intel" class="section split reverse">
       <div class="container">
-        <div class="section-heading">
+        <div class="section-heading" data-reveal="rise">
           <p class="overline">Insights</p>
           <h2>Forward-looking research built for limited partners.</h2>
           <p>Quarterly outlooks, market playbooks, and asset-level commentary keep Monthaven partners ahead of macro shifts.</p>
         </div>
-        <div class="section-panel">
-          <article class="panel">
+        <div class="section-panel" data-reveal="slide-left" style="--reveal-delay: 0.2s;">
+          <article class="panel" data-reveal="rise" style="--reveal-delay: 0.2s;">
             <h3>Recent highlights</h3>
             <ul class="feature-list">
               <li><strong>Sunbelt Rent Resilience Brief</strong><span>Scenario modeling on insurance, tax, and debt costs across target MSAs.</span></li>
@@ -191,21 +197,21 @@
 
     <section id="team" class="section">
       <div class="container">
-        <div class="section-heading center">
+        <div class="section-heading center" data-reveal="rise">
           <p class="overline">Team</p>
           <h2>Principals who have built, scaled, and exited across cycles.</h2>
           <p>Monthaven Capital is led by multidisciplinary investors with backgrounds in private equity, family offices, and institutional operations.</p>
         </div>
         <div class="cards">
-          <article class="panel">
+          <article class="panel" data-reveal="rise" style="--reveal-delay: 0.12s;">
             <h3>Alignment first</h3>
             <p>We co-invest in every vehicle and maintain transparent economics with our partners.</p>
           </article>
-          <article class="panel">
+          <article class="panel" data-reveal="rise" style="--reveal-delay: 0.22s;">
             <h3>Operator network</h3>
             <p>Deep relationships with best-in-class operators, brokers, and lenders across the Southeast.</p>
           </article>
-          <article class="panel">
+          <article class="panel" data-reveal="rise" style="--reveal-delay: 0.32s;">
             <h3>Disciplined stewardship</h3>
             <p>Hands-on governance, quarterly site reviews, and rigorous risk management frameworks.</p>
           </article>
@@ -215,7 +221,7 @@
 
     <section id="contact" class="section muted">
       <div class="container contact-grid">
-        <div class="contact-copy">
+        <div class="contact-copy" data-reveal="rise">
           <p class="overline">Connect</p>
           <h2>Share an opportunity or request access.</h2>
           <p>Email us to discuss capital partnerships, co-GP opportunities, or to review our investor materials.</p>
@@ -225,7 +231,7 @@
             <a href="mailto:intel@monthavencapital.com">intel@monthavencapital.com</a>
           </p>
         </div>
-        <form class="panel contact-form" onsubmit="window.location.href='mailto:info@monthavencapital.com'; return false;">
+        <form class="panel contact-form" data-reveal="slide-left" style="--reveal-delay: 0.2s;" onsubmit="window.location.href='mailto:info@monthavencapital.com'; return false;">
           <h3>Lightweight reach-out</h3>
           <label>Name
             <input type="text" name="name" placeholder="Your name" required />
@@ -243,7 +249,7 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" data-reveal="rise">
     <div class="container">
       <p>&copy; <span id="year"></span> Monthaven Capital. All rights reserved.</p>
       <a href="mailto:info@monthavencapital.com" class="footer-link">info@monthavencapital.com</a>
@@ -301,6 +307,136 @@
         });
 
         setTimeout(dismissIntro, 6000);
+      }
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (prefersReducedMotion) {
+        document
+          .querySelectorAll('[data-reveal]')
+          .forEach((element) => element.classList.add('is-visible'));
+      } else {
+        const revealElements = document.querySelectorAll('[data-reveal]');
+
+        if (revealElements.length) {
+          const revealObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('is-visible');
+                  revealObserver.unobserve(entry.target);
+                }
+              });
+            },
+            {
+              threshold: 0.15,
+              rootMargin: '0px 0px -10%',
+            }
+          );
+
+          revealElements.forEach((element) => {
+            if (element.dataset.revealImmediate === 'true') {
+              element.classList.add('is-visible');
+            } else {
+              revealObserver.observe(element);
+            }
+          });
+        }
+
+        const statElements = document.querySelectorAll('[data-count-target]');
+
+        const animateCount = (element) => {
+          if (element.dataset.countAnimated === 'true') {
+            return;
+          }
+
+          const target = Number(element.dataset.countTarget);
+          if (Number.isNaN(target)) {
+            return;
+          }
+
+          const prefix = element.dataset.countPrefix ?? '';
+          const suffix = element.dataset.countSuffix ?? '';
+          const decimals = Number(element.dataset.countDecimals ?? 0);
+          const duration = Number(element.dataset.countDuration ?? 1600);
+          const startValue = Number(element.dataset.countStart ?? 0);
+          const startTime = performance.now();
+
+          const animate = (time) => {
+            const elapsed = time - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 4);
+            const value = startValue + (target - startValue) * eased;
+            element.textContent = `${prefix}${value.toFixed(decimals)}${suffix}`;
+
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            } else {
+              element.textContent = `${prefix}${target.toFixed(decimals)}${suffix}`;
+            }
+          };
+
+          element.dataset.countAnimated = 'true';
+          requestAnimationFrame(animate);
+        };
+
+        if (statElements.length) {
+          const statObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  animateCount(entry.target);
+                  statObserver.unobserve(entry.target);
+                }
+              });
+            },
+            {
+              threshold: 0.6,
+              rootMargin: '0px 0px -10%',
+            }
+          );
+
+          statElements.forEach((element) => {
+            statObserver.observe(element);
+          });
+        }
+
+        const hero = document.querySelector('[data-hero]');
+        const heroBackground = document.querySelector('[data-hero-background]');
+
+        if (hero && heroBackground) {
+          const orbits = hero.querySelectorAll('[data-orbit]');
+
+          const setParallax = () => {
+            const offset = window.scrollY * -0.12;
+            heroBackground.style.setProperty('--hero-parallax', `${offset}px`);
+          };
+
+          const resetOrbits = () => {
+            orbits.forEach((orbit) => {
+              orbit.style.setProperty('--x', '0px');
+              orbit.style.setProperty('--y', '0px');
+            });
+          };
+
+          const updateOrbits = (event) => {
+            const rect = hero.getBoundingClientRect();
+            const xRatio = (event.clientX - rect.left) / rect.width - 0.5;
+            const yRatio = (event.clientY - rect.top) / rect.height - 0.5;
+
+            orbits.forEach((orbit) => {
+              const intensity = Number(orbit.dataset.orbit ?? 12);
+              orbit.style.setProperty('--x', `${xRatio * intensity}px`);
+              orbit.style.setProperty('--y', `${yRatio * intensity}px`);
+            });
+          };
+
+          window.addEventListener('scroll', setParallax, { passive: true });
+          setParallax();
+
+          hero.addEventListener('pointermove', updateOrbits);
+          hero.addEventListener('pointerleave', resetOrbits);
+        }
       }
 
       if (year) {
