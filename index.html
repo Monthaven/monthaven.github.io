@@ -14,7 +14,7 @@
   <!-- Canonical + Open Graph + Twitter -->
   <link rel="canonical" href="https://monthavencapital.com/">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Monthaven Capital">
+  <meta property="og:site_name" content="Monthaven Capital Inc.">
   <meta property="og:title" content="Monthaven | Capital Advisory & Deal-Intelligence">
   <meta property="og:description" content="Monthaven partners with real asset principals to deliver mandate-driven sourcing, diligence, and execution for off-market transactions.">
   <meta property="og:url" content="https://monthavencapital.com/">
@@ -28,15 +28,42 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#111827">
 
-  <!-- JSON-LD Organization -->
+  <!-- JSON-LD Schema -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Monthaven Capital",
-    "url": "https://monthavencapital.com/",
-    "logo": "https://monthavencapital.com/assets/icons/icon-512.png",
-    "sameAs": ["https://www.linkedin.com/company/monthavencapital"]
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "url":"https://monthavencapital.com/",
+    "name":"Monthaven Capital",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://monthavencapital.com/?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Monthaven Capital Inc.",
+    "url":"https://monthavencapital.com/",
+    "logo":"https://monthavencapital.com/assets/icons/icon-512.png",
+    "contactPoint":[{
+      "@type":"ContactPoint",
+      "contactType":"customer support",
+      "email":"info@monthavencapital.com",
+      "areaServed":"US"
+    }],
+    "sameAs":["https://www.linkedin.com/company/monthavencapital"],
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"30 N Gould St, Ste R",
+      "addressLocality":"Sheridan",
+      "addressRegion":"WY",
+      "postalCode":"82801",
+      "addressCountry":"US"
+    }
   }
   </script>
 </head>
@@ -44,8 +71,9 @@
   <header class="site-header">
     <div class="container">
       <div class="brand-group">
-        <a class="brand" href="/">Monthaven</a>
-        <span class="site-tagline">Capital Advisory &amp; Deal-Intelligence</span>
+        <a class="brand" href="/" aria-label="Monthaven Capital">
+          <img src="/assets/logo.svg" alt="Monthaven Capital logo" class="brand-mark" />
+        </a>
       </div>
       <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
       <nav id="primary-navigation" class="nav" aria-label="Primary navigation">
@@ -151,7 +179,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <div>© <span id="current-year"></span> Monthaven Capital Group.</div>
+      <div>© <span id="current-year"></span> Monthaven Capital Inc.</div>
       <div class="footer-links">
         <a href="/legal/terms.html">Terms</a>
         <a href="/legal/privacy.html">Privacy</a>
