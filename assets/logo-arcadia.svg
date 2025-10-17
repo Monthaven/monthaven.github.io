@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 60" role="img" aria-labelledby="title">
+  <title id="title">Arcadia Ridge Partners emblem</title>
+  <defs>
+    <linearGradient id="arcadia-stroke" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f1e6cd" stop-opacity="0.9" />
+      <stop offset="1" stop-color="#c8a66a" stop-opacity="0.8" />
+    </linearGradient>
+  </defs>
+  <rect width="180" height="60" rx="14" fill="#0a0f1d" fill-opacity="0.7" />
+  <path d="M30 46c6-20 22-32 60-32s54 12 60 32" fill="none" stroke="url(#arcadia-stroke)" stroke-width="4" stroke-linecap="round" />
+  <path d="M90 20c18 0 32 12 36 26" fill="none" stroke="#f0e3c6" stroke-opacity="0.6" stroke-width="2.2" stroke-linecap="round" />
+  <circle cx="90" cy="20" r="5" fill="#d5b372" />
+</svg>

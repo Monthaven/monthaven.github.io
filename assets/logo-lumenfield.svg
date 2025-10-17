@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 60" role="img" aria-labelledby="title">
+  <title id="title">Lumenfield Analytics badge</title>
+  <rect width="180" height="60" rx="14" fill="#0a0f1d" fill-opacity="0.7" />
+  <g transform="translate(90 30)" fill="none" stroke-linecap="round">
+    <circle r="18" stroke="#d5b372" stroke-width="3.4" />
+    <circle r="6" stroke="#f2e6cc" stroke-width="2.2" />
+    <path d="M0 -24v12" stroke="#d5b372" stroke-width="3.4" />
+    <path d="M0 24v-12" stroke="#d5b372" stroke-width="3.4" />
+    <path d="M-24 0h12" stroke="#d5b372" stroke-width="3.4" />
+    <path d="M24 0h-12" stroke="#d5b372" stroke-width="3.4" />
+    <path d="M-17 -17l8.5 8.5" stroke="#f1e6cd" stroke-width="2.2" />
+    <path d="M17 17l-8.5-8.5" stroke="#f1e6cd" stroke-width="2.2" />
+    <path d="M17 -17l-8.5 8.5" stroke="#f1e6cd" stroke-width="2.2" />
+    <path d="M-17 17l8.5-8.5" stroke="#f1e6cd" stroke-width="2.2" />
+  </g>
+</svg>

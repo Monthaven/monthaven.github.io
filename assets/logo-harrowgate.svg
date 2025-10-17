@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 60" role="img" aria-labelledby="title">
+  <title id="title">Harrowgate Group crest</title>
+  <rect width="180" height="60" rx="14" fill="#090e1c" fill-opacity="0.72" />
+  <path d="M90 15l32 10v14c0 18-14.3 25-32 31-17.7-6-32-13-32-31V25l32-10z" fill="none" stroke="#d5b372" stroke-width="3.2" stroke-linejoin="round" />
+  <path d="M90 26v30" stroke="#f2e6cc" stroke-width="2.4" stroke-linecap="round" />
+  <path d="M74 32h32" stroke="#d5b372" stroke-width="2.8" stroke-linecap="round" />
+  <path d="M80 40h20" stroke="#d5b372" stroke-width="2.4" stroke-linecap="round" />
+</svg>

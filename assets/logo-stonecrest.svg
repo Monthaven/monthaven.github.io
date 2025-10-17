@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 60" role="img" aria-labelledby="title">
+  <title id="title">Stonecrest Holdings mark</title>
+  <rect width="180" height="60" rx="14" fill="#0b101e" fill-opacity="0.74" />
+  <g fill="none" stroke="#d5b372" stroke-linecap="round">
+    <path d="M48 46h84" stroke-width="3" />
+    <path d="M60 18h60" stroke-width="4" />
+    <path d="M72 18v28" stroke-width="5" />
+    <path d="M90 18v28" stroke-width="6" />
+    <path d="M108 18v28" stroke-width="5" />
+  </g>
+  <path d="M60 28h60" stroke="#f1e6cd" stroke-width="2.2" stroke-linecap="round" />
+</svg>
