@@ -1,0 +1,4 @@
+# robots.txt for Crown & Oak (GitHub Pages)
+User-agent: *
+Allow: /
+Sitemap: https://crownandoakcapital.com/sitemap.xml

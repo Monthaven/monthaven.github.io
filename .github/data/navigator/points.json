@@ -1,0 +1,10 @@
+{
+  "meta": {
+    "source": "Internal research",
+    "refresh": "Monthly"
+  },
+  "points": [
+    {"msa":"Houston","sector":"Multifamily","capRate":6.0,"rentCAGR":3.1,"liquidity":7},
+    {"msa":"Dallas","sector":"Industrial","capRate":4.8,"rentCAGR":4.0,"liquidity":8}
+  ]
+}

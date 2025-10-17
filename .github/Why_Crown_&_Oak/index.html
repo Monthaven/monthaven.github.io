@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crown & Oak Capital — Why Choose Us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* — RESET & BASE — */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0a0c14;
+      color: #d4b45a;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      padding-top: 160px; /* ticker (40px) + header (~120px) */
+    }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    /* — LIVE TICKER — */
+    .ticker {
+      position: fixed; top: 120px; left: 0; right: 0;
+      background: #14161E;
+      color: #d4b45a;
+      font-size: 14px;
+      display: flex; justify-content: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(212,180,90,0.2);
+      z-index: 999;
+      overflow: hidden;
+    }
+    .ticker-wrapper {
+      display: flex;
+      animation: ticker-scroll 30s linear infinite;
+    }
+    .ticker span { 
+      margin: 0 20px; 
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+    }
+    .ticker span::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background-color: #d4b45a;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    @keyframes ticker-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* — HEADER & NAV — */
+    .header {
+      width: 100%;
+      position: fixed;
+      left: 0;
+      z-index: 1000;
+      transition: all 0.4s ease;
+    }
+    .header-scrolled {
+      background: rgba(10, 12, 20, 0.98);
+      backdrop-filter: saturate(180%) blur(10px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    }
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: clamp(15px, 2vw, 25px) clamp(30px, 5vw, 50px);
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .logo img {
+      display: block;
+      max-height: clamp(65px, 4vw, 75px);
+      width: auto;
+      transition: all 0.3s ease;
+    }
+    .header-scrolled .logo img {
+      max-height: clamp(55px, 3.5vw, 65px);
+    }
+    .nav-menu {
+      display: flex;
+      align-items: center;
+    }
+    .nav-list {
+      display: flex;
+      list-style: none;
+    }
+    .nav-item {
+      margin: 0 clamp(25px, 3vw, 40px);
+    }
+    .nav-link {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(14px, 1.2vw, 18px);
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(212, 180, 90, 0.85);
+      position: relative;
+      padding: 8px 0;
+      transition: color 0.25s ease, transform 0.25s ease;
+    }
+    .nav-link:hover,
+    .nav-link.active {
+      color: #d4b45a;
+      transform: translateY(-1px);
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%;
+      width: 0; height: 2px;
+      background: #d4b45a;
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%; left: 0;
+    }
+    .nav-cta {
+      margin-left: clamp(40px, 5vw, 60px);
+    }
+    .cta-btn {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(15px, 1.5vw, 20px);
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 12px 30px;
+      background: transparent;
+      color: #d4b45a;
+      border: 2px solid #d4b45a;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
+    .cta-btn:hover {
+      background: #d4b45a;
+      color: #0a0c14;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(212,180,90,0.3);
+    }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 30px; height: 22px;
+      position: relative; z-index: 1002;
+    }
+    .nav-toggle span {
+      display: block; width: 100%; height: 2px;
+      background: #d4b45a;
+      position: absolute; left: 0;
+      transition: all 0.3s;
+    }
+    .nav-toggle span:nth-child(1) { top: 0; }
+    .nav-toggle span:nth-child(2) { top: 10px; }
+    .nav-toggle span:nth-child(3) { top: 20px; }
+    .nav-open .nav-toggle span:nth-child(1) {
+      transform: rotate(45deg); top: 10px;
+    }
+    .nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+    .nav-open .nav-toggle span:nth-child(3) {
+      transform: rotate(-45deg); top: 10px;
+    }
+    .overlay {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      opacity: 0; visibility: hidden;
+      transition: all 0.4s;
+      z-index: 999;
+    }
+    .nav-open .overlay {
+      opacity: 1; visibility: visible;
+    }
+    @media (max-width: 1024px) {
+      .nav-toggle { display: block; }
+      .nav-menu {
+        position: fixed; right: -100%;
+        width: 300px; max-width: 80%; height: 100vh;
+        background: rgba(10,12,20,0.98);
+        backdrop-filter: saturate(180%) blur(10px);
+        flex-direction: column; padding: 100px 30px 30px;
+        transition: right 0.4s ease; overflow-y: auto;
+      }
+      .nav-open .nav-menu { right: 0; }
+      .nav-list { flex-direction: column; width: 100%; }
+      .nav-item { margin: 12px 0; text-align: center; }
+      .cta-btn { width: 100%; text-align: center; }
+    }
+    @media (max-width: 768px) {
+      .nav-link { font-size: clamp(12px,2vw,16px); letter-spacing: 2px; }
+      .cta-btn { font-size: clamp(14px,2vw,18px); padding: 10px 24px; }
+    }
+
+    /* — PAGE STYLES — */
+    /* HERO */
+    .page-header { 
+      text-align: center; 
+      margin-bottom: 80px; 
+      position: relative;
+    }
+    .page-header::before, .page-header::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(212,180,90,0) 0%, rgba(212,180,90,0.8) 50%, rgba(212,180,90,0) 100%);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .page-header::before {
+      top: -30px;
+    }
+    .page-header::after {
+      bottom: -30px;
+    }
+    .page-header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(34px, 6vw, 48px);
+      font-weight: 600;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+    .page-header p {
+      font-size: clamp(17px, 1.2vw, 20px);
+      color: rgba(212,180,90,0.85);
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+    
+    /* INTRO SECTION */
+    .intro-section {
+      margin-bottom: 80px;
+      padding: 0 30px;
+      text-align: center;
+    }
+    .intro-text {
+      font-size: clamp(16px, 1.1vw, 18px);
+      color: rgba(212,180,90,0.9);
+      max-width: 900px;
+      margin: 0 auto 50px;
+      position: relative;
+      padding: 0 40px;
+      line-height: 1.8;
+    }
+    .intro-text::before, .intro-text::after {
+      content: """;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 80px;
+      line-height: 0;
+      position: absolute;
+      color: rgba(212,180,90,0.3);
+    }
+    .intro-text::before {
+      top: 30px;
+      left: 0;
+    }
+    .intro-text::after {
+      content: """;
+      bottom: -10px;
+      right: 0;
+    }
+    
+    /* CONTENT SECTION WRAPPER */
+    .content-section {
+      background: linear-gradient(to bottom, #14161E, #0f1118);
+      border: 1px solid rgba(212,180,90,0.1);
+      padding: 60px 40px;
+      margin-bottom: 80px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      border-radius: 6px;
+      position: relative;
+      overflow: hidden;
+    }
+    .content-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, 
+        rgba(212,180,90,0) 0%, 
+        rgba(212,180,90,0.4) 50%, 
+        rgba(212,180,90,0) 100%);
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(24px, 3vw, 30px);
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .section-title::after {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 2px;
+      background: #d4b45a;
+      left: 50%;
+      bottom: -15px;
+      transform: translateX(-50%);
+    }
+    
+    /* PILLARS GRID */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
+    .pillar {
+      background: rgba(20, 22, 30, 0.5);
+      border: 1px solid rgba(212,180,90,0.1);
+      border-radius: 4px;
+      padding: 40px 30px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .pillar::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: #d4b45a;
+    }
+    .pillar:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    }
+    .pillar-icon { 
+      margin-bottom: 25px; 
+      position: relative;
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pillar-icon::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 1px solid rgba(212,180,90,0.3);
+      border-radius: 50%;
+      transform: scale(1.2);
+      opacity: 0.5;
+    }
+    .pillar-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 15px;
+      position: relative;
+    }
+    .pillar-text {
+      font-size: 15px;
+      color: rgba(212,180,90,0.9);
+      line-height: 1.6;
+    }
+    
+    /* SOCIAL PROOF */
+    .proof-section {
+      margin-bottom: 80px;
+      text-align: center;
+    }
+    .proof-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 2.5vw, 26px);
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      color: rgba(212,180,90,0.9);
+    }
+    .proof-strip {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      padding: 40px 0;
+      position: relative;
+    }
+    .proof-strip::before, .proof-strip::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, 
+        rgba(212,180,90,0) 0%, 
+        rgba(212,180,90,0.3) 50%, 
+        rgba(212,180,90,0) 100%);
+    }
+    .proof-strip::before { top: 0; }
+    .proof-strip::after { bottom: 0; }
+    .proof-logo-box {
+      width: 180px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(212,180,90,0.1);
+      border-radius: 4px;
+      padding: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+    .proof-logo-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .proof-logo {
+      max-width: 100%;
+      max-height: 60px;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+      filter: brightness(0) invert(1);
+    }
+    .proof-logo-box:hover .proof-logo {
+      opacity: 1;
+    }
+    
+    /* STATS SECTION */
+    .stats-section {
+      margin-bottom: 80px;
+      padding: 60px 40px;
+      background: rgba(20, 22, 30, 0.5);
+      border: 1px solid rgba(212,180,90,0.1);
+      border-radius: 6px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+    .stat-item {
+      padding: 20px;
+      position: relative;
+    }
+    .stat-item::after {
+      content: "";
+      position: absolute;
+      right: 0; top: 20%;
+      height: 60%; width: 1px;
+      background: linear-gradient(to bottom, 
+        rgba(212,180,90,0) 0%, 
+        rgba(212,180,90,0.3) 50%, 
+        rgba(212,180,90,0) 100%);
+    }
+    .stat-item:last-child::after {
+      display: none;
+    }
+    .stat-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4vw, 44px);
+      font-weight: 600;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, #d4b45a, #e0c675);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .stat-label {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(212,180,90,0.8);
+    }
+    
+    /* TESTIMONIAL SECTION */
+    .testimonial-section {
+      margin-bottom: 80px;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .testimonial {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      background: rgba(20, 22, 30, 0.5);
+      border: 1px solid rgba(212,180,90,0.1);
+      border-radius: 6px;
+      position: relative;
+    }
+    .testimonial::before, .testimonial::after {
+      content: """;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 120px;
+      line-height: 0;
+      position: absolute;
+      color: rgba(212,180,90,0.1);
+    }
+    .testimonial::before {
+      top: 60px;
+      left: 20px;
+    }
+    .testimonial::after {
+      content: """;
+      bottom: 0;
+      right: 20px;
+    }
+    .testimonial-text {
+      font-size: 18px;
+      font-style: italic;
+      color: rgba(212,180,90,0.9);
+      line-height: 1.8;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .testimonial-author {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    .testimonial-position {
+      font-size: 14px;
+      color: rgba(212,180,90,0.7);
+    }
+    
+    /* CTA BUTTON */
+    .cta-section { 
+      text-align: center; 
+      margin-bottom: 80px;
+      padding: 60px 20px;
+      background: linear-gradient(to right, rgba(20, 22, 30, 0.5), rgba(15, 17, 24, 0.5));
+      border-radius: 6px;
+      border: 1px solid rgba(212,180,90,0.1);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+    .cta-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+    .cta-text {
+      font-size: 17px;
+      color: rgba(212,180,90,0.9);
+      max-width: 600px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+    .cta-section .cta-btn {
+      font-size: clamp(18px, 2vw, 22px);
+      padding: 18px 54px;
+      color: #0a0c14;
+      background: #d4b45a;
+      border-radius: 6px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      transition: background 0.25s ease, transform 0.2s ease;
+      display: inline-block;
+    }
+    .cta-section .cta-btn:hover {
+      background: rgba(212,180,90,0.95);
+      transform: translateY(-4px);
+    }
+        
+    @media (max-width: 768px) {
+      .pillars-grid { grid-template-columns: 1fr; }
+      .content-section { padding: 40px 20px; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .stat-item::after { display: none; }
+      .testimonial { padding: 30px 20px; }
+    }
+  </style>
+  <link rel="stylesheet" href="/co-shared.css">
+</head>
+<body class="page-with-fixed-header">
+<header class="header" role="banner">
+  <div class="header-container">
+    <a href="/" class="logo" aria-label="Crown & Oak — Home">
+      <img src="../images/Logo.png" alt="Crown & Oak">
+    </a>
+    <button class="nav-toggle" aria-label="Toggle Navigation"><span></span><span></span><span></span></button>
+    <nav class="nav-menu" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a data-slug="Why_Crown_&_Oak" href="/Why_Crown_&_Oak" class="nav-link active" aria-current="page">Why Crown &amp; Oak</a></li>
+        <li><a data-slug="How_it_works" href="/How_it_works" class="nav-link">How It Works</a></li>
+        <li><a data-slug="Intel" href="/Intel" class="nav-link">Intel</a></li>
+        <li><a data-slug="Speak_with_us" href="/Speak_with_us" class="nav-link">Speak With Us</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a data-slug="Get-access" href="/Get-access" class="cta-btn">Request Access</a>
+      </div>
+    </nav>
+  </div>
+</header>
+<div class="overlay" aria-hidden="true"></div>
+
+
+  <div class="ticker">
+    <div class="ticker-wrapper">
+      <span>10Y Treasury: 3.85%</span>
+      <span>Avg Cap-Rate: 5.2%</span>
+      <span>LTV Avg: 65%</span>
+      <span>YTD Deal Vol: $1.4B</span>
+      <span>Avg IRR: 18.2%</span>
+      <span>10Y Treasury: 3.85%</span>
+      <span>Avg Cap-Rate: 5.2%</span>
+      <span>LTV Avg: 65%</span>
+      <span>YTD Deal Vol: $1.4B</span>
+      <span>Avg IRR: 18.2%</span>
+    </div>
+  </div>
+
+  
+
+  
+
+  <div class="container">
+    <div class="page-header">
+      <h1>Why Crown & Oak Capital</h1>
+      <p>Preferred by Private Equity, Hedge Funds, and Family Offices for our institutional-grade off-market sourcing, rigorous underwriting, and unwavering confidentiality.</p>
+    </div>
+    
+    <div class="intro-section">
+      <div class="intro-text">
+        At Crown & Oak Capital, we operate at the intersection of institutional rigor and exclusive access, securing opportunities that never reach the open market. Our approach bridges the gap between sophisticated capital and premium assets, providing a level of service that meets the exacting standards of top-tier allocators.
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h2 class="section-title">Our Core Pillars</h2>
+      <div class="pillars-grid">
+        <div class="pillar">
+          <div class="pillar-icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 5C11.7157 5 5 11.7157 5 20C5 28.2843 11.7157 35 20 35C28.2843 35 35 28.2843 35 20C35 11.7157 28.2843 5 20 5Z" stroke="#d4b45a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M15 15C15 13.3431 17.2386 12 20 12C22.7614 12 25 13.3431 25 15C25 17.5686 22 18.5 20 20.5C18 22.5 18 25 20 25" stroke="#d4b45a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M20 29H20.01" stroke="#d4b45a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M13 20L27 20" stroke="#d4b45a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="pillar-title">Strategic Relationships</div>
+          <div class="pillar-text">Leverage decades of alliance with top-tier PE, hedge funds, and proprietary networks to secure exclusive opportunities others simply cannot access.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M30 14V10C30 8.89543 29.1046 8 28 8H12C10.8954 8 10 8.89543 10 10V14" stroke="#d4b45a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M30 20V30C30 31.1046 29.1046 32 28 32H12C10.8954 32 10 31.1046 10 30V20" stroke="#d4b45a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M5 14H35V20H5V14Z" stroke="#d4b45a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M20 20V26" stroke="#d4b45a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M15 26H25" stroke="#d4b45a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="pillar-title">Institutional Underwriting</div>
+          <div class="pillar-text">Employ advanced financial models and on-site due diligence to meet the stringent standards of sophisticated allocators, ensuring every opportunity is thoroughly vetted.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 17H25V25C25 27.2091 22.7614 29 20 29C17.2386 29 15 27.2091 15 25V17Z" stroke="#d4b45a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M13 17H27" stroke="#d4b45a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M20 17V12" stroke="#d4b45a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M28 13V10C28 8.89543 27.1046 8 26 8H14C12.8954 8 12 8.89543 12 10V13" stroke="#d4b45a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="20" cy="22" r="2" fill="#d4b45a"/>
+            </svg>
+          </div>
+          <div class="pillar-title">Absolute Confidentiality</div>
+          <div class="pillar-text">NCNDA-enforced process ensures all transaction data remains secure and deals discreet from market visibility, protecting both buyers and sellers throughout the process.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 35C28.2843 35 35 28.2843 35 20C35 11.7157 28.2843 5 20 5C11.7157 5 5 11.7157 5 20C5 28.2843 11.7157 35 20 35Z" stroke="#d4b45a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M20 11V20L26 23" stroke="#d4b45a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 20H14" stroke="#d4b45a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M26 20H28" stroke="#d4b45a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="pillar-title">Rapid Execution</div>
+          <div class="pillar-text">Accelerated term sheet delivery and transaction support—powered by streamlined protocols to capture time-sensitive deals when every moment counts.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-value">$1B+</div>
+          <div class="stat-label">Transaction Volume</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">1,000+</div>
+          <div class="stat-label">Investors</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">10,000+</div>
+          <div class="stat-label">Sellers</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">24-48h</div>
+          <div class="stat-label">Average Response Time</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Industry Trust Section -->
+<style>
+  /* Trust Section Styling */
+  .trust-section {
+    margin: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .trust-section::before, .trust-section::after {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      rgba(212,180,90,0) 0%, 
+      rgba(212,180,90,0.4) 100%);
+  }
+  
+  .trust-section::before {
+    top: 0;
+    left: 0;
+  }
+  
+  .trust-section::after {
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
+  }
+  
+  .trust-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 2.5vw, 28px);
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    color: #d4b45a;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .trust-title::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 1px;
+    background: #d4b45a;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .trust-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px 0;
+    gap: 40px;
+  }
+  
+  .trust-category {
+    flex: 1;
+    min-width: 220px;
+    max-width: 300px;
+    padding: 30px 20px;
+    background: rgba(20, 22, 30, 0.5);
+    border: 1px solid rgba(212,180,90,0.1);
+    border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .trust-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+  
+  .trust-category::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, 
+      rgba(212,180,90,0.2) 0%, 
+      rgba(212,180,90,0.8) 50%,
+      rgba(212,180,90,0.2) 100%);
+  }
+  
+  .category-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    color: #d4b45a;
+  }
+  
+  .category-list {
+    list-style: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .category-list li {
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+    font-size: 15px;
+    color: rgba(212,180,90,0.9);
+    letter-spacing: 0.5px;
+  }
+  
+  .category-list li::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    border: 1px solid #d4b45a;
+    border-radius: 50%;
+  }
+  
+  .trust-credentials {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .credential-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 160px;
+  }
+  
+  .credential-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 36px);
+    font-weight: 600;
+    color: #d4b45a;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  .credential-value::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    background: rgba(212,180,90,0.4);
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .credential-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(212,180,90,0.7);
+  }
+  
+  @media (max-width: 768px) {
+    .trust-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .trust-category {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+</style>
+
+<div class="trust-section">
+  <h3 class="trust-title">Trusted by Industry Leaders</h3>
+  
+  <div class="trust-grid">
+    <div class="trust-category">
+      <h4 class="category-title">Private Equity</h4>
+      <ul class="category-list">
+        <li>Institutional Funds</li>
+        <li>Growth Equity Firms</li>
+        <li>Buyout Specialists</li>
+        <li>Venture Capital Partners</li>
+        <li>Investment Corporations</li>
+      </ul>
+    </div>
+    
+    <div class="trust-category">
+      <h4 class="category-title">Family Offices</h4>
+      <ul class="category-list">
+        <li>Multi-Generational Estates</li>
+        <li>Single Family Offices</li>
+        <li>Private Wealth Managers</li>
+        <li>Legacy Portfolios</li>
+        <li>HNW Family Consortiums</li>
+      </ul>
+    </div>
+    
+    <div class="trust-category">
+      <h4 class="category-title">Institutional Investors</h4>
+      <ul class="category-list">
+        <li>Sovereign Wealth Funds</li>
+        <li>Pension Portfolio Managers</li>
+        <li>Endowment Advisors</li>
+        <li>Insurance Investment Arms</li>
+        <li>Foundation Asset Directors</li>
+      </ul>
+    </div>
+  </div>
+  
+
+    <div class="testimonial-section">
+      <div class="testimonial">
+        <p class="testimonial-text">Crown & Oak has consistently delivered unparalleled access to off-market opportunities that perfectly align with our investment criteria. Their rigorous underwriting and institutional approach have made them an invaluable partner in our portfolio expansion strategy.</p>
+        <div class="testimonial-author">Michael</div>
+        <div class="testimonial-position">Major Capital Partner</div>
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <h3 class="cta-title">Ready to Access Elite Opportunities?</h3>
+      <p class="cta-text">Join our exclusive network of sophisticated investors and gain access to institutional-grade private market opportunities that never reach the open market.</p>
+      <a href="/Get-access" class="cta-btn">Get Access</a>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+  <p class="footer-text">© 2025 Crown & Oak Capital. All rights reserved.</p>
+  <p class="footer-links">
+    <a href="/privacy_policy/">Privacy Policy</a> |
+    <a href="/sms-terms/">SMS Terms</a> |
+    <a href="/legal/terms-of-use.html">Terms of Use</a> |
+    <a href="/accessability/">Accessibility</a>
+  </p>
+</footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Animations on scroll
+      const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.pillar, .stat-item, .proof-logo-box, .testimonial');
+        elements.forEach(element => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          if (elementPosition < windowHeight - 100) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+          }
+        });
+      };
+      
+      // Set initial state for animations
+      const setInitialState = function() {
+        const elements = document.querySelectorAll('.pillar, .stat-item, .proof-logo-box, .testimonial');
+        elements.forEach(element => {
+          element.style.opacity = '0';
+          element.style.transform = 'translateY(20px)';
+          element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+      };
+      
+      setInitialState();
+      window.addEventListener('scroll', animateOnScroll);
+      animateOnScroll(); // Run once on load
+    });
+  </script>
+  <script src="/co-header.js"></script>
+</body>
+</html>
