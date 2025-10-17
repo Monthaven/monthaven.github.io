@@ -1,0 +1,17 @@
+:root {
+  /* Monthaven Advisory palette */
+  --mh-cream: #f7f5f2;
+  --mh-cream-100: #fcfaf8;
+  --mh-sage: #d6d3cc;
+  --mh-sage-700: #beb9ae;
+  --mh-charcoal: #555553;
+  --mh-charcoal-900: #2d2d2b;
+  --mh-accent: #35614d;
+  --mh-brass: #a38b66;
+
+  --mh-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  --mh-radius: 20px;
+
+  --font-body: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-display: 'Lora', 'Times New Roman', serif;
+}
