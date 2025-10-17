@@ -1,28 +1,20 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy static site
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
+    branches: [ main ]
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
     environment:
       name: github-pages
@@ -31,13 +23,58 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Generate sitemap.xml and robots.txt
+        run: |
+          python3 - << 'PY'
+          import os, xml.sax.saxutils as esc
+
+          base = "https://monthavencapital.com"
+          urls = []
+
+          # Add root index.html if present
+          if os.path.exists("index.html"):
+              urls.append("/")
+
+          # Add top-level .html files (except index.html)
+          for f in os.listdir("."):
+              if f.endswith(".html") and f != "index.html":
+                  urls.append("/" + f)
+
+          # Add directory indexes (skip hidden and excluded)
+          exclude_dirs = {".github", "docs", ".git", "node_modules"}
+          for d in os.listdir("."):
+              if d.startswith(".") or d in exclude_dirs:
+                  continue
+              p = os.path.join(d, "index.html")
+              if os.path.isdir(d) and os.path.exists(p):
+                  urls.append(f"/{d}/")
+
+          with open("sitemap.xml", "w", encoding="utf-8") as out:
+              out.write('<?xml version="1.0" encoding="UTF-8"?>\n')
+              out.write('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
+              for loc in urls:
+                  out.write("  <url>\n")
+                  out.write(f"    <loc>{esc.escape(base + loc)}</loc>\n")
+                  out.write("    <changefreq>monthly</changefreq>\n")
+                  out.write("    <priority>0.7</priority>\n")
+                  out.write("  </url>\n")
+              out.write("</urlset>\n")
+
+          with open("robots.txt", "w", encoding="utf-8") as out:
+              out.write("User-agent: *\n")
+              out.write("Allow: /\n")
+              out.write(f"Sitemap: {base}/sitemap.xml\n")
+          PY
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          path: "."
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
