@@ -1,4 +1,5 @@
 import CalloutStrip from "@/components/CalloutStrip";
+import { contactEmails } from "@/lib/seo";
 
 export default function ClientLoginPage() {
   return (
@@ -9,7 +10,11 @@ export default function ClientLoginPage() {
           Access your confidential mandate workspace, diligence trackers, and analytics via the secure portal. Please refer to your onboarding email for credentials.
         </p>
         <CalloutStrip>
-          For support, contact mandates@monthaven.capital. Access is limited to clients with active NCNDAs.
+          For support, email {" "}
+          <a className="underline" href={`mailto:${contactEmails.info}`}>
+            {contactEmails.info}
+          </a>
+          . Access is limited to clients with active NCNDAs.
         </CalloutStrip>
       </div>
     </div>

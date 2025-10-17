@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://monthaven.capital"),
+  metadataBase: new URL("https://www.monthavencapital.com"),
   title: {
     default: "Monthaven — Capital Advisory & Deal-Intelligence",
     template: "%s | Monthaven",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description:
       "Monthaven is a capital advisory and deal-intelligence partner focused on mandate-driven sourcing, institutional underwriting, and confidential execution.",
     type: "website",
-    url: "https://monthaven.capital",
+    url: "https://www.monthavencapital.com",
   },
 };
 

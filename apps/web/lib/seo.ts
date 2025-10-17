@@ -2,10 +2,10 @@ export const defaultOpenGraph = {
   title: "Monthaven — Capital Advisory & Deal-Intelligence",
   description:
     "Monthaven connects qualified buyers and owners of real assets through mandate-driven sourcing, institutional underwriting, and confidential execution.",
-  url: "https://monthaven.capital",
+  url: "https://www.monthavencapital.com",
 };
 
 export const contactEmails = {
-  info: "info@monthaven.capital",
-  mandates: "mandates@monthaven.capital",
+  info: "info@monthavencapital.com",
+  legal: "legal@monthavencapital.com",
 };

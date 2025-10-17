@@ -1,5 +1,6 @@
 import Box from "@/components/Box";
 import CalloutStrip from "@/components/CalloutStrip";
+import { contactEmails } from "@/lib/seo";
 
 export default function RequestAccessPage() {
   return (
@@ -20,7 +21,11 @@ export default function RequestAccessPage() {
           </ol>
         </Box>
         <CalloutStrip>
-          Already executed the NCNDA? Email mandates@monthaven.capital for expedited access or visit the client login portal.
+          Already executed the NCNDA? Email {" "}
+          <a className="underline" href={`mailto:${contactEmails.info}`}>
+            {contactEmails.info}
+          </a>{" "}
+          for expedited access or visit the client login portal.
         </CalloutStrip>
       </div>
     </div>
