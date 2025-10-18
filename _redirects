@@ -1,2 +1,3 @@
 /request-access  /contact.html  301
 /login  /contact.html  302
+/about.html  /team.html#about  301
