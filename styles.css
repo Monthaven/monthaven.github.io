@@ -418,6 +418,14 @@ textarea:focus-visible {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
+.team-card img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  aspect-ratio: 4 / 5;
+  margin-bottom: 16px;
+}
+
 .team-card h3 {
   margin-bottom: 4px;
 }
@@ -430,6 +438,13 @@ textarea:focus-visible {
 .team-card p {
   margin-top: 12px;
   color: var(--mh-charcoal);
+}
+
+.section-divider {
+  border: 0;
+  border-top: 1px solid var(--mh-sage);
+  margin: 48px auto;
+  max-width: 780px;
 }
 
 /* Forms */
