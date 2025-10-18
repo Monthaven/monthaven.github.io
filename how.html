@@ -17,11 +17,11 @@
   <meta property="og:title" content="How We Work | Monthaven Capital" />
   <meta property="og:description" content="Our mandate-based process for sourcing, diligence, and capital formation that stays discreet and on-criteria." />
   <meta property="og:url" content="https://monthavencapital.com/how.html" />
-  <meta property="og:image" content="https://monthavencapital.com/og-default.jpg" />
+  <meta property="og:image" content="https://monthavencapital.com/assets/logo.svg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="How We Work | Monthaven Capital" />
   <meta name="twitter:description" content="Our mandate-based process for sourcing, diligence, and capital formation that stays discreet and on-criteria." />
-  <meta name="twitter:image" content="https://monthavencapital.com/og-default.jpg" />
+  <meta name="twitter:image" content="https://monthavencapital.com/assets/logo.svg" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="theme-color" content="#111827" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CFGZGFMX9G"></script>
@@ -32,7 +32,57 @@
 
     gtag('config', 'G-CFGZGFMX9G');
   </script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Monthaven Capital Inc.", "url": "https://monthavencapital.com/", "logo": "https://monthavencapital.com/logo.png", "sameAs": ["https://www.linkedin.com/company/monthaven-capital/"], "contactPoint": [{"@type": "ContactPoint", "email": "info@monthavencapital.com", "contactType": "Business"}]}</script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://monthavencapital.com/#organization",
+          "name": "Monthaven Capital Inc.",
+          "url": "https://monthavencapital.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://monthavencapital.com/assets/logo.svg"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/monthaven-capital/"
+          ],
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "email": "info@monthavencapital.com",
+              "contactType": "Business"
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://monthavencapital.com/#website",
+          "url": "https://monthavencapital.com/",
+          "name": "Monthaven Capital",
+          "publisher": {
+            "@id": "https://monthavencapital.com/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://monthavencapital.com/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://monthavencapital.com/how.html#webpage",
+          "url": "https://monthavencapital.com/how.html",
+          "name": "How We Work | Monthaven Capital",
+          "description": "Our mandate-based process for sourcing, diligence, and capital formation that stays discreet and on-criteria.",
+          "isPartOf": {
+            "@id": "https://monthavencapital.com/#website"
+          }
+        }
+      ]
+    }
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -50,7 +100,7 @@
       <nav id="primary-navigation" class="nav" aria-label="Primary navigation">
         <a href="/why.html">Why Monthaven</a>
         <a href="/services.html">Services</a>
-        <a href="/how.html">How We Work</a>
+        <a href="/how.html" aria-current="page">How We Work</a>
         <a href="/intel.html">Intel</a>
         <a href="/team.html">Team</a>
         <a class="btn btn-outline" href="/submit-a-deal/">Submit a Deal</a>
@@ -65,7 +115,7 @@
         <p class="eyebrow">Process</p>
         <p class="hero-tagline">Capital Advisory &amp; Deal-Intelligence</p>
         <h1>How we take mandates from intake to close.</h1>
-        <p>Each step is designed to respect confidentiality, accelerate diligence, and provide clear communication for principals, operators, and capital partners.</p>
+        <p>Each step is designed to respect confidentiality, accelerate diligence, and provide clear communication for principals, operators, and capital partners. Reference the <a href="/services.html">service modules</a> tied to each stage and subscribe to ongoing <a href="/intel.html">Intel updates</a> for mandate context.</p>
       </div>
     </section>
 
@@ -79,7 +129,7 @@
         <div class="cards stepper">
           <article class="panel step">
             <div class="step-title">Intro &amp; Criteria</div>
-            <p class="step-body">Define acquisition or disposition profile, capital stack preferences, geography, and timeline. Align on communication cadence and decision makers.</p>
+            <p class="step-body">Define acquisition or disposition profile, capital stack preferences, geography, and timeline. Align on communication cadence and decision makers, often alongside the <a href="/services.html">mandate intake playbook</a>.</p>
           </article>
           <article class="panel step">
             <div class="step-title">NCNDA</div>
@@ -87,11 +137,11 @@
           </article>
           <article class="panel step">
             <div class="step-title">Targeting</div>
-            <p class="step-body">Deploy sourcing playbooks, outreach sequences, and intelligence sweeps. Present only opportunities that pass mandate fit and pre-screening.</p>
+            <p class="step-body">Deploy sourcing playbooks, outreach sequences, and intelligence sweeps. Present only opportunities that pass mandate fit and pre-screening, leveraging signals highlighted in recent <a href="/intel.html">market briefs</a>.</p>
           </article>
           <article class="panel step">
             <div class="step-title">Transaction Advisory</div>
-            <p class="step-body">Lead diligence checklists, coordinate third-party reviews, synthesize findings, and manage negotiations through signed agreements.</p>
+            <p class="step-body">Lead diligence checklists, coordinate third-party reviews, synthesize findings, and manage negotiations through signed agreements. Align outputs with the <a href="/services.html">transaction advisory toolkit</a>.</p>
           </article>
           <article class="panel step">
             <div class="step-title">Ongoing</div>
