@@ -156,6 +156,23 @@ textarea:focus-visible {
   color: var(--mh-charcoal);
 }
 
+.nav a[aria-current="page"] {
+  color: var(--mh-accent);
+  font-weight: 600;
+  position: relative;
+}
+
+.nav a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 3px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--mh-accent) 85%, white 15%);
+}
+
 .nav .btn {
   font-size: 0.9rem;
 }

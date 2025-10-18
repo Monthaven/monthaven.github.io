@@ -17,11 +17,11 @@
   <meta property="og:title" content="Team | Monthaven Capital" />
   <meta property="og:description" content="Meet the Monthaven Capital principals and advisors delivering mandate-led execution." />
   <meta property="og:url" content="https://monthavencapital.com/team.html" />
-  <meta property="og:image" content="https://monthavencapital.com/og-default.jpg" />
+  <meta property="og:image" content="https://monthavencapital.com/assets/logo.svg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Team | Monthaven Capital" />
   <meta name="twitter:description" content="Meet the Monthaven Capital principals and advisors delivering mandate-led execution." />
-  <meta name="twitter:image" content="https://monthavencapital.com/og-default.jpg" />
+  <meta name="twitter:image" content="https://monthavencapital.com/assets/logo.svg" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="theme-color" content="#111827" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CFGZGFMX9G"></script>
@@ -32,7 +32,57 @@
 
     gtag('config', 'G-CFGZGFMX9G');
   </script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Monthaven Capital Inc.", "url": "https://monthavencapital.com/", "logo": "https://monthavencapital.com/logo.png", "sameAs": ["https://www.linkedin.com/company/monthaven-capital/"], "contactPoint": [{"@type": "ContactPoint", "email": "info@monthavencapital.com", "contactType": "Business"}]}</script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://monthavencapital.com/#organization",
+          "name": "Monthaven Capital Inc.",
+          "url": "https://monthavencapital.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://monthavencapital.com/assets/logo.svg"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/monthaven-capital/"
+          ],
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "email": "info@monthavencapital.com",
+              "contactType": "Business"
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://monthavencapital.com/#website",
+          "url": "https://monthavencapital.com/",
+          "name": "Monthaven Capital",
+          "publisher": {
+            "@id": "https://monthavencapital.com/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://monthavencapital.com/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://monthavencapital.com/team.html#webpage",
+          "url": "https://monthavencapital.com/team.html",
+          "name": "Team | Monthaven Capital",
+          "description": "Meet the Monthaven Capital principals and advisors delivering mandate-led execution.",
+          "isPartOf": {
+            "@id": "https://monthavencapital.com/#website"
+          }
+        }
+      ]
+    }
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -52,7 +102,7 @@
         <a href="/services.html">Services</a>
         <a href="/how.html">How We Work</a>
         <a href="/intel.html">Intel</a>
-        <a href="/team.html">Team</a>
+        <a href="/team.html" aria-current="page">Team</a>
         <a class="btn btn-outline" href="/submit-a-deal/">Submit a Deal</a>
         <a class="btn btn-primary" href="/contact.html">Request Access</a>
       </nav>
@@ -65,7 +115,7 @@
         <p class="eyebrow">Team</p>
         <p class="hero-tagline">Capital Advisory &amp; Deal-Intelligence</p>
         <h1>Leadership grounded in principal investing and advisory execution.</h1>
-        <p>Monthaven’s team blends institutional acquisition, operating, and capital markets experience to guide mandates with speed and discretion.</p>
+        <p>Monthaven’s team blends institutional acquisition, operating, and capital markets experience to guide mandates with speed and discretion. See the <a href="/services.html">services each partner anchors</a> and how we <a href="/how.html">structure engagements</a>.</p>
       </div>
     </section>
 
@@ -95,7 +145,7 @@
     <section class="section" id="team-about">
       <div class="container" style="max-width: 780px;">
         <h2>About Monthaven</h2>
-        <p>Monthaven Capital partners with principals, operators, and capital providers across essential real assets. We originate, underwrite, and package transactions, then either take a GP position (10–30%) or place opportunities with institutional/HNW partners. Our stance: off-market mandates, institutional diligence, and disciplined execution. We run a Notion-first, automation-heavy workflow for speed and consistency: T-12/rent roll parsing, comp libraries, sensitivity cases, and investor-ready OMs, with lender and operator relationships to assemble full stacks quickly and on-criteria.</p>
+        <p>Monthaven Capital partners with principals, operators, and capital providers across essential real assets. We originate, underwrite, and package transactions, then either take a GP position (10–30%) or place opportunities with institutional/HNW partners. Our stance: off-market mandates, institutional diligence, and disciplined execution. We run a Notion-first, automation-heavy workflow for speed and consistency: T-12/rent roll parsing, comp libraries, sensitivity cases, and investor-ready OMs, with lender and operator relationships to assemble full stacks quickly and on-criteria. For next steps, review <a href="/why.html">why mandates choose Monthaven</a> or <a href="/contact.html">start an introduction</a>.</p>
       </div>
     </section>
   </main>
