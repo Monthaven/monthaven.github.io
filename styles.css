@@ -93,31 +93,18 @@ textarea:focus-visible {
 
 .brand-group {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
 }
 
-.brand {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.88rem;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--mh-charcoal-900);
-}
+.brand { display: none; } /* replaced by logo mark */
 
-.site-tagline {
-  font-family: var(--font-body);
-  font-weight: 500;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  font-size: 0.72rem;
-  color: color-mix(in oklab, var(--mh-charcoal-900) 60%, white);
-}
+.site-tagline { display: none; } /* remove extra words under brand */
 
+/* Header mark sizing: roughly “two stacked letters” */
 .brand-mark {
-  height: 2.4rem;
+  height: 36px; /* adjust if needed; keeps mark crisp across pages */
   width: auto;
   display: block;
 }
@@ -172,7 +159,7 @@ textarea:focus-visible {
 
 .btn-primary {
   background: var(--mh-accent);
-  color: #fff;
+  color: #fff; /* ensure white text for Request Access */
 }
 
 .btn-primary:hover {
