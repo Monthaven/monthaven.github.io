@@ -118,6 +118,38 @@ textarea:focus-visible {
   display: block;
 }
 
+/*
+ * This CSS makes the logo and text sit side-by-side
+ * and styles the text itself.
+*/
+
+/* Target the link that holds everything */
+.brand-group a {
+  display: flex;           /* Use Flexbox to align items horizontally */
+  align-items: center;     /* Vertically center the logo and text block */
+  gap: 12px;               /* Creates a nice space between the logo and text */
+  text-decoration: none;   /* Removes the default blue underline from the link */
+  color: #333;             /* Sets a default text color (change as needed) */
+}
+
+/* This is the container for the two lines of text */
+.brand-text {
+  display: flex;
+  flex-direction: column;  /* Stack the text lines vertically */
+}
+
+/* Style the top line of text */
+.brand-line-1 {
+  font-weight: bold;       /* Makes "Monthaven" bold */
+  font-size: 1.1em;        /* Makes it slightly larger */
+}
+
+/* Style the bottom line of text */
+.brand-line-2 {
+  font-size: 1em;          /* Normal size */
+  line-height: 1;          /* Reduces the space between the two lines */
+}
+
 .nav {
   display: flex;
   align-items: center;
