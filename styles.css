@@ -126,10 +126,6 @@ textarea:focus-visible {
   color: var(--mh-charcoal);
 }
 
-.nav a {
-  color: inherit;
-}
-
 .nav .btn {
   font-size: 0.9rem;
 }
