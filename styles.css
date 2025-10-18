@@ -104,7 +104,7 @@ textarea:focus-visible {
 
 /* Header mark sizing: roughly “two stacked letters” */
 .brand-mark {
-  height: 36px; /* adjust if needed; keeps mark crisp across pages */
+  height: 75px; /* adjust if needed; keeps mark crisp across pages */
   width: auto;
   display: block;
 }
