@@ -95,7 +95,6 @@ textarea:focus-visible {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 12px;
 }
 
 .brand { display: none; } /* replaced by logo mark */
