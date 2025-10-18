@@ -234,10 +234,22 @@ textarea:focus-visible {
   color: var(--mh-charcoal);
 }
 
-.hero .cta-row {
+.cta-row {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+}
+
+.cta-section {
+  background: var(--mh-cream-100);
+  padding: clamp(32px, 6vw, 48px) 0;
+  border-top: 1px solid var(--mh-sage);
+  border-bottom: 1px solid var(--mh-sage);
+}
+
+.cta-section .cta-row {
+  justify-content: center;
+  align-items: center;
 }
 
 .page-hero {
@@ -300,6 +312,10 @@ textarea:focus-visible {
 }
 
 .cards.three {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.cards.cards-3 {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
@@ -578,7 +594,7 @@ blockquote {
 }
 
 @media (max-width: 600px) {
-  .hero .cta-row {
+  .cta-row {
     flex-direction: column;
     align-items: stretch;
   }
