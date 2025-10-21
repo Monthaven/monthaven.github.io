@@ -213,6 +213,10 @@ textarea:focus-visible {
   background: color-mix(in srgb, var(--mh-accent) 85%, white 15%);
 }
 
+.nav .btn-primary[aria-current="page"] {
+  color: var(--mh-cream);
+}
+
 .nav .btn {
   font-size: 0.9rem;
 }
