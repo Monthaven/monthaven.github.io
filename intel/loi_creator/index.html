@@ -146,10 +146,10 @@
 
     <section class="page-hero">
       <div class="container">
-        <p class="eyebrow">The Toolkit Series</p>
+        <p class="eyebrow">Tools</p>
         <p class="hero-tagline">Deal execution resources</p>
         <h1>Institutional Letter of Intent (LOI) Generator</h1>
-        <p>Create a polished, print-ready LOI with configurable defaults, automated numbering, and signature blocks.</p>
+        <p>Create a polished, print-ready LOI with configurable defaults, automated numbering, and space for signatures.</p>
       </div>
     </section>
 
@@ -272,18 +272,16 @@ Please signify your agreement with the terms set forth above by signing and retu
 
               <div class="loi-actions">
                 <button type="submit" class="btn btn-primary">Generate LOI</button>
+                <button id="copyBtn" type="button" class="btn btn-outline btn-compact">Copy body text</button>
                 <button id="resetButton" type="button" class="btn btn-outline btn-compact">Reset</button>
               </div>
             </form>
           </section>
 
           <section id="previewWrapper" class="loi-preview">
-            <div class="loi-preview-header print-hidden">
-              <p class="loi-preview-title">Document preview</p>
-              <div class="loi-preview-actions">
-                <button id="printButton" type="button" class="btn btn-primary btn-compact">Print / Save PDF</button>
-                <button id="copyBtn" type="button" class="btn btn-outline btn-compact">Copy body text</button>
-              </div>
+            <div class="loi-preview-actions print-hidden">
+              <button id="printButton" type="button" class="btn btn-primary btn-compact">Print / Save PDF</button>
+              <button id="backToForm" type="button" class="btn btn-outline btn-compact">Edit inputs</button>
             </div>
             <div class="loi-document-wrapper" id="docWrapper">
               <div class="print-header">
@@ -320,22 +318,11 @@ Please signify your agreement with the terms set forth above by signing and retu
                 <div class="loi-subject">Subject: <span id="outputSubject"></span></div>
 
                 <div class="loi-body">
-                  <p class="loi-salutation">Dear <span id="outputRecipientSalutation"></span>,</p>
-                  <div id="introBlock" class="loi-body-block">
-                    <div id="outputIntro" class="loi-paragraphs"></div>
-                  </div>
-                  <section id="termsSection" class="loi-body-section" aria-labelledby="termsHeading">
-                    <h2 id="termsHeading" class="loi-section-heading">Key Terms</h2>
-                    <div id="outputTerms" class="loi-terms"></div>
-                  </section>
-                  <section id="bindingSection" class="loi-body-section" aria-labelledby="bindingHeading">
-                    <h2 id="bindingHeading" class="loi-section-heading">Binding Effect</h2>
-                    <div id="outputBinding" class="loi-paragraphs"></div>
-                  </section>
-                  <section id="closingSection" class="loi-body-section" aria-labelledby="closingHeading">
-                    <h2 id="closingHeading" class="loi-section-heading">Next Steps</h2>
-                    <div id="outputClosing" class="loi-paragraphs"></div>
-                  </section>
+                  <p>Dear <span id="outputRecipientSalutation"></span>,</p>
+                  <div id="outputIntro"></div>
+                  <div id="outputTerms" class="loi-terms"></div>
+                  <div id="outputBinding"></div>
+                  <div id="outputClosing"></div>
                   <p id="outputExpiry" class="loi-expiry"></p>
                 </div>
 
@@ -401,13 +388,10 @@ Please signify your agreement with the terms set forth above by signing and retu
     defaultExpiry.setDate(defaultExpiry.getDate() + 7);
     byId('expiryDate').valueAsDate = defaultExpiry;
 
-    const form = byId('loiForm');
+    const formWrapper = byId('formWrapper');
     const previewWrapper = byId('previewWrapper');
+    const layout = byId('loiLayout');
     const doc = byId('loiOutput');
-    const introBlock = byId('introBlock');
-    const termsSection = byId('termsSection');
-    const bindingSection = byId('bindingSection');
-    const closingSection = byId('closingSection');
 
     const institutionalIntro = `This Letter of Intent (the "Letter") sets forth the non-binding terms and conditions under which Sender Solutions Inc. ("Buyer") proposes to acquire substantially all of the assets of Receiver Corp. ("Seller").`;
 
@@ -436,8 +420,6 @@ Please signify your agreement with the terms set forth above by signing and retu
       byId('keyTerms').value = institutionalTerms;
       byId('bindingClause').value = institutionalBinding;
       byId('closingParagraph').value = institutionalClosing;
-      renderPreview();
-      pulsePreview();
     });
 
     byId('logoUpload').addEventListener('change', (e) => {
@@ -463,10 +445,9 @@ Please signify your agreement with the terms set forth above by signing and retu
           .map((line) => line.replace(/^\s*\d+\.\s*/, '').trim())
           .map((line) => `<li>${line}</li>`)
           .join('');
-        return `<ol class="loi-term-list">${items}</ol>`;
+        return `<ol>${items}</ol>`;
       }
-      const paragraphs = lines.map((line) => `<p>${line}</p>`).join('');
-      return `<div class="loi-paragraphs">${paragraphs}</div>`;
+      return lines.map((line) => `<p>${line}</p>`).join('');
     };
 
     const escapeHTML = (str) =>
@@ -494,15 +475,10 @@ Please signify your agreement with the terms set forth above by signing and retu
       const letterDate = fmtDate(letterDateRaw);
       const subject = byId('subject').value.trim();
 
-      const introInput = byId('introParagraph').value;
-      const termsInput = byId('keyTerms').value;
-      const bindingInput = byId('bindingClause').value;
-      const closingInput = byId('closingParagraph').value;
-
-      const intro = escapeHTML(introInput).replace(/\n\n+/g, '</p><p>').replace(/\n/g, '<br>');
-      const termsHTML = toOrderedList(termsInput);
-      const binding = escapeHTML(bindingInput).replace(/\n\n+/g, '</p><p>').replace(/\n/g, '<br>');
-      const closing = escapeHTML(closingInput).replace(/\n\n+/g, '</p><p>').replace(/\n/g, '<br>');
+      const intro = escapeHTML(byId('introParagraph').value).replace(/\n\n+/g, '</p><p>').replace(/\n/g, '<br>');
+      const termsHTML = toOrderedList(byId('keyTerms').value);
+      const binding = escapeHTML(byId('bindingClause').value).replace(/\n\n+/g, '</p><p>').replace(/\n/g, '<br>');
+      const closing = escapeHTML(byId('closingParagraph').value).replace(/\n\n+/g, '</p><p>').replace(/\n/g, '<br>');
 
       byId('printHeaderLeft').textContent = senderCompany || '';
       byId('printHeaderRight').textContent = subject || '';
@@ -523,30 +499,13 @@ Please signify your agreement with the terms set forth above by signing and retu
       const lastName = nameParts.length > 1 ? nameParts[nameParts.length - 1] : nameParts[0] || 'Sir/Madam';
       byId('outputRecipientSalutation').textContent = `Mr./Ms. ${lastName}`;
 
-      const hasIntro = introInput.trim().length > 0;
-      const hasTerms = termsHTML.trim().length > 0;
-      const hasBinding = bindingInput.trim().length > 0;
-      const hasClosing = closingInput.trim().length > 0;
-
-      byId('outputIntro').innerHTML = hasIntro ? `<p>${intro}</p>` : '';
-      introBlock.hidden = !hasIntro;
-
-      byId('outputTerms').innerHTML = hasTerms ? termsHTML : '';
-      termsSection.hidden = !hasTerms;
-
-      byId('outputBinding').innerHTML = hasBinding ? `<p>${binding}</p>` : '';
-      bindingSection.hidden = !hasBinding;
-
-      byId('outputClosing').innerHTML = hasClosing ? `<p>${closing}</p>` : '';
-      closingSection.hidden = !hasClosing;
-      const expiryEl = byId('outputExpiry');
-      if (expiryDateRaw) {
-        expiryEl.textContent = `This LOI shall expire at 5:00 p.m. Eastern Time on ${fmtDate(expiryDateRaw)} unless executed earlier or extended in writing.`;
-        expiryEl.hidden = false;
-      } else {
-        expiryEl.textContent = '';
-        expiryEl.hidden = true;
-      }
+      byId('outputIntro').innerHTML = intro ? `<p>${intro}</p>` : '';
+      byId('outputTerms').innerHTML = termsHTML;
+      byId('outputBinding').innerHTML = binding ? `<p>${binding}</p>` : '';
+      byId('outputClosing').innerHTML = closing ? `<p>${closing}</p>` : '';
+      byId('outputExpiry').textContent = expiryDateRaw
+        ? `This LOI shall expire at 5:00 p.m. Eastern Time on ${fmtDate(expiryDateRaw)} unless executed earlier or extended in writing.`
+        : '';
 
       byId('buyerNamePrinted').textContent = senderName;
       byId('buyerTitlePrinted').textContent = senderTitle;
@@ -556,30 +515,13 @@ Please signify your agreement with the terms set forth above by signing and retu
       doc.classList.toggle('watermark', byId('toggleWatermark').checked);
     };
 
-    const pulsePreview = () => {
-      previewWrapper.classList.add('loi-preview--active');
-      window.setTimeout(() => previewWrapper.classList.remove('loi-preview--active'), 1200);
-    };
-
-    form.addEventListener('submit', (event) => {
+    byId('loiForm').addEventListener('submit', (event) => {
       event.preventDefault();
       renderPreview();
-      pulsePreview();
-      previewWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-
-    form.addEventListener('input', (event) => {
-      if (event.target.id === 'logoUpload') {
-        return;
-      }
-      renderPreview();
-    });
-
-    form.addEventListener('change', (event) => {
-      if (event.target.id === 'logoUpload') {
-        return;
-      }
-      renderPreview();
+      previewWrapper.classList.add('show-preview');
+      formWrapper.classList.add('hidden');
+      layout?.classList.add('with-preview');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
     byId('copyBtn').addEventListener('click', async () => {
@@ -601,7 +543,15 @@ Please signify your agreement with the terms set forth above by signing and retu
 
     byId('printButton')?.addEventListener('click', () => window.print());
 
+    byId('backToForm')?.addEventListener('click', () => {
+      previewWrapper.classList.remove('show-preview');
+      formWrapper.classList.remove('hidden');
+      layout?.classList.remove('with-preview');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
     byId('resetButton').addEventListener('click', () => {
+      const form = byId('loiForm');
       form.reset();
       byId('letterDate').valueAsDate = new Date();
       const exp = new Date();
@@ -610,18 +560,15 @@ Please signify your agreement with the terms set forth above by signing and retu
       const img = byId('logoPreview');
       img.src = '#';
       img.classList.add('hidden');
-      byId('toggleWatermark').checked = false;
+      previewWrapper.classList.remove('show-preview');
+      formWrapper.classList.remove('hidden');
+      layout?.classList.remove('with-preview');
       doc.classList.remove('watermark');
-      renderPreview();
-      pulsePreview();
     });
 
     byId('toggleWatermark').addEventListener('change', (event) => {
       doc.classList.toggle('watermark', event.target.checked);
-      pulsePreview();
     });
-
-    renderPreview();
   </script>
   <script src="/scripts.js"></script>
 </body>
