@@ -380,7 +380,28 @@ Please signify your agreement with the terms set forth above by signing and retu
 
   <script>
     const byId = (id) => document.getElementById(id);
-    const fmtDate = (d) => new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    const toLocalDate = (value) => {
+      if (!value) return null;
+      if (value instanceof Date) return value;
+
+      if (typeof value === 'string') {
+        const isoMatch = value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+        if (isoMatch) {
+          const [, year, month, day] = isoMatch;
+          return new Date(Number(year), Number(month) - 1, Number(day));
+        }
+      }
+
+      const parsed = new Date(value);
+      return Number.isNaN(parsed.getTime()) ? null : parsed;
+    };
+
+    const fmtDate = (value) => {
+      const date = toLocalDate(value);
+      return date
+        ? date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+        : '';
+    };
 
     const today = new Date();
     byId('letterDate').valueAsDate = today;
@@ -470,7 +491,17 @@ Please signify your agreement with the terms set forth above by signing and retu
       const recipientCompany = byId('recipientCompany').value.trim();
       const recipientAddress = byId('recipientAddress').value.trim();
 
-      const letterDateRaw = byId('letterDate').value || new Date().toISOString().substring(0, 10);
+      const letterDateRaw = (() => {
+        const inputValue = byId('letterDate').value;
+        if (inputValue) return inputValue;
+
+        const today = new Date();
+        return [
+          today.getFullYear(),
+          String(today.getMonth() + 1).padStart(2, '0'),
+          String(today.getDate()).padStart(2, '0'),
+        ].join('-');
+      })();
       const expiryDateRaw = byId('expiryDate').value;
       const letterDate = fmtDate(letterDateRaw);
       const subject = byId('subject').value.trim();
