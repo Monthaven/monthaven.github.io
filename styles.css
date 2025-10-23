@@ -28,6 +28,7 @@ a {
 
 a:hover,
 a:focus {
+  color: #2a4e3e;
   color: color-mix(in srgb, var(--mh-accent) 80%, black 20%);
 }
 
@@ -35,6 +36,7 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
+  outline: 3px solid #86a094;
   outline: 3px solid color-mix(in srgb, var(--mh-accent) 60%, white 40%);
   outline-offset: 2px;
 }
@@ -210,6 +212,7 @@ textarea:focus-visible {
   bottom: -8px;
   height: 3px;
   border-radius: 999px;
+  background: #537968;
   background: color-mix(in srgb, var(--mh-accent) 85%, white 15%);
 }
 
@@ -342,6 +345,7 @@ textarea:focus-visible {
 /* Cards & panels */
 .panel {
   background: #fff;
+  border: 1px solid var(--mh-sage);
   border: 1px solid color-mix(in oklab, var(--mh-sage) 48%, transparent);
   border-radius: var(--mh-radius);
   padding: clamp(20px, 2.6vw, 32px);
@@ -415,6 +419,7 @@ textarea:focus-visible {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-size: 0.72rem;
+  color: var(--mh-charcoal);
   color: color-mix(in srgb, var(--mh-charcoal) 70%, black 0%);
 }
 
@@ -535,6 +540,7 @@ input:focus,
 textarea:focus,
 select:focus {
   border-color: var(--mh-accent);
+  box-shadow: 0 0 0 4px rgba(53, 97, 77, 0.2);
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--mh-accent) 20%, transparent 80%);
 }
 
@@ -602,6 +608,7 @@ textarea {
   background: var(--mh-cream-100);
   border-radius: var(--mh-radius);
   padding: clamp(24px, 3vw, 32px);
+  border: 1px solid var(--mh-sage);
   border: 1px solid color-mix(in oklab, var(--mh-sage) 40%, transparent);
 }
 
@@ -657,6 +664,7 @@ blockquote {
     display: grid;
     gap: 18px;
     box-shadow: var(--mh-shadow);
+    border: 1px solid var(--mh-sage);
     border: 1px solid color-mix(in oklab, var(--mh-sage) 40%, transparent);
     border-radius: var(--mh-radius);
     max-height: calc(100vh - 120px);
