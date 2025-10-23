@@ -721,11 +721,6 @@ blockquote {
   display: none !important;
 }
 
-@page {
-  size: Letter;
-  margin: 1in;
-}
-
 /* LOI generator */
 .loi-page {
   background: var(--mh-cream);
@@ -733,7 +728,6 @@ blockquote {
 
 .loi-page main {
   padding-bottom: clamp(64px, 10vw, 96px);
-  background: linear-gradient(180deg, var(--mh-cream-100) 0%, var(--mh-cream) 82%);
 }
 
 .loi-page .page-hero {
@@ -747,8 +741,11 @@ blockquote {
 
 @media (min-width: 1100px) {
   .loi-layout {
-    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-    align-items: start;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .loi-layout.with-preview {
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
   }
 }
 
@@ -757,21 +754,7 @@ blockquote {
   border-radius: var(--mh-radius);
   box-shadow: var(--mh-shadow);
   padding: clamp(24px, 3.4vw, 32px);
-  border: 1px solid color-mix(in oklab, var(--mh-sage) 55%, transparent);
-  align-self: start;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.loi-panel:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 24px 50px rgba(17, 24, 39, 0.08);
-}
-
-@media (min-width: 1100px) {
-  .loi-panel {
-    position: sticky;
-    top: 108px;
-  }
+  border: 1px solid color-mix(in oklab, var(--mh-sage) 50%, transparent);
 }
 
 .loi-panel-header {
@@ -875,21 +858,18 @@ blockquote {
 .loi-textarea,
 .loi-file {
   width: 100%;
-  border: 1px solid color-mix(in oklab, var(--mh-sage) 60%, white 40%);
+  border: 1px solid var(--mh-sage);
   border-radius: 12px;
   padding: 12px 14px;
   font: inherit;
-  font-size: 0.95rem;
-  background: var(--mh-cream-100);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  background: #fff;
   color: var(--mh-charcoal-900);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .loi-textarea {
   min-height: 140px;
   resize: vertical;
-  line-height: 1.6;
 }
 
 .loi-input:focus,
@@ -900,72 +880,43 @@ blockquote {
   outline: none;
 }
 
-.loi-input::placeholder,
-.loi-textarea::placeholder {
-  color: color-mix(in srgb, var(--mh-charcoal) 55%, white 45%);
-}
-
 .loi-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  align-items: center;
+}
+
+.loi-actions .btn {
+  flex-shrink: 0;
 }
 
 .loi-actions .btn-primary {
   min-width: 170px;
 }
 
-.loi-actions .btn-outline {
-  background: transparent;
-  border-color: color-mix(in oklab, var(--mh-sage) 55%, transparent);
-}
-
-.loi-actions .btn-outline:hover {
-  border-color: color-mix(in srgb, var(--mh-accent) 65%, white 35%);
-}
-
 .loi-preview {
+  display: none;
+  gap: 20px;
+}
+
+.loi-preview.show-preview {
   display: flex;
   flex-direction: column;
-  gap: clamp(20px, 3vw, 28px);
-  background: var(--mh-cream-100);
-  border-radius: var(--mh-radius);
-  border: 1px solid color-mix(in oklab, var(--mh-sage) 40%, transparent);
-  padding: clamp(24px, 3vw, 32px);
-  box-shadow: 0 24px 55px rgba(17, 24, 39, 0.06);
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
-  align-self: stretch;
-}
-
-.loi-preview--active {
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--mh-accent) 18%, transparent 82%),
-    0 28px 60px rgba(17, 24, 39, 0.1);
-  border-color: color-mix(in srgb, var(--mh-accent) 30%, var(--mh-sage) 70%);
-}
-
-.loi-preview-header {
-  display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px 16px;
+  gap: 20px;
 }
 
-.loi-preview-title {
-  margin: 0;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: color-mix(in srgb, var(--mh-charcoal) 75%, white 25%);
+@media (min-width: 1100px) {
+  .loi-preview.show-preview {
+    align-items: stretch;
+  }
 }
 
 .loi-preview-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 @media (min-width: 1100px) {
@@ -983,7 +934,6 @@ blockquote {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: clamp(12px, 2.4vw, 24px);
 }
 
 .loi-document {
@@ -996,10 +946,8 @@ blockquote {
   max-width: 780px;
   width: 100%;
   font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: 1.02rem;
   color: var(--mh-charcoal-900);
   line-height: 1.7;
-  border: 1px solid color-mix(in oklab, var(--mh-sage) 45%, transparent);
 }
 
 .loi-document header {
@@ -1071,56 +1019,9 @@ blockquote {
 }
 
 .loi-body {
-  display: block;
-}
-
-.loi-body > * + * {
-  margin-top: 1.1em;
-}
-
-.loi-salutation {
-  margin-bottom: 0.2em;
-}
-
-.loi-body-block {
-  display: block;
-}
-
-.loi-body-block[hidden] {
-  display: none !important;
-}
-
-.loi-body-section {
-  margin-top: 1.8em;
-  break-inside: avoid;
-}
-
-.loi-body-section[hidden] {
-  display: none !important;
-}
-
-.loi-section-heading {
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: color-mix(in srgb, var(--mh-charcoal-900) 82%, white 18%);
-  margin: 0 0 0.8em;
-  padding-bottom: 0.4em;
-  border-bottom: 1px solid color-mix(in srgb, var(--mh-sage) 45%, white 55%);
-}
-
-.loi-paragraphs p {
-  margin: 0 0 1em;
-}
-
-.loi-paragraphs p:last-child {
-  margin-bottom: 0;
-}
-
-.loi-term-list {
-  margin: 0;
-  padding-left: 1.35em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
 .loi-expiry {
@@ -1128,33 +1029,8 @@ blockquote {
   color: var(--mh-charcoal);
 }
 
-.loi-signoff {
-  margin-top: clamp(28px, 3.6vw, 44px);
-  break-inside: avoid;
-}
-
-.loi-signoff-line {
-  margin: 0 0 1.2em;
-}
-
-.loi-signoff-name,
-.loi-signoff-title,
-.loi-signoff-company {
-  margin: 0;
-}
-
-.loi-signoff-name {
-  font-weight: 600;
-}
-
-.loi-signoff-company {
-  color: var(--mh-charcoal);
-}
-
 .loi-signatures {
   margin-top: clamp(32px, 5vw, 48px);
-  padding-top: clamp(24px, 3vw, 32px);
-  border-top: 1px solid color-mix(in oklab, var(--mh-sage) 55%, transparent);
   display: grid;
   gap: clamp(24px, 3vw, 36px);
 }
@@ -1169,7 +1045,6 @@ blockquote {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  break-inside: avoid;
 }
 
 .signature-heading {
@@ -1267,20 +1142,14 @@ blockquote {
     display: none !important;
   }
 
-  .loi-preview {
-    display: block;
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    padding: 0;
-  }
-
-  #loiLayout {
+  .loi-preview,
+  .loi-preview.show-preview {
     display: block;
   }
 
-  .loi-document-wrapper {
-    padding: 0;
+  #loiLayout,
+  .loi-layout.with-preview {
+    display: block;
   }
 
   #loiOutput {
@@ -1288,19 +1157,6 @@ blockquote {
     border-radius: 0;
     max-width: 100%;
     margin: 0 auto;
-    padding: 0;
-    font-size: 12pt;
-    line-height: 1.6;
-  }
-
-  .loi-section-heading {
-    font-size: 11pt;
-    letter-spacing: 0.06em;
-    margin-bottom: 0.6em;
-  }
-
-  .loi-term-list {
-    padding-left: 1.15em;
   }
 
   .print-header,
