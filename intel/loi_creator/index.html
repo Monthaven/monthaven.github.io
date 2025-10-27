@@ -239,7 +239,7 @@
                 </div>
                 <div class="loi-field">
                   <label for="subject">Subject</label>
-                  <input id="subject" type="text" class="loi-input" value="Letter of Intent Regarding Proposed Transaction" />
+                  <input id="subject" type="text" class="loi-input" value="Non-Binding Letter of Intent for the Acquisition of Assets" />
                 </div>
               </fieldset>
 
@@ -247,26 +247,30 @@
                 <legend>Body</legend>
                 <div class="loi-field">
                   <label for="introParagraph">Introduction</label>
-                  <textarea id="introParagraph" rows="4" class="loi-textarea">This Letter of Intent (the "Letter") sets forth the non-binding terms and conditions under which Sender Solutions Inc. ("Buyer") proposes to acquire substantially all of the assets of Receiver Corp. ("Seller").</textarea>
+                  <textarea id="introParagraph" rows="4" class="loi-textarea">This Letter of Intent (the "Letter") outlines the proposed terms and conditions for a transaction in which Your Company, LLC or its affiliate ("Buyer") would acquire substantially all of the assets of Recipient Corp. ("Seller").</textarea>
                 </div>
                 <div class="loi-field">
                   <div class="loi-label-row">
                     <label for="keyTerms">Key Terms (numbered list supported)</label>
                     <span class="loi-hint">Start lines with 1., 2., 3. to auto-number.</span>
                   </div>
-                  <textarea id="keyTerms" rows="10" class="loi-textarea">1. Proposed Transaction: Buyer would acquire substantially all of the assets of Seller, including its intellectual property, customer lists, and inventory, free and clear of all encumbrances.
-2. Purchase Price: The proposed purchase price is $5,000,000 USD, payable in cash at closing.
-3. Due Diligence: Buyer shall have 30 days from the execution of this Letter to conduct a comprehensive due diligence review of Seller's business, finances, and operations.</textarea>
+                  <textarea id="keyTerms" rows="10" class="loi-textarea">1. The Proposed Transaction: Buyer proposes to acquire substantially all of the assets used in the operation of the Seller's business (the "Assets"). Included Assets: The Assets shall include, but not be limited to, all intellectual property, customer and supplier lists, contracts, inventory, equipment, and goodwill. Excluded Assets: The Seller will retain certain assets, such as cash, cash equivalents, and accounts receivable existing at Closing (unless otherwise agreed). Excluded Liabilities: The Buyer will not assume any of the Seller's liabilities or obligations, past or present, except for those expressly identified and agreed upon in the Definitive Agreement. The transaction will be on a "cash-free, debt-free" basis.
+2. Purchase Price: The proposed purchase price is $5,000,000 USD. Payment: The Purchase Price will be payable in cash at the closing of the transaction (the "Closing"). Working Capital Adjustment: The Purchase Price will be subject to a standard post-Closing adjustment to ensure a normalized level of net working capital is delivered to the Buyer. The specific target and calculation method will be detailed in the Definitive Agreement.
+3. Key Conditions: The Closing of the Proposed Transaction will be contingent upon several conditions, including: (i) the successful completion of Buyer's due diligence to its sole satisfaction; (ii) the negotiation and execution of a definitive Asset Purchase Agreement (the "Definitive Agreement"); (iii) receipt of any necessary board, shareholder, and third-party consents; (iv) the absence of any material adverse change in the Seller's business or financial condition; and (v) the retention of certain key employees identified by the Buyer.
+4. Due Diligence: Upon execution of this Letter, Seller shall provide Buyer and its representatives with reasonable access to its business, financial, legal, and operational records and facilities for a period of 30 days (the "Diligence Period").
+5. Definitive Agreement: The parties will negotiate in good faith to draft a Definitive Agreement that will contain standard representations, warranties, covenants, and indemnification provisions customary for a transaction of this nature.
+6. Binding Provisions: This Letter is an expression of intent and is non-binding, creating no legal obligations on either party, except for the following provisions, which shall be legally binding and survive the termination of this Letter: Confidentiality: Both parties agree to keep the existence and content of these negotiations, as well as all information shared during due diligence, strictly confidential. A separate Non-Disclosure Agreement may be executed. Exclusivity (No-Shop): From the date of execution until the expiration of this Letter, Seller agrees not to, directly or indirectly, solicit, initiate, or engage in discussions with any other party regarding the sale of its business or assets. Expenses: Each party will be responsible for its own costs and expenses incurred in connection with the Proposed Transaction, including legal, accounting, and advisory fees. Governing Law: This Letter and the binding provisions shall be governed by the laws of the State of [Insert State].
+7. Expiration: This offer shall expire at 5:00 p.m. Eastern Time on November 3, 2025, unless accepted by the Seller in writing, or otherwise extended by the Buyer in writing.</textarea>
                 </div>
                 <div class="loi-field">
                   <label for="bindingClause">Binding / Non-Binding Clause</label>
-                  <textarea id="bindingClause" rows="4" class="loi-textarea">This Letter is not a binding contract and does not create any rights or obligations for either party, except for the provisions regarding Confidentiality and Exclusivity, which shall be binding. This proposal is contingent upon the execution of a definitive purchase agreement satisfactory to both parties.</textarea>
+                  <textarea id="bindingClause" rows="4" class="loi-textarea">This Letter is intended solely as a non-binding expression of mutual intent. Except for the provisions titled Confidentiality, Exclusivity (No-Shop), Expenses, and Governing Law (collectively, the "Binding Provisions"), neither party shall be under any legal obligation with respect to the Proposed Transaction unless and until a Definitive Agreement is executed.</textarea>
                 </div>
                 <div class="loi-field">
                   <label for="closingParagraph">Closing / Next Steps</label>
-                  <textarea id="closingParagraph" rows="4" class="loi-textarea">We are excited about the potential for this transaction and believe it represents a significant opportunity for both parties. We look forward to working with you to complete due diligence and negotiate a definitive agreement.
+                  <textarea id="closingParagraph" rows="4" class="loi-textarea">We are enthusiastic about the potential of this transaction and look forward to working with you toward a successful closing.
 
-Please signify your agreement with the terms set forth above by signing and returning a copy of this Letter.</textarea>
+Please signify your agreement with the Binding Provisions and the process outlined above by signing and returning a countersigned copy of this Letter.</textarea>
                 </div>
               </fieldset>
 
@@ -414,27 +418,21 @@ Please signify your agreement with the terms set forth above by signing and retu
     const layout = byId('loiLayout');
     const doc = byId('loiOutput');
 
-    const institutionalIntro = `This Letter of Intent (the "Letter") sets forth the non-binding terms and conditions under which Sender Solutions Inc. ("Buyer") proposes to acquire substantially all of the assets of Receiver Corp. ("Seller").`;
+    const institutionalIntro = `This Letter of Intent (the "Letter") outlines the proposed terms and conditions for a transaction in which Your Company, LLC or its affiliate ("Buyer") would acquire substantially all of the assets of Recipient Corp. ("Seller").`;
 
     const institutionalTerms = [
-      '1. <strong>Structure.</strong> Asset purchase of the Business, free and clear of all liens, claims and encumbrances pursuant to Section 363(f) of the UCC or applicable law (if any).',
-      '2. <strong>Purchase Price.</strong> USD $5,000,000, subject to customary adjustments for cash, indebtedness, unpaid transaction expenses, and a dollar-for-dollar working capital true-up against a target to be mutually agreed.',
-      '3. <strong>Consideration Mix.</strong> Payable in cash at Closing. Buyer may, at its discretion, allocate a portion to a contingent earn-out based on agreed revenue/EBITDA thresholds.',
-      '4. <strong>Working Capital.</strong> Target normalized net working capital (“NWC”) as of Closing to be mutually agreed following diligence; post-closing adjustment within 90 days based on GAAP and consistent application of historical accounting policies.',
-      '5. <strong>Due Diligence.</strong> 45 days from execution of this LOI for financial, legal, tax, operational, environmental, HR, insurance, IT/cyber and commercial diligence. Seller to provide reasonable access to information, facilities and key personnel.',
-      '6. <strong>Exclusivity / No-Shop (Binding).</strong> From the date of execution of this LOI until the earlier of 45 days or execution of a definitive agreement, Seller shall not, directly or indirectly, solicit, initiate or encourage any inquiries or proposals relating to a sale of the Business or any material assets, and shall promptly notify Buyer of any unsolicited approaches.',
-      '7. <strong>Conditions to Closing.</strong> (i) Completion of diligence satisfactory to Buyer; (ii) negotiation and execution of mutually acceptable definitive agreements; (iii) receipt of all necessary corporate approvals and third-party consents; (iv) absence of a material adverse effect; (v) delivery of customary transition covenants; and (vi) if applicable, execution of reasonable non-competition and non-solicitation agreements by key stakeholders.',
-      '8. <strong>Employees.</strong> Buyer intends to extend offers of employment to designated employees effective as of Closing subject to customary conditions. Seller remains responsible for all pre-Closing liabilities and obligations related to employees, including accrued compensation and benefits.',
-      '9. <strong>Indemnification.</strong> Customary caps, baskets and survival periods to be negotiated in the definitive agreements, subject to fundamental reps and certain specified matters.',
-      '10. <strong>Taxes.</strong> Seller shall be responsible for all Taxes attributable to periods (or portions thereof) ending on or prior to Closing and for any transfer Taxes, except as otherwise agreed.',
-      '11. <strong>Publicity.</strong> No public announcement regarding the Transaction shall be made without the prior written consent of the other party, except as required by law.',
-      '12. <strong>Timing.</strong> Target execution of definitive agreements on or before [●]; target Closing on or before [●], subject to satisfaction of conditions.',
-      '13. <strong>Costs (Binding).</strong> Each party shall bear its own costs and expenses, including fees of advisors, incurred in connection with the Transaction.'
+      `1. The Proposed Transaction: Buyer proposes to acquire substantially all of the assets used in the operation of the Seller's business (the "Assets"). Included Assets: The Assets shall include, but not be limited to, all intellectual property, customer and supplier lists, contracts, inventory, equipment, and goodwill. Excluded Assets: The Seller will retain certain assets, such as cash, cash equivalents, and accounts receivable existing at Closing (unless otherwise agreed). Excluded Liabilities: The Buyer will not assume any of the Seller's liabilities or obligations, past or present, except for those expressly identified and agreed upon in the Definitive Agreement. The transaction will be on a "cash-free, debt-free" basis.`,
+      `2. Purchase Price: The proposed purchase price is $5,000,000 USD. Payment: The Purchase Price will be payable in cash at the closing of the transaction (the "Closing"). Working Capital Adjustment: The Purchase Price will be subject to a standard post-Closing adjustment to ensure a normalized level of net working capital is delivered to the Buyer. The specific target and calculation method will be detailed in the Definitive Agreement.`,
+      `3. Key Conditions: The Closing of the Proposed Transaction will be contingent upon several conditions, including: (i) the successful completion of Buyer's due diligence to its sole satisfaction; (ii) the negotiation and execution of a definitive Asset Purchase Agreement (the "Definitive Agreement"); (iii) receipt of any necessary board, shareholder, and third-party consents; (iv) the absence of any material adverse change in the Seller's business or financial condition; and (v) the retention of certain key employees identified by the Buyer.`,
+      `4. Due Diligence: Upon execution of this Letter, Seller shall provide Buyer and its representatives with reasonable access to its business, financial, legal, and operational records and facilities for a period of 30 days (the "Diligence Period").`,
+      `5. Definitive Agreement: The parties will negotiate in good faith to draft a Definitive Agreement that will contain standard representations, warranties, covenants, and indemnification provisions customary for a transaction of this nature.`,
+      `6. Binding Provisions: This Letter is an expression of intent and is non-binding, creating no legal obligations on either party, except for the following provisions, which shall be legally binding and survive the termination of this Letter: Confidentiality: Both parties agree to keep the existence and content of these negotiations, as well as all information shared during due diligence, strictly confidential. A separate Non-Disclosure Agreement may be executed. Exclusivity (No-Shop): From the date of execution until the expiration of this Letter, Seller agrees not to, directly or indirectly, solicit, initiate, or engage in discussions with any other party regarding the sale of its business or assets. Expenses: Each party will be responsible for its own costs and expenses incurred in connection with the Proposed Transaction, including legal, accounting, and advisory fees. Governing Law: This Letter and the binding provisions shall be governed by the laws of the State of [Insert State].`,
+      `7. Expiration: This offer shall expire at 5:00 p.m. Eastern Time on November 3, 2025, unless accepted by the Seller in writing, or otherwise extended by the Buyer in writing.`
     ].join('\n');
 
-    const institutionalBinding = 'Binding Terms. Notwithstanding anything to the contrary, the provisions titled <em>Exclusivity / No-Shop</em>, <em>Confidentiality</em> (pursuant to any existing NDA or one executed concurrently herewith), <em>Costs</em>, <em>Publicity</em>, <em>Governing Law</em> and <em>Miscellaneous</em> are intended to be binding and enforceable obligations of the parties. All other provisions are non-binding expressions of mutual intent and do not obligate either party to proceed with the Transaction until execution of definitive agreements.';
+    const institutionalBinding = `This Letter is intended solely as a non-binding expression of mutual intent. Except for the provisions titled Confidentiality, Exclusivity (No-Shop), Expenses, and Governing Law (collectively, the "Binding Provisions"), neither party shall be under any legal obligation with respect to the Proposed Transaction unless and until a Definitive Agreement is executed.`;
 
-    const institutionalClosing = 'We appreciate your consideration and look forward to working together to complete diligence and negotiate definitive agreements in an efficient manner. Please indicate your agreement to the Binding Terms and acceptance of the process outlined above by signing and returning a countersigned copy of this LOI.';
+    const institutionalClosing = `We are enthusiastic about the potential of this transaction and look forward to working with you toward a successful closing.\n\nPlease signify your agreement with the Binding Provisions and the process outlined above by signing and returning a countersigned copy of this Letter.`;
 
     byId('prefillBtn').addEventListener('click', () => {
       byId('introParagraph').value = institutionalIntro;
