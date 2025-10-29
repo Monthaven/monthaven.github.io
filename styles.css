@@ -316,6 +316,18 @@ textarea:focus-visible {
   align-items: center;
 }
 
+.cta-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  margin: 0 0 16px;
+}
+
+.cta-section p {
+  margin: 0 auto 24px;
+  max-width: 620px;
+  color: var(--mh-charcoal);
+}
+
 .page-hero {
   padding: clamp(96px, 14vw, 140px) 0 clamp(52px, 10vw, 80px);
   background: var(--mh-cream-100);
@@ -504,6 +516,50 @@ textarea:focus-visible {
 .team-card p {
   margin-top: 12px;
   color: var(--mh-charcoal);
+}
+
+.advisor-grid {
+  gap: 32px;
+}
+
+.advisor-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tag-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  color: var(--mh-charcoal);
+  font-size: 0.95rem;
+}
+
+.team-metrics {
+  margin-top: 24px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.team-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.team-metric-value {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--mh-charcoal-900);
+}
+
+.team-metric-label {
+  color: var(--mh-charcoal);
+  font-size: 0.9rem;
 }
 
 .section-divider {
