@@ -2,9 +2,13 @@
 
 ## ✅ Implementation Complete
 
+### Your Toll-Free Number
+**Number**: (844) 482-9105
+
 ### 1. Dedicated SMS Opt-In Page
 - **URL**: `monthavencapital.com/text`
 - **Location**: `/text/index.html`
+- **Formspree Endpoint**: `https://formspree.io/f/xpwvbwno`
 - **Features**:
   - Name field (required)
   - Mobile number field (required, with auto-formatting)
@@ -34,7 +38,115 @@
 
 ---
 
-## 📋 Toll-Free Verification Form Answers
+## 📋 Twilio Toll-Free Verification Form (TRANSACTIONAL ONLY - FASTEST APPROVAL)
+
+### Toll-Free Number
+```
+(844) 482-9105
+```
+
+### Opt-In Method
+```
+Web Form
+```
+
+### Proof of Consent (Opt-In) URL
+```
+https://monthavencapital.com/text/
+```
+
+### Privacy Policy URL
+```
+https://monthavencapital.com/legal/privacy/
+```
+
+### Terms & Conditions URL
+```
+https://monthavencapital.com/legal/sms/
+```
+
+### Messaging Use Case Categories
+Select these options ONLY (do not select Marketing/Promotions):
+- ✅ Customer Care
+- ✅ Account Notifications
+- ✅ Conversational
+
+### Use Case Description
+Copy/paste exactly:
+```
+Monthaven Capital uses this toll-free number to send text messages only to individuals who opt in via our website webform. Messages are strictly for customer care and transaction-related communication, including scheduling calls, requesting diligence/documents, and coordination on an active mandate or transaction. Message frequency varies. Message and data rates may apply. Recipients can opt out at any time by replying STOP and can request help by replying HELP or emailing info@monthavencapital.com. We do not use purchased lists.
+```
+
+### Sample Message
+```
+Monthaven Capital: Confirming our call tomorrow at 2:00 PM ET. Reply STOP to opt out, HELP for help.
+```
+
+### Opt-In Confirmation Message
+```
+Monthaven Capital: You're subscribed to transaction-related texts. Message frequency varies. Msg & data rates may apply. Reply STOP to opt out, HELP for help.
+```
+
+### Help Message Sample
+```
+Monthaven Capital: For help, email info@monthavencapital.com. Reply STOP to opt out.
+```
+
+### Email for Notifications
+```
+info@monthavencapital.com
+```
+
+### Additional Information
+```
+Opt-in is collected via a website webform with an explicit consent checkbox and disclosures (message frequency varies, msg/data rates may apply, STOP/HELP). Messaging is limited to scheduling and transaction coordination.
+```
+
+### Opt-In Keywords (Optional)
+```
+START, UNSTOP
+```
+
+### Important Prerequisites
+- **Paid Twilio Account Required**: Trial accounts cannot complete toll-free verification
+- **No SMS Until Approved**: Toll-free numbers can't send SMS to US/Canada until TFV is approved
+- **Daily Volume**: Choose a realistic number for your expected volume
+
+---
+
+## 🔍 Pages Twilio Will Review
+
+1. **Proof-of-consent webform** (KEY URL): https://monthavencapital.com/text/
+2. **SMS Terms**: https://monthavencapital.com/legal/sms/
+3. **Privacy Policy**: https://monthavencapital.com/legal/privacy/
+
+---
+
+## ✅ Website Changes for Transactional-Only Approval
+
+### REMOVED from /text page:
+- ❌ "deal flow"
+- ❌ "deal updates"  
+- ❌ "general updates"
+- ❌ Any promotional/marketing language
+
+### REPLACED WITH:
+- ✅ "scheduling"
+- ✅ "document/diligence requests"
+- ✅ "transaction coordination"
+- ✅ "We do not send promotional messages"
+
+### Updated Dropdown Options:
+- Scheduling
+- Document requests
+- Transaction coordination
+
+### Updated Consent Checkbox Language:
+"I agree to receive text messages from Monthaven Capital at the number provided for scheduling and transaction-related communication. Message frequency varies. Message and data rates may apply. Reply STOP to opt out. Reply HELP for help."
+
+---
+
+## 📋 Old Form Answers (Reference - Marketing/Promotional)
 
 ### Messaging Use Case Categories
 Select these options:
@@ -117,21 +229,20 @@ The site now has a "real estate country club" feel:
 
 ## 🚀 Next Steps
 
-1. **Update Formspree endpoint** in `/text/index.html` (line 79) with your actual form ID
-2. **Test the SMS opt-in flow** - submit the form and verify data reaches your CRM
-3. **Configure your SMS platform** to send the confirmation text after opt-in
-4. **Submit the toll-free verification** using the language above
-5. **Set up email templates** with links to `/text` instead of reply-based opt-in
-6. **Train your team** on the new "proof of consent = web page" method
+1. ✅ **Formspree endpoint configured** - Form submissions go to `xpwvbwno`
+2. ✅ **Toll-free number obtained** - (844) 482-9105
+3. **Submit Twilio TFV** - Use the form answers above (requires paid Twilio account)
+4. **Test the SMS opt-in flow** - Submit the form and verify data reaches Formspree
+5. **Configure Twilio Messaging Service** - Link your toll-free number after TFV approval
+6. **Send confirmation texts** - When form submissions come in via Formspree webhook
+7. **Set up email templates** - With links to `/text` instead of reply-based opt-in
 
 ---
 
-## 📞 Form Endpoints to Update
+## 📞 Form Endpoints
 
-If not using Formspree, update these form actions:
-
-- `/text/index.html` - Line 79: `action="https://formspree.io/f/YOUR_FORM_ID"`
-- `/contact.html` - Already set to Netlify forms
+- `/text/index.html` - ✅ Connected to Formspree: `https://formspree.io/f/xpwvbwno`
+- `/contact/index.html` - Already set to Netlify forms
 - `/submit-a-deal/index.html` - Already set to Netlify forms
 
 ---

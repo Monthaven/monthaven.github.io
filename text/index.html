@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Text Message Opt-In | Monthaven Capital</title>
-  <meta name="description" content="Subscribe to receive text message updates from Monthaven Capital." />
+  <title>Text Opt-In for Scheduling | Monthaven Capital</title>
+  <meta name="description" content="Opt in to receive text messages from Monthaven Capital for scheduling and transaction coordination. No promotional messages." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@500;600&display=swap" rel="stylesheet" />
@@ -14,14 +14,14 @@
   <link rel="canonical" href="https://monthavencapital.com/text" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Monthaven Capital Inc." />
-  <meta property="og:title" content="Text Message Opt-In | Monthaven Capital" />
-  <meta property="og:description" content="Subscribe to receive text message updates from Monthaven Capital." />
+  <meta property="og:title" content="Text Opt-In for Scheduling | Monthaven Capital" />
+  <meta property="og:description" content="Opt in to receive text messages for scheduling and transaction coordination. No promotional messages." />
   <meta property="og:url" content="https://monthavencapital.com/text" />
   <meta property="og:image" content="https://monthavencapital.com/assets/social-card.png" />
   <meta property="og:image:alt" content="Monthaven Capital brand mark on gradient background" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Text Message Opt-In | Monthaven Capital" />
-  <meta name="twitter:description" content="Subscribe to receive text message updates from Monthaven Capital." />
+  <meta name="twitter:title" content="Text Opt-In for Scheduling | Monthaven Capital" />
+  <meta name="twitter:description" content="Opt in to receive text messages for scheduling and transaction coordination. No promotional messages." />
   <meta name="twitter:image" content="https://monthavencapital.com/assets/social-card.png" />
   <meta name="twitter:image:alt" content="Monthaven Capital brand mark on gradient background" />
   <link rel="manifest" href="/site.webmanifest" />
@@ -50,7 +50,7 @@
       <nav id="primary-navigation" class="nav" aria-label="Primary navigation">
         <a href="/">Home</a>
         <a href="/contact">Contact</a>
-        <a class="btn btn-primary" href="/text" aria-current="page">Text Updates</a>
+        <a class="btn btn-primary" href="/text" aria-current="page">Text Opt-In</a>
       </nav>
     </div>
   </header>
@@ -78,37 +78,37 @@
           
           <!-- Form Box -->
           <div style="position: relative; z-index: 1; background: white; border-radius: 20px; padding: clamp(32px, 5vw, 48px); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12); border: 1px solid rgba(214, 211, 204, 0.3);">
-            <h1 class="h1" style="margin-top: 0;">Subscribe to Text Updates</h1>
-            <p class="lead" style="margin-bottom: clamp(24px, 3vw, 32px);">Receive timely updates about deal flow, scheduling, and document requests via text message.</p>
+            <h1 class="h1" style="margin-top: 0;">Text Opt-In for Scheduling and Transaction Coordination</h1>
+            <p class="lead" style="margin-bottom: clamp(24px, 3vw, 32px);">If you are working with Monthaven Capital on a specific transaction or mandate, you can opt in to receive text messages for scheduling, document requests, and coordination. We do not send promotional messages.</p>
+            <p style="margin-top: -16px; color: var(--mh-charcoal); font-size: 0.95rem; margin-bottom: clamp(24px, 3vw, 32px);">Texts will come from (844) 482-9105.</p>
 
         <div class="form-wrapper">
           <form id="sms-opt-in-form" class="form" action="https://formspree.io/f/xpwvbwno" method="POST">
             <!-- Hidden fields for tracking -->
             <input type="hidden" name="form_type" value="sms_opt_in" />
-            <input type="hidden" name="consent_version" value="v1" />
+            <input type="hidden" name="consent_version" value="v2" />
+            <input type="hidden" name="consent_text" value="I agree to receive text messages from Monthaven Capital from (844) 482-9105 for scheduling and transaction-related communication. Message frequency varies. Message and data rates may apply. Reply STOP to opt out. Reply HELP for help." />
             <input type="hidden" name="opt_in_url" value="https://monthavencapital.com/text" />
             <input type="hidden" name="timestamp" id="timestamp" value="" />
-            <input type="hidden" name="user_ip" id="user_ip" value="" />
 
             <div class="form-group">
-              <label for="name" class="form-label">Name <span class="required">*</span></label>
-              <input type="text" id="name" name="name" class="form-input" required />
+              <label for="name" class="form-label">Name</label>
+              <input type="text" id="name" name="name" class="form-input" />
             </div>
 
             <div class="form-group">
               <label for="phone" class="form-label">Mobile Number <span class="required">*</span></label>
-              <input type="tel" id="phone" name="phone" class="form-input" placeholder="(555) 123-4567" required />
+              <input type="tel" id="phone" name="phone" class="form-input" placeholder="(555) 123-4567" autocomplete="tel" inputmode="tel" required />
               <small class="form-help">U.S. mobile numbers only</small>
             </div>
 
             <div class="form-group">
-              <label for="reason" class="form-label">Reason for texts <span class="required">*</span></label>
-              <select id="reason" name="reason" class="form-input" required>
+              <label for="reason" class="form-label">Reason</label>
+              <select id="reason" name="reason" class="form-input">
                 <option value="">Select a reason</option>
-                <option value="deal_updates">Deal updates</option>
                 <option value="scheduling">Scheduling</option>
                 <option value="document_requests">Document requests</option>
-                <option value="general_updates">General updates</option>
+                <option value="transaction_coordination">Transaction coordination</option>
               </select>
             </div>
 
@@ -116,19 +116,21 @@
               <label class="form-checkbox-label">
                 <input type="checkbox" id="sms_consent" name="sms_consent" value="true" required />
                 <span class="checkbox-text">
-                  I agree to receive text messages from Monthaven Capital at the number provided. Message frequency varies. Message and data rates may apply. Reply STOP to opt out, HELP for help. See our <a href="/legal/sms" target="_blank">SMS Terms</a> and <a href="/legal/privacy" target="_blank">Privacy Policy</a>. <span class="required">*</span>
+                  I agree to receive text messages from Monthaven Capital from (844) 482-9105 for scheduling and transaction-related communication. Message frequency varies. Message and data rates may apply. Reply STOP to opt out. Reply HELP for help. <span class="required">*</span>
                 </span>
               </label>
+              <p class="form-help" style="margin-top: 8px; font-size: 0.875rem;">By opting in, you agree to our <a href="/legal/sms" target="_blank">SMS Terms</a> and acknowledge our <a href="/legal/privacy" target="_blank">Privacy Policy</a>.</p>
             </div>
 
             <div class="form-actions">
-              <button type="submit" class="btn btn-primary">Subscribe to Text Updates</button>
+              <button type="submit" class="btn btn-primary">Opt In for Transaction Texts</button>
             </div>
           </form>
 
           <div id="success-message" class="alert alert-success" style="display: none;">
             <h3>You're subscribed!</h3>
-            <p>You will receive a confirmation text message shortly. You can reply STOP at any time to opt out, or HELP for assistance.</p>
+            <p>You are subscribed to transaction-related text messages from Monthaven Capital from (844) 482-9105. Message frequency varies. Message and data rates may apply. Reply STOP to opt out. Reply HELP for help.</p>
+            <p style="margin-top: 12px; font-size: 0.875rem;">Support: <a href="mailto:info@monthavencapital.com">info@monthavencapital.com</a> | Toll-free: (844) 482-9105</p>
           </div>
 
           <div id="error-message" class="alert alert-error" style="display: none;">
@@ -163,14 +165,6 @@
   <script>
     // Set timestamp when page loads
     document.getElementById('timestamp').value = new Date().toISOString();
-
-    // Get user IP (optional - you can use a service or server-side implementation)
-    fetch('https://api.ipify.org?format=json')
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('user_ip').value = data.ip;
-      })
-      .catch(err => console.log('IP detection skipped'));
 
     // Handle form submission
     document.getElementById('sms-opt-in-form').addEventListener('submit', function(e) {
