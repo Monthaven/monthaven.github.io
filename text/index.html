@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Text Message Opt-In | Monthaven Capital</title>
+  <meta name="description" content="Subscribe to receive text message updates from Monthaven Capital." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/theme.css" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="canonical" href="https://monthavencapital.com/text" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Monthaven Capital Inc." />
+  <meta property="og:title" content="Text Message Opt-In | Monthaven Capital" />
+  <meta property="og:description" content="Subscribe to receive text message updates from Monthaven Capital." />
+  <meta property="og:url" content="https://monthavencapital.com/text" />
+  <meta property="og:image" content="https://monthavencapital.com/assets/social-card.png" />
+  <meta property="og:image:alt" content="Monthaven Capital brand mark on gradient background" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Text Message Opt-In | Monthaven Capital" />
+  <meta name="twitter:description" content="Subscribe to receive text message updates from Monthaven Capital." />
+  <meta name="twitter:image" content="https://monthavencapital.com/assets/social-card.png" />
+  <meta name="twitter:image:alt" content="Monthaven Capital brand mark on gradient background" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#111827" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CFGZGFMX9G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CFGZGFMX9G');
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand-group">
+        <a href="/" aria-label="Monthaven Capital Inc.">
+          <img class="brand-mark" src="/assets/logo.svg" alt="Monthaven Capital logo">
+          <div class="brand-text">
+            <span class="brand-line-1">Monthaven</span>
+            <span class="brand-line-2">Capital</span>
+          </div>
+        </a>
+      </div>
+      <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
+      <nav id="primary-navigation" class="nav" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/contact">Contact</a>
+        <a class="btn btn-primary" href="/text" aria-current="page">Text Updates</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li>Text Message Opt-In</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section" style="background: var(--mh-cream-100);">
+      <div class="container" style="max-width: 700px;">
+        <div style="position: relative;">
+          <!-- Background Photo Top Left -->
+          <div style="position: absolute; top: -60px; left: -60px; width: 400px; height: 300px; background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80') center/cover; border-radius: 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12); border: 1px solid rgba(255, 255, 255, 0.9); z-index: 0;">
+          </div>
+          
+          <!-- Background Photo Bottom Right -->
+          <div style="position: absolute; bottom: -60px; right: -60px; width: 400px; height: 300px; background: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=80') center/cover; border-radius: 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12); border: 1px solid rgba(255, 255, 255, 0.9); z-index: 0;">
+          </div>
+          
+          <!-- Form Box -->
+          <div style="position: relative; z-index: 1; background: white; border-radius: 20px; padding: clamp(32px, 5vw, 48px); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12); border: 1px solid rgba(214, 211, 204, 0.3);">
+            <h1 class="h1" style="margin-top: 0;">Subscribe to Text Updates</h1>
+            <p class="lead" style="margin-bottom: clamp(24px, 3vw, 32px);">Receive timely updates about deal flow, scheduling, and document requests via text message.</p>
+
+        <div class="form-wrapper">
+          <form id="sms-opt-in-form" class="form" action="https://formspree.io/f/xpwvbwno" method="POST">
+            <!-- Hidden fields for tracking -->
+            <input type="hidden" name="form_type" value="sms_opt_in" />
+            <input type="hidden" name="consent_version" value="v1" />
+            <input type="hidden" name="opt_in_url" value="https://monthavencapital.com/text" />
+            <input type="hidden" name="timestamp" id="timestamp" value="" />
+            <input type="hidden" name="user_ip" id="user_ip" value="" />
+
+            <div class="form-group">
+              <label for="name" class="form-label">Name <span class="required">*</span></label>
+              <input type="text" id="name" name="name" class="form-input" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone" class="form-label">Mobile Number <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" class="form-input" placeholder="(555) 123-4567" required />
+              <small class="form-help">U.S. mobile numbers only</small>
+            </div>
+
+            <div class="form-group">
+              <label for="reason" class="form-label">Reason for texts <span class="required">*</span></label>
+              <select id="reason" name="reason" class="form-input" required>
+                <option value="">Select a reason</option>
+                <option value="deal_updates">Deal updates</option>
+                <option value="scheduling">Scheduling</option>
+                <option value="document_requests">Document requests</option>
+                <option value="general_updates">General updates</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-checkbox-label">
+                <input type="checkbox" id="sms_consent" name="sms_consent" value="true" required />
+                <span class="checkbox-text">
+                  I agree to receive text messages from Monthaven Capital at the number provided. Message frequency varies. Message and data rates may apply. Reply STOP to opt out, HELP for help. See our <a href="/legal/sms" target="_blank">SMS Terms</a> and <a href="/legal/privacy" target="_blank">Privacy Policy</a>. <span class="required">*</span>
+                </span>
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Subscribe to Text Updates</button>
+            </div>
+          </form>
+
+          <div id="success-message" class="alert alert-success" style="display: none;">
+            <h3>You're subscribed!</h3>
+            <p>You will receive a confirmation text message shortly. You can reply STOP at any time to opt out, or HELP for assistance.</p>
+          </div>
+
+          <div id="error-message" class="alert alert-error" style="display: none;">
+            <h3>Something went wrong</h3>
+            <p>Please try again or contact us at <a href="mailto:info@monthavencapital.com">info@monthavencapital.com</a></p>
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="disclosure">This is not an offer to sell or a solicitation to buy any security. Any investment will be made only pursuant to definitive documents provided to qualified investors.</p>
+      <div>© <span id="current-year"></span> <span class="footer-entity">Monthaven Capital Inc.</span></div>
+      <div class="footer-links">
+        <a href="/legal/terms">Terms</a>
+        <a href="/legal/privacy">Privacy</a>
+        <a href="/legal/accessibility">Accessibility</a>
+        <a href="/legal/sms">SMS Terms</a>
+      </div>
+      <div class="footer-contacts">
+        <a href="https://www.linkedin.com/company/monthavencapital" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="mailto:info@monthavencapital.com">info@monthavencapital.com</a>
+        <a href="mailto:mandates@monthavencapital.com">mandates@monthavencapital.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Set timestamp when page loads
+    document.getElementById('timestamp').value = new Date().toISOString();
+
+    // Get user IP (optional - you can use a service or server-side implementation)
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('user_ip').value = data.ip;
+      })
+      .catch(err => console.log('IP detection skipped'));
+
+    // Handle form submission
+    document.getElementById('sms-opt-in-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const form = e.target;
+      const formData = new FormData(form);
+      
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          form.style.display = 'none';
+          document.getElementById('success-message').style.display = 'block';
+          
+          // Track conversion
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'sms_opt_in', {
+              'event_category': 'engagement',
+              'event_label': 'SMS Subscription'
+            });
+          }
+        } else {
+          throw new Error('Form submission failed');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('error-message').style.display = 'block';
+      });
+    });
+
+    // Phone number formatting
+    document.getElementById('phone').addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length > 0) {
+        if (value.length <= 3) {
+          value = '(' + value;
+        } else if (value.length <= 6) {
+          value = '(' + value.slice(0, 3) + ') ' + value.slice(3);
+        } else {
+          value = '(' + value.slice(0, 3) + ') ' + value.slice(3, 6) + '-' + value.slice(6, 10);
+        }
+      }
+      e.target.value = value;
+    });
+  </script>
+</body>
+</html>

@@ -106,4 +106,25 @@
       }
     });
   });
+
+  // SMS opt-in: show consent checkbox when phone is entered
+  const phoneInputs = document.querySelectorAll('input[name="phone"]');
+  phoneInputs.forEach((phoneInput) => {
+    const consentWrapper = document.getElementById('sms-consent-wrapper');
+    const consentCheckbox = document.getElementById('sms_consent');
+    
+    if (consentWrapper && consentCheckbox) {
+      phoneInput.addEventListener('input', (e) => {
+        const value = e.target.value.trim();
+        if (value.length > 0) {
+          consentWrapper.style.display = 'block';
+          consentCheckbox.required = true;
+        } else {
+          consentWrapper.style.display = 'none';
+          consentCheckbox.required = false;
+          consentCheckbox.checked = false;
+        }
+      });
+    }
+  });
 })();

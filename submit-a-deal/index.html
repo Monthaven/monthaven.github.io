@@ -107,23 +107,19 @@
   <header class="site-header">
     <div class="container">
       <div class="brand-group">
-  <a href="/" aria-label="Monthaven Capital Inc.">
-    <img class="brand-mark" src="/assets/logo.svg" alt="Monthaven Capital logo">
-    <div class="brand-text">
-      <span class="brand-line-1">Monthaven</span>
-      <span class="brand-line-2">Capital</span>
-    </div>
-  </a>
-</div>
+        <a href="/" aria-label="Monthaven Capital Inc.">
+          <img class="brand-mark" src="/assets/logo.svg" alt="Monthaven Capital logo">
+          <div class="brand-text">
+            <span class="brand-line-1">Monthaven</span>
+            <span class="brand-line-2">Capital</span>
+          </div>
+        </a>
+      </div>
       <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
       <nav id="primary-navigation" class="nav" aria-label="Primary navigation">
-        <a href="/why">Why Monthaven</a>
-        <a href="/services">Services</a>
-        <a href="/how">How We Work</a>
-        <a href="/intel">Intel</a>
-        <a href="/team">Team</a>
-        <a class="btn btn-outline" href="/submit-a-deal/" aria-current="page">Submit a Deal</a>
-        <a class="btn btn-primary" href="/contact">Request Access</a>
+        <a href="/">Home</a>
+        <a href="/contact">Contact</a>
+        <a class="btn btn-primary" href="/text">Text Updates</a>
       </nav>
     </div>
   </header>
@@ -156,6 +152,15 @@
 
             <label for="email">Email</label>
             <input id="email" name="email" type="email" autocomplete="email" required />
+
+            <label for="phone">Mobile Number (optional)</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" />
+            <div id="sms-consent-wrapper" style="display: none; margin-top: 12px; margin-bottom: 16px;">
+              <label style="display: flex; align-items: start; gap: 8px; cursor: pointer;">
+                <input type="checkbox" id="sms_consent" name="sms_consent" value="true" style="margin-top: 4px;" />
+                <span style="font-size: 0.9rem; line-height: 1.5;">I agree to receive text messages from Monthaven Capital at the number provided. Message frequency varies. Message and data rates may apply. Reply STOP to opt out, HELP for help. See our <a href="/legal/sms" target="_blank">SMS Terms</a> and <a href="/legal/privacy" target="_blank">Privacy Policy</a>.</span>
+              </label>
+            </div>
 
             <label for="assetType">Asset Type</label>
             <select id="assetType" name="assetType" required>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Request Access | Monthaven Capital</title>
-  <meta name="description" content="Begin mandate intake, access data rooms, or coordinate diligence support." />
+  <title>Contact | Monthaven Capital</title>
+  <meta name="description" content="Get in touch with Monthaven Capital." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@500;600&display=swap" rel="stylesheet" />
@@ -14,14 +14,14 @@
   <link rel="canonical" href="https://monthavencapital.com/contact" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Monthaven Capital Inc." />
-  <meta property="og:title" content="Request Access | Monthaven Capital" />
-  <meta property="og:description" content="Begin mandate intake, access data rooms, or coordinate diligence support." />
+  <meta property="og:title" content="Contact | Monthaven Capital" />
+  <meta property="og:description" content="Get in touch with Monthaven Capital." />
   <meta property="og:url" content="https://monthavencapital.com/contact" />
   <meta property="og:image" content="https://monthavencapital.com/assets/social-card.png" />
   <meta property="og:image:alt" content="Monthaven Capital brand mark on gradient background" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Request Access | Monthaven Capital" />
-  <meta name="twitter:description" content="Begin mandate intake, access data rooms, or coordinate diligence support." />
+  <meta name="twitter:title" content="Contact | Monthaven Capital" />
+  <meta name="twitter:description" content="Get in touch with Monthaven Capital." />
   <meta name="twitter:image" content="https://monthavencapital.com/assets/social-card.png" />
   <meta name="twitter:image:alt" content="Monthaven Capital brand mark on gradient background" />
   <link rel="manifest" href="/site.webmanifest" />
@@ -106,24 +106,20 @@
 <body>
   <header class="site-header">
     <div class="container">
-    <div class="brand-group">
-  <a href="/" aria-label="Monthaven Capital Inc.">
-    <img class="brand-mark" src="/assets/logo.svg" alt="Monthaven Capital logo">
-    <div class="brand-text">
-      <span class="brand-line-1">Monthaven</span>
-      <span class="brand-line-2">Capital</span>
-    </div>
-  </a>
-</div>
+      <div class="brand-group">
+        <a href="/" aria-label="Monthaven Capital Inc.">
+          <img class="brand-mark" src="/assets/logo.svg" alt="Monthaven Capital logo">
+          <div class="brand-text">
+            <span class="brand-line-1">Monthaven</span>
+            <span class="brand-line-2">Capital</span>
+          </div>
+        </a>
+      </div>
       <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
       <nav id="primary-navigation" class="nav" aria-label="Primary navigation">
-        <a href="/why">Why Monthaven</a>
-        <a href="/services">Services</a>
-        <a href="/how">How We Work</a>
-        <a href="/intel">Intel</a>
-        <a href="/team">Team</a>
-        <a class="btn btn-outline" href="/submit-a-deal/">Submit a Deal</a>
-        <a class="btn btn-primary" href="/contact" aria-current="page">Request Access</a>
+        <a href="/">Home</a>
+        <a href="/contact" aria-current="page">Contact</a>
+        <a class="btn btn-primary" href="/text">Text Updates</a>
       </nav>
     </div>
   </header>
@@ -159,6 +155,15 @@
 
             <label for="organization">Organization</label>
             <input id="organization" name="organization" type="text" autocomplete="organization" />
+
+            <label for="phone">Mobile Number (optional)</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" />
+            <div id="sms-consent-wrapper" style="display: none; margin-top: 12px; margin-bottom: 16px;">
+              <label style="display: flex; align-items: start; gap: 8px; cursor: pointer;">
+                <input type="checkbox" id="sms_consent" name="sms_consent" value="true" style="margin-top: 4px;" />
+                <span style="font-size: 0.9rem; line-height: 1.5;">I agree to receive text messages from Monthaven Capital at the number provided. Message frequency varies. Message and data rates may apply. Reply STOP to opt out, HELP for help. See our <a href="/legal/sms" target="_blank">SMS Terms</a> and <a href="/legal/privacy" target="_blank">Privacy Policy</a>.</span>
+              </label>
+            </div>
 
             <label for="mandate">Mandate focus</label>
             <select id="mandate" name="mandate">
