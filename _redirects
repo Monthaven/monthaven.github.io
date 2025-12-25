@@ -5,6 +5,8 @@
 
 /contact  /contact.html  200
 /contact.html  /contact  301
+/contacts  /contact  301
+/contacts/*  /contact  301
 /why  /why.html  200
 /why.html  /why  301
 /services  /services.html  200
@@ -15,11 +17,16 @@
 /intel.html  /intel  301
 /team  /team.html  200
 /team.html  /team  301
-/legal/terms  /legal/terms.html  200
-/legal/terms.html  /legal/terms  301
-/legal/privacy  /legal/privacy.html  200
-/legal/privacy.html  /legal/privacy  301
+/legal/terms  /terms  301
+/legal/terms.html  /terms  301
+/legal/terms/*  /terms  301
+/legal/privacy  /privacy  301
+/legal/privacy.html  /privacy  301
+/legal/privacy/*  /privacy  301
 /legal/accessibility  /legal/accessibility.html  200
 /legal/accessibility.html  /legal/accessibility  301
 /legal/sms  /legal/sms.html  200
 /legal/sms.html  /legal/sms  301
+
+/privacy  /privacy/index.html  200
+/terms  /terms/index.html  200

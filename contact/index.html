@@ -13,7 +13,7 @@
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <link rel="canonical" href="https://monthavencapital.com/contact" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Monthaven Capital Inc." />
+  <meta property="og:site_name" content="Monthaven Capital LLC" />
   <meta property="og:title" content="Contact | Monthaven Capital" />
   <meta property="og:description" content="Get in touch with Monthaven Capital." />
   <meta property="og:url" content="https://monthavencapital.com/contact" />
@@ -41,7 +41,7 @@
       {
         "@type": "Organization",
         "@id": "https://monthavencapital.com/#organization",
-        "name": "Monthaven Capital Inc.",
+        "name": "Monthaven Capital LLC",
         "url": "https://monthavencapital.com/",
         "logo": {
           "@type": "ImageObject",
@@ -107,7 +107,7 @@
   <header class="site-header">
     <div class="container">
       <div class="brand-group">
-        <a href="/" aria-label="Monthaven Capital Inc.">
+        <a href="/" aria-label="Monthaven Capital LLC">
           <img class="brand-mark" src="/assets/logo.svg" alt="Monthaven Capital logo">
           <div class="brand-text">
             <span class="brand-line-1">Monthaven</span>
@@ -136,9 +136,9 @@
     <section class="page-hero">
       <div class="container">
         <p class="eyebrow">Contact</p>
-        <p class="hero-tagline">Capital Advisory &amp; Deal-Intelligence</p>
-        <h1>Request access or introduce an opportunity.</h1>
-        <p>Submit your details to begin mandate intake, access data rooms, or coordinate diligence support. A Monthaven advisor will respond within one business day.</p>
+        <p class="hero-tagline">Capital Advisory &amp; Deal Intelligence</p>
+        <h1>Introduce your mandate. We respond within one business day.</h1>
+        <p>Send the essentials and we will align on scope: advisory support, co-sponsor interest, or a second opinion. Quiet, direct, and execution-focused.</p>
       </div>
     </section>
 
@@ -147,6 +147,9 @@
         <div>
           <form name="contact" method="post" action="/contact?submitted=contact" data-netlify="true">
             <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="consent_version" value="v3" />
+            <input type="hidden" name="consent_text" value="By entering your phone number and clicking submit, you consent to receive recurring automated marketing and informational text messages from Monthaven Capital LLC at the phone number provided. Consent is not a condition of purchase. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe or HELP for help. View our Privacy Policy and Terms of Service." />
+            <input type="hidden" name="timestamp" value="" />
             <label for="name">Name</label>
             <input id="name" name="name" type="text" autocomplete="name" required />
 
@@ -158,11 +161,12 @@
 
             <label for="phone">Mobile Number (optional)</label>
             <input id="phone" name="phone" type="tel" autocomplete="tel" />
-            <div id="sms-consent-wrapper" style="display: none; margin-top: 12px; margin-bottom: 16px;">
+            <div class="sms-consent" style="display: none; margin-top: 12px; margin-bottom: 8px;">
               <label style="display: flex; align-items: start; gap: 8px; cursor: pointer;">
-                <input type="checkbox" id="sms_consent" name="sms_consent" value="true" style="margin-top: 4px;" />
-                <span style="font-size: 0.9rem; line-height: 1.5;">I agree to receive text messages from Monthaven Capital at the number provided. Message frequency varies. Message and data rates may apply. Reply STOP to opt out, HELP for help. See our <a href="/legal/sms" target="_blank">SMS Terms</a> and <a href="/legal/privacy" target="_blank">Privacy Policy</a>.</span>
+                <input type="checkbox" name="sms_consent" value="true" style="margin-top: 4px;" />
+                <span style="font-size: 0.9rem; line-height: 1.5;">I agree to receive recurring automated marketing and informational text messages from Monthaven Capital LLC. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe; HELP for help. Consent is not a condition of purchase.</span>
               </label>
+              <p class="form-help" style="margin-top: 8px; font-size: 0.875rem;">By opting in, you agree to our <a href="/terms" target="_blank">Terms of Service</a> and acknowledge our <a href="/privacy" target="_blank">Privacy Policy</a>.</p>
             </div>
 
             <label for="mandate">Mandate focus</label>
@@ -189,7 +193,7 @@
           <p style="color: var(--mh-charcoal);">Confidential fax / secure uploads available upon request.</p>
           <hr style="margin: 24px 0; border: none; border-top: 1px solid var(--mh-sage);" />
           <p style="color: var(--mh-charcoal); margin-bottom: 8px;">Office</p>
-          <p style="color: var(--mh-charcoal);">Monthaven Capital Inc.<br />
+          <p style="color: var(--mh-charcoal);">Monthaven Capital LLC<br />
             30 N Gould St, Ste R<br />
             Sheridan, WY 82801</p>
           <p style="color: var(--mh-charcoal); margin-top: 24px;">Preparing for outreach? Review the <a href="/services">Services menu</a> or align with our <a href="/how">engagement workflow</a> before submitting.</p>
@@ -198,24 +202,31 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+      <footer class="site-footer">
     <div class="container">
       <p class="disclosure">This is not an offer to sell or a solicitation to buy any security. Any investment will be made only pursuant to definitive documents provided to qualified investors.</p>
-      <div>© <span id="current-year"></span> <span class="footer-entity">Monthaven Capital Inc.</span></div>
-      <div class="footer-links">
-        <a href="/legal/terms">Terms</a>
-        <a href="/legal/privacy">Privacy</a>
-        <a href="/legal/accessibility">Accessibility</a>
-        <a href="/legal/sms">SMS Terms</a>
-      </div>
       <div class="footer-contacts">
-        <a href="https://www.linkedin.com/company/monthavencapital" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="mailto:info@monthavencapital.com">info@monthavencapital.com</a>
-        <a href="mailto:mandates@monthavencapital.com">mandates@monthavencapital.com</a>
+        <div>
+          <strong>Monthaven Capital LLC</strong><br />
+          32 N Gould St.<br />
+          Sheridan, WY 82801
+        </div>
+        <div>
+          <a href="mailto:info@monthavencapital.com">info@monthavencapital.com</a><br />
+          <a href="tel:12727771020">(272) 777-1020</a>
+        </div>
       </div>
+      <div class="footer-links">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+      </div>
+      <div class="footer-meta">&copy; 2025 Monthaven Capital LLC. All rights reserved.</div>
     </div>
   </footer>
 
   <script src="/scripts.js"></script>
 </body>
 </html>
+
+
+

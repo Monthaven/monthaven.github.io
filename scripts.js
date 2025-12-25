@@ -108,23 +108,35 @@
   });
 
   // SMS opt-in: show consent checkbox when phone is entered
-  const phoneInputs = document.querySelectorAll('input[name="phone"]');
+  const phoneInputs = document.querySelectorAll('form input[name="phone"]');
   phoneInputs.forEach((phoneInput) => {
-    const consentWrapper = document.getElementById('sms-consent-wrapper');
-    const consentCheckbox = document.getElementById('sms_consent');
-    
-    if (consentWrapper && consentCheckbox) {
-      phoneInput.addEventListener('input', (e) => {
-        const value = e.target.value.trim();
-        if (value.length > 0) {
-          consentWrapper.style.display = 'block';
-          consentCheckbox.required = true;
-        } else {
-          consentWrapper.style.display = 'none';
-          consentCheckbox.required = false;
-          consentCheckbox.checked = false;
-        }
-      });
+    const form = phoneInput.closest('form');
+    const consentWrapper = form ? form.querySelector('.sms-consent') : null;
+    const consentCheckbox = consentWrapper ? consentWrapper.querySelector('input[type="checkbox"]') : null;
+
+    if (!form || !consentWrapper || !consentCheckbox) return;
+
+    const toggleConsent = (value) => {
+      if (value.length > 0) {
+        consentWrapper.style.display = 'block';
+        consentCheckbox.required = true;
+      } else {
+        consentWrapper.style.display = 'none';
+        consentCheckbox.required = false;
+        consentCheckbox.checked = false;
+      }
+    };
+
+    toggleConsent(phoneInput.value.trim());
+    phoneInput.addEventListener('input', (e) => toggleConsent(e.target.value.trim()));
+  });
+
+  // Stamp timestamps on forms for consent logging
+  const timestampInputs = document.querySelectorAll('input[name="timestamp"]');
+  const nowIso = new Date().toISOString();
+  timestampInputs.forEach((input) => {
+    if (!input.value) {
+      input.value = nowIso;
     }
   });
 })();

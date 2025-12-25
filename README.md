@@ -1,51 +1,47 @@
 # Monthaven Capital Website
 
-This repository hosts the static site for Monthaven Capital and is configured to deploy automatically to GitHub Pages. The goal is to provide a clean, well-documented starting point that we can iterate on as new designs and content from Checkover come together.
+Static site for Monthaven Capital LLC deployed via GitHub Pages (with Netlify-style redirects for friendly URLs). The site leans into a clean, capital-markets look with SMS compliance built in.
 
-## Project structure
+## Project structure (key routes)
 
-```
-/
-├── index.html        # Home (advisory positioning)
-├── why.html          # Why Monthaven overview
-├── services.html     # Advisory service lanes
-├── how.html          # Mandate process & NCNDA stepper
-├── intel.html        # Briefs, playbooks, and case studies
-├── team.html         # Leadership bios
-├── contact.html      # Request access / intake form
-├── legal/            # Terms, privacy, accessibility, SMS terms
-├── theme.css         # Design tokens (palette, typography)
-├── styles.css        # Global layout, “boxes” system, utilities
-├── scripts.js        # Navigation toggle + shared enhancements
-├── assets/           # Images, icons, and other static assets
-└── .github/workflows # GitHub Pages deployment workflow
-```
+- `index.html` — Home
+- `why.html`, `services.html`, `how.html`, `intel.html`, `team.html` — Core positioning
+- `contact/index.html` — Request access/intake
+- `submit-a-deal/index.html` — Deal submission intake
+- `text/index.html` — SMS opt-in (A2P consent language)
+- `privacy/index.html`, `terms/index.html` — Canonical policies (Dec 24, 2025)
+- `legal/accessibility/`, `legal/sms/` — Accessibility and SMS terms (legacy `/legal/privacy` and `/legal/terms` now redirect to `/privacy` and `/terms`)
+- `assets/` — Brand assets
+- `theme.css`, `styles.css` — Tokens and layout
+- `scripts.js` — Shared JS (nav toggle, form handling, SMS consent toggle)
+- `_redirects` — Friendly aliases (GitHub Pages/Netlify compatible)
 
 ## Local development
 
-Because the site is a static HTML/CSS experience there is no build step required.
+No build step. Open `index.html` directly, or run a lightweight server such as:
 
-1. Open `index.html` directly in your browser, or
-2. Run a simple development server (for example `python -m http.server 8000`) and navigate to `http://localhost:8000`.
+```bash
+python -m http.server 8000
+```
 
-Update the HTML, CSS, or JS files, refresh the browser, and you will see your changes immediately.
+Then visit `http://localhost:8000`. Edit HTML/CSS/JS and refresh.
 
 ## Deployment workflow
 
-The repository includes a GitHub Actions workflow (`.github/workflows/static.yml`) that publishes the contents of the `main` branch to GitHub Pages automatically. Pushes to `main` will trigger a deployment without any additional configuration.
+`.github/workflows/static.yml` publishes `main` to GitHub Pages. Keep `CNAME` updated if using a custom domain. `_redirects` provides 301s for legacy paths (e.g., `/legal/privacy` → `/privacy`, `/contacts` → `/contact`).
 
-If you use a custom domain, keep the `CNAME` file at the repository root updated with the desired hostname so GitHub Pages can provision TLS certificates correctly.
+## Compliance + forms
+
+- Global footer shows entity, address (32 N Gould St, Sheridan, WY), email, phone, and Privacy/Terms links.
+- SMS consent: `scripts.js` shows a required checkbox when a phone number is entered; consent text aligns with A2P requirements.
+- Text Updates page includes the full opt-in disclosure above the submit button.
+- Privacy/Terms updated to December 24, 2025 language.
 
 ## Asset guidelines
 
-- Store icons and illustrations as SVG when possible so they remain editable and friendly for code review.
-- If you need a raster favicon or screenshot, convert it to a data URI (Base64) and inline it in the page rather than committing the binary asset directly.
-- Larger binaries (videos, photography, etc.) should live in an external CDN or object store and be referenced via absolute URLs.
+- Prefer SVG for logos/icons; keep binaries small and CDN-host large media.
+- Favicon/social cards live in `assets/`; update references if you swap imagery.
 
-## Next steps
+## QA checklist
 
-- Replace placeholder copy with approved messaging and data.
-- Drop in real imagery or charts inside the `assets/` directory and update references in `index.html`.
-- Layer on components or JavaScript enhancements as new functionality is defined.
-
-Feel free to open issues or pull requests as we expand the site alongside the Checkover design work.
+See `docs/pr-checklist.md` for quick regression checks before shipping.

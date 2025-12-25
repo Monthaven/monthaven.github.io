@@ -49,16 +49,16 @@
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://monthavencapital.com/legal/terms</loc>
-    <lastmod>2025-10-06</lastmod>
+    <loc>https://monthavencapital.com/privacy</loc>
+    <lastmod>2025-12-24</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://monthavencapital.com/legal/privacy</loc>
-    <lastmod>2025-10-06</lastmod>
+    <loc>https://monthavencapital.com/terms</loc>
+    <lastmod>2025-12-24</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://monthavencapital.com/legal/accessibility</loc>

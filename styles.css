@@ -10,7 +10,7 @@ html {
 body {
   margin: 0;
   font-family: var(--font-body);
-  background: var(--mh-cream);
+  background: linear-gradient(180deg, var(--mh-cream-100) 0%, var(--mh-linen) 55%, var(--mh-cream) 100%);
   color: var(--mh-charcoal-900);
   line-height: 1.6;
 }
@@ -120,9 +120,10 @@ textarea:focus-visible {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: #fff;
-  border-bottom: 1px solid var(--mh-sage);
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid color-mix(in srgb, var(--mh-sage) 60%, transparent);
   backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(15, 23, 22, 0.04);
 }
 
 .site-header .container {
@@ -240,39 +241,42 @@ textarea:focus-visible {
   justify-content: center;
   gap: 8px;
   padding: 12px 22px;
-  border-radius: 14px;
+  border-radius: 999px;
   font-weight: 600;
   border: none;
   cursor: pointer;
-  transition: transform 0.3s ease, filter 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-primary {
-  background: var(--mh-accent);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--mh-accent) 90%, white 10%), color-mix(in srgb, var(--mh-accent-700) 90%, black 10%));
   color: #fff; /* ensure white text for Request Access */
+  box-shadow: 0 12px 30px rgba(33, 79, 61, 0.24), 0 2px 8px rgba(15, 23, 22, 0.12);
 }
 
 .btn-primary:hover {
   filter: brightness(1.05);
   transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(33, 79, 61, 0.28), 0 3px 10px rgba(15, 23, 22, 0.14);
 }
 
 .btn-outline {
   background: var(--mh-cream);
   color: var(--mh-charcoal-900);
-  border: 1px solid var(--mh-sage);
+  border: 1px solid color-mix(in srgb, var(--mh-sage) 70%, transparent);
+  box-shadow: inset 0 0 0 1px rgba(33, 79, 61, 0.06);
 }
 
 .btn-outline:hover {
-  border-color: var(--mh-sage-700);
+  border-color: color-mix(in srgb, var(--mh-brass) 55%, var(--mh-sage-700) 45%);
   transform: translateY(-2px);
 }
 
 /* Hero */
 .hero {
   padding: clamp(120px, 16vw, 160px) 0 clamp(72px, 12vw, 96px);
-  background: var(--mh-cream-100);
-  border-bottom: 1px solid var(--mh-sage);
+  background: radial-gradient(circle at 20% 20%, rgba(184, 149, 96, 0.08), transparent 35%), radial-gradient(circle at 80% 10%, rgba(33, 79, 61, 0.08), transparent 40%), var(--mh-cream-100);
+  border-bottom: 1px solid color-mix(in srgb, var(--mh-sage) 60%, transparent);
 }
 
 .hero .eyebrow {
@@ -344,18 +348,21 @@ textarea:focus-visible {
 
 /* Cards & panels */
 .panel {
-  background: #fff;
-  border: 1px solid var(--mh-sage);
-  border: 1px solid color-mix(in oklab, var(--mh-sage) 48%, transparent);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid color-mix(in srgb, var(--mh-brass) 24%, transparent);
   border-radius: var(--mh-radius);
   padding: clamp(20px, 2.6vw, 32px);
   box-shadow: var(--mh-shadow);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
 }
 
 .panel:hover {
   transform: translateY(-6px);
-  border-color: var(--mh-sage-700);
+  border-color: color-mix(in srgb, var(--mh-brass) 50%, var(--mh-sage-700) 50%);
+  box-shadow: var(--mh-glow);
+  background: color-mix(in srgb, rgba(255, 255, 255, 0.96) 70%, rgba(184, 149, 96, 0.06) 30%);
 }
 
 .panel h3 {

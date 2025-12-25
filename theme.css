@@ -1,16 +1,23 @@
 :root {
-  /* Monthaven Advisory palette */
-  --mh-cream: #f7f5f2;
-  --mh-cream-100: #fcfaf8;
-  --mh-sage: #d6d3cc;
-  --mh-sage-700: #beb9ae;
-  --mh-charcoal: #555553;
-  --mh-charcoal-900: #2d2d2b;
-  --mh-accent: #35614d;
-  --mh-brass: #a38b66;
+  /* Monthaven Capital palette (refined) */
+  --mh-cream: #f6f3ec;
+  --mh-cream-100: #fbf8f2;
+  --mh-linen: #f0eadf;
+  --mh-sage: #cfc8ba;
+  --mh-sage-700: #b9b1a1;
+  --mh-charcoal: #4a4a47;
+  --mh-charcoal-900: #1f2524;
+  --mh-ink: #0f1716;
+  --mh-accent: #214f3d;
+  --mh-accent-700: #173c2e;
+  --mh-brass: #b89560;
+  --mh-brass-700: #9b7a42;
 
-  --mh-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-  --mh-radius: 20px;
+  --mh-shadow: 0 20px 70px rgba(15, 23, 22, 0.14);
+  --mh-shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.08);
+  --mh-radius: 18px;
+  --mh-glow: 0 0 0 1px rgba(184, 149, 96, 0.18), 0 20px 60px rgba(15, 23, 22, 0.08);
+  --mh-sheen: linear-gradient(135deg, rgba(33, 79, 61, 0.12) 0%, rgba(184, 149, 96, 0.08) 100%);
 
   --font-body: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --font-display: 'Lora', 'Times New Roman', serif;
