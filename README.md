@@ -1,6 +1,6 @@
 # Monthaven Capital Website
 
-Static site for Monthaven Capital LLC deployed via GitHub Pages (with Netlify-style redirects for friendly URLs). The site leans into a clean, capital-markets look with SMS compliance built in.
+Static site for Monthaven Capital LLC deployed via GitHub Pages (with Vercel-style redirects for friendly URLs). The site leans into a clean, capital-markets look with SMS compliance built in.
 
 ## Project structure (key routes)
 
@@ -14,7 +14,7 @@ Static site for Monthaven Capital LLC deployed via GitHub Pages (with Netlify-st
 - `assets/` — Brand assets
 - `theme.css`, `styles.css` — Tokens and layout
 - `scripts.js` — Shared JS (nav toggle, form handling, SMS consent toggle)
-- `_redirects` — Friendly aliases (GitHub Pages/Netlify compatible)
+- `_redirects` — Friendly aliases (GitHub Pages/Vercel compatible)
 
 ## Local development
 

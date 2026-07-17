@@ -394,7 +394,7 @@ To complete implementation, you need:
 **Tech Stack Needed:**
 - Backend: Node.js, Python, PHP, etc.
 - Database: PostgreSQL, MySQL, or Firebase
-- Hosting: Vercel, Netlify Functions, AWS Lambda
+- Hosting: Vercel, Vercel Functions, AWS Lambda
 
 ---
 

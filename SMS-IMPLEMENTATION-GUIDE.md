@@ -242,8 +242,8 @@ The site now has a "real estate country club" feel:
 ## 📞 Form Endpoints
 
 - `/text/index.html` - ✅ Connected to Formspree: `https://formspree.io/f/xpwvbwno`
-- `/contact/index.html` - Already set to Netlify forms
-- `/submit-a-deal/index.html` - Already set to Netlify forms
+- `/contact/index.html` - Already set to Vercel forms
+- `/submit-a-deal/index.html` - Already set to Vercel forms
 
 ---
 
