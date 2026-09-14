@@ -52,6 +52,40 @@ Until then the site builds and is fully reviewable; the proof blocks render a vi
 
 ---
 
+## Before enabling the Two-Number Promise
+
+`site.twoNumberPromise.enabled` is **false**, and while it is, no file is written for
+`/two-number-promise/` and nothing about the feature appears anywhere in `_site/`.
+`check-content.mjs` fails the build if any of it leaks while the flag is off.
+
+The feature advertises brokerage services alongside cash offers. Before flipping it:
+
+1. **Place the firm license with the LLC.** You cannot advertise brokerage services through
+   an entity that doesn't hold a firm license.
+2. **Set `site.licenseNumber`.** The build fails with the flag on and this empty.
+3. **Fill `proof.team` with a real bio.** The build fails with the flag on and this empty —
+   a named person has to stand behind a brokerage offer.
+4. **Have an NC real estate attorney or your BIC review the two-stage structure.**
+
+On that last point, the structure is deliberate and must not be collapsed into a single
+"buy it or list it" pitch:
+
+```
+Stage 1   Cash offer, made as a PRINCIPAL buying for our own account.
+          No agency, no fiduciary duty, licensee status disclosed anyway.
+              ↓ only if the seller declines
+Stage 2   Separate conversation, separate listing agreement. Agency begins here,
+          and the cash offer comes off the table for that property.
+```
+
+Never present both as a live simultaneous choice out of the same conversation. NCREC holds
+licensees to a higher standard on their own transactions, rule 21 NCAC 58A .0104(o) bars a
+broker selling their own residential property from also representing the buyer, and
+self-dealing rules require the client's interest over the broker's. Sequential and mutually
+exclusive is what keeps this clean. **This is not legal advice — get it reviewed.**
+
+---
+
 ## ⚠️ Four URLs that must never move
 
 ```
@@ -128,3 +162,11 @@ docs/archive/    the previous capital-advisory site
 - **Partial lead capture** (posting step 1 before step 2 completes) is built but **off** by
   default — `site.partialCapture`. It doubles submissions against the form provider's quota.
   Turn it on when the endpoint is Monthaven's own.
+- **Promises live in `site.json`, not in templates.** `noRetrade` is the exact re-trade
+  language, rendered by one macro on every page that makes the claim. It is deliberately
+  narrow — it promises the price won't move *on condition*, and names the four things that
+  can still void a contract. Do not widen it back into "no inspection contingency"; that is
+  a promise the business cannot always keep, and a broken promise is worse than a modest one.
+- **Content pipeline:** `docs/content-questions.md` is the 30-question voice-memo list. Group
+  4 (local knowledge) is the direct fix for city-page similarity, which currently sits at
+  **69.7%** against a **72%** build-failing ceiling — roughly two points of headroom.

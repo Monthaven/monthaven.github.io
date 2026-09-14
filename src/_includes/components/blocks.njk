@@ -12,9 +12,11 @@
   </li>
   <li>
     <div>
-      <h3>We look at it in person</h3>
-      <p>Someone from Monthaven walks{% if city %} the {{ city.name }} property{% else %} the property{% endif %}
-      themselves. No inspector, no contractor parade, no cleaning up first. It takes about 20 minutes.</p>
+      <h3>We set an appointment and walk it with you</h3>
+      <p>Someone from Monthaven comes out and walks{% if city %} the {{ city.name }} property{% else %} the property{% endif %}
+      in person, at a time that works for you. We'd rather meet you than price a house off a
+      spreadsheet. No inspector, no contractor parade, and don't clean up on our account.
+      It takes about 20 minutes.</p>
     </div>
   </li>
   <li>
@@ -50,10 +52,10 @@
       <tr><th scope="row">Commission</th><td>None</td><td>Typically 5&ndash;6% of the sale price</td></tr>
       <tr><th scope="row">Seller closing costs</th><td>We pay them</td><td>You pay them</td></tr>
       <tr><th scope="row">Repairs before sale</th><td>None &mdash; we buy as-is</td><td>Usually required to show and to pass inspection</td></tr>
-      <tr><th scope="row">Repairs after inspection</th><td>None &mdash; no inspection contingency</td><td>Commonly renegotiated after the buyer's inspection</td></tr>
+      <tr><th scope="row">Price changes after inspection</th><td>None &mdash; we don't re-trade on condition</td><td>Commonly renegotiated after the buyer's inspection</td></tr>
       <tr><th scope="row">Cleanout</th><td>Included &mdash; leave what you want</td><td>Your cost</td></tr>
       <tr><th scope="row">Showings</th><td>One walkthrough</td><td>Ongoing, on the buyer's schedule</td></tr>
-      <tr><th scope="row">Financing falls through?</th><td>Can't &mdash; there's no loan</td><td>A real risk right up to closing day</td></tr>
+      <tr><th scope="row">Financing falls through?</th><td>Can't &mdash; there is no loan</td><td>A real risk right up to closing day</td></tr>
       <tr><th scope="row">Time to close</th><td>{{ site.closeDaysMin }}&ndash;{{ site.closeDaysMax }} days, your date</td><td>Often 60&ndash;90 days from listing to funding</td></tr>
       <tr><th scope="row">Sale price</th><td>Below full retail &mdash; that's the trade</td><td>Full retail, if it appraises and closes</td></tr>
     </tbody>
@@ -194,4 +196,48 @@
     </div>
   </div>
 </section>
+{% endmacro %}
+
+
+{% macro noRetradePromise(compact=false) %}
+{% set nr = site.noRetrade %}
+<div class="promise">
+  <h3 class="promise__head">{{ nr.headline }}</h3>
+  <p>{{ nr.body }}</p>
+  {% if not compact %}
+  <p class="mt-4">{{ nr.limitsIntro }}</p>
+  <ul class="promise__limits">
+    {% for l in nr.limits %}<li>{{ l }}</li>{% endfor %}
+  </ul>
+  <p class="promise__closer">{{ nr.closer }}</p>
+  {% endif %}
+</div>
+{% endmacro %}
+
+
+{#- Everything below renders ONLY when site.twoNumberPromise.enabled is true.
+    Do not remove the guards. See the _README in src/_data/site.json. -#}
+{% macro twoNumberPromise(compact=false) %}
+{% if site.twoNumberPromise.enabled %}
+{% set tn = site.twoNumberPromise %}
+<div class="promise promise--accent">
+  <h3 class="promise__head">{{ tn.name }}</h3>
+  <p>{{ tn.summary }}</p>
+  {% if not compact %}
+  <ol class="promise__stages">
+    <li><strong>First, the cash offer.</strong> {{ tn.stage1 }}</li>
+    <li><strong>Only if you'd rather list.</strong> {{ tn.stage2 }}</li>
+  </ol>
+  <p class="small muted">{{ tn.disclosure }}</p>
+  <p class="mt-4"><a href="/two-number-promise/">How the Two-Number Promise works &rarr;</a></p>
+  {% endif %}
+</div>
+{% endif %}
+{% endmacro %}
+
+
+{% macro licenseeDisclosure() %}
+{% if site.twoNumberPromise.enabled %}
+<p class="footer__disclaimer">{{ site.twoNumberPromise.disclosure }}{% if site.licenseNumber %} NC real estate license #{{ site.licenseNumber }}.{% endif %}</p>
+{% endif %}
 {% endmacro %}

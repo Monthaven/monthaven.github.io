@@ -36,7 +36,7 @@ eleventyComputed:
         <li>No commission and no closing costs, ever</li>
         <li>Close in {{ site.closeDaysMin }}&ndash;{{ site.closeDaysMax }} days, or later if you need it</li>
         <li>Leave what you don't want &mdash; cleanout is on us</li>
-        <li>No inspection contingency, so the offer doesn't change at the last minute</li>
+        <li>We don't re-trade you on condition &mdash; the number doesn't move after you sign</li>
       </ul>
       <p class="hero__trust">
         Prefer to talk it through? Call or text <a href="tel:{{ site.phoneRaw }}" style="color:#fff"><strong>{{ site.phoneDisplay }}</strong></a>.
@@ -89,6 +89,14 @@ eleventyComputed:
   <div class="wrap--narrow">
     <h2 class="mb-6">How selling to us works</h2>
     {{ b.howItWorks(city) }}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap--narrow">
+    <h2 class="mb-5">The one thing we won't do to you</h2>
+    {{ b.noRetradePromise() }}
+    {{ b.twoNumberPromise(true) }}
   </div>
 </section>
 

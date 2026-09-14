@@ -105,6 +105,38 @@ for (const g of gaps) {
   else warnings.push(g);
 }
 
+// ------------------------------------------------- Two-Number Promise guardrails
+// Always errors, never a warning: if the flag is on, the site is advertising
+// brokerage services, and you cannot do that anonymously. These conditions must
+// hold the moment the feature is public, not by launch day.
+const site = JSON.parse(fs.readFileSync(path.join(process.cwd(), "src/_data/site.json"), "utf8"));
+if (site.twoNumberPromise && site.twoNumberPromise.enabled) {
+  if (!site.licenseNumber) {
+    errors.push(
+      "twoNumberPromise is ENABLED but site.licenseNumber is empty. The site is advertising " +
+        "brokerage services with no license number on it. Set it or turn the flag off."
+    );
+  }
+  if (!realTeam.length) {
+    errors.push(
+      "twoNumberPromise is ENABLED but proof.team has no real bio. A named, real person has to " +
+        "stand behind a brokerage offer. Fill proof.team or turn the flag off."
+    );
+  }
+  const tnPage = path.join(SITE, "two-number-promise/index.html");
+  if (!fs.existsSync(tnPage)) {
+    errors.push("twoNumberPromise is ENABLED but /two-number-promise/ was not built.");
+  }
+} else {
+  // Flag off: nothing about the feature may appear anywhere in the output.
+  for (const p of pages) {
+    const html = fs.readFileSync(p.file, "utf8");
+    if (/two-number|Two-Number|brokerage license|we'll list it|we can list it/i.test(html)) {
+      errors.push(`${p.rel}: Two-Number Promise content leaked while the flag is OFF`);
+    }
+  }
+}
+
 // ---------------------------------------------------------- thin content check
 const MIN_WORDS = { city: 700, situation: 600, post: 700, page: 250 };
 const corpus = [];

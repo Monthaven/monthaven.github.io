@@ -1,3 +1,4 @@
+{% import "components/blocks.njk" as blk with context %}
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer__cols">
@@ -34,6 +35,7 @@
         <ul>
           <li><a href="/about/">About Us</a></li>
           <li><a href="/how-it-works/">How It Works</a></li>
+          {% if site.twoNumberPromise.enabled %}<li><a href="/two-number-promise/">The Two-Number Promise</a></li>{% endif %}
           <li><a href="/reviews/">Reviews</a></li>
           <li><a href="/blog/">Blog</a></li>
           <li><a href="/contact/">Contact</a></li>
@@ -52,13 +54,19 @@
       </div>
     </div>
 
+    {{ blk.licenseeDisclosure() }}
+
     <p class="footer__disclaimer">
       {{ site.name }} is a trade name of {{ site.legalName }}. We are a real estate
-      investment company that buys houses directly. We are not real estate agents, we do
-      not list properties, and we are not attorneys, accountants, or financial advisors.
-      Nothing on this site is legal, tax, or financial advice. Cash offers are based on
-      property condition, location, and comparable sales, and are made in writing with
-      no obligation to accept.
+      investment company that buys houses directly with our own funds.
+      {%- if site.twoNumberPromise.enabled %} When we buy, we act as a principal and not as
+      your agent. We also hold a North Carolina real estate brokerage license and can list a
+      property for you under a separate listing agreement, but never in the same transaction
+      in which we are the buyer.{%- else %} We are not acting as real estate agents and we do
+      not list properties.{%- endif %} We are not attorneys, accountants, or financial
+      advisors, and nothing on this site is legal, tax, or financial advice. Cash offers are
+      based on property condition, location, and comparable sales, and are made in writing
+      with no obligation to accept.
     </p>
 
     <div class="footer__bottom">

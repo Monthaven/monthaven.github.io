@@ -8,7 +8,20 @@ export default {
   layout: "layouts/base.njk",
   // A page's own front-matter `permalink` wins over this (template data outranks
   // directory data in the cascade), which is how the A2P-frozen URLs pin themselves.
-  permalink: (data) => `/${data.page.fileSlug}/index.html`,
+  //
+  // A page may also declare `requiresFlag: "someSiteFlag"`. If that flag is off in
+  // site.json, we return boolean false and Eleventy writes NO FILE AT ALL — there is
+  // nothing to crawl, leak, or land on from a stale link. Returning a string here
+  // (including "false") would be treated as a path, so this has to be real JS.
+  permalink: (data) => {
+    const flag = data.requiresFlag;
+    if (flag) {
+      const cfg = data.site[flag];
+      const on = cfg && typeof cfg === "object" ? cfg.enabled : cfg;
+      if (!on) return false;
+    }
+    return `/${data.page.fileSlug}/index.html`;
+  },
   eleventyComputed: {
     // Pages that set `useGeneralFaqs: true` get the shared FAQ list, which the
     // layout also turns into FAQPage schema. One source, so the rendered

@@ -1,0 +1,123 @@
+---
+pageType: page
+title: "The Two-Number Promise | Cash Offer or Listing — Monthaven"
+description: "We give you two numbers: what we'll pay in cash and what we think it lists for. If listing nets you more we'll say so, and we can list it for you. Gaston & Cleveland County NC."
+breadcrumbs:
+  - name: "Home"
+    url: "/"
+  - name: "The Two-Number Promise"
+    url: "/two-number-promise/"
+# Gated by src/pages/pages.11tydata.js: while site.twoNumberPromise.enabled is
+# false, no file is written for this page at all.
+requiresFlag: twoNumberPromise
+---
+{#- FLAG-GATED. Renders nothing while site.twoNumberPromise.enabled is false.
+    Do not enable until the firm license is placed, licenseNumber is set in
+    site.json, and an NC real estate attorney or BIC has reviewed the two-stage
+    structure below. check-content.mjs enforces the first two. -#}
+{% from "components/lead-form.njk" import leadForm with context %}
+{% import "components/blocks.njk" as b with context %}
+{% set tn = site.twoNumberPromise %}
+
+<section class="section section--soft">
+  <div class="wrap--narrow">
+    <p class="eyebrow">{{ tn.name }}</p>
+    <h1>Two numbers, not one.</h1>
+    <p class="lead mt-5">{{ tn.summary }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap--narrow stack-lg">
+    <h2>Why anybody would do this</h2>
+    <p>
+      The loudest objection to selling a house for cash is that cash buyers lowball you.
+      It is a fair objection. A cash offer <em>is</em> below retail, and most of the
+      companies advertising for your house will not tell you when listing would net you more,
+      because saying so costs them the deal.
+    </p>
+    <p>
+      We are licensed, which means saying it does not cost us the deal. If the honest answer
+      is "list it," we can be the ones who list it. That removes the reason to shade the
+      truth, and it is the entire point of the promise.
+    </p>
+  </div>
+</section>
+
+<section class="section section--warm">
+  <div class="wrap--narrow stack-lg">
+    <h2>How it actually works, in order</h2>
+    <ol class="steps">
+      <li>
+        <div>
+          <h3>First, the cash offer &mdash; we are a buyer, not your agent</h3>
+          <p>{{ tn.stage1 }}</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>With it, our honest read on what it would list for</h3>
+          <p>
+            What we think it realistically sells for on the open market, what it would cost
+            you to get there, and what you would net after commission, closing costs, repairs
+            and the months of carrying it. Compare the two <strong>net</strong> numbers, not
+            the headline prices.
+          </p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Only if you'd rather list &mdash; a separate agreement</h3>
+          <p>{{ tn.stage2 }}</p>
+        </div>
+      </li>
+    </ol>
+    <div class="promise promise--accent">
+      <h3 class="promise__head">Why the order matters</h3>
+      <p>
+        We do not act as your agent and as the buyer at the same time. When we are buying,
+        we are a principal spending our own money and we owe you no fiduciary duty &mdash;
+        we tell you that plainly rather than let you assume otherwise. Only when you decline
+        the cash offer and sign a listing agreement do we start working <em>for</em> you.
+        The two never overlap, so you never have to wonder which side we are on.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap--narrow stack-lg">
+    <h2>When listing genuinely beats our cash offer</h2>
+    <p>We will tell you to list when:</p>
+    <ul>
+      <li>The house is in decent condition and a retail buyer could get a loan on it.</li>
+      <li>You have two or three months and no hard deadline.</li>
+      <li>You can live with showings and with a buyer's financing possibly falling through.</li>
+      <li>The gap between our number and a realistic net listing is larger than the
+      certainty is worth to you.</li>
+    </ul>
+    <p>And we will tell you to take the cash offer when:</p>
+    <ul>
+      <li>The house needs work a retail lender will not finance.</li>
+      <li>You have a foreclosure date, a job start date, or a court date.</li>
+      <li>It is inherited, full, and being managed from another state.</li>
+      <li>There are tenants you would have to remove before you could list.</li>
+    </ul>
+    <p><a href="/compare/">See the full comparison, including iBuyers &rarr;</a></p>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="wrap--narrow">
+    <p class="small muted">
+      {{ tn.disclosure }}{% if site.licenseNumber %} NC real estate license #{{ site.licenseNumber }}.{% endif %}
+      Nothing on this page is legal, tax, or financial advice.
+    </p>
+  </div>
+</section>
+
+{{ b.ctaBand("Get both numbers", "Start with the address. We'll come look at it, and you'll have the cash number and our read on the listing number in writing within " + site.offerWindowHours + " hours.") }}
+
+<section class="section">
+  <div class="wrap--narrow">{{ leadForm("bottom-form", "full") }}</div>
+</section>

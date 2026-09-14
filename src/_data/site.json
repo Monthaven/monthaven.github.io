@@ -5,7 +5,6 @@
   "url": "https://monthavencapital.com",
   "lang": "en",
   "locale": "en_US",
-
   "_comment_nap": "NAP must match the Google Business Profile character-for-character. Verify before launch.",
   "phoneDisplay": "(272) 777-1020",
   "phoneRaw": "+12727771020",
@@ -13,31 +12,52 @@
   "smsRaw": "+18444829105",
   "email": "offers@monthavencapital.com",
   "emailFallback": "info@monthavencapital.com",
-
   "_comment_lead": "ONE-LINE SWAP: replace leadEndpoint when the Monthaven lead system is live. Nothing else changes.",
   "leadEndpoint": "https://formspree.io/f/xpwvbwno",
   "partialCapture": false,
-
   "gaId": "G-CFGZGFMX9G",
   "themeColor": "#1d5c46",
-
   "offerName": "The 7-Day Certain Sale",
   "offerWindowHours": 24,
   "closeDaysMin": 7,
   "closeDaysMax": 21,
-
-  "serviceAreaCounties": ["Gaston County", "Cleveland County", "Lincoln County"],
+  "serviceAreaCounties": [
+    "Gaston County",
+    "Cleveland County",
+    "Lincoln County"
+  ],
   "serviceAreaState": "North Carolina",
   "serviceAreaStateCode": "NC",
-
   "businessHours": "Monday to Saturday, 8am to 8pm ET",
-
   "social": {
     "gbp": "",
     "facebook": "",
     "linkedin": "https://www.linkedin.com/company/monthaven-capital/"
   },
-
   "consentVersion": "v4",
-  "consentText": "By entering your phone number and submitting this form, you consent to receive recurring automated marketing and informational text messages from Monthaven Capital LLC at the phone number provided about your property and your cash offer. Consent is not a condition of purchase or of receiving an offer. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe or HELP for help. View our Privacy Policy and Terms of Service."
+  "consentText": "By entering your phone number and submitting this form, you consent to receive recurring automated marketing and informational text messages from Monthaven Capital LLC at the phone number provided about your property and your cash offer. Consent is not a condition of purchase or of receiving an offer. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe or HELP for help. View our Privacy Policy and Terms of Service.",
+  "phoneMemorable": "(272) 777-1020",
+  "_comment_phone": "phoneDisplay/phoneRaw are what appear on the site and MUST match the Google Business Profile exactly. phoneMemorable is the easy-to-recall number for direct mail, yard signs and cold calling - keep it OFF the website.",
+  "licenseNumber": "",
+  "noRetrade": {
+    "headline": "We don't re-trade you on condition",
+    "body": "We only make an offer after we've walked the property with you. Once you sign, the price does not change because of what we find in the house. No repair renegotiation, no inspection deduction, no \"our contractor came back with a bigger number.\" Being moved off the number a week before closing is the most common complaint people have about cash buyers, and it is the one thing we will not do to you.",
+    "limitsIntro": "What can end a deal is never our opinion of the house. It is the short list of things neither of us controls, and we would rather name them now than bury them in a contract:",
+    "limits": [
+      "Every owner and heir on title has to sign. If one sibling won't, we cannot buy it, and that is not a renegotiation.",
+      "Title has to be clear enough to insure. Unknown liens, judgments, boundary problems or a break in the chain of ownership can stop any sale, ours included.",
+      "A tenant we agreed to inherit has to actually be there on the terms you described.",
+      "Anything you knew about and didn't tell us changes what we were pricing."
+    ],
+    "closer": "If one of those ends the contract, it is void and you owe us nothing. No fee, no penalty, no hard feelings."
+  },
+  "twoNumberPromise": {
+    "_README": "OFF BY DEFAULT. Do not set enabled:true until (1) the firm license is placed with the LLC, (2) licenseNumber above is filled in, (3) an NC real estate attorney or your BIC has reviewed the two-stage structure, and (4) proof.team carries a real bio. check-content.mjs enforces 2 and 4. Nothing about this feature renders while enabled is false.",
+    "enabled": false,
+    "name": "The Two-Number Promise",
+    "summary": "We'll give you two numbers, not one: what we'll pay in cash today, and what we think the house lists for. If listing nets you more, we'll say so. And if you want us to list it, we can do that too.",
+    "stage1": "First, the cash offer. We make it as a buyer using our own money, not as your agent. You have no agreement with us and owe us nothing.",
+    "stage2": "If you'd rather list, that's a separate conversation and a separate agreement. At that point we're working for you as your broker, and the cash offer comes off the table for that property. We don't do both at once, because you shouldn't have to wonder which side we're on.",
+    "disclosure": "Monthaven Capital LLC is a licensed North Carolina real estate brokerage. When we buy a house we are acting as a buyer for our own account, not as your agent, and we have no fiduciary duty to you in that transaction. We tell you this up front because you are entitled to know it."
+  }
 }

@@ -100,12 +100,20 @@ if (!fs.existsSync(smPath)) {
   const sm = fs.readFileSync(smPath, "utf8");
   const locs = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
   if (!locs.length) errors.push("sitemap.xml has no <loc> entries");
+  const seen = new Set();
   for (const loc of locs) {
+    if (seen.has(loc)) errors.push(`sitemap: duplicate entry -> ${loc}`);
+    seen.add(loc);
     const p = loc.replace(BASE, "");
+    if (!p) {
+      // loc === BASE with no trailing slash: a second, non-canonical homepage URL.
+      errors.push(`sitemap: bare root URL without trailing slash -> ${loc}`);
+      continue;
+    }
     if (p.endsWith(".html")) errors.push(`sitemap: .html URL contradicts canonicals -> ${loc}`);
     if (!resolves(p)) errors.push(`sitemap: URL does not resolve -> ${loc}`);
     const file = path.join(SITE, p.replace(/\/$/, "/index.html").slice(1));
-    if (fs.existsSync(file)) {
+    if (fs.existsSync(file) && fs.statSync(file).isFile()) {
       const h = fs.readFileSync(file, "utf8");
       if (h.includes('http-equiv="refresh"')) errors.push(`sitemap: redirect stub listed -> ${loc}`);
       if (/name="robots" content="[^"]*noindex/.test(h)) {

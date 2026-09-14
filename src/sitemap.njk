@@ -5,7 +5,9 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {%- for page in collections.all %}
-{%- if page.data.sitemap !== false and not page.data.eleventyExcludeFromCollections and "noindex" not in (page.data.robots or "") %}
+{#- page.url is false for flag-gated pages that were never written; without this
+    guard absoluteUrl() falls back to the site root and emits a duplicate homepage. -#}
+{%- if page.url and page.data.sitemap !== false and not page.data.eleventyExcludeFromCollections and "noindex" not in (page.data.robots or "") %}
   <url>
     <loc>{{ page.url | absoluteUrl(site.url) }}</loc>
     <lastmod>{{ page.date | isoDate }}</lastmod>

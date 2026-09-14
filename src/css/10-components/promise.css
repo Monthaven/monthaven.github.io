@@ -1,0 +1,42 @@
+.promise {
+  background: var(--c-bg-warm);
+  border: 1px solid var(--c-line);
+  border-left: 5px solid var(--c-cta);
+  border-radius: 0 var(--r) var(--r) 0;
+  padding: var(--sp-5);
+}
+.promise + .promise {
+  margin-top: var(--sp-5);
+}
+.promise--accent {
+  background: var(--c-green-100);
+  border-left-color: var(--c-green-600);
+}
+.promise__head {
+  font-size: var(--step-2);
+  margin-bottom: var(--sp-3);
+}
+.promise p {
+  color: var(--c-body);
+}
+.promise__limits {
+  margin-top: var(--sp-3);
+  display: grid;
+  gap: var(--sp-2);
+}
+.promise__limits li {
+  color: var(--c-body);
+}
+.promise__closer {
+  margin-top: var(--sp-4);
+  font-weight: 600;
+  color: var(--c-ink);
+}
+.promise__stages {
+  margin-top: var(--sp-4);
+  display: grid;
+  gap: var(--sp-3);
+}
+.promise__stages li {
+  color: var(--c-body);
+}

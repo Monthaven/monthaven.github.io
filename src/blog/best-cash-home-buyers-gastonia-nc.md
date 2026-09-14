@@ -86,8 +86,8 @@ percent and post-assessment repair deductions are standard. Compare the net, not
 
 ### Monthaven Home Buyers (us)
 We buy in Gaston, Cleveland, and Lincoln counties. We walk every property ourselves, put
-offers in writing with the math shown, and do not include an inspection contingency, which
-means the number cannot be renegotiated after you have signed.
+offers in writing with the math shown, and commit that the price will not change because of
+the condition of the house after you have signed.
 
 **Being straight with you:** we are newer to this market than J&B. We do not yet have the
 review history they have built over six years, and you should weigh that. What we will do
