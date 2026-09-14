@@ -1,0 +1,72 @@
+/* No image above the fold. LCP is a text node. */
+.hero {
+  background: linear-gradient(165deg, var(--c-green-800) 0%, var(--c-green-900) 100%);
+  color: #dfeae4;
+  padding-block: clamp(2rem, 5vw, 3.5rem) clamp(2.5rem, 6vw, 4rem);
+}
+
+.hero__grid {
+  display: grid;
+  gap: var(--sp-6);
+  align-items: start;
+}
+@media (min-width: 900px) {
+  .hero__grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: var(--sp-7);
+  }
+}
+
+.hero h1 {
+  color: #fff;
+}
+
+.hero__sub {
+  font-size: var(--step-1);
+  color: #c9ded4;
+  margin-top: var(--sp-4);
+}
+
+.hero__points {
+  list-style: none;
+  padding: 0;
+  margin-top: var(--sp-5);
+  display: grid;
+  gap: var(--sp-3);
+}
+.hero__points li {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: flex-start;
+  color: #dfeae4;
+  font-size: var(--step-0);
+}
+.hero__points li::before {
+  content: "✓";
+  color: var(--c-cta);
+  font-weight: 700;
+  flex: 0 0 auto;
+}
+
+.hero__trust {
+  margin-top: var(--sp-5);
+  font-size: var(--step--1);
+  color: #a9c6b8;
+}
+
+.trust-bar {
+  background: var(--c-green-900);
+  color: #b9d3c7;
+  padding-block: var(--sp-3);
+  font-size: var(--step--1);
+}
+.trust-bar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3) var(--sp-5);
+  justify-content: center;
+  text-align: center;
+}

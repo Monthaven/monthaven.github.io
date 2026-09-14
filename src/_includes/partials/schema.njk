@@ -1,0 +1,113 @@
+{#- JSON-LD @graph, assembled from data. Never hand-written per page.
+    NOTE: no PostalAddress anywhere. Monthaven is a service-area business with a
+    Google Business Profile and no public street address; publishing a fake or
+    out-of-market address is a real local-SEO and trust risk. areaServed only. -#}
+{%- set canonical = page.url | absoluteUrl(site.url) -%}
+
+{%- set areaServed = [] -%}
+{%- for c in cities -%}
+  {%- set areaServed = (areaServed.push({ "@type": "City", "name": c.name + ", " + c.state }), areaServed) -%}
+{%- endfor -%}
+{%- for co in site.serviceAreaCounties -%}
+  {%- set areaServed = (areaServed.push({ "@type": "AdministrativeArea", "name": co + ", " + site.serviceAreaStateCode }), areaServed) -%}
+{%- endfor -%}
+
+{%- set sameAs = [] -%}
+{%- if site.social.gbp -%}{%- set sameAs = (sameAs.push(site.social.gbp), sameAs) -%}{%- endif -%}
+{%- if site.social.facebook -%}{%- set sameAs = (sameAs.push(site.social.facebook), sameAs) -%}{%- endif -%}
+{%- if site.social.linkedin -%}{%- set sameAs = (sameAs.push(site.social.linkedin), sameAs) -%}{%- endif -%}
+
+{%- set org = {
+  "@type": ["LocalBusiness", "RealEstateAgent"],
+  "@id": site.url + "/#business",
+  "name": site.name,
+  "legalName": site.legalName,
+  "url": site.url + "/",
+  "description": site.tagline,
+  "telephone": site.phoneRaw,
+  "email": site.email,
+  "priceRange": "$$",
+  "image": site.url + "/assets/img/social-card.png",
+  "logo": site.url + "/assets/icons/logo.svg",
+  "areaServed": areaServed,
+  "sameAs": sameAs,
+  "knowsAbout": [
+    "Selling a house fast for cash",
+    "Foreclosure in North Carolina",
+    "Probate and inherited property",
+    "As-is home sales"
+  ]
+} -%}
+
+{%- set website = {
+  "@type": "WebSite",
+  "@id": site.url + "/#website",
+  "url": site.url + "/",
+  "name": site.name,
+  "publisher": { "@id": site.url + "/#business" },
+  "inLanguage": "en-US"
+} -%}
+
+{%- set webpage = {
+  "@type": "WebPage",
+  "@id": canonical + "#webpage",
+  "url": canonical,
+  "name": title or site.name,
+  "description": description or site.tagline,
+  "isPartOf": { "@id": site.url + "/#website" },
+  "about": { "@id": site.url + "/#business" }
+} -%}
+
+{%- set graph = [org, website, webpage] -%}
+
+{#- Breadcrumbs -#}
+{%- if breadcrumbs and breadcrumbs.length -%}
+  {%- set crumbItems = [] -%}
+  {%- for b in breadcrumbs -%}
+    {%- set crumbItems = (crumbItems.push({
+      "@type": "ListItem",
+      "position": loop.index,
+      "name": b.name,
+      "item": b.url | absoluteUrl(site.url)
+    }), crumbItems) -%}
+  {%- endfor -%}
+  {%- set graph = (graph.push({
+    "@type": "BreadcrumbList",
+    "@id": canonical + "#breadcrumbs",
+    "itemListElement": crumbItems
+  }), graph) -%}
+{%- endif -%}
+
+{#- FAQPage, only when the page actually renders those questions -#}
+{%- if faqItems and faqItems.length -%}
+  {%- set qa = [] -%}
+  {%- for f in faqItems -%}
+    {%- set qa = (qa.push({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a }
+    }), qa) -%}
+  {%- endfor -%}
+  {%- set graph = (graph.push({
+    "@type": "FAQPage",
+    "@id": canonical + "#faq",
+    "mainEntity": qa
+  }), graph) -%}
+{%- endif -%}
+
+{#- BlogPosting on articles -#}
+{%- if ogType == "article" -%}
+  {%- set graph = (graph.push({
+    "@type": "BlogPosting",
+    "@id": canonical + "#article",
+    "headline": title,
+    "description": description,
+    "datePublished": page.date | isoDate,
+    "dateModified": page.date | isoDate,
+    "mainEntityOfPage": { "@id": canonical + "#webpage" },
+    "publisher": { "@id": site.url + "/#business" },
+    "author": { "@id": site.url + "/#business" }
+  }), graph) -%}
+{%- endif -%}
+
+<script type="application/ld+json">{{ { "@context": "https://schema.org", "@graph": graph } | json | safe }}</script>

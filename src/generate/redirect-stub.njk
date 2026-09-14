@@ -1,0 +1,26 @@
+---
+pagination:
+  data: redirects
+  size: 1
+  alias: r
+permalink: "{{ r.from }}{% if r.from.endsWith('/') %}index.html{% endif %}"
+eleventyExcludeFromCollections: true
+sitemap: false
+---
+{%- set target = r.to | absoluteUrl(site.url) -%}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Redirecting&hellip;</title>
+<meta http-equiv="refresh" content="0; url={{ target }}">
+<link rel="canonical" href="{{ target }}">
+{#- noarchive, NOT noindex: a noindex here conflicts with the canonical and can
+    block consolidation of the old URL's signals onto the new page. -#}
+<meta name="robots" content="noarchive">
+<script>location.replace("{{ target }}");</script>
+</head>
+<body>
+<p>This page has moved. <a href="{{ target }}">Continue to {{ site.name }}</a>.</p>
+</body>
+</html>

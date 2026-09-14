@@ -1,0 +1,183 @@
+---
+pagination:
+  data: cities
+  size: 1
+  alias: city
+  addAllPagesToCollections: true
+permalink: "/sell-my-house-fast-{{ city.slug }}-nc/index.html"
+layout: layouts/base.njk
+pageType: city
+eleventyComputed:
+  title: "Sell My House Fast in {{ city.name }}, NC | Cash Offer in {{ site.offerWindowHours }} Hours"
+  description: "Need to sell a house fast in {{ city.name }}, NC? We buy houses in {{ city.county }} County as-is — no repairs, no commission, no closing costs. Written cash offer in {{ site.offerWindowHours }} hours."
+  breadcrumbs:
+    - name: "Home"
+      url: "/"
+    - name: "Areas We Buy"
+      url: "/service-areas/"
+    - name: "{{ city.name }}, NC"
+      url: "/sell-my-house-fast-{{ city.slug }}-nc/"
+---
+{% from "components/lead-form.njk" import leadForm with context %}
+{% import "components/blocks.njk" as b with context %}
+
+
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <p class="eyebrow">{{ city.county }} County, North Carolina</p>
+      <h1>Sell My House Fast in {{ city.name }}, NC</h1>
+      <p class="hero__sub">
+        Any condition. Any situation. A written cash offer within {{ site.offerWindowHours }} hours,
+        and you pick the closing date.
+      </p>
+      <ul class="hero__points">
+        <li>No repairs &mdash; we buy {{ city.name }} houses exactly as they stand</li>
+        <li>No commission and no closing costs, ever</li>
+        <li>Close in {{ site.closeDaysMin }}&ndash;{{ site.closeDaysMax }} days, or later if you need it</li>
+        <li>Leave what you don't want &mdash; cleanout is on us</li>
+        <li>No inspection contingency, so the offer doesn't change at the last minute</li>
+      </ul>
+      <p class="hero__trust">
+        Prefer to talk it through? Call or text <a href="tel:{{ site.phoneRaw }}" style="color:#fff"><strong>{{ site.phoneDisplay }}</strong></a>.
+      </p>
+    </div>
+    <div>
+      {{ leadForm("hero-form", "hero", city, null, "What's your " + city.name + " house worth to us?", "Start with the address. Written offer within " + site.offerWindowHours + " hours.", true) }}
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="wrap">
+    <ul>
+      <li>Written offers, not verbal estimates</li>
+      <li>We walk every property ourselves</li>
+      <li>Closed through a NC attorney</li>
+      <li>No obligation</li>
+    </ul>
+  </div>
+</div>
+
+<section class="section">
+  <div class="wrap--narrow">
+    <div class="answer-box">
+      <p>
+        <strong>Can you sell a house fast in {{ city.name }}?</strong> Yes. A cash sale skips the
+        two things that make a retail sale slow: lender underwriting and repair negotiations.
+        Monthaven buys {{ city.name }} houses directly, as-is, with no financing contingency,
+        which means a written offer within {{ site.offerWindowHours }} hours and closing in
+        {{ site.closeDaysMin }} to {{ site.closeDaysMax }} days at a North Carolina closing attorney.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="wrap">
+    <h2>We buy houses in {{ city.name }} in any situation</h2>
+    <p class="lead mt-4 mb-6">
+      Most people who call us aren't trying to squeeze the last dollar out of a house.
+      They're trying to get out from under one. These are the situations we see most in
+      {{ city.county }} County.
+    </p>
+    {{ b.situationGrid(city) }}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap--narrow">
+    <h2 class="mb-6">How selling to us works</h2>
+    {{ b.howItWorks(city) }}
+  </div>
+</section>
+
+<section class="section section--warm">
+  <div class="wrap--narrow">
+    <h2 class="mb-5">Cash offer vs. listing with an agent in {{ city.name }}</h2>
+    {{ b.comparison(city) }}
+    {{ b.valueStack() }}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="mb-5">Houses we've bought near {{ city.name }}</h2>
+    {{ b.caseStudies(city.slug) }}
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="wrap">
+    <h2 class="mb-5">What {{ city.name }} sellers say</h2>
+    {{ b.testimonials(city.slug) }}
+  </div>
+</section>
+
+{#- The genuinely local section. This is what every competitor fakes. -#}
+<section class="section">
+  <div class="wrap--narrow stack-lg">
+    <h2>About the {{ city.name }} housing market</h2>
+
+    <p>{{ city.housingStock }}</p>
+
+    <p>{{ city.whyWeBuyHere }}</p>
+
+    <h3>Who sells to us in {{ city.name }}</h3>
+    <p>{{ city.sellerProfile }}</p>
+
+    <h3>What makes a {{ city.name }} house hard to sell the normal way</h3>
+    <p>{{ city.localChallenges }}</p>
+
+    {% if city.medianHomeValue %}
+    <p>
+      As of {{ city.marketDataAsOf }}, the median home value in {{ city.name }} is around
+      {{ city.medianHomeValue | usd }}{% if city.medianDaysOnMarket %}, with homes averaging
+      about {{ city.medianDaysOnMarket }} days on market{% endif %}{% if city.monthsInventory %}
+      and roughly {{ city.monthsInventory }} months of inventory{% endif %}.
+      {% if city.marketDataSource %}<span class="small muted">(Source: {{ city.marketDataSource }}.)</span>{% endif %}
+      Those are averages across the whole city, though, and they include renovated houses.
+      A house that needs a roof, a system, or structural work does not sell at the median,
+      which is the gap a cash offer is actually priced against.
+    </p>
+    {% endif %}
+
+    <p>
+      We buy across
+      {% for z in city.zips %}{{ z }}{% if not loop.last %}, {% endif %}{% endfor %},
+      including
+      {% for n in city.neighborhoods %}{{ n }}{% if loop.revindex == 2 %} and {% elif not loop.last %}, {% endif %}{% endfor %}.
+      {% if city.landmarks.length %}If you're anywhere near
+      {% for l in city.landmarks | limit(3) %}{{ l }}{% if loop.revindex == 2 %} or {% elif not loop.last %}, {% endif %}{% endfor %},
+      we know the area.{% endif %}
+      {% if city.countySeat %}{{ city.name }} is the {{ city.county }} County seat, so estate,
+      probate, and foreclosure matters for the whole county run through here.{% else %}
+      Probate and foreclosure matters for {{ city.name }} are handled at the
+      {{ city.courthouse }}.{% endif %}
+      Homes here are served by {{ city.schoolDistrict }}.
+    </p>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="wrap--narrow">
+    <h2 class="mb-5">{{ city.name }} sellers ask us</h2>
+    {{ b.faqList(faqItems) }}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap--narrow">
+    <h2 class="mb-5">We also buy houses near {{ city.name }}</h2>
+    {{ b.nearbyCities(city) }}
+    <p class="mt-5"><a href="/service-areas/">See every city we buy in &rarr;</a></p>
+  </div>
+</section>
+
+{{ b.ctaBand("Get a cash offer on your " + city.name + " house", "Start with the address. You'll have a written offer within " + site.offerWindowHours + " hours, and there's no obligation to take it.") }}
+
+<section class="section">
+  <div class="wrap--narrow">
+    {{ leadForm("bottom-form", "full", city, null, "Get your " + city.name + " cash offer") }}
+  </div>
+</section>

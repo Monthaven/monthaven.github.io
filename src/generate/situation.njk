@@ -1,0 +1,112 @@
+---
+pagination:
+  data: situations
+  size: 1
+  alias: situation
+  addAllPagesToCollections: true
+permalink: "/{{ situation.urlPrefix }}-nc/index.html"
+layout: layouts/base.njk
+pageType: situation
+eleventyComputed:
+  title: "{{ situation.metaTitle }}"
+  description: "{{ situation.metaDescription }}"
+  breadcrumbs:
+    - name: "Home"
+      url: "/"
+    - name: "{{ situation.navLabel }}"
+      url: "/{{ situation.urlPrefix }}-nc/"
+---
+{% from "components/lead-form.njk" import leadForm with context %}
+{% import "components/blocks.njk" as b with context %}
+
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <p class="eyebrow">Gaston, Cleveland &amp; Lincoln Counties, NC</p>
+      <h1>{{ situation.h1 }}</h1>
+      <p class="hero__sub">
+        Written cash offer within {{ site.offerWindowHours }} hours. No repairs, no commission,
+        no closing costs, and no obligation.
+      </p>
+      <ul class="hero__points">
+        {% for p in situation.painPoints | limit(4) %}<li>{{ p }}</li>{% endfor %}
+      </ul>
+      <p class="hero__trust">
+        Call or text <a href="tel:{{ site.phoneRaw }}" style="color:#fff"><strong>{{ site.phoneDisplay }}</strong></a>
+        &mdash; {{ site.businessHours }}.
+      </p>
+    </div>
+    <div>
+      {{ leadForm("hero-form", situation.formVariant, null, situation, null, "Start with the address. We'll take it from there.", true) }}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap--narrow">
+    <div class="answer-box"><p>{{ situation.directAnswer }}</p></div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="wrap--narrow">
+    <h2 class="mb-6">How we handle this</h2>
+    <ol class="steps">
+      {% for step in situation.processSteps %}
+      <li><div><h3>{{ step.title }}</h3><p>{{ step.body }}</p></div></li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap--narrow">
+    <h2 class="mb-5">What this costs you compared to listing</h2>
+    {{ b.comparison() }}
+  </div>
+</section>
+
+<section class="section section--warm">
+  <div class="wrap--narrow">
+    <h2 class="mb-5">Questions people ask us about this</h2>
+    {{ b.faqList(situation.faq) }}
+    <p class="small muted mt-6">
+      Nothing here is legal, tax, or financial advice. We buy houses; we are not attorneys
+      or accountants. For anything that turns on your specific circumstances, talk to a
+      North Carolina attorney or a CPA. We will work with yours.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="mb-5">Where we buy</h2>
+    <ul class="pill-links">
+      {% for c in cities %}
+      <li><a href="/sell-my-house-fast-{{ c.slug }}-nc/">{{ c.name }}, NC</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="wrap">
+    <h2 class="mb-5">Other situations we buy in</h2>
+    <div class="grid grid--3">
+      {% for s in situations %}{% if s.slug != situation.slug %}
+      <a class="card card--link" href="/{{ s.urlPrefix }}-nc/">
+        <h3>{{ s.label }}</h3>
+        <p>{{ s.painPoints[0] }}</p>
+      </a>
+      {% endif %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+{{ b.ctaBand() }}
+
+<section class="section">
+  <div class="wrap--narrow">
+    {{ leadForm("bottom-form", situation.formVariant, null, situation) }}
+  </div>
+</section>

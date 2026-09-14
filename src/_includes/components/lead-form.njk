@@ -1,0 +1,159 @@
+{#- The one lead form. Rendered everywhere; endpoint comes from site.leadEndpoint
+    (src/_data/site.json) so swapping lead systems is a one-line change.
+
+    Step 1 is address-only plus one contact method: lowest possible friction.
+    The SMS consent checkbox MUST stay on step 1 with the phone field and the
+    submit that sends it — otherwise a partial POST transmits a phone number
+    with no captured consent, which breaks the A2P record. -#}
+
+{% macro leadForm(id, variant="full", city=null, situation=null, title=null, sub=null, onDark=false) %}
+<form
+  class="lead-form{% if onDark %} lead-form--onDark{% endif %}"
+  id="{{ id }}"
+  data-lead-form
+  data-variant="{{ variant }}"
+  data-phone="{{ site.phoneDisplay }}"
+  data-offer-hours="{{ site.offerWindowHours }}"
+  {% if site.partialCapture %}data-partial-capture{% endif %}
+  action="{{ site.leadEndpoint }}"
+  method="POST"
+  novalidate
+>
+  <h2 class="lead-form__title">{{ title or "Get your cash offer" }}</h2>
+  <p class="lead-form__sub">{{ sub or ("Written offer within " + site.offerWindowHours + " hours. No fees, no obligation, no repairs.") }}</p>
+
+  {#- Honeypot: off-screen, never display:none. _gotcha is Formspree's native name
+      so it also filters server-side. -#}
+  <div class="hp" aria-hidden="true">
+    <label for="{{ id }}-gotcha">Leave this field empty</label>
+    <input id="{{ id }}-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+  </div>
+
+  {#- Attribution. Values stamped by js/main.js on load. -#}
+  <input type="hidden" name="lead_id" value="">
+  <input type="hidden" name="stage" value="complete">
+  <input type="hidden" name="form_variant" value="{{ variant }}">
+  <input type="hidden" name="page_url" value="">
+  <input type="hidden" name="page_title" value="">
+  <input type="hidden" name="page_type" value="{{ pageType or 'page' }}">
+  <input type="hidden" name="city" value="{{ city.name if city else '' }}">
+  <input type="hidden" name="county" value="{{ city.county if city else '' }}">
+  <input type="hidden" name="situation" value="{{ situation.label if situation else '' }}">
+  <input type="hidden" name="landing_page" value="">
+  <input type="hidden" name="referrer" value="">
+  <input type="hidden" name="utm_source" value="">
+  <input type="hidden" name="utm_medium" value="">
+  <input type="hidden" name="utm_campaign" value="">
+  <input type="hidden" name="utm_term" value="">
+  <input type="hidden" name="utm_content" value="">
+  <input type="hidden" name="gclid" value="">
+  <input type="hidden" name="fbclid" value="">
+  <input type="hidden" name="timestamp" value="">
+  <input type="hidden" name="elapsed_ms" value="">
+  <input type="hidden" name="consent_version" value="{{ site.consentVersion }}">
+  <input type="hidden" name="consent_text" value="{{ site.consentText }}">
+  <input type="hidden" name="opt_in_url" value="">
+  <input type="hidden" name="_subject" value="New cash offer request{% if city %} — {{ city.name }}, NC{% endif %}">
+
+  {#- ---------------- STEP 1 ---------------- -#}
+  <div data-step="1">
+    <div class="field">
+      <label for="{{ id }}-address">Property address <span class="req" aria-hidden="true">*</span></label>
+      <input id="{{ id }}-address" name="address" type="text" autocomplete="street-address"
+             placeholder="123 Main St, {{ city.name if city else 'Gastonia' }}, NC" required>
+    </div>
+
+    <div class="field-row field-row--2">
+      <div class="field">
+        <label for="{{ id }}-phone">Phone</label>
+        <input id="{{ id }}-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel"
+               placeholder="(704) 555-0123">
+      </div>
+      <div class="field">
+        <label for="{{ id }}-email">Email</label>
+        <input id="{{ id }}-email" name="email" type="email" autocomplete="email"
+               placeholder="you@example.com">
+      </div>
+    </div>
+    <p class="field__help" data-contact-help>Give us one or the other, whichever you'd rather we use.</p>
+
+    {#- A2P consent. Revealed by JS when a phone number is entered. -#}
+    <div class="sms-consent" hidden>
+      <label class="sms-consent__row">
+        <input type="checkbox" name="sms_consent" value="true">
+        <span class="sms-consent__text">
+          {{ site.consentText }}
+          See our <a href="/terms/" target="_blank" rel="noopener">Terms of Service</a> and
+          <a href="/privacy/" target="_blank" rel="noopener">Privacy Policy</a>.
+        </span>
+      </label>
+    </div>
+
+    <div class="mt-5">
+      <button class="btn btn--cta btn--block" type="button" data-next-step>
+        {{ "Get My Cash Offer" if variant != "urgent" else "Get Help Now" }}
+      </button>
+    </div>
+  </div>
+
+  {#- ---------------- STEP 2 ---------------- -#}
+  <div data-step="2" hidden>
+    <p class="field__help mb-4"><strong>Almost done.</strong> These help us price it accurately the first time.</p>
+
+    <div class="field">
+      <label for="{{ id }}-name">Your name <span class="req" aria-hidden="true">*</span></label>
+      <input id="{{ id }}-name" name="name" type="text" autocomplete="name" required>
+    </div>
+
+    <div class="field-row field-row--2">
+      <div class="field">
+        <label for="{{ id }}-condition">Condition</label>
+        <select id="{{ id }}-condition" name="condition">
+          <option value="">Select</option>
+          <option>Move-in ready</option>
+          <option>Good, minor work</option>
+          <option>Fair, dated</option>
+          <option>Needs significant work</option>
+          <option>Major repairs / damage</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="{{ id }}-timeline">Timeline</label>
+        <select id="{{ id }}-timeline" name="timeline">
+          <option value="">Select</option>
+          <option>ASAP — I have a deadline</option>
+          <option>Within 30 days</option>
+          <option>30 to 90 days</option>
+          <option>Just exploring options</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="{{ id }}-reason">What's going on?</label>
+      <select id="{{ id }}-reason" name="reason">
+        <option value="">Select</option>
+        {% for s in situations %}<option>{{ s.label }}</option>{% endfor %}
+        <option>Something else</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="{{ id }}-notes">Anything we should know?</label>
+      <textarea id="{{ id }}-notes" name="notes"
+                placeholder="Foreclosure date, tenants, roof, whatever matters. The more you tell us, the more accurate the number."></textarea>
+    </div>
+
+    <div class="mt-5">
+      <button class="btn btn--cta btn--block" type="submit">Send It — Get My Offer</button>
+    </div>
+  </div>
+
+  <p class="form-note">
+    No fees. No obligation. We'll never sell your information.<br>
+    Prefer to talk? <a href="tel:{{ site.phoneRaw }}">Call or text {{ site.phoneDisplay }}</a>.
+  </p>
+
+  <div class="form-status" data-form-status role="status" aria-live="polite" tabindex="-1" hidden></div>
+</form>
+{% endmacro %}

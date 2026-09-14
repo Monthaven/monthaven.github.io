@@ -1,0 +1,535 @@
+[
+  {
+    "slug": "gastonia",
+    "name": "Gastonia",
+    "county": "Gaston",
+    "countySeat": true,
+    "state": "NC",
+    "tier": 1,
+    "zips": [
+      "28052",
+      "28053",
+      "28054",
+      "28055",
+      "28056"
+    ],
+    "population": 80000,
+    "medianHomeValue": 255000,
+    "medianDaysOnMarket": 21,
+    "monthsInventory": 1.4,
+    "marketDataAsOf": "2026",
+    "marketDataSource": "Redfin / Gastonia housing market",
+    "schoolDistrict": "Gaston County Schools",
+    "courthouse": "Gaston County Courthouse, 325 Dr. Martin Luther King Jr. Way, Gastonia",
+    "neighborhoods": [
+      "Loray Mill Village",
+      "York Chester Historic District",
+      "Brookwood",
+      "Highland",
+      "Beaty Road",
+      "Robinwood"
+    ],
+    "landmarks": [
+      "Schiele Museum of Natural History",
+      "Loray Mill",
+      "Rankin Lake Park",
+      "CaroMont Health Park",
+      "the FUSE District"
+    ],
+    "nearby": [
+      "dallas",
+      "bessemer-city",
+      "mount-holly",
+      "belmont",
+      "cherryville"
+    ],
+    "combos": [
+      "foreclosure",
+      "inherited-probate"
+    ],
+    "housingStock": "Gastonia has one of the largest stocks of pre-war textile mill housing in the Carolinas. The Loray Mill village alone accounts for hundreds of 1920s-era frame houses, and the York Chester Historic District adds early-1900s homes on deep lots. These are wonderful houses and they are also the ones that fail a buyer's inspection: knob-and-tube wiring, cast iron drain lines, original single-pane windows, asbestos siding under vinyl, and foundations that have moved. A retail buyer using conventional or FHA financing often cannot close on them at all.",
+    "whyWeBuyHere": "We buy in Gastonia more than anywhere else in the county, and it is because of the housing stock rather than in spite of it. A house that an agent has to list \"as-is, cash only\" is a house we can simply buy.",
+    "sellerProfile": "The Gastonia sellers who call us are usually one of three people: an heir who inherited a mill-village house they cannot afford to rehab, a landlord who bought a cheap rental in the 2010s and is tired of turning it, or an owner who has been quoted $40,000 in repairs by an agent who then suggested listing it as-is, cash only.",
+    "localChallenges": "Two things make Gastonia houses hard to sell retail. First, the age: the FHA and conventional appraisers who serve Gaston County will flag peeling paint on a pre-1978 house, active roof leaks, and non-functioning HVAC, and a buyer's lender will hold back funds until those are fixed. Second, foundation movement. A lot of the pre-war housing sits on brick pier foundations that have settled unevenly over ninety years, and a structural engineer's letter is now a routine buyer demand rather than an unusual one.",
+    "cityFaq": [
+      {
+        "q": "Do you buy houses in the Loray Mill village and the older Gastonia neighborhoods?",
+        "a": "Those are the houses we buy most. The pre-1940 frame housing around Loray, York Chester, and Highland is exactly the inventory that fails an appraisal and that most retail buyers cannot finance. Knob-and-tube wiring, cast iron drain lines, asbestos siding and settled pier foundations are normal to us, not disqualifying."
+      },
+      {
+        "q": "My Gastonia house is in good shape. Should I still get a cash offer?",
+        "a": "Get the number so you can compare, but be prepared for us to tell you to list it. Gastonia has been running about 1.4 months of inventory with homes selling near 99% of list price in roughly three weeks. In a market that tight, a move-in-ready house almost always nets more through an agent, even after commission."
+      }
+    ]
+  },
+  {
+    "slug": "shelby",
+    "name": "Shelby",
+    "county": "Cleveland",
+    "countySeat": true,
+    "state": "NC",
+    "tier": 1,
+    "zips": [
+      "28150",
+      "28151",
+      "28152"
+    ],
+    "population": 21000,
+    "medianHomeValue": null,
+    "medianDaysOnMarket": null,
+    "monthsInventory": null,
+    "marketDataAsOf": null,
+    "marketDataSource": null,
+    "schoolDistrict": "Cleveland County Schools",
+    "courthouse": "Cleveland County Courthouse, 100 Justice Place, Shelby",
+    "neighborhoods": [
+      "Uptown Shelby",
+      "Central Shelby Historic District",
+      "West Shelby",
+      "Cleveland Avenue",
+      "Dover Mill"
+    ],
+    "landmarks": [
+      "the Earl Scruggs Center",
+      "the Don Gibson Theatre",
+      "the historic Court Square",
+      "the LeGrand Center",
+      "Shelby City Park"
+    ],
+    "nearby": [
+      "kings-mountain",
+      "gastonia",
+      "lincolnton",
+      "cherryville"
+    ],
+    "combos": [
+      "foreclosure",
+      "inherited-probate"
+    ],
+    "housingStock": "Shelby's older neighborhoods around Uptown and the Central Shelby Historic District are full of 1910-1950 homes, many of them large, and many of them held by the same family for two or three generations. Cleveland County's foreclosure and estate filings run through the courthouse on Justice Place, which means probate and pre-foreclosure sales here tend to be on a clock.",
+    "whyWeBuyHere": "Shelby is the county seat, so it is where most Cleveland County estates get settled. A lot of what we buy here comes from heirs who live out of state and have no practical way to clean out, repair, and list a house from three hours away.",
+    "sellerProfile": "Most of our Shelby calls come from executors and heirs. Someone's parent lived in the same house on the west side or near Uptown for fifty years, the estate is open at the courthouse on Justice Place, the siblings live in Charlotte or Atlanta or Ohio, and none of them can realistically clear out and renovate a house from where they are.",
+    "localChallenges": "Long-held Shelby houses tend to come with two complications. The first is contents: fifty years of accumulation, including a full attic, a full basement, and often an outbuilding. The second is deferred systems. A house that was comfortable for its owner through the 2000s frequently has an original furnace, a 60-amp or early 100-amp panel, galvanized supply lines, and a roof past its second layer. None of that bothered the person living there. All of it stops a mortgage.",
+    "cityFaq": [
+      {
+        "q": "We are settling an estate through the Cleveland County courthouse. Can you work with our attorney?",
+        "a": "Yes, and we prefer to. Tell us who represents the estate and we will deal with them directly on timing and signatures. We will not push a family to close before the Clerk's office is ready, and we will wait if the estate needs more time to convey."
+      },
+      {
+        "q": "The house is full. Do we need to empty it before you will look at it?",
+        "a": "No. Take the things that matter to your family and leave everything else exactly where it is, attic and outbuildings included. Cleanout is our cost and it is built into the offer, not subtracted from it after the fact."
+      }
+    ]
+  },
+  {
+    "slug": "kings-mountain",
+    "name": "Kings Mountain",
+    "county": "Cleveland",
+    "countySeat": false,
+    "state": "NC",
+    "tier": 1,
+    "zips": [
+      "28086"
+    ],
+    "population": 11000,
+    "medianHomeValue": null,
+    "medianDaysOnMarket": null,
+    "monthsInventory": null,
+    "marketDataAsOf": null,
+    "marketDataSource": null,
+    "schoolDistrict": "Cleveland County Schools",
+    "courthouse": "Cleveland County Courthouse, 100 Justice Place, Shelby",
+    "neighborhoods": [
+      "Downtown Kings Mountain",
+      "Grover Road",
+      "Oak Grove",
+      "Bethlehem",
+      "Margrace"
+    ],
+    "landmarks": [
+      "Kings Mountain National Military Park",
+      "Kings Mountain State Park",
+      "the Catawba Two Kings Casino",
+      "Patrick Senior Center",
+      "Deal Street Park"
+    ],
+    "nearby": [
+      "shelby",
+      "bessemer-city",
+      "gastonia"
+    ],
+    "combos": [
+      "foreclosure"
+    ],
+    "housingStock": "Kings Mountain is a former mill town with the housing to match: compact frame houses from the Margrace and Bonnie mill villages, plus post-war ranches out toward Grover Road and Oak Grove. Many have had additions built without permits over the years, which is a problem for an appraiser and not a problem for us.",
+    "whyWeBuyHere": "The Catawba Two Kings Casino has changed what land and houses near I-85 are worth, and it has also brought a lot of speculative offers to people's mailboxes. If you are getting those letters and want an actual written offer from someone who will put their name on it, that is what we do.",
+    "sellerProfile": "Kings Mountain sellers are often people who have been receiving unsolicited letters and postcards for two years and have finally decided to find out what the house is actually worth. The casino development near I-85 kicked off a wave of speculative mail into 28086, and a lot of it comes from buyers who have never set foot in Cleveland County.",
+    "localChallenges": "The specific Kings Mountain problem is unpermitted work. Mill-village houses here have been added onto for decades: enclosed porches converted to bedrooms, carports turned into dens, bathrooms added off the back. The county has no permit record for most of it, which means the square footage on the tax card does not match the house, the appraiser will not count the unpermitted space, and a retail buyer's loan comes in short. We buy the house that exists rather than the house on the tax card.",
+    "cityFaq": [
+      {
+        "q": "I keep getting letters offering to buy my Kings Mountain house. Are those real?",
+        "a": "Some are from real buyers and many are from lead brokers who will sell your response to whoever pays most, which is why one reply produces a dozen calls. Ask any of them one question: are you buying this house yourself? Then verify, because property transfers in Cleveland County are public record and a buyer who has actually bought here can be looked up."
+      },
+      {
+        "q": "Part of my house was added on without a permit. Is that a problem?",
+        "a": "Not for us. It is a problem for a retail sale, because the appraiser will not credit unpermitted square footage and the buyer's lender will lend against the appraisal. We buy on what is physically there. Tell us about it up front so nothing changes later."
+      }
+    ]
+  },
+  {
+    "slug": "belmont",
+    "name": "Belmont",
+    "county": "Gaston",
+    "countySeat": false,
+    "state": "NC",
+    "tier": 1,
+    "zips": [
+      "28012"
+    ],
+    "population": 15000,
+    "medianHomeValue": null,
+    "medianDaysOnMarket": null,
+    "monthsInventory": null,
+    "marketDataAsOf": null,
+    "marketDataSource": null,
+    "schoolDistrict": "Gaston County Schools",
+    "courthouse": "Gaston County Courthouse, 325 Dr. Martin Luther King Jr. Way, Gastonia",
+    "neighborhoods": [
+      "Downtown Belmont",
+      "Chronicle Mill",
+      "Imperial Mill",
+      "McAdenville side",
+      "Catawba Heights"
+    ],
+    "landmarks": [
+      "Daniel Stowe Botanical Garden",
+      "Belmont Abbey College",
+      "historic Main Street",
+      "the Catawba River and Lake Wylie",
+      "Stowe Park"
+    ],
+    "nearby": [
+      "mount-holly",
+      "gastonia",
+      "stanley"
+    ],
+    "combos": [],
+    "housingStock": "Belmont has appreciated faster than anywhere else in Gaston County because it is the closest thing the county has to a Charlotte suburb with a real downtown. That cuts both ways: the newer neighborhoods sell themselves, while the older mill housing off Catawba Street and around the Chronicle and Imperial mill sites still needs the same work it always did.",
+    "whyWeBuyHere": "We will tell you plainly: if your Belmont house is in good condition and near downtown, you will probably net more listing it with an agent, and we will say so on the call. Where we make sense here is the older, unrenovated, or inherited houses that would need $40,000 of work before they would show well.",
+    "sellerProfile": "Belmont is the one city on our list where we turn people away most often. Sellers here frequently call assuming a cash sale is the fast route, and for a tidy house within walking distance of Main Street it usually is not. The Belmont sellers we genuinely help are the ones with older unrenovated houses off Catawba Street, or with inherited property near the former Chronicle and Imperial mill sites.",
+    "localChallenges": "Belmont's appreciation has created a gap. Renovated houses near downtown and the river command Charlotte-adjacent prices, while the unrenovated stock a few streets over has not moved nearly as far. That gap is good news if your house is renovated and bad news if it is not, because buyers arriving with Charlotte expectations walk into a 1940s house with original wiring and keep driving.",
+    "cityFaq": [
+      {
+        "q": "Belmont prices have gone up a lot. Will your offer reflect that?",
+        "a": "It reflects what renovated comparable houses near yours have actually closed at, minus what it costs to get your house to that condition. In Belmont the renovated comps are strong, which helps your number. The repair subtraction is the same as anywhere. If your house is already in good condition, our offer will not beat a listing and we will tell you so."
+      },
+      {
+        "q": "Would I be better off listing my Belmont house with an agent?",
+        "a": "Often, yes. Belmont has the strongest retail buyer demand in Gaston County. If your house shows well and you have two or three months, list it. We are the better option when the house needs work a retail buyer cannot finance, when it is inherited and full, or when you have a deadline a listing cannot meet."
+      }
+    ]
+  },
+  {
+    "slug": "mount-holly",
+    "name": "Mount Holly",
+    "county": "Gaston",
+    "countySeat": false,
+    "state": "NC",
+    "tier": 1,
+    "zips": [
+      "28120"
+    ],
+    "population": 17000,
+    "medianHomeValue": null,
+    "medianDaysOnMarket": null,
+    "monthsInventory": null,
+    "marketDataAsOf": null,
+    "marketDataSource": null,
+    "schoolDistrict": "Gaston County Schools",
+    "courthouse": "Gaston County Courthouse, 325 Dr. Martin Luther King Jr. Way, Gastonia",
+    "neighborhoods": [
+      "Downtown Mount Holly",
+      "Tuckaseege",
+      "Woodlawn",
+      "Catawba Heights",
+      "Lakewood"
+    ],
+    "landmarks": [
+      "Tuckaseege Park",
+      "the Catawba River",
+      "the Mount Holly Municipal Complex",
+      "Dutchmans Creek Greenway"
+    ],
+    "nearby": [
+      "belmont",
+      "stanley",
+      "gastonia"
+    ],
+    "combos": [],
+    "housingStock": "Mount Holly sits right on the Mecklenburg County line, so it draws Charlotte commuters, and prices have followed. The older housing along the river and around the former Mount Holly mill is a different story: mid-century ranches and earlier frame houses, often with original systems and deferred maintenance.",
+    "whyWeBuyHere": "A lot of what we see in Mount Holly is landlords getting out. Long-term rentals that have been through several tenants need a full turn before they can be listed, and most owners would rather not fund one.",
+    "sellerProfile": "A large share of our Mount Holly calls come from landlords. The town's proximity to Charlotte made it a popular buy-and-hold market, and a decade later a lot of those owners are looking at a unit that needs a full turn before it could be listed and deciding they would rather be done.",
+    "localChallenges": "Rental turnover is the recurring Mount Holly issue. A house that has been through four or five tenants needs flooring, paint, usually a kitchen, frequently an HVAC system, and sometimes remediation of things the last tenant left behind. Funding that turn out of pocket, with no rent coming in, is exactly the position owners do not want to be in. There is also a river factor: parts of Mount Holly sit close enough to the Catawba that flood zone determination and insurance cost affect what a retail buyer can afford to pay.",
+    "cityFaq": [
+      {
+        "q": "My Mount Holly rental still has tenants in it. Can I sell without evicting them?",
+        "a": "Yes. In North Carolina a lease generally survives the sale and the buyer takes subject to it, so we can buy with the tenant in place. You do not need to evict, turn the unit, or deliver it vacant. Send us the lease, the current rent, and the deposit you are holding."
+      },
+      {
+        "q": "The tenant has stopped paying and left the place rough. Does that kill the deal?",
+        "a": "No. It affects the number, because it affects what we are actually buying, but non-paying tenants and damage are our problem after closing rather than a reason for us to walk. We would rather know the truth on the first call than discover it at the walkthrough."
+      }
+    ]
+  },
+  {
+    "slug": "bessemer-city",
+    "name": "Bessemer City",
+    "county": "Gaston",
+    "countySeat": false,
+    "state": "NC",
+    "tier": 2,
+    "zips": [
+      "28016"
+    ],
+    "population": 5500,
+    "medianHomeValue": null,
+    "medianDaysOnMarket": null,
+    "monthsInventory": null,
+    "marketDataAsOf": null,
+    "marketDataSource": null,
+    "schoolDistrict": "Gaston County Schools",
+    "courthouse": "Gaston County Courthouse, 325 Dr. Martin Luther King Jr. Way, Gastonia",
+    "neighborhoods": [
+      "Downtown Bessemer City",
+      "Osceola",
+      "Concord Road"
+    ],
+    "landmarks": [
+      "Bessemer City Central Park",
+      "Osceola Lake",
+      "the old downtown rail corridor"
+    ],
+    "nearby": [
+      "gastonia",
+      "kings-mountain",
+      "cherryville"
+    ],
+    "combos": [],
+    "housingStock": "Small-town Gaston County housing stock: modest frame houses and post-war ranches, priced low enough that a $25,000 repair bill can exceed what a retail buyer's lender will allow against the appraisal. That gap is exactly where cash sales happen.",
+    "whyWeBuyHere": "Bessemer City is small enough that most cash buyers skip it, which is a mistake. We buy here on the same terms as Gastonia.",
+    "sellerProfile": "Bessemer City sellers are frequently owners of modest houses where the repair bill has caught up with the value. When a house is worth well under the Gaston County median, a new roof and an HVAC system are not a percentage of value, they are a large fraction of it.",
+    "localChallenges": "This is the appraisal gap problem in its clearest form. On a lower-priced house, a $25,000 repair list can exceed what a lender will advance against the appraised value, which removes every financed buyer from the pool at once. What is left is cash. That is not a reflection of the neighborhood; it is arithmetic about repair cost against price point, and it is why small towns like Bessemer City see a higher share of cash sales than the county average.",
+    "cityFaq": [
+      {
+        "q": "Is my house too small or too inexpensive for you to bother with?",
+        "a": "No. We buy at price points that most of the buyers advertising in the Charlotte metro skip. A modest house in Bessemer City is a normal purchase for us, not an exception we make."
+      },
+      {
+        "q": "Do you actually come out to Bessemer City?",
+        "a": "Yes. We walk every property we make an offer on, including here. Any buyer who will quote you a number for a Bessemer City house without seeing it is planning to revise it later."
+      }
+    ]
+  },
+  {
+    "slug": "cherryville",
+    "name": "Cherryville",
+    "county": "Gaston",
+    "countySeat": false,
+    "state": "NC",
+    "tier": 2,
+    "zips": [
+      "28021"
+    ],
+    "population": 6000,
+    "medianHomeValue": null,
+    "medianDaysOnMarket": null,
+    "monthsInventory": null,
+    "marketDataAsOf": null,
+    "marketDataSource": null,
+    "schoolDistrict": "Gaston County Schools",
+    "courthouse": "Gaston County Courthouse, 325 Dr. Martin Luther King Jr. Way, Gastonia",
+    "neighborhoods": [
+      "Downtown Cherryville",
+      "Houser Street",
+      "Beam Road"
+    ],
+    "landmarks": [
+      "the C. Grier Beam Truck Museum",
+      "Cherryville City Park",
+      "the New Year's Shooters tradition"
+    ],
+    "nearby": [
+      "bessemer-city",
+      "gastonia",
+      "shelby",
+      "lincolnton"
+    ],
+    "combos": [],
+    "housingStock": "Cherryville's older housing runs from turn-of-the-century frame homes near downtown to 1960s and 70s ranches on larger lots toward the county line. Larger lots are common here, which matters: an outbuilding or an old mobile home on the property can complicate a conventional sale and doesn't complicate a cash one.",
+    "whyWeBuyHere": "Cherryville is far enough from Charlotte that it gets ignored by the buyers who only work the I-85 corridor. We drive out here.",
+    "sellerProfile": "Cherryville sellers often own a house plus land, or a house with outbuildings that have been there for decades. They are frequently people whose families have been in western Gaston County a long time and who are dealing with a property that has passed down rather than one they bought.",
+    "localChallenges": "Acreage and outbuildings complicate a conventional sale in ways people do not expect. A second structure, an old mobile home on the parcel, a barn in poor repair, or a well and septic system instead of municipal utilities will each generate lender conditions, appraiser comments, or outright refusals. Add the distance from the I-85 corridor, and Cherryville simply gets fewer retail buyers walking through than Gastonia does, which is why houses here sit longer.",
+    "cityFaq": [
+      {
+        "q": "My Cherryville property has acreage and an old outbuilding. Do you buy that?",
+        "a": "Yes. Land with the house, barns, sheds, and old mobile homes on the parcel are all normal here and none of them stop us. They complicate a financed sale far more than they complicate a cash one."
+      },
+      {
+        "q": "The house is on a well and septic. Does that change anything?",
+        "a": "Not for us. It does for a retail buyer, because lenders often require water testing and septic inspection and will condition the loan on the results. A failed septic can end a financed sale outright and does not end ours."
+      }
+    ]
+  },
+  {
+    "slug": "dallas",
+    "name": "Dallas",
+    "county": "Gaston",
+    "countySeat": false,
+    "state": "NC",
+    "tier": 2,
+    "zips": [
+      "28034"
+    ],
+    "population": 5000,
+    "medianHomeValue": null,
+    "medianDaysOnMarket": null,
+    "monthsInventory": null,
+    "marketDataAsOf": null,
+    "marketDataSource": null,
+    "schoolDistrict": "Gaston County Schools",
+    "courthouse": "Gaston County Courthouse, 325 Dr. Martin Luther King Jr. Way, Gastonia",
+    "neighborhoods": [
+      "Downtown Dallas",
+      "the Courthouse Square area",
+      "Dallas High Shoals Highway"
+    ],
+    "landmarks": [
+      "the Gaston County Museum of Art and History",
+      "the historic Dallas Courthouse Square",
+      "Gaston College",
+      "Cloninger Park"
+    ],
+    "nearby": [
+      "gastonia",
+      "stanley",
+      "cherryville"
+    ],
+    "combos": [],
+    "housingStock": "Dallas was the original Gaston County seat, and the housing around the old Courthouse Square reflects it — 19th and early 20th century homes, several of them large and several of them in need of serious structural and systems work. Gaston College keeps a steady rental market going, so there is also a supply of tired small rentals.",
+    "whyWeBuyHere": "Historic houses are the hardest thing in the county to sell retail, because the repair list is long and the buyer pool is small. We are comfortable with them.",
+    "sellerProfile": "Two kinds of Dallas sellers call us. The first has an old, often large house near the Courthouse Square that has become more building than one household can maintain. The second is a small-scale landlord renting to Gaston College students who has decided the returns no longer justify the management.",
+    "localChallenges": "Historic houses are the single hardest thing in Gaston County to sell retail, and Dallas has a concentration of them. The repair list on a 19th-century house runs long, the systems are often original or nearly so, and the pool of buyers who want that project and can finance it is small. Meanwhile student-adjacent rentals near Gaston College tend to show hard wear and need a complete turn before they would photograph well enough to list.",
+    "cityFaq": [
+      {
+        "q": "My house near the Dallas Courthouse Square is historic. Will you preserve it?",
+        "a": "We renovate to sell or to hold, so the houses we buy get restored rather than demolished. We cannot promise a specific approach before we have walked it, and if the property carries historic district restrictions, tell us up front so it is factored into the number rather than discovered later."
+      },
+      {
+        "q": "I own a small rental near Gaston College. Do you buy those?",
+        "a": "Yes, occupied or vacant, and we will look at several at once if you want out of more than one. Send the rent roll and the leases with the addresses."
+      }
+    ]
+  },
+  {
+    "slug": "stanley",
+    "name": "Stanley",
+    "county": "Gaston",
+    "countySeat": false,
+    "state": "NC",
+    "tier": 2,
+    "zips": [
+      "28164"
+    ],
+    "population": 4000,
+    "medianHomeValue": null,
+    "medianDaysOnMarket": null,
+    "monthsInventory": null,
+    "marketDataAsOf": null,
+    "marketDataSource": null,
+    "schoolDistrict": "Gaston County Schools",
+    "courthouse": "Gaston County Courthouse, 325 Dr. Martin Luther King Jr. Way, Gastonia",
+    "neighborhoods": [
+      "Downtown Stanley",
+      "Old Plank Road",
+      "Hickory Grove"
+    ],
+    "landmarks": [
+      "Harper Park",
+      "the Stanley Depot",
+      "Rankin Lake nearby"
+    ],
+    "nearby": [
+      "mount-holly",
+      "dallas",
+      "belmont",
+      "lincolnton"
+    ],
+    "combos": [],
+    "housingStock": "Stanley is small, semi-rural, and increasingly a commuter town for people priced out of Mount Holly and Belmont. Housing ranges from older frame homes near the depot to manufactured homes on acreage, which most conventional lenders treat very differently than site-built houses.",
+    "whyWeBuyHere": "Land-and-house combinations and manufactured homes on owned land are common here, and both are harder to finance retail. Those are straightforward cash purchases for us.",
+    "sellerProfile": "Stanley sellers often own a manufactured home on land they own, or an older house on a larger semi-rural lot. Many are long-time owners in a town that has changed around them as people priced out of Mount Holly and Belmont moved further out.",
+    "localChallenges": "Manufactured housing is the specific Stanley complication. Lenders treat a manufactured home very differently from a site-built house: the home must generally be permanently affixed and the title retired and converted to real property, or conventional financing is simply unavailable. Many Stanley properties never completed that conversion, which means the seller discovers at contract time that most buyers cannot get a loan. Older homes on acreage hit a version of the same wall through well and septic conditions.",
+    "cityFaq": [
+      {
+        "q": "I have a manufactured home on land I own in Stanley. Will you buy it?",
+        "a": "Yes. We buy manufactured homes on owned land, including ones where the title was never retired and converted to real property. That conversion issue is the most common reason these sales fall apart with a financed buyer and it is not an obstacle for a cash purchase."
+      },
+      {
+        "q": "My property is a few acres outside town. Is that a problem?",
+        "a": "No. Land with the house is common in Stanley and we are comfortable with it. It is worth telling us about any easements, shared driveways, or right-of-way arrangements early, since the title search will surface them anyway."
+      }
+    ]
+  },
+  {
+    "slug": "lincolnton",
+    "name": "Lincolnton",
+    "county": "Lincoln",
+    "countySeat": true,
+    "state": "NC",
+    "tier": 2,
+    "zips": [
+      "28092",
+      "28093"
+    ],
+    "population": 11000,
+    "medianHomeValue": null,
+    "medianDaysOnMarket": null,
+    "monthsInventory": null,
+    "marketDataAsOf": null,
+    "marketDataSource": null,
+    "schoolDistrict": "Lincoln County Schools",
+    "courthouse": "Lincoln County Courthouse, 1 Court Square, Lincolnton",
+    "neighborhoods": [
+      "Downtown Lincolnton",
+      "Ramsour's Mill area",
+      "Boger City",
+      "South Aspen"
+    ],
+    "landmarks": [
+      "the Battle of Ramsour's Mill site",
+      "the Lincoln Cultural Center",
+      "the historic Court Square",
+      "Betty G. Ross Park"
+    ],
+    "nearby": [
+      "cherryville",
+      "stanley",
+      "shelby"
+    ],
+    "combos": [],
+    "housingStock": "Lincolnton is the Lincoln County seat, with a historic downtown and a ring of early-1900s housing around it, plus mill-era housing from the old Lincolnton textile operations. Lincoln County probate and foreclosure matters run through the courthouse on Court Square.",
+    "whyWeBuyHere": "Lincolnton sits just outside Gaston and Cleveland, and we buy here because the drive is short and the situations are the same: estates, pre-foreclosures, and houses that need more work than the owner wants to fund.",
+    "sellerProfile": "Lincolnton sellers reach us through the same channels as Cleveland and Gaston County: estates being settled at the Court Square courthouse, owners who have fallen behind, and people who have inherited a house in a county they no longer live in.",
+    "localChallenges": "Lincoln County sits just outside the two counties most cash buyers concentrate on, which cuts both ways. There is less competition among buyers, so unsolicited offers here tend to be lower and lazier. But there are also fewer retail buyers driving out from Charlotte than there are in Belmont or Mount Holly, so a house needing work can sit on the market a long time before anyone willing to take the project appears. The older housing around downtown and the former Lincolnton textile operations carries the usual pre-war systems and structural questions.",
+    "cityFaq": [
+      {
+        "q": "Do you really buy in Lincoln County, or only Gaston and Cleveland?",
+        "a": "We buy in Lincoln County regularly. Lincolnton is a short drive and the situations are identical to the ones we handle in Shelby and Gastonia. Probate and foreclosure matters here run through the courthouse on Court Square."
+      },
+      {
+        "q": "I have gotten low offers from out-of-town buyers. Why would yours be different?",
+        "a": "It might not be, and you should compare. What we will do that most mailer buyers will not is walk the house, show you the four numbers behind the offer, and commit in writing to no inspection contingency, so the number cannot drop after you have signed."
+      }
+    ]
+  }
+]

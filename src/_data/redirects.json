@@ -1,0 +1,19 @@
+[
+  { "from": "/why/", "to": "/why-sell-to-us/" },
+  { "from": "/why.html", "to": "/why-sell-to-us/" },
+  { "from": "/services/", "to": "/how-it-works/" },
+  { "from": "/services.html", "to": "/how-it-works/" },
+  { "from": "/how/", "to": "/how-it-works/" },
+  { "from": "/how.html", "to": "/how-it-works/" },
+  { "from": "/intel/", "to": "/" },
+  { "from": "/intel.html", "to": "/" },
+  { "from": "/intel/loi_creator/", "to": "/" },
+  { "from": "/team/", "to": "/about/" },
+  { "from": "/team.html", "to": "/about/" },
+  { "from": "/about.html", "to": "/about/" },
+  { "from": "/submit-a-deal/", "to": "/get-offer/" },
+  { "from": "/contacts/", "to": "/contact/" },
+  { "from": "/request-access/", "to": "/contact/" },
+  { "from": "/legal/terms/", "to": "/terms/" },
+  { "from": "/legal/privacy/", "to": "/privacy/" }
+]

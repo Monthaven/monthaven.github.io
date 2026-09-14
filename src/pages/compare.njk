@@ -1,0 +1,98 @@
+---
+pageType: page
+title: "Cash Offer vs. Real Estate Agent vs. iBuyer | Honest Comparison"
+description: "An honest comparison of your three options for selling a house in Gaston or Cleveland County NC: a cash buyer, listing with an agent, or an iBuyer. Including when we are the wrong choice."
+breadcrumbs:
+  - name: "Home"
+    url: "/"
+  - name: "Cash vs. Agent"
+    url: "/compare/"
+---
+{% from "components/lead-form.njk" import leadForm with context %}
+{% import "components/blocks.njk" as b with context %}
+
+<section class="section section--soft">
+  <div class="wrap--narrow">
+    <p class="eyebrow">An honest comparison</p>
+    <h1>Cash buyer, real estate agent, or iBuyer &mdash; which is actually right for you?</h1>
+    <p class="lead mt-5">
+      We'd rather lose a deal than take one that shouldn't have been ours. Here is a
+      straight comparison of all three, including the cases where you should not sell to us.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="table-scroll">
+      <table>
+        <caption>Typical outcomes for a house in Gaston or Cleveland County, NC. Your situation may differ.</caption>
+        <thead>
+          <tr>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">Cash buyer (us)</th>
+            <th scope="col">Listing with an agent</th>
+            <th scope="col">iBuyer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Sale price</th><td>Below retail</td><td>Highest, if it appraises and closes</td><td>Near retail, before fees</td></tr>
+          <tr><th scope="row">Commission</th><td>None</td><td>Typically 5&ndash;6%</td><td>None, but a service fee usually applies</td></tr>
+          <tr><th scope="row">Service fee</th><td>None</td><td>None</td><td>Commonly 5&ndash;8% of the price</td></tr>
+          <tr><th scope="row">Seller closing costs</th><td>We pay them</td><td>You pay them</td><td>Usually you pay them</td></tr>
+          <tr><th scope="row">Repairs before listing</th><td>None</td><td>Usually needed to show well</td><td>Usually needed to qualify</td></tr>
+          <tr><th scope="row">Repair deductions after inspection</th><td>None</td><td>Commonly renegotiated</td><td>Commonly deducted from the offer</td></tr>
+          <tr><th scope="row">Will they buy a house in poor condition?</th><td>Yes</td><td>Listable, but the buyer pool shrinks to cash</td><td>Usually no &mdash; most decline older or damaged homes</td></tr>
+          <tr><th scope="row">Showings</th><td>One walkthrough</td><td>Ongoing</td><td>Usually a virtual or single assessment</td></tr>
+          <tr><th scope="row">Risk of falling through</th><td>Very low &mdash; no loan</td><td>Real &mdash; financing and appraisal</td><td>Moderate &mdash; offers can be revised after assessment</td></tr>
+          <tr><th scope="row">Time to close</th><td>{{ site.closeDaysMin }}&ndash;{{ site.closeDaysMax }} days</td><td>Often 60&ndash;90 days</td><td>2&ndash;6 weeks</td></tr>
+          <tr><th scope="row">Do they operate in Gaston/Cleveland County?</th><td>Yes, we live and work here</td><td>Yes</td><td>Coverage varies and is often limited outside Charlotte proper</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section--warm">
+  <div class="wrap--narrow stack-lg">
+    <h2>When you should <em>not</em> sell to us</h2>
+    <p>This is the part most cash-buyer websites leave out. Do not sell to us if:</p>
+    <ul>
+      <li><strong>Your house is in good condition and you have two or three months.</strong>
+      List it. Even after a 6% commission you will very likely net more than our offer.</li>
+      <li><strong>You are only a little behind and can catch up.</strong> Call your servicer
+      about a repayment plan or a loan modification first. Selling should be the fallback,
+      not the first move.</li>
+      <li><strong>You owe more than the house is worth.</strong> A cash sale usually cannot
+      work. Ask your lender about a short sale.</li>
+      <li><strong>One spouse can refinance and keep the house in a divorce.</strong> That is
+      generally a better outcome than selling.</li>
+      <li><strong>Your relocation package includes a guaranteed buyout.</strong> Compare it
+      carefully. Sometimes it beats us.</li>
+    </ul>
+    <p>
+      We will say all of this on the phone too. Telling someone the truth costs us one deal;
+      taking a deal we shouldn't have costs us a reputation in a county this size.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap--narrow stack-lg">
+    <h2>When a cash sale genuinely is the better deal</h2>
+    <ul>
+      <li>The house needs more work than you can fund, and retail buyers can't get financing on it.</li>
+      <li>You have a hard deadline &mdash; a foreclosure sale date, a job start, a court date.</li>
+      <li>The house is inherited, full, and three hours away.</li>
+      <li>You have tenants you'd have to evict before you could list.</li>
+      <li>You've already had a listing fall through at financing and can't take that risk again.</li>
+      <li>You simply want it done, and the certainty is worth more to you than the last few percent.</li>
+    </ul>
+  </div>
+</section>
+
+{{ b.ctaBand("Get the number, then decide", "A written offer costs you nothing and takes " + site.offerWindowHours + " hours. Compare it against an agent's estimate with real figures instead of guesses.") }}
+
+<section class="section">
+  <div class="wrap--narrow">{{ leadForm("bottom-form", "full") }}</div>
+</section>

@@ -2,53 +2,27 @@ name: site-ci
 
 on:
   push:
+    branches-ignore: [ main ]
   pull_request:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Detect Node workspace
-        id: detect
-        run: |
-          if [ -f package.json ]; then
-            echo "node_project=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "node_project=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Setup Node.js
-        if: steps.detect.outputs.node_project == 'true'
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
-      - name: Install dependencies
-        if: steps.detect.outputs.node_project == 'true'
-        run: npm ci
-
-      - name: Lint
-        if: steps.detect.outputs.node_project == 'true'
-        run: npm run lint
-
-      - name: Typecheck
-        if: steps.detect.outputs.node_project == 'true'
-        run: npm run typecheck
+      - run: npm ci
 
       - name: Build
-        if: steps.detect.outputs.node_project == 'true'
         run: npm run build
 
-      - name: Lighthouse CI
-        if: steps.detect.outputs.node_project == 'true'
-        run: npx @lhci/cli autorun || echo "LHCI warnings only"
+      - name: Verify links, assets, canonicals and frozen URLs
+        run: node scripts/check-links.mjs
 
-      - name: Static site verification
-        if: steps.detect.outputs.node_project == 'false'
-        run: |
-          echo "Static site detected; skipping Node-based pipeline."
-          test -f index.html
+      - name: Verify content depth and uniqueness
+        run: node scripts/check-content.mjs

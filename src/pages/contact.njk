@@ -1,0 +1,55 @@
+---
+pageType: page
+title: "Contact Monthaven Home Buyers | Gaston & Cleveland County NC"
+description: "Call, text, or email Monthaven Home Buyers. We buy houses for cash across Gaston, Cleveland and Lincoln County, North Carolina."
+breadcrumbs:
+  - name: "Home"
+    url: "/"
+  - name: "Contact"
+    url: "/contact/"
+---
+{% from "components/lead-form.njk" import leadForm with context %}
+
+<section class="section section--soft">
+  <div class="wrap--narrow">
+    <p class="eyebrow">Contact</p>
+    <h1>Get in touch</h1>
+    <p class="lead mt-5">
+      The fastest way to get an answer is to call or text. A person picks up.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap grid grid--split">
+    <div class="stack-lg">
+      <div>
+        <h2>Call or text</h2>
+        <p class="lead"><a href="tel:{{ site.phoneRaw }}">{{ site.phoneDisplay }}</a></p>
+        <p class="small muted">{{ site.businessHours }}</p>
+      </div>
+      <div>
+        <h2>Email</h2>
+        <p class="lead"><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      </div>
+      <div>
+        <h2>Where we work</h2>
+        <p>
+          Gaston, Cleveland, and Lincoln counties, North Carolina. We're a service-area
+          business, so we come to the property rather than asking you to come to an office.
+        </p>
+        <p><a href="/service-areas/">See every city we buy in &rarr;</a></p>
+      </div>
+      <div>
+        <h2>Just want a number?</h2>
+        <p>
+          Use the form. You'll have a written offer within {{ site.offerWindowHours }} hours
+          and there's no obligation attached to it.
+        </p>
+      </div>
+    </div>
+    <div>
+      {{ leadForm("contact-form", "full", null, null, "Tell us about the property") }}
+    </div>
+  </div>
+</section>

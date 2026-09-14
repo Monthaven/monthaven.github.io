@@ -1,0 +1,17 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for page in collections.all %}
+{%- if page.data.sitemap !== false and not page.data.eleventyExcludeFromCollections and "noindex" not in (page.data.robots or "") %}
+  <url>
+    <loc>{{ page.url | absoluteUrl(site.url) }}</loc>
+    <lastmod>{{ page.date | isoDate }}</lastmod>
+    <changefreq>{% if page.url == "/" %}weekly{% elif page.data.pageType == "post" %}monthly{% else %}monthly{% endif %}</changefreq>
+    <priority>{% if page.url == "/" %}1.0{% elif page.data.pageType == "city" %}0.9{% elif page.data.pageType == "situation" %}0.85{% elif page.data.pageType == "legal" %}0.3{% else %}0.7{% endif %}</priority>
+  </url>
+{%- endif %}
+{%- endfor %}
+</urlset>

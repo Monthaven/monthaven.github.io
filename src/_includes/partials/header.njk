@@ -1,0 +1,25 @@
+<header class="site-header">
+  <div class="wrap site-header__bar">
+    <a class="brand" href="/">
+      <span class="brand__name">{{ site.name }}</span>
+      <span class="brand__sub">Gaston &amp; Cleveland County, NC</span>
+    </a>
+
+    <a class="header-phone" href="tel:{{ site.phoneRaw }}" data-cta="header-call">
+      <span class="header-phone__label">Call or text</span>
+      <span class="header-phone__num">{{ site.phoneDisplay }}</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+
+    <nav id="primary-nav" class="nav" aria-label="Primary">
+      <a href="/how-it-works/">How It Works</a>
+      <a href="/service-areas/">Areas We Buy</a>
+      <a href="/compare/">Cash vs. Agent</a>
+      <a href="/reviews/">Reviews</a>
+      <a href="/about/">About</a>
+      <a href="/faq/">FAQ</a>
+      <a class="btn btn--cta" href="/get-offer/">Get My Cash Offer</a>
+    </nav>
+  </div>
+</header>

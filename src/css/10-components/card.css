@@ -1,0 +1,105 @@
+.card {
+  background: #fff;
+  border: 1px solid var(--c-line);
+  border-radius: var(--r);
+  padding: var(--sp-5);
+}
+.card h3 {
+  margin-bottom: var(--sp-2);
+}
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+.card--link {
+  text-decoration: none;
+  display: block;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.card--link:hover {
+  border-color: var(--c-green-600);
+  box-shadow: var(--shadow);
+}
+.card--link h3 {
+  color: var(--c-green-800);
+}
+.card--link p {
+  color: var(--c-body);
+}
+
+.card--accent {
+  border-left: 4px solid var(--c-cta);
+}
+
+.steps {
+  list-style: none;
+  padding: 0;
+  counter-reset: step;
+  display: grid;
+  gap: var(--sp-5);
+}
+.steps > li {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: var(--sp-4);
+  align-items: start;
+}
+.steps > li::before {
+  content: counter(step);
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--c-green-700);
+  color: #fff;
+  font-weight: 700;
+}
+.steps h3 {
+  margin-bottom: var(--sp-1);
+}
+.steps p {
+  color: var(--c-body);
+}
+
+.answer-box {
+  background: var(--c-bg-warm);
+  border-left: 4px solid var(--c-cta);
+  border-radius: 0 var(--r) var(--r) 0;
+  padding: var(--sp-5);
+  font-size: var(--step-1);
+  color: var(--c-ink);
+}
+
+.pill-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  list-style: none;
+  padding: 0;
+}
+.pill-links a {
+  display: inline-block;
+  padding: var(--sp-2) var(--sp-4);
+  border: 1px solid var(--c-line);
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--c-green-800);
+  background: #fff;
+}
+.pill-links a:hover {
+  border-color: var(--c-green-600);
+  background: var(--c-green-100);
+}
+
+.placeholder-note {
+  background: #fff6e5;
+  border: 2px dashed var(--c-cta);
+  border-radius: var(--r);
+  padding: var(--sp-4);
+  font-size: var(--step--1);
+  color: #7a4d00;
+}

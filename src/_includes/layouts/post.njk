@@ -1,0 +1,29 @@
+---
+layout: layouts/base.njk
+---
+{% import "components/blocks.njk" as b with context %}
+
+<article class="section">
+  <div class="wrap--narrow stack-lg">
+    <h1>{{ title }}</h1>
+    <p class="small muted">
+      Published {{ page.date | readableDate }}{% if updated %} &middot; Updated {{ updated | readableDate }}{% endif %}
+      &middot; by {{ site.name }}
+    </p>
+    {% if directAnswer %}
+    <div class="answer-box"><p>{{ directAnswer }}</p></div>
+    {% endif %}
+    {{ content | safe }}
+  </div>
+</article>
+
+{% if faqItems and faqItems.length %}
+<section class="section section--soft">
+  <div class="wrap--narrow">
+    <h2 class="mb-5">Questions people ask</h2>
+    {{ b.faqList(faqItems) }}
+  </div>
+</section>
+{% endif %}
+
+{{ b.ctaBand() }}

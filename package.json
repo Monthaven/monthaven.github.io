@@ -1,0 +1,19 @@
+{
+  "name": "monthaven-home-buyers",
+  "version": "1.0.0",
+  "description": "Monthaven Home Buyers - cash home buyer site for Gaston & Cleveland County, NC",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "check": "node scripts/check-links.mjs && node scripts/check-content.mjs",
+    "lint": "node scripts/check-links.mjs",
+    "typecheck": "echo \"no typecheck for this project\"",
+    "test": "npm run build && npm run check",
+    "check:launch": "node scripts/check-links.mjs && node scripts/check-content.mjs --launch"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.2"
+  }
+}

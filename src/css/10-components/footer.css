@@ -1,0 +1,87 @@
+.site-footer {
+  background: var(--c-green-900);
+  color: #a9c6b8;
+  padding-block: var(--sp-7) var(--sp-6);
+  font-size: var(--step--1);
+  margin-top: auto;
+}
+.site-footer h2,
+.site-footer h3 {
+  color: #fff;
+  font-size: var(--step-0);
+  margin-bottom: var(--sp-3);
+}
+.site-footer a {
+  color: #c9ded4;
+}
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: var(--sp-2);
+}
+.footer__cols {
+  display: grid;
+  gap: var(--sp-6);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+}
+.footer__bottom {
+  margin-top: var(--sp-6);
+  padding-top: var(--sp-5);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3) var(--sp-5);
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: #86a798;
+}
+.footer__disclaimer {
+  margin-top: var(--sp-4);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #7e9e90;
+}
+
+/* Sticky mobile call/text bar. Hidden on desktop where the header phone shows. */
+.sticky-cta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--c-line);
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.12);
+}
+.sticky-cta a {
+  padding: var(--sp-4) var(--sp-2);
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: var(--step--1);
+  background: #fff;
+  color: var(--c-green-800);
+  min-height: 52px;
+  display: grid;
+  place-items: center;
+}
+.sticky-cta a.is-primary {
+  background: var(--c-cta);
+  color: var(--c-cta-ink);
+}
+@media (min-width: 1120px) {
+  .sticky-cta {
+    display: none;
+  }
+}
+body {
+  padding-bottom: 56px;
+}
+@media (min-width: 1120px) {
+  body {
+    padding-bottom: 0;
+  }
+}

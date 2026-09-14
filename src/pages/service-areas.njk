@@ -1,0 +1,70 @@
+---
+pageType: page
+title: "Where We Buy Houses | Gaston, Cleveland & Lincoln County NC"
+description: "Cities and towns where Monthaven buys houses for cash: Gastonia, Shelby, Kings Mountain, Belmont, Mount Holly, Bessemer City, Cherryville, Dallas, Stanley and Lincolnton NC."
+breadcrumbs:
+  - name: "Home"
+    url: "/"
+  - name: "Areas We Buy"
+    url: "/service-areas/"
+---
+{% from "components/lead-form.njk" import leadForm with context %}
+{% import "components/blocks.njk" as b with context %}
+
+<section class="section section--soft">
+  <div class="wrap--narrow">
+    <p class="eyebrow">Service area</p>
+    <h1>Where we buy houses</h1>
+    <p class="lead mt-5">
+      Gaston, Cleveland, and Lincoln counties in North Carolina. We keep the radius tight on
+      purpose &mdash; we walk every property ourselves, and we can't do that well across
+      half the state.
+    </p>
+  </div>
+</section>
+
+{% for county in site.serviceAreaCounties %}
+{% set countyName = county | replace(" County", "") %}
+{% set countyCities = cities | where("county", countyName) %}
+{% if countyCities.length %}
+<section class="section{% if loop.index0 % 2 == 1 %} section--soft{% endif %}">
+  <div class="wrap">
+    <h2 class="mb-4">{{ county }}, NC</h2>
+    <div class="grid grid--3">
+      {% for c in countyCities %}
+      <a class="card card--link" href="/sell-my-house-fast-{{ c.slug }}-nc/">
+        <h3>{{ c.name }}, NC</h3>
+        <p>{{ c.whyWeBuyHere }}</p>
+        <p class="small muted mt-4">
+          {% for z in c.zips %}{{ z }}{% if not loop.last %} &middot; {% endif %}{% endfor %}
+        </p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endfor %}
+
+<section class="section">
+  <div class="wrap--narrow stack-lg">
+    <h2>Don't see your town?</h2>
+    <p>
+      This list is where we buy most often, not a fence. We regularly buy in smaller
+      communities across all three counties &mdash; McAdenville, Ranlo, Lowell, Cramerton,
+      High Shoals, Grover, Boiling Springs, Lattimore, Waco, Casar, Vale, Iron Station and
+      others. If your house is in Gaston, Cleveland, or Lincoln County, ask.
+    </p>
+    <p>
+      If you're outside those three counties, tell us anyway. If we can't buy it, we'll say
+      so quickly rather than waste your time, and we'll usually know someone who does work
+      that area.
+    </p>
+  </div>
+</section>
+
+{{ b.ctaBand() }}
+
+<section class="section">
+  <div class="wrap--narrow">{{ leadForm("bottom-form", "full") }}</div>
+</section>

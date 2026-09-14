@@ -1,0 +1,44 @@
+{
+  "general": [
+    {
+      "q": "How do you decide what to offer for my house?",
+      "a": "We start with what comparable renovated houses in your neighborhood have actually sold for in the last six months. From that we subtract what it will cost us to get your house to that condition, the cost of holding it while the work is done, and our margin. We will show you those figures on the call. Any buyer who will not show you their math is hiding something."
+    },
+    {
+      "q": "Will you pay full market value?",
+      "a": "No, and nobody buying for cash will. We buy houses that need work, at a price that leaves room to do the work. What we offer instead is certainty, speed, no repairs, no commission, no closing costs, and no financing contingency. If your house is in good condition and you have three months, list it with an agent. We will tell you that on the call rather than waste your time."
+    },
+    {
+      "q": "Are there any fees or commissions?",
+      "a": "No. No commission, no buyer's fee, no service charge, and we pay the standard seller closing costs including the attorney fee, title work, recording fees, and transfer tax. The number on the offer is the number you walk away with, subject only to your loan payoff and any liens on the property."
+    },
+    {
+      "q": "How fast can you close?",
+      "a": "Typically 7 to 21 days from an accepted offer. The floor is set by title work and the closing attorney's calendar, not by our funding. If you need longer, we will wait. If you have a foreclosure sale date, tell us on the first call and we will tell you honestly whether we can beat it."
+    },
+    {
+      "q": "Do I have to clean or repair anything?",
+      "a": "No. Not the roof, not the HVAC, not the carpet. You do not have to clean it out either. Take what you want and leave everything else where it is."
+    },
+    {
+      "q": "Is your offer going to change after I accept it?",
+      "a": "No. There is no inspection contingency and no renegotiation after the walkthrough. The number we put in writing is the number at closing. Being re-traded at the last minute is the most common complaint people have about cash buyers, and it is the one thing we will not do."
+    },
+    {
+      "q": "Am I obligated to accept?",
+      "a": "No. The offer is free, there is no obligation, and there is no pressure. If you want to take it to an agent for a second opinion, do that. A number in writing is useful even if you never sell to us."
+    },
+    {
+      "q": "What kinds of houses do you buy?",
+      "a": "Single-family houses, townhomes, duplexes and small multifamily, manufactured homes on owned land, and vacant lots, in Gaston, Cleveland, and Lincoln counties. Any condition, occupied or vacant, tenant-occupied or not."
+    },
+    {
+      "q": "Who actually handles the closing?",
+      "a": "A North Carolina closing attorney. North Carolina requires attorney-supervised real estate closings, which is good for you: an independent attorney searches title, confirms the liens, and disburses the funds. You are welcome to use your own."
+    },
+    {
+      "q": "What if I owe more than the house is worth?",
+      "a": "Then a cash sale may not work, and we will tell you that directly instead of stringing you along. In some cases a short sale with your lender's approval is possible. We will point you toward it rather than pretend we can help when we cannot."
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+.lead-form {
+  background: #fff;
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+  box-shadow: var(--shadow);
+}
+.lead-form--onDark {
+  border-color: transparent;
+  box-shadow: var(--shadow-lg);
+}
+
+.lead-form__title {
+  font-size: var(--step-2);
+  color: var(--c-ink);
+  margin-bottom: var(--sp-2);
+}
+.lead-form__sub {
+  font-size: var(--step--1);
+  color: var(--c-muted);
+  margin-bottom: var(--sp-4);
+}
+
+.field + .field {
+  margin-top: var(--sp-4);
+}
+.field label {
+  display: block;
+  font-weight: 600;
+  font-size: var(--step--1);
+  color: var(--c-ink);
+  margin-bottom: var(--sp-2);
+}
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: var(--sp-3);
+  min-height: 48px;
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-sm);
+  background: #fff;
+  color: var(--c-ink);
+}
+.field textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--c-green-600);
+}
+.field__help {
+  font-size: 0.8rem;
+  color: var(--c-muted);
+  margin-top: var(--sp-2);
+}
+.req {
+  color: var(--c-danger);
+}
+
+.field-row {
+  display: grid;
+  gap: var(--sp-4);
+  margin-top: var(--sp-4);
+}
+/* Grid children must not inherit the stacked-field top margin, or the two
+   columns start at different heights. */
+.field-row > .field,
+.field-row > .field + .field {
+  margin-top: 0;
+}
+@media (min-width: 560px) {
+  .field-row--2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* A2P consent block. Revealed by JS when a phone number is entered.
+   Must stay on the same step as the phone field and the submit that sends it. */
+.sms-consent {
+  margin-top: var(--sp-4);
+  padding: var(--sp-4);
+  background: var(--c-bg-soft);
+  border-radius: var(--r-sm);
+  border: 1px solid var(--c-line);
+}
+.sms-consent__row {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: flex-start;
+  cursor: pointer;
+}
+.sms-consent input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  min-height: 0;
+  margin-top: 2px;
+  flex: 0 0 auto;
+}
+.sms-consent__text {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--c-body);
+}
+
+/* Honeypot: off-screen, never display:none (bots skip hidden fields). */
+.hp {
+  position: absolute;
+  left: -5000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-note {
+  font-size: 0.78rem;
+  color: var(--c-muted);
+  margin-top: var(--sp-3);
+  text-align: center;
+}
+
+.form-status {
+  margin-top: var(--sp-4);
+  padding: var(--sp-4);
+  border-radius: var(--r-sm);
+  font-size: var(--step--1);
+}
+.form-status--ok {
+  background: var(--c-ok-bg);
+  color: var(--c-ok);
+  border: 1px solid currentColor;
+}
+.form-status--err {
+  background: var(--c-danger-bg);
+  color: var(--c-danger);
+  border: 1px solid currentColor;
+}

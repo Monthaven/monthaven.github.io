@@ -1,0 +1,143 @@
+---
+permalink: /index.html
+pageType: home
+useGeneralFaqs: true
+faqLimit: 6
+title: "We Buy Houses in Gaston & Cleveland County NC | Cash Offer in 24 Hours"
+description: "Sell your house fast for cash in Gastonia, Shelby, Kings Mountain and across Gaston & Cleveland County NC. Any condition, no repairs, no commission, no closing costs. Written offer in 24 hours."
+breadcrumbs:
+  - name: "Home"
+    url: "/"
+---
+{% from "components/lead-form.njk" import leadForm with context %}
+{% import "components/blocks.njk" as b with context %}
+
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <p class="eyebrow">Gaston &middot; Cleveland &middot; Lincoln County, NC</p>
+      <h1>We buy houses in Gaston &amp; Cleveland County. Any condition, any situation.</h1>
+      <p class="hero__sub">
+        A written cash offer within {{ site.offerWindowHours }} hours. You pick the closing date.
+        No repairs, no commission, no closing costs, and no obligation to take it.
+      </p>
+      <ul class="hero__points">
+        <li>Don't fix anything &mdash; we buy exactly as the house stands</li>
+        <li>Don't clean it out &mdash; take what you want, leave the rest</li>
+        <li>No commission and no closing costs, ever</li>
+        <li>Close in {{ site.closeDaysMin }}&ndash;{{ site.closeDaysMax }} days, or whenever suits you</li>
+        <li>No inspection contingency, so the number doesn't move</li>
+      </ul>
+      <p class="hero__trust">
+        Rather just talk? Call or text
+        <a href="tel:{{ site.phoneRaw }}" style="color:#fff"><strong>{{ site.phoneDisplay }}</strong></a>.
+        {{ site.businessHours }}.
+      </p>
+    </div>
+    <div>
+      {{ leadForm("hero-form", "hero", null, null, "What's your house worth to us?", "Start with the address. Written offer within " + site.offerWindowHours + " hours.", true) }}
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="wrap">
+    <ul>
+      <li>Written offers, not verbal estimates</li>
+      <li>We walk every property ourselves</li>
+      <li>Closed through a North Carolina attorney</li>
+      <li>We'll tell you when listing beats selling to us</li>
+    </ul>
+  </div>
+</div>
+
+<section class="section">
+  <div class="wrap--narrow">
+    <div class="answer-box">
+      <p>
+        <strong>How does selling a house for cash work?</strong> You tell us the address and
+        what's going on. We walk the property in person, then send a written offer within
+        {{ site.offerWindowHours }} hours with the math behind it. If you accept, a North
+        Carolina closing attorney handles title and closing, usually in
+        {{ site.closeDaysMin }} to {{ site.closeDaysMax }} days. You make no repairs, pay no
+        commission, and pay no closing costs.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="wrap">
+    <h2>Why people call us</h2>
+    <p class="lead mt-4 mb-6">
+      Almost nobody sells to a cash buyer because they want top dollar. They sell because
+      something else matters more &mdash; a deadline, a house they can't fix, a situation
+      they need to be done with.
+    </p>
+    {{ b.situationGrid() }}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap--narrow">
+    <h2 class="mb-6">How it works</h2>
+    {{ b.howItWorks() }}
+    <p class="mt-6"><a href="/how-it-works/">See the whole process in detail &rarr;</a></p>
+  </div>
+</section>
+
+<section class="section section--warm">
+  <div class="wrap--narrow">
+    <h2 class="mb-5">Cash offer vs. listing with an agent</h2>
+    {{ b.comparison() }}
+    {{ b.valueStack() }}
+    <p class="mt-5"><a href="/compare/">The full comparison, including iBuyers &rarr;</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="mb-5">Houses we've bought</h2>
+    {{ b.caseStudies() }}
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="wrap">
+    <h2 class="mb-5">What sellers say</h2>
+    {{ b.testimonials() }}
+    <p class="mt-6"><a href="/reviews/">Read more &rarr;</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="mb-4">Where we buy houses</h2>
+    <p class="lead mb-5">
+      We work Gaston, Cleveland, and Lincoln counties. Close enough that someone can be at
+      your door tomorrow, not a call center three states away.
+    </p>
+    <ul class="pill-links">
+      {% for c in cities %}
+      <li><a href="/sell-my-house-fast-{{ c.slug }}-nc/">{{ c.name }}, NC</a></li>
+      {% endfor %}
+    </ul>
+    <p class="mt-5"><a href="/service-areas/">Not on the list? We probably still buy there &rarr;</a></p>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="wrap--narrow">
+    <h2 class="mb-5">Common questions</h2>
+    {{ b.faqList(faqItems) }}
+    <p class="mt-6"><a href="/faq/">Every question we get asked &rarr;</a></p>
+  </div>
+</section>
+
+{{ b.ctaBand("Find out what your house is worth to us", "Start with the address. A written offer within " + site.offerWindowHours + " hours, no obligation, and we'll tell you honestly if listing would net you more.") }}
+
+<section class="section">
+  <div class="wrap--narrow">
+    {{ leadForm("bottom-form", "full") }}
+  </div>
+</section>

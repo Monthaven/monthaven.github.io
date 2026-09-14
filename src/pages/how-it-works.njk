@@ -1,0 +1,125 @@
+---
+pageType: page
+useGeneralFaqs: true
+title: "How Selling Your House to Monthaven Works | 4 Steps, 7 Days"
+description: "The whole process, start to finish: how we price your house, what the walkthrough involves, what the written offer contains, and what happens at a North Carolina closing."
+breadcrumbs:
+  - name: "Home"
+    url: "/"
+  - name: "How It Works"
+    url: "/how-it-works/"
+---
+{% from "components/lead-form.njk" import leadForm with context %}
+{% import "components/blocks.njk" as b with context %}
+
+<section class="section section--soft">
+  <div class="wrap--narrow">
+    <p class="eyebrow">How it works</p>
+    <h1>Four steps, no surprises, and you can stop at any point.</h1>
+    <p class="lead mt-5">
+      Most "we buy houses" companies keep the process vague on purpose, because the vagueness
+      is where the re-trade happens. Here is exactly what we do, in order, including the part
+      where we show you our math.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap--narrow">
+    {{ b.howItWorks() }}
+  </div>
+</section>
+
+<section class="section section--warm">
+  <div class="wrap--narrow stack-lg">
+    <h2>How we actually price your house</h2>
+    <p>
+      Every cash buyer uses roughly the same formula. Most of them won't show it to you.
+      Ours works like this:
+    </p>
+    <div class="table-scroll">
+      <table>
+        <caption>The four inputs behind every offer we make. We'll walk through your specific numbers on the call.</caption>
+        <tbody>
+          <tr>
+            <th scope="row">After-repair value</th>
+            <td>What comparable <em>renovated</em> houses within about a mile of yours have actually
+            sold for in the last six months. Not list prices &mdash; closed sales.</td>
+          </tr>
+          <tr>
+            <th scope="row">Minus repair cost</th>
+            <td>What it will cost us to get your house to that condition. Roof, systems,
+            kitchen, bath, flooring, whatever it needs.</td>
+          </tr>
+          <tr>
+            <th scope="row">Minus carrying and selling costs</th>
+            <td>Taxes, insurance, utilities, and financing while the work is done, plus the
+            commission and closing costs <em>we</em> pay when we eventually resell it.</td>
+          </tr>
+          <tr>
+            <th scope="row">Minus our margin</th>
+            <td>We're a business and we're not going to pretend otherwise. If there's no
+            margin in a house, we can't buy it, and we'll tell you that instead of
+            lowballing you and hoping.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      This is why a cash offer is below retail, and it is also why the discount is bigger on
+      a house that needs a roof than on one that doesn't. If someone offers you a number
+      without looking at the house, they are planning to lower it later.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap--narrow stack-lg">
+    <h2>What the written offer contains</h2>
+    <ul>
+      <li>The purchase price, in writing.</li>
+      <li>What we pay: closing costs, attorney fee, title work, recording, transfer tax.</li>
+      <li>What you pay: nothing to us. Your loan payoff and any liens come out of proceeds.</li>
+      <li>The closing date you chose, and any post-closing occupancy you asked for.</li>
+      <li>An explicit statement that there is no inspection contingency &mdash; meaning the
+      price cannot be renegotiated after you sign.</li>
+    </ul>
+    <p>
+      You are welcome to take it to an agent or an attorney for a second opinion. A written
+      number is useful to you even if you never sell it to us.
+    </p>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="wrap--narrow stack-lg">
+    <h2>What closing looks like in North Carolina</h2>
+    <p>
+      North Carolina requires that real estate closings be supervised by a licensed attorney.
+      That is genuinely good for you. An independent attorney searches title at the Register
+      of Deeds, confirms every lien and judgment against the property, prepares the deed, and
+      disburses the funds. Nobody has to take our word for anything.
+    </p>
+    <p>
+      We pay the attorney fee and the standard seller closing costs. You're welcome to use
+      your own attorney instead of ours, and some sellers do.
+    </p>
+    <p>
+      If you've already moved out of the area, closings can usually be coordinated remotely.
+      Raise it early so the attorney can set it up.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap--narrow">
+    <h2 class="mb-5">Questions about the process</h2>
+    {{ b.faqList(faqItems) }}
+  </div>
+</section>
+
+{{ b.ctaBand() }}
+
+<section class="section">
+  <div class="wrap--narrow">{{ leadForm("bottom-form", "full") }}</div>
+</section>

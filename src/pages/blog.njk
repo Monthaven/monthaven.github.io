@@ -1,0 +1,39 @@
+---
+permalink: /blog/index.html
+pageType: page
+title: "Blog | Straight Answers for North Carolina Home Sellers"
+description: "Honest guides to selling a house in Gaston, Cleveland and Lincoln County NC — including comparisons of the cash buyers competing for your house."
+breadcrumbs:
+  - name: "Home"
+    url: "/"
+  - name: "Blog"
+    url: "/blog/"
+---
+{% import "components/blocks.njk" as b with context %}
+
+<section class="section section--soft">
+  <div class="wrap--narrow">
+    <p class="eyebrow">Blog</p>
+    <h1>Straight answers for North Carolina home sellers</h1>
+    <p class="lead mt-5">
+      Including honest comparisons of our own competitors. If another buyer is a better fit
+      for your situation, you should know that.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="grid grid--2">
+      {% for post in collections.posts %}
+      <a class="card card--link" href="{{ post.url }}">
+        <h3>{{ post.data.title }}</h3>
+        <p>{{ post.data.description }}</p>
+        <p class="small muted mt-4">{{ post.date | readableDate }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{{ b.ctaBand() }}

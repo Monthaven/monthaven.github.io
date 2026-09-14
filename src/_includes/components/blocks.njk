@@ -1,0 +1,197 @@
+{#- Shared content blocks. Boilerplate repeating across pages is fine and normal;
+    what must stay unique per page is the local/market/proof content. -#}
+
+{% macro howItWorks(city=null) %}
+<ol class="steps">
+  <li>
+    <div>
+      <h3>Tell us about the house</h3>
+      <p>Address, condition, and what's going on. Two minutes on the form or one call
+      to {{ site.phoneDisplay }}. You don't need to have anything ready.</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <h3>We look at it in person</h3>
+      <p>Someone from Monthaven walks{% if city %} the {{ city.name }} property{% else %} the property{% endif %}
+      themselves. No inspector, no contractor parade, no cleaning up first. It takes about 20 minutes.</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <h3>Written offer within {{ site.offerWindowHours }} hours</h3>
+      <p>In writing, with the math behind it. No obligation. If listing with an agent
+      would net you more, we'll say so.</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <h3>You pick the closing date</h3>
+      <p>Usually {{ site.closeDaysMin }} to {{ site.closeDaysMax }} days, at a North Carolina
+      closing attorney. Need longer? We'll wait. Need to stay a few weeks after closing? Ask.</p>
+    </div>
+  </li>
+</ol>
+{% endmacro %}
+
+
+{% macro comparison(city=null) %}
+<div class="table-scroll">
+  <table>
+    <caption>What each route actually costs you{% if city %} in {{ city.name }}{% endif %}. Figures are typical for North Carolina; your situation may differ.</caption>
+    <thead>
+      <tr>
+        <th scope="col">&nbsp;</th>
+        <th scope="col">Selling to Monthaven</th>
+        <th scope="col">Listing with an agent</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><th scope="row">Commission</th><td>None</td><td>Typically 5&ndash;6% of the sale price</td></tr>
+      <tr><th scope="row">Seller closing costs</th><td>We pay them</td><td>You pay them</td></tr>
+      <tr><th scope="row">Repairs before sale</th><td>None &mdash; we buy as-is</td><td>Usually required to show and to pass inspection</td></tr>
+      <tr><th scope="row">Repairs after inspection</th><td>None &mdash; no inspection contingency</td><td>Commonly renegotiated after the buyer's inspection</td></tr>
+      <tr><th scope="row">Cleanout</th><td>Included &mdash; leave what you want</td><td>Your cost</td></tr>
+      <tr><th scope="row">Showings</th><td>One walkthrough</td><td>Ongoing, on the buyer's schedule</td></tr>
+      <tr><th scope="row">Financing falls through?</th><td>Can't &mdash; there's no loan</td><td>A real risk right up to closing day</td></tr>
+      <tr><th scope="row">Time to close</th><td>{{ site.closeDaysMin }}&ndash;{{ site.closeDaysMax }} days, your date</td><td>Often 60&ndash;90 days from listing to funding</td></tr>
+      <tr><th scope="row">Sale price</th><td>Below full retail &mdash; that's the trade</td><td>Full retail, if it appraises and closes</td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="small muted mt-4">
+  We're not going to pretend a cash offer beats a retail sale on price. It doesn't.
+  It beats it on certainty, speed, and everything you don't have to do. If your house
+  shows well and you have three months, list it &mdash; and we'll tell you that on the call.
+</p>
+{% endmacro %}
+
+
+{% macro valueStack() %}
+{% set vs = proof.valueStack %}
+{% set hasNumbers = false %}
+{% for r in vs.rows %}{% if r.amount %}{% set hasNumbers = true %}{% endif %}{% endfor %}
+{% if hasNumbers %}
+<div class="table-scroll">
+  <table>
+    <caption>{{ vs.basisNote }}</caption>
+    <thead><tr><th scope="col">What you skip</th><th scope="col">What it normally costs</th></tr></thead>
+    <tbody>
+      {% for r in vs.rows %}{% if r.amount %}
+      <tr><th scope="row">{{ r.label }}</th><td>{{ r.amount | usd }}</td></tr>
+      {% endif %}{% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+{% endmacro %}
+
+
+{% macro situationGrid(city=null) %}
+<div class="grid grid--3">
+  {% for s in situations %}
+  <a class="card card--link" href="/{{ s.urlPrefix }}-nc/">
+    <h3>{{ s.label }}</h3>
+    <p>{{ s.painPoints[0] }}</p>
+  </a>
+  {% endfor %}
+</div>
+{% endmacro %}
+
+
+{% macro faqList(items) %}
+<div class="faq">
+  {% for f in items %}
+  <details>
+    <summary>{{ f.q }}</summary>
+    <div><p>{{ f.a }}</p></div>
+  </details>
+  {% endfor %}
+</div>
+{% endmacro %}
+
+
+{% macro testimonials(citySlug=null) %}
+{% set real = [] %}
+{% for t in proof.testimonials %}
+  {% if not t.placeholder and (not citySlug or t.citySlug == citySlug) %}
+    {% set real = (real.push(t), real) %}
+  {% endif %}
+{% endfor %}
+{% if real.length %}
+<div class="grid grid--2">
+  {% for t in real %}
+  <figure class="testimonial">
+    <blockquote><p>{{ t.quote }}</p></blockquote>
+    <figcaption>{{ t.name }} &mdash; {{ t.city }}</figcaption>
+  </figure>
+  {% endfor %}
+</div>
+{% else %}
+<p class="placeholder-note">
+  <strong>Awaiting real testimonials.</strong> Nothing is published here until Alec supplies
+  real quotes from real sellers with permission to use them. Fabricated reviews are both a
+  legal problem and the fastest way to lose the trust this page exists to build.
+  Add them to <code>src/_data/proof.json</code>.
+</p>
+{% endif %}
+{% endmacro %}
+
+
+{% macro caseStudies(citySlug=null) %}
+{% set real = [] %}
+{% for c in proof.caseStudies %}
+  {% if not c.placeholder and (not citySlug or c.citySlug == citySlug) %}
+    {% set real = (real.push(c), real) %}
+  {% endif %}
+{% endfor %}
+{% if real.length %}
+<div class="grid grid--3">
+  {% for c in real %}
+  <article class="case-study">
+    <p class="case-study__addr">{{ c.address }}</p>
+    <dl>
+      <dt>Situation</dt><dd>{{ c.situation }}</dd>
+      <dt>Condition</dt><dd>{{ c.condition }}</dd>
+      {% if c.daysToClose %}<dt>Closed in</dt><dd>{{ c.daysToClose }} days</dd>{% endif %}
+      <dt>Outcome</dt><dd>{{ c.outcome }}</dd>
+    </dl>
+  </article>
+  {% endfor %}
+</div>
+{% else %}
+<p class="placeholder-note">
+  <strong>Awaiting real closed deals.</strong> This block stays empty until Alec supplies
+  actual addresses and outcomes. Invented case studies would be the single most damaging
+  thing we could put on this site. Add them to <code>src/_data/proof.json</code>.
+</p>
+{% endif %}
+{% endmacro %}
+
+
+{% macro nearbyCities(city) %}
+{% set near = cities | citiesBySlug(city.nearby) %}
+{% if near.length %}
+<ul class="pill-links">
+  {% for n in near %}
+  <li><a href="/sell-my-house-fast-{{ n.slug }}-nc/">Sell my house fast in {{ n.name }}, NC</a></li>
+  {% endfor %}
+</ul>
+{% endif %}
+{% endmacro %}
+
+
+{% macro ctaBand(heading=null, sub=null) %}
+<section class="section section--dark">
+  <div class="wrap--narrow text-center">
+    <h2>{{ heading or "Find out what your house is worth to us" }}</h2>
+    <p class="lead mt-4" style="color:#c9ded4">
+      {{ sub or ("A written offer within " + site.offerWindowHours + " hours. No fee, no obligation, and no pressure if the number isn't right for you.") }}
+    </p>
+    <div class="btn-row mt-6" style="justify-content:center">
+      <a class="btn btn--cta" href="/get-offer/">Get My Cash Offer</a>
+      <a class="btn btn--on-dark" href="tel:{{ site.phoneRaw }}">Call {{ site.phoneDisplay }}</a>
+    </div>
+  </div>
+</section>
+{% endmacro %}

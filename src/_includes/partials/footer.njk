@@ -1,0 +1,74 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer__cols">
+      <div>
+        <h2>{{ site.name }}</h2>
+        <ul>
+          <li><a href="tel:{{ site.phoneRaw }}">{{ site.phoneDisplay }}</a></li>
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          <li>{{ site.businessHours }}</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Cities we buy in</h3>
+        <ul>
+          {% for c in cities | limit(6) %}
+          <li><a href="/sell-my-house-fast-{{ c.slug }}-nc/">{{ c.name }}, NC</a></li>
+          {% endfor %}
+          <li><a href="/service-areas/">All areas &rarr;</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Situations</h3>
+        <ul>
+          {% for s in situations | limit(5) %}
+          <li><a href="/{{ s.urlPrefix }}-nc/">{{ s.navLabel }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/how-it-works/">How It Works</a></li>
+          <li><a href="/reviews/">Reviews</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+          <li><a href="/legal/sms/">SMS Terms</a></li>
+          <li><a href="/legal/accessibility/">Accessibility</a></li>
+          <li><a href="/text/">Text Updates Opt-In</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="footer__disclaimer">
+      {{ site.name }} is a trade name of {{ site.legalName }}. We are a real estate
+      investment company that buys houses directly. We are not real estate agents, we do
+      not list properties, and we are not attorneys, accountants, or financial advisors.
+      Nothing on this site is legal, tax, or financial advice. Cash offers are based on
+      property condition, location, and comparable sales, and are made in writing with
+      no obligation to accept.
+    </p>
+
+    <div class="footer__bottom">
+      <span>&copy; <span id="current-year">2026</span> {{ site.legalName }}. All rights reserved.</span>
+      <span>Serving Gaston, Cleveland &amp; Lincoln Counties, North Carolina</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a href="tel:{{ site.phoneRaw }}" data-cta="sticky-call">Call {{ site.phoneDisplay }}</a>
+  <a class="is-primary" href="/get-offer/" data-cta="sticky-offer">Get My Cash Offer</a>
+</div>

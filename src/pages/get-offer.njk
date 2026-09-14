@@ -1,0 +1,46 @@
+---
+pageType: page
+title: "Get Your Cash Offer | Written Offer in 24 Hours | Monthaven"
+description: "Start your cash offer. Tell us the property address and we'll send a written, no-obligation offer within 24 hours. Gaston, Cleveland and Lincoln County NC."
+robots: "noindex, follow"
+breadcrumbs:
+  - name: "Home"
+    url: "/"
+  - name: "Get My Cash Offer"
+    url: "/get-offer/"
+---
+{% from "components/lead-form.njk" import leadForm with context %}
+{% import "components/blocks.njk" as b with context %}
+
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <h1>Get your cash offer</h1>
+      <p class="hero__sub">
+        Start with the address. You'll have a written offer within {{ site.offerWindowHours }} hours.
+      </p>
+      <ul class="hero__points">
+        <li>Free, with no obligation to accept</li>
+        <li>No repairs, no cleaning, no showings</li>
+        <li>No commission and no closing costs</li>
+        <li>You pick the closing date</li>
+        <li>We'll tell you honestly if listing would net you more</li>
+      </ul>
+      <p class="hero__trust">
+        Rather talk to a person? Call or text
+        <a href="tel:{{ site.phoneRaw }}" style="color:#fff"><strong>{{ site.phoneDisplay }}</strong></a>.
+        {{ site.businessHours }}.
+      </p>
+    </div>
+    <div>
+      {{ leadForm("offer-form", "full", null, null, "Tell us about the property", "Takes about two minutes.", true) }}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap--narrow">
+    <h2 class="mb-6">What happens after you hit send</h2>
+    {{ b.howItWorks() }}
+  </div>
+</section>

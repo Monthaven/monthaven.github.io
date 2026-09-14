@@ -1,0 +1,41 @@
+{#- Canonical is COMPUTED from page.url. Never hand-type one. -#}
+{%- set canonical = page.url | absoluteUrl(site.url) -%}
+{%- set pageTitle = title or site.name -%}
+{%- set pageDesc = description or site.tagline -%}
+{%- set ogImg = (ogImage or "/assets/img/social-card.png") | absoluteUrl(site.url) -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ pageTitle }}</title>
+<meta name="description" content="{{ pageDesc }}">
+<link rel="canonical" href="{{ canonical }}">
+{% if robots %}<meta name="robots" content="{{ robots }}">{% endif %}
+
+<meta property="og:type" content="{{ ogType or 'website' }}">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:title" content="{{ pageTitle }}">
+<meta property="og:description" content="{{ pageDesc }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ ogImg }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ pageTitle }}">
+<meta name="twitter:description" content="{{ pageDesc }}">
+<meta name="twitter:image" content="{{ ogImg }}">
+
+<meta name="theme-color" content="{{ site.themeColor }}">
+<link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/assets/site.webmanifest">
+
+{#- Entire stylesheet inlined: zero render-blocking requests, no FOUC.
+    Budget enforced in src/_data/css.js (throws over 20KB). -#}
+<style>{{ css | safe }}</style>
+
+{% include "partials/schema.njk" %}
+
+{% if site.gaId %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.gaId }}"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','{{ site.gaId }}');
+</script>
+{% endif %}

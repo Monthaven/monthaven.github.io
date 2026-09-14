@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Monthaven">
+  <rect width="64" height="64" rx="12" fill="#123d2e"/>
+  <path d="M14 46V18h6.6l11.4 17.6L43.4 18H50v28h-6.6V29.4L33.6 44h-3.2L20.6 29.4V46z" fill="#f6f8f6"/>
+  <rect x="18" y="50" width="28" height="3.5" rx="1.75" fill="#f0a02a"/>
+</svg>

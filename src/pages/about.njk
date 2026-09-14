@@ -1,0 +1,89 @@
+---
+pageType: page
+title: "About Monthaven Home Buyers | Who We Are & Why We Buy Houses Here"
+description: "Who Monthaven is, how we operate in Gaston and Cleveland County NC, and what we will and won't do. Real people, real offers, no call center."
+breadcrumbs:
+  - name: "Home"
+    url: "/"
+  - name: "About"
+    url: "/about/"
+---
+{% from "components/lead-form.njk" import leadForm with context %}
+{% import "components/blocks.njk" as b with context %}
+
+<section class="section section--soft">
+  <div class="wrap--narrow">
+    <p class="eyebrow">About us</p>
+    <h1>We're local buyers, not a lead broker.</h1>
+    <p class="lead mt-5">
+      A lot of the "we buy houses" sites you'll find for Gastonia and Shelby aren't buyers
+      at all. They collect your address and sell it to whoever pays most for the lead, which
+      is why you get eleven calls. We buy the houses ourselves.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap--narrow stack-lg">
+    {% set realTeam = [] %}
+    {% for t in proof.team %}{% if not t.placeholder %}{% set realTeam = (realTeam.push(t), realTeam) %}{% endif %}{% endfor %}
+
+    {% if realTeam.length %}
+    <h2>Who you'll be dealing with</h2>
+    {% for t in realTeam %}
+    <div class="card">
+      <h3>{{ t.name }}{% if t.role %} &mdash; {{ t.role }}{% endif %}</h3>
+      <p>{{ t.bio }}</p>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p class="placeholder-note">
+      <strong>Team bios and photos pending.</strong> This is the highest-value trust block on the
+      whole site and the single biggest E-E-A-T signal we have. It stays empty rather than
+      carrying a stock photo and invented copy. Add real names, roles, photos and first-person
+      bios to <code>src/_data/proof.json</code>.
+    </p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section section--warm">
+  <div class="wrap--narrow stack-lg">
+    <h2>How we operate</h2>
+    <p><strong>We look at the house.</strong> Someone from Monthaven walks every property in
+    person before we make an offer. We don't send algorithmic numbers and then "adjust" after
+    the walkthrough.</p>
+    <p><strong>We put it in writing.</strong> Verbal offers are how people get moved off a number
+    later. Ours comes in writing with the math behind it.</p>
+    <p><strong>We don't re-trade.</strong> No inspection contingency means the price can't be
+    renegotiated after you've signed and told everyone the house is sold. This is the most
+    common complaint about cash buyers and it's the one thing we won't do.</p>
+    <p><strong>We tell you when to walk away.</strong> If listing with an agent would net you
+    more, or if a repayment plan with your servicer solves the problem, we'll say so. We'd
+    rather lose the deal.</p>
+    <p><strong>We don't sell your information.</strong> Your address and phone number go to us,
+    not to a list.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap--narrow stack-lg">
+    <h2>What we are not</h2>
+    <p>
+      We're a real estate investment company. We buy houses directly with our own funds,
+      renovate them, and either sell or hold them. We are not real estate agents, we don't
+      list properties, and we don't represent you in a transaction. We're not attorneys,
+      accountants, or financial advisors, and nothing on this site is legal, tax, or
+      financial advice.
+    </p>
+    <p class="small muted">
+      {{ site.name }} is a trade name of {{ site.legalName }}.
+    </p>
+  </div>
+</section>
+
+{{ b.ctaBand() }}
+
+<section class="section">
+  <div class="wrap--narrow">{{ leadForm("bottom-form", "full") }}</div>
+</section>

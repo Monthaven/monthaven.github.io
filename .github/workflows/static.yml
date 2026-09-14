@@ -24,56 +24,32 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate sitemap.xml and robots.txt
-        run: |
-          python3 - << 'PY'
-          import os, xml.sax.saxutils as esc
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
 
-          base = "https://monthavencapital.com"
-          urls = []
+      - name: Install dependencies
+        run: npm ci
 
-          # Add root index.html if present
-          if os.path.exists("index.html"):
-              urls.append("/")
+      - name: Build site
+        run: npm run build
 
-          # Add top-level .html files (except index.html)
-          for f in os.listdir("."):
-              if f.endswith(".html") and f != "index.html":
-                  urls.append("/" + f)
-
-          # Add directory indexes (skip hidden and excluded)
-          exclude_dirs = {".github", "docs", ".git", "node_modules"}
-          for d in os.listdir("."):
-              if d.startswith(".") or d in exclude_dirs:
-                  continue
-              p = os.path.join(d, "index.html")
-              if os.path.isdir(d) and os.path.exists(p):
-                  urls.append(f"/{d}/")
-
-          with open("sitemap.xml", "w", encoding="utf-8") as out:
-              out.write('<?xml version="1.0" encoding="UTF-8"?>\n')
-              out.write('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
-              for loc in urls:
-                  out.write("  <url>\n")
-                  out.write(f"    <loc>{esc.escape(base + loc)}</loc>\n")
-                  out.write("    <changefreq>monthly</changefreq>\n")
-                  out.write("    <priority>0.7</priority>\n")
-                  out.write("  </url>\n")
-              out.write("</urlset>\n")
-
-          with open("robots.txt", "w", encoding="utf-8") as out:
-              out.write("User-agent: *\n")
-              out.write("Allow: /\n")
-              out.write(f"Sitemap: {base}/sitemap.xml\n")
-          PY
+      # Blocks the deploy on dead links, missing assets, canonical/sitemap
+      # disagreement, published internal docs, or a missing A2P-frozen URL.
+      - name: Verify build
+        run: npm run check
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        # _site only, never the repo root. This is what keeps internal markdown
+        # (compliance guides, notes) from being published at a public URL.
         with:
-          path: "."
+          path: "_site"
 
       - name: Deploy to GitHub Pages
         id: deployment

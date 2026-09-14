@@ -1,0 +1,142 @@
+---
+permalink: /text/index.html
+pageType: page
+title: "Text Updates Opt-In | Monthaven Home Buyers"
+description: "Opt in to receive text messages from Monthaven Home Buyers about your property and your cash offer. Message frequency varies. Reply STOP to opt out, HELP for help."
+breadcrumbs:
+  - name: "Home"
+    url: "/"
+  - name: "Text Updates"
+    url: "/text/"
+---
+{#- ===================================================================
+    FROZEN URL — DO NOT MOVE OR REDIRECT THIS PAGE.
+
+    https://monthavencapital.com/text is filed with the carriers as the
+    proof-of-consent URL for the toll-free messaging campaign. Carriers
+    re-check it. If it 404s or redirects elsewhere, the number can be
+    flagged or shut off.
+
+    The opt_in_url hidden field below must keep that exact value.
+    =================================================================== -#}
+
+<section class="section section--soft">
+  <div class="wrap--narrow">
+    <p class="eyebrow">Text updates</p>
+    <h1>Get updates about your property by text</h1>
+    <p class="lead mt-5">
+      Offer updates, closing reminders, and the occasional document request. Texting is
+      usually the fastest way to reach us and for us to reach you.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap--narrow">
+    <form class="lead-form" id="sms-opt-in" data-lead-form data-variant="sms"
+          data-phone="{{ site.phoneDisplay }}" data-offer-hours="{{ site.offerWindowHours }}"
+          action="{{ site.leadEndpoint }}" method="POST" novalidate>
+
+      <div class="hp" aria-hidden="true">
+        <label for="sms-gotcha">Leave this field empty</label>
+        <input id="sms-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+      </div>
+
+      <input type="hidden" name="form_type" value="sms_opt_in">
+      <input type="hidden" name="lead_id" value="">
+      <input type="hidden" name="stage" value="complete">
+      <input type="hidden" name="consent_version" value="{{ site.consentVersion }}">
+      <input type="hidden" name="consent_text" value="{{ site.consentText }}">
+      {#- Exact value filed with the carriers. Do not template this from page.url. -#}
+      <input type="hidden" name="opt_in_url" value="https://monthavencapital.com/text">
+      <input type="hidden" name="timestamp" value="">
+      <input type="hidden" name="page_url" value="">
+      <input type="hidden" name="referrer" value="">
+      <input type="hidden" name="utm_source" value="">
+      <input type="hidden" name="utm_medium" value="">
+      <input type="hidden" name="utm_campaign" value="">
+      <input type="hidden" name="utm_term" value="">
+      <input type="hidden" name="utm_content" value="">
+      <input type="hidden" name="gclid" value="">
+      <input type="hidden" name="fbclid" value="">
+      <input type="hidden" name="elapsed_ms" value="">
+      <input type="hidden" name="_subject" value="SMS opt-in">
+
+      <div data-step="1">
+        <div class="field">
+          <label for="sms-name">Name</label>
+          <input id="sms-name" name="name" type="text" autocomplete="name">
+        </div>
+
+        <div class="field">
+          <label for="sms-address">Property address</label>
+          <input id="sms-address" name="address" type="text" autocomplete="street-address">
+        </div>
+
+        <div class="field">
+          <label for="sms-phone">Mobile number <span class="req" aria-hidden="true">*</span></label>
+          <input id="sms-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel"
+                 placeholder="(704) 555-0123" required>
+          <p class="field__help">U.S. mobile numbers only.</p>
+        </div>
+
+        <div class="field">
+          <label for="sms-reason">What's this about?</label>
+          <select id="sms-reason" name="reason">
+            <option value="">Select</option>
+            <option value="offer_updates">My cash offer</option>
+            <option value="scheduling">Scheduling a walkthrough</option>
+            <option value="document_requests">Document requests</option>
+            <option value="closing_coordination">Closing coordination</option>
+          </select>
+        </div>
+
+        <div class="sms-consent" hidden>
+          <label class="sms-consent__row">
+            <input type="checkbox" name="sms_consent" value="true">
+            <span class="sms-consent__text">
+              {{ site.consentText }}
+              See our <a href="/terms/" target="_blank" rel="noopener">Terms of Service</a>,
+              <a href="/privacy/" target="_blank" rel="noopener">Privacy Policy</a>, and
+              <a href="/legal/sms/" target="_blank" rel="noopener">SMS Terms</a>.
+            </span>
+          </label>
+        </div>
+
+        <div class="mt-5">
+          <button class="btn btn--cta btn--block" type="submit">Subscribe to text updates</button>
+        </div>
+      </div>
+
+      <p class="form-note">
+        Consent is not a condition of receiving an offer or of any purchase.
+        Reply <strong>STOP</strong> to opt out or <strong>HELP</strong> for help at any time.
+      </p>
+
+      <div class="form-status" data-form-status role="status" aria-live="polite" tabindex="-1" hidden></div>
+    </form>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="wrap--narrow stack-lg">
+    <h2>What you're agreeing to</h2>
+    <ul>
+      <li><strong>Who sends the messages:</strong> {{ site.legalName }}, operating as {{ site.name }}.</li>
+      <li><strong>What they're about:</strong> your property, your cash offer, scheduling,
+      documents, and closing coordination.</li>
+      <li><strong>How often:</strong> message frequency varies depending on where you are in
+      the process.</li>
+      <li><strong>Cost:</strong> message and data rates may apply, depending on your carrier plan.</li>
+      <li><strong>Opting out:</strong> reply STOP to any message and we stop. Reply HELP for help.</li>
+      <li><strong>Consent is not required</strong> to get an offer or to sell us your house.</li>
+      <li><strong>Carriers are not liable</strong> for delayed or undelivered messages.</li>
+    </ul>
+    <p>
+      Full details are in our <a href="/legal/sms/">SMS Terms</a> and
+      <a href="/privacy/">Privacy Policy</a>. Questions: call or text
+      <a href="tel:{{ site.phoneRaw }}">{{ site.phoneDisplay }}</a> or email
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+    </p>
+  </div>
+</section>

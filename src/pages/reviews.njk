@@ -1,0 +1,55 @@
+---
+pageType: page
+title: "Reviews & Houses We've Bought | Monthaven Home Buyers NC"
+description: "Real sellers, real closed transactions in Gaston and Cleveland County NC. What the houses needed, how fast we closed, and what the sellers said."
+breadcrumbs:
+  - name: "Home"
+    url: "/"
+  - name: "Reviews"
+    url: "/reviews/"
+---
+{% from "components/lead-form.njk" import leadForm with context %}
+{% import "components/blocks.njk" as b with context %}
+
+<section class="section section--soft">
+  <div class="wrap--narrow">
+    <p class="eyebrow">Proof</p>
+    <h1>Houses we've bought and what the sellers said</h1>
+    <p class="lead mt-5">
+      Anyone can claim they close fast. These are actual transactions, with addresses,
+      and actual sellers who agreed to be quoted.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="mb-5">Closed transactions</h2>
+    {{ b.caseStudies() }}
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="wrap">
+    <h2 class="mb-5">What sellers said</h2>
+    {{ b.testimonials() }}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap--narrow stack-lg">
+    <h2>About reviews on this page</h2>
+    <p>
+      We only publish testimonials from real sellers who gave us permission to use them,
+      and we don't publish an aggregate star rating until there are enough verified reviews
+      to make one meaningful. Sites that show a 4.9 out of 247 reviews on day one didn't
+      earn them.
+    </p>
+  </div>
+</section>
+
+{{ b.ctaBand() }}
+
+<section class="section">
+  <div class="wrap--narrow">{{ leadForm("bottom-form", "full") }}</div>
+</section>
