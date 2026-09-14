@@ -1,0 +1,119 @@
+---
+pagination:
+  data: counties
+  size: 1
+  alias: county
+  addAllPagesToCollections: true
+permalink: "/we-buy-houses-{{ county.slug }}-county-nc/index.html"
+layout: layouts/base.njk
+pageType: county
+eleventyComputed:
+  title: "We Buy Houses in {{ county.name }}, NC | Cash Offer in {{ site.offerWindowHours }} Hours"
+  description: "Cash home buyers across {{ county.name }}, North Carolina. Any condition, no repairs, no commission, no closing costs. Written offer in {{ site.offerWindowHours }} hours."
+  breadcrumbs:
+    - name: "Home"
+      url: "/"
+    - name: "Areas We Buy"
+      url: "/service-areas/"
+    - name: "{{ county.name }}"
+      url: "/we-buy-houses-{{ county.slug }}-county-nc/"
+---
+{% from "components/lead-form.njk" import leadForm with context %}
+{% import "components/blocks.njk" as b with context %}
+{% set inCounty = cities | where("county", county.name | replace(" County","")) %}
+
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <p class="eyebrow">{{ county.name }}, North Carolina</p>
+      <h1>We buy houses across {{ county.name }}</h1>
+      <p class="hero__sub">
+        Any condition, any situation. A written cash offer within {{ site.offerWindowHours }} hours,
+        and you pick the closing date.
+      </p>
+      <ul class="hero__points">
+        <li>Every town in the county, not just the big ones</li>
+        <li>No repairs, no commission, no closing costs</li>
+        <li>We don't re-trade you on condition</li>
+        <li>Close in {{ site.closeDaysMin }}&ndash;{{ site.closeDaysMax }} days, or later if you need it</li>
+      </ul>
+      <p class="hero__trust">
+        Call or text <a href="tel:{{ site.phoneRaw }}" style="color:#fff"><strong>{{ site.phoneDisplay }}</strong></a>.
+      </p>
+    </div>
+    <div>
+      {{ leadForm("hero-form", "hero", null, null, "What's your " + county.name + " house worth to us?", "Start with the address.", true) }}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap--narrow stack-lg">
+    <h2>About {{ county.name }}</h2>
+    <p>{{ county.intro }}</p>
+    <p>{{ county.character }}</p>
+    {% if county.unrestricted %}
+    <p>
+      One thing worth understanding before you price your own house: most of {{ county.name }} is
+      <strong>not deed-restricted</strong>. There is nothing obliging the property next to yours to
+      look like yours. What is visible from the street, what the road surface is, whether there is a
+      mobile home park at the end of the block or a couple of acres of privacy instead &mdash; all of
+      that moves your number more than square footage does, and no automated estimate accounts for
+      any of it. It is the most common reason a seller's expectation and a real offer are far apart.
+    </p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="wrap">
+    <h2 class="mb-5">Towns in {{ county.name }} with their own page</h2>
+    <div class="grid grid--3">
+      {% for c in inCounty %}
+      <a class="card card--link" href="/sell-my-house-fast-{{ c.slug }}-nc/">
+        <h3>{{ c.name }}, NC</h3>
+        <p>{{ c.whyWeBuyHere }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap--narrow stack-lg">
+    <h2>We also buy in the smaller communities</h2>
+    <p>
+      These do not have a page of their own yet, mostly because there are only a few hundred
+      people in them and almost nothing changes hands in a given year. They are still a short
+      drive and we still buy in all of them. If your house is here, the answer is yes &mdash;
+      and if we close a deal in one, it gets its own page.
+    </p>
+    <ul class="cost-list">
+      {% for a in county.alsoBuy %}<li><strong>{{ a.name }}</strong> &mdash; {{ a.note }}</li>{% endfor %}
+    </ul>
+    <p>
+      Not on the list at all? Ask anyway. If we can't buy it we'll tell you quickly rather than
+      waste your time, and we usually know somebody who works that area.
+    </p>
+  </div>
+</section>
+
+<section class="section section--warm">
+  <div class="wrap--narrow">
+    <h2 class="mb-5">Why people in {{ county.name }} call us</h2>
+    {{ b.situationGrid() }}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap--narrow">
+    <h2 class="mb-6">How it works</h2>
+    {{ b.howItWorks() }}
+  </div>
+</section>
+
+{{ b.ctaBand() }}
+
+<section class="section">
+  <div class="wrap--narrow">{{ leadForm("bottom-form", "full") }}</div>
+</section>

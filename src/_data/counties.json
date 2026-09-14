@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "gaston",
+    "name": "Gaston County",
+    "state": "NC",
+    "seat": "Gastonia",
+    "intro": "Gaston County has more incorporated towns than any other county in North Carolina. The exact count depends who you ask: the federal Advisory Council on Historic Preservation says 15, while the county's own government counts 13 active and treats Dellview and Spencer Mountain as inactive. Almost all of them started as mill villages, most run straight into each other, and buyers searching for a house rarely search by which one they are technically standing in.",
+    "character": "Price in this county is driven by one thing more than any other: how long it takes to get to Charlotte. Anything fifteen to thirty minutes out carries a premium, which is why Belmont, Mount Holly and Cramerton sit where they do. Head west toward Bessemer City, Cherryville and the Cleveland County line and it turns rural: more farming, more acreage, more industry, and prices that reflect the drive.",
+    "unrestricted": true,
+    "alsoBuy": [
+      {
+        "name": "Spencer Mountain",
+        "note": "a former mill village whose 2020 Census population was zero, and where WBTV broadcast the first commercial TV signal in the Carolinas in 1949"
+      },
+      {
+        "name": "Dellview",
+        "note": "one of the smallest incorporated places in the country, six residents at the 2020 Census"
+      },
+      {
+        "name": "Alexis",
+        "note": "unincorporated, up toward the Lincoln County line"
+      },
+      {
+        "name": "Riverbend",
+        "note": "on the Catawba between Mount Holly and Belmont"
+      },
+      {
+        "name": "Hardin and Union",
+        "note": "unincorporated communities in central Gaston County"
+      }
+    ]
+  },
+  {
+    "slug": "cleveland",
+    "name": "Cleveland County",
+    "state": "NC",
+    "seat": "Shelby",
+    "intro": "Cleveland County is bigger, emptier and further from Charlotte than Gaston, and it behaves differently because of it. Cotton was king here for most of the county's history and manufacturing still is: it remains the largest employer in the county by a clear margin.",
+    "character": "Outside Shelby and Kings Mountain this is a rural county of very small towns, several of them under a thousand people. That has a practical effect on selling: comparable sales are thin, appraisers have little to work with, and financed deals fall through on valuation more often than anywhere in Gaston. It is a large part of why cash sales are common out here.",
+    "unrestricted": true,
+    "alsoBuy": [
+      {
+        "name": "Earl",
+        "note": "around 200 people near the South Carolina line, once called Swangs and then Earl Station"
+      },
+      {
+        "name": "Mooresboro",
+        "note": "around 290 people on the US 74 corridor toward Rutherford County"
+      },
+      {
+        "name": "Waco",
+        "note": "around 310 people out toward the Gaston line, and yes, named before the Texas one was famous"
+      }
+    ]
+  }
+]

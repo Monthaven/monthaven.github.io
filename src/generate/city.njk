@@ -20,6 +20,7 @@ eleventyComputed:
 ---
 {% from "components/lead-form.njk" import leadForm with context %}
 {% import "components/blocks.njk" as b with context %}
+{%- set small = city.tier == 3 -%}
 
 
 <section class="hero">
@@ -81,31 +82,62 @@ eleventyComputed:
       They're trying to get out from under one. These are the situations we see most in
       {{ city.county }} County.
     </p>
+    {% if small %}
+    <ul class="pill-links">
+      {% for s in situations %}<li><a href="/{{ s.urlPrefix }}-nc/">{{ s.label }}</a></li>{% endfor %}
+    </ul>
+    {% else %}
     {{ b.situationGrid(city) }}
+    {% endif %}
   </div>
 </section>
 
 <section class="section">
   <div class="wrap--narrow">
     <h2 class="mb-6">How selling to us works</h2>
+    {% if small %}
+    <ol class="steps">
+      <li><div><h3>Tell us about the house</h3><p>Address and what's going on. One call to
+      {{ site.phoneDisplay }}, or the form.</p></div></li>
+      <li><div><h3>We drive out and walk it with you</h3><p>{{ city.name }} is a short drive and we
+      would rather see a property than price it off a screen. Don't clean up on our account.</p></div></li>
+      <li><div><h3>Written offer within {{ site.offerWindowHours }} hours</h3><p>With the math behind it,
+      and no obligation.</p></div></li>
+      <li><div><h3>You pick the closing date</h3><p>Usually {{ site.closeDaysMin }} to
+      {{ site.closeDaysMax }} days, at a North Carolina closing attorney.</p></div></li>
+    </ol>
+    <p class="mt-5"><a href="/how-it-works/">The full process, including how we price an offer &rarr;</a></p>
+    {% else %}
     {{ b.howItWorks(city) }}
+    {% endif %}
   </div>
 </section>
 
 <section class="section">
   <div class="wrap--narrow">
     <h2 class="mb-5">The one thing we won't do to you</h2>
-    {{ b.noRetradePromise() }}
+    {{ b.noRetradePromise(small) }}
     {{ b.twoNumberPromise(true) }}
     <div class="mt-6">{{ b.guarantee(true) }}</div>
+    {% if small %}<p class="mt-4"><a href="/how-it-works/">What can and can't change after you sign &rarr;</a></p>{% endif %}
   </div>
 </section>
 
 <section class="section section--warm">
   <div class="wrap--narrow">
     <h2 class="mb-5">Cash offer vs. listing with an agent in {{ city.name }}</h2>
+    {% if small %}
+    <p>
+      No commission, no seller closing costs, no repairs, no showings, and no financing that can
+      fall through &mdash; against a price below what a retail sale would bring if your house is
+      sound and you can wait for it. That is the whole trade, and in a market as thin as
+      {{ city.name }}'s the waiting is the part worth thinking hardest about.
+    </p>
+    <p class="mt-4"><a href="/compare/">The full comparison, line by line &rarr;</a></p>
+    {% else %}
     {{ b.comparison(city) }}
     {{ b.valueStack() }}
+    {% endif %}
   </div>
 </section>
 
@@ -181,7 +213,12 @@ eleventyComputed:
   <div class="wrap--narrow">
     <h2 class="mb-5">We also buy houses near {{ city.name }}</h2>
     {{ b.nearbyCities(city) }}
-    <p class="mt-5"><a href="/service-areas/">See every city we buy in &rarr;</a></p>
+    {#- Only Gaston and Cleveland have hub pages; Lincoln has one city and would be thin. -#}
+    {% set hub = counties | findBySlug(city.county | lower) %}
+    <p class="mt-5">
+      {% if hub %}<a href="/we-buy-houses-{{ hub.slug }}-county-nc/">Everything we buy in {{ city.county }} County</a> &middot; {% endif %}
+      <a href="/service-areas/">See every city we buy in</a>
+    </p>
   </div>
 </section>
 

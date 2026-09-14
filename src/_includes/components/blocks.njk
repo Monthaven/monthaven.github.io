@@ -406,3 +406,36 @@
 </div>
 {% endif %}
 {% endmacro %}
+
+
+{% macro repairPadding() %}
+{% set rp = proof.repairPadding %}
+{% if rp.enabled %}
+<div class="table-scroll">
+  <table>
+    <caption>
+      What these items actually run, against what a padded estimate says. These are our own
+      figures from our own renovations, not published data. A contractor may quote you
+      differently and that is a fair argument to have &mdash; which is the point.
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Item</th>
+        <th scope="col">What it actually runs</th>
+        <th scope="col">What a padded estimate says</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for r in rp.rows %}
+      <tr>
+        <th scope="row">{{ r.item }}</th>
+        <td>{{ r.real }}</td>
+        <td>{{ r.padded }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<p class="mt-4"><strong>{{ rp.pattern }}</strong></p>
+{% endif %}
+{% endmacro %}

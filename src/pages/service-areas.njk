@@ -30,6 +30,13 @@ breadcrumbs:
 <section class="section{% if loop.index0 % 2 == 1 %} section--soft{% endif %}">
   <div class="wrap">
     <h2 class="mb-4">{{ county }}, NC</h2>
+    {% set hub = counties | findBySlug(countyName | lower) %}
+    {% if hub %}
+    <p class="lead mb-5">
+      {{ hub.intro }}
+      <a href="/we-buy-houses-{{ hub.slug }}-county-nc/">More about buying in {{ county }} &rarr;</a>
+    </p>
+    {% endif %}
     <div class="grid grid--3">
       {% for c in countyCities %}
       <a class="card card--link" href="/sell-my-house-fast-{{ c.slug }}-nc/">
@@ -50,10 +57,11 @@ breadcrumbs:
   <div class="wrap--narrow stack-lg">
     <h2>Don't see your town?</h2>
     <p>
-      This list is where we buy most often, not a fence. We regularly buy in smaller
-      communities across all three counties &mdash; McAdenville, Ranlo, Lowell, Cramerton,
-      High Shoals, Grover, Boiling Springs, Lattimore, Waco, Casar, Vale, Iron Station and
-      others. If your house is in Gaston, Cleveland, or Lincoln County, ask.
+      The towns above have their own pages. Beyond them we buy in the smaller communities
+      across all three counties &mdash; Lattimore, Waco, Kingstown, Fallston, Polkville,
+      Casar, Belwood, Earl, Mooresboro, Patterson Springs, Lawndale, Spencer Mountain, Alexis
+      and others. They're listed on the county pages. If your house is in Gaston, Cleveland,
+      or Lincoln County, ask.
     </p>
     <p>
       If you're outside those three counties, tell us anyway. If we can't buy it, we'll say

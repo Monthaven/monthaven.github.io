@@ -12,11 +12,24 @@ Two or three a day gets us through this in two weeks.
 not publish anything you flagged as uncertain, and a hedge from you costs nothing while a
 wrong fact on a live page costs a lot.
 
-**Q25–Q29 are done and the About page is written.** Next up: **Q1–Q5** (case studies — unblocks the biggest remaining launch blocker), then **Q16–Q20** (local detail for the city pages).
+**Groups 2, 3, 4 and 6 are answered and published.** The city pages now carry Alec's own
+local knowledge instead of my inferred content, and worst-pair similarity dropped from 69.3%
+to **67.1%** even after adding 18 new town pages against a 72% ceiling.
 
-**Original priority order:** start with **Q25–Q30** (that's the About page and
-the single biggest trust signal on the site), then **Q1–Q5** (case studies), then
-**Q16–Q20** (the local content that pushes the city pages apart).
+**What's left, in order:**
+
+1. **The Oak Ridge seller testimonial.** One or two sentences, first name, city, permission.
+   This is one of two remaining launch blockers and the cheapest one to clear.
+2. **The GBP URL**, once the new profile is verified (see `docs/gbp-setup.md`). The other
+   launch blocker.
+3. **Group 5 (Q21–Q24)** — the industry memos. These become the competitor-comparison posts
+   that get cited by AI assistants. Highest-leverage remaining content on the site.
+4. **The three missing locations** listed under Group 1 below.
+5. **Two dollar figures** for the value stack: what a cleanout and haul-away actually costs
+   you, and what taxes + insurance + utilities run on a house during a 60-day listing. Both
+   rows render nothing until they have real numbers.
+6. **Your NC license number and a photo.** The license number gates the Two-Number Promise
+   flag; the bio without a face is worth a fraction of the bio with one.
 
 ---
 
@@ -52,7 +65,18 @@ These are the highest-value memos. Real addresses, real numbers, real outcomes.
 5. **A seller you told to list instead of selling to you.** What made it obvious, what you
    said, what happened to them.
 
-## Group 2 — The math → expands `/how-it-works/` and `/blog/how-much-do-cash-home-buyers-pay-nc/`
+## Group 2 — The math → expands `/how-it-works/` and `/blog/how-much-do-cash-home-buyers-pay-nc/`  ✅ ANSWERED, published
+
+**Q7 (repair padding) is the most valuable single thing in the interview.** It's now a table
+on `/how-it-works/` and in the pricing post, published explicitly as *our figures from our own
+jobs*, not as survey data. **Q8 (holding costs)** filled in the third term of the pricing
+formula, which previously had no numbers: ~11% renovation money with cash down alongside it,
+a two-month target hold, three to five realistically, six or seven when it goes wrong.
+**Q10 (Zestimate)** became its own section and an FAQ entry.
+
+**Q9 — deliberately not published.** Alec's call, and the right one: a margin percentage with
+no agreed denominator invites exactly the argument it was meant to prevent. The
+$140K → $265K → ~$10K disclosure does that job and is concrete rather than abstract.
 
 6. **Price a real house out loud.** Pick one you actually bought. ARV, repair estimate,
    carrying costs, your margin. Say the four numbers and how you got each.
@@ -63,7 +87,16 @@ These are the highest-value memos. Real addresses, real numbers, real outcomes.
 10. **What do sellers get wrong about what their house is worth?** Where does the Zillow
     number come from and why is it wrong on these houses specifically?
 
-## Group 3 — Seller situations → expands the seven situation pages
+## Group 3 — Seller situations → expands the seven situation pages  ✅ ANSWERED, published
+
+The most useful reframe in this group: facing foreclosure is **not a knowledge gap, it is
+denial.** People know the mechanics and don't believe the bank will really take it until it
+is too late to act. That's now how the foreclosure page opens.
+
+Also verified before publishing: if a house sells at foreclosure auction for more than what
+is owed, the surplus goes on a claims list the homeowner has to actively go and collect from
+the Clerk of Superior Court — which holds it roughly three years before it escheats — and
+most people never do. Nobody local publishes this and it may be worth real money to a reader.
 
 11. **What does someone facing foreclosure sound like on the first call?** What are they
     afraid of, what do they already know, what do they have wrong?
@@ -74,12 +107,29 @@ These are the highest-value memos. Real addresses, real numbers, real outcomes.
 15. **Someone calls with a house that's been vacant for years.** What do you expect to find,
     and what does it do to the number?
 
-## Group 4 — Local knowledge → rewrites the per-city sections
+## Group 4 — Local knowledge → rewrites the per-city sections  ✅ ANSWERED, published
 
-**This is the group that matters most for rankings.** Right now the ten city pages are 69.7%
-similar to each other, against a 72% ceiling that fails the build. Every specific local fact
-you give me pushes that number down and pushes the pages up. Generic copy is what every
-competitor has; this is what none of them do.
+**This was the group that mattered most for rankings, and it worked.** Worst-pair similarity
+went 69.3% → 67.1% while the number of city pages went from 10 to 28.
+
+**Three corrections I made to the dump before publishing, so you know:**
+
+- **Belmont Abbey College**, not Belmont University. Belmont University is in Nashville.
+- **Gastonia is the county seat** of Gaston County. Dallas is the *former* seat.
+- **The Gastonia ADU advantage came out.** NC House Bill 409, effective October 2023,
+  requires *every* North Carolina local government to allow at least one ADU per
+  single-family dwelling. It's statewide law, not a Gastonia edge, and publishing it as one
+  would have been wrong.
+
+**Two things I softened rather than published:** the "Mack plant near Grover" (I won't put a
+named company's facility location on a live page without confirming it) and the lithium
+operation "buying up and boarding properties" — the page describes the observable market
+effect, not the conduct of a named company.
+
+**The mill-housing conflict resolved in your favor and mine.** My research said Loray-era
+1900s–1920s frame housing; you described 1960s–70s stock with galvanized pipe and wood
+paneling. Both are right — they're different cohorts. Galvanized and paneling are 1950s–70s
+markers; knob-and-tube and cast iron are 1900s–30s. Both are written, yours leads.
 
 16. **What's specifically wrong with mill-village houses?** Loray, Margrace, the Shelby mill
     housing — what do you find every single time?
@@ -143,3 +193,21 @@ single biggest E-E-A-T signal the site has. It needs to be in your voice, first 
 | 4 — Local | `src/_data/cities.json` → `housingStock`, `localChallenges`, `sellerProfile`, `cityFaq` |
 | 5 — Industry | `/blog/best-cash-home-buyers-*` comparison posts |
 | 6 — You | `/about/`; `src/_data/proof.json` → `team` |
+
+---
+
+## Open research items (things I can't resolve without you)
+
+- **Bessemer City comps.** The only city page still written from unreliable memory. It keeps
+  its sourced content and does not get rewritten from a guess. What does a house actually
+  trade for there, and what kind of house is it?
+- **The "Mack plant near Grover."** Real? If so, which company and where? It's a genuinely
+  useful local employer fact for that page if it's confirmable.
+- **Kings Mountain land asks.** You said comparable parcels are running anywhere from roughly
+  $10K to $100K an acre because the casino hasn't settled the market. That spread is on the
+  page as-is. If you see it tighten, tell me and I'll update it.
+- **Read the Kingstown page before it goes live.** A "we buy houses" page aimed at a
+  majority-Black, self-incorporated town with the lowest home values in the region needs
+  different handling than the other 27, and I wrote it with the site's strongest
+  anti-predatory framing — including an explicit instruction to get more than one written
+  offer. I'd rather you read it and disagree than find out later you would have.

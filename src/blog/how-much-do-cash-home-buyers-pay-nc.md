@@ -10,6 +10,10 @@ faq:
     a: "Usually one of three reasons. They estimated repairs differently, which is the biggest single variable. They used different comparable sales. Or the higher one is planning to reduce it after the walkthrough. The third is common enough that you should ask, in writing, whether the offer is contingent on inspection."
   - q: "Can I negotiate a cash offer?"
     a: "Yes, and you should try, especially if you have a competing written offer or if the buyer's repair estimate is clearly too high. Bring evidence: a contractor quote, a recent comparable sale, another written offer. Arguing without evidence rarely moves a number that was built from a formula."
+  - q: "How do I tell if a buyer's repair estimate is padded?"
+    a: "Ask for it broken out item by item, then check the biggest lines against what the work actually runs. In our own renovations foundation work has run $10,000 to $25,000, a roof $5,000 to $7,000 depending on size, and a water heater around $2,500. Padded estimates on the same items tend to read $25,000 to $30,000, $10,000 to $12,000, and $5,000 to $7,000. The tell is rarely one absurd line — it is every line priced at or past the top of its range, so the total balloons while each individual figure still sounds defensible. One contractor quote on the largest item usually settles it."
+  - q: "Why is my Zestimate so much higher than the cash offer?"
+    a: "An automated estimate is built from comparable sales plus an assumption that your house is in average condition. It has never been inside. It does not know about the roof, the drywall, the doors, or what pets did to the floors. It is not lying to you — it is answering a different question. The number that matters is what comparable renovated houses near you actually closed at, minus what it costs to get yours to that condition."
   - q: "Do cash buyers pay closing costs in North Carolina?"
     a: "Reputable ones do, including the attorney fee, title work, recording fees, and transfer tax. Ask explicitly and get it in writing, because 'no fees' sometimes means no commission while closing costs still come out of your proceeds. In North Carolina an attorney must supervise the closing, so there is always an attorney fee somewhere."
 ---
@@ -37,10 +41,38 @@ breakdown.
 If you think the estimate is high, get one contractor quote. One real quote is the single
 most effective thing you can bring to a negotiation.
 
+Here is what those lines run in our own renovations, against what a padded estimate on the
+same house tends to say. These are our figures from our own jobs, not published survey data
+— if your contractor disagrees with them, that is exactly the argument worth having, and
+you should be having it with a number in your hand.
+
+| Item | What it has actually run us | What a padded estimate says |
+|---|---|---|
+| Foundation work | $10,000 to $25,000 | $25,000 to $30,000 |
+| Roof replacement | $5,000 to $7,000 depending on size | $10,000 to $12,000 |
+| Water heater | around $2,500 | $5,000 to $7,000 |
+| Flooring, tile, countertops | priced as one scope | broken out and each pushed to the top of its range |
+
+**The pattern matters more than any single line.** Almost nobody lowballs you by naming an
+absurd repair number. They do it by nitpicking every item and pricing each one at or past the
+top of its range, so the total looks far bigger than the real cost while every individual
+figure still sounds defensible.
+
+Your defense is two steps, and it works on us as well as on anyone else: ask for the estimate
+item by item, then get one real contractor quote on the single biggest line.
+
 ### Carrying and selling costs
 Taxes, insurance, utilities, and financing costs while the work is done, plus the
 commission and closing costs the buyer pays when *they* eventually resell. On a typical
 Gaston County house this is commonly 8 to 12% of ARV. It is real, and it is not margin.
+
+The financing is the part sellers rarely picture. Renovation money on these houses is
+typically borrowed at **around 11% interest**, with the buyer's own cash down alongside it,
+and both are tied up from the day of closing to the day it resells. The target hold is two
+months. Realistically it is three to five when the work goes right and six or seven when it
+does not — and the interest, the insurance and the taxes run the entire time. That is why a
+house needing structural work gets a lower offer than the repair estimate alone would
+explain: the work isn't just more expensive, it takes longer, and the clock costs money.
 
 ### Margin
 The buyer's profit. Anyone who claims not to have one is lying to you about something

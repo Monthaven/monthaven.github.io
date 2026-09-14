@@ -132,5 +132,32 @@
     "body": "We bought it for $140,000 and sold it for $265,000. That looks like a $125,000 win, and it is the number people assume we're making on every house. We walked away with about $10,000.",
     "why": "The house needed everything. All the drywall, every bathroom, the roof, the water heater, every door. The copper had been stripped out. There was no refrigerator and no oven; they'd been sold. There was graffiti on the walls, holes in everything, and roughly 45 shopping carts' worth of debris to clear before we could start. Then, partway through the remodel, the water heater failed and flooded the house, and a good part of the interior had to be done a second time.",
     "point": "We're showing you this because the biggest objection we hear is that cash buyers make a killing on your house. Sometimes there's a good margin in one. Sometimes a water heater eats it. What you should take from it is that the gap between what we pay and what a house resells for is not profit, it's the cost of the work plus the risk that the work goes wrong. That's also why we'd rather show you the arithmetic than ask you to trust a number."
+  },
+  "repairPadding": {
+    "_README": "Alec's own figures from his own renovations. Presented explicitly as our experience, NOT as published data, because that is what it is. If a contractor disagrees, that is a fair argument to have and the page invites it.",
+    "enabled": true,
+    "rows": [
+      {
+        "item": "Foundation work",
+        "real": "$10,000 to $25,000",
+        "padded": "$25,000 to $30,000"
+      },
+      {
+        "item": "Roof replacement",
+        "real": "$5,000 to $7,000 depending on size",
+        "padded": "$10,000 to $12,000"
+      },
+      {
+        "item": "Water heater",
+        "real": "around $2,500",
+        "padded": "$5,000 to $7,000"
+      },
+      {
+        "item": "Flooring, tile, countertops",
+        "real": "priced as one scope",
+        "padded": "broken out and each one pushed to the top of its range"
+      }
+    ],
+    "pattern": "The trick is not one inflated line. It is nitpicking every item and pricing each one at the top of its range or past it, so the total looks far bigger than the real number while every individual figure still sounds defensible."
   }
 }

@@ -10,16 +10,16 @@
     "directAnswer": "Yes, you can sell your house during foreclosure in North Carolina. Until the property is sold at auction and the 10-day upset bid period closes, you still own the house and can sell it. The sale pays off the lender, stops the foreclosure, and any equity above what you owe goes to you instead of being lost at auction.",
     "formVariant": "urgent",
     "painPoints": [
+      "You know how foreclosure works. You just don't believe the bank will actually go through with it.",
       "You have a Notice of Hearing from the Clerk of Superior Court and a date on the calendar.",
       "You owe more in arrears than you can catch up in one payment.",
       "An agent told you there isn't time to list it.",
-      "You have equity in the house and you are about to lose all of it at auction.",
-      "The phone calls and the certified letters have not stopped."
+      "You have equity in the house and you are about to lose all of it at auction."
     ],
     "processSteps": [
       {
-        "title": "Tell us the sale date first",
-        "body": "It is the only fact that sets the schedule. If there is a date, everything below compresses to fit it."
+        "title": "Tell us the sale date, and tell us honestly",
+        "body": "Most people who call us already know how foreclosure works. What they do not believe is that the bank will really take the house. It will. The bank is not emotional about it and it does not need your cooperation. The date on that notice is the only fact that sets the schedule, so it is the first thing we need."
       },
       {
         "title": "We get the payoff, not an estimate",
@@ -42,6 +42,10 @@
       {
         "q": "What happens to my equity if the house sells at auction?",
         "a": "Foreclosure auctions routinely bring less than market value. The lender is paid first, along with fees and costs. Whatever is left is supposed to come to you, but it is frequently very little or nothing. Selling before the auction is how you protect equity you have actually built."
+      },
+      {
+        "q": "If the house sells for more than I owe, what happens to the extra money?",
+        "a": "It is yours, and a lot of people never collect it. When a foreclosure sale brings more than the debt and costs, the difference is called surplus funds and it belongs to whoever owned the property at the time of the sale. The trustee normally deposits it with the Clerk of Superior Court in that county. It does not come to you automatically. You have to claim it: contact the Clerk in the county where the foreclosure happened, gather proof you owned the property, and file a special proceeding asking for it to be released. The Clerk typically holds surplus funds for around three years, after which they transfer to the state as unclaimed property. Two warnings. Liens and judgments against you can be paid out of that surplus before you see any of it. And surplus funds attract scammers who offer to recover the money for a large cut of something you could claim yourself. The North Carolina Justice Center publishes a free fact sheet on this. Talk to the Clerk's office or a legal aid attorney before you sign anything with a recovery company."
       },
       {
         "q": "Will selling to a cash buyer hurt my credit less than foreclosure?",
@@ -70,7 +74,7 @@
     "painPoints": [
       "The house is three hours away and you cannot keep driving out to check on it.",
       "It is full, and clearing it out means deciding what to do with a lifetime of belongings.",
-      "You and your siblings do not agree on what to do.",
+      "You and your siblings do not agree on what to do, and you are the one carrying it.",
       "Insurance on a vacant house is expensive and getting harder to keep.",
       "Taxes, utilities, and lawn care are coming out of your pocket every month."
     ],
@@ -96,6 +100,10 @@
       {
         "q": "Can I sell an inherited house before probate is finished in North Carolina?",
         "a": "Often yes. In North Carolina real property generally vests in the heirs or devisees at death, so the heirs may be able to convey it directly. It gets more complicated if the estate has debts that require the personal representative to sell the property to create assets. Your estate attorney should confirm which applies before you sign anything, and we are happy to work directly with them."
+      },
+      {
+        "q": "Why do my siblings and I see this so differently?",
+        "a": "Because you are not carrying the same thing. In almost every estate we deal with, one heir lives closest and ends up doing the work: checking on the house, cutting the grass, handling the insurance calls, paying things out of pocket. That person usually wants it resolved. The heirs further away are not carrying any of that, so waiting for a better number costs them nothing and they can hold out indefinitely. Neither position is unreasonable, and both sides usually think the other is being difficult. What tends to help is everybody looking at the same written number and the same running monthly cost at the same time, rather than each person estimating from a distance. We are happy to put that in front of all of you at once."
       },
       {
         "q": "What if my siblings and I do not agree, or one of us won't sign?",
@@ -142,6 +150,10 @@
     ],
     "processSteps": [
       {
+        "title": "We stay out of the dispute entirely",
+        "body": "We are not going to take a side, relay messages, or get involved in anything between you. We give both attorneys the same facts and the same written number and let the two of you and your counsel decide what to do with it. If communication is going through lawyers, we will communicate through lawyers."
+      },
+      {
         "title": "We work with both parties or with the attorneys",
         "body": "Whichever is less painful. If communication is going through counsel, we will communicate through counsel."
       },
@@ -174,6 +186,10 @@
       {
         "q": "How is this different from listing with an agent?",
         "a": "A listing means agreeing on price, agreeing on every reduction, keeping the house presentable, and coordinating showings, all with someone you are separating from, for however long it takes. A cash sale is one number and one date."
+      },
+      {
+        "q": "How long does this usually take?",
+        "a": "It depends almost entirely on how civil the divorce is rather than on anything about the house. Everyone with an interest has to sign and agree, and where the parties are still fighting that can take months. Where you have already reached an agreement before you call us, the hard part is behind you and the sale itself is straightforward."
       }
     ]
   },
@@ -185,7 +201,7 @@
     "h1": "Sell a Rental Property in North Carolina, Tenants and All",
     "metaTitle": "Sell Your Rental Property Fast | Tenant-Occupied OK | Gaston & Cleveland County NC",
     "metaDescription": "Sell a tenant-occupied or vacant rental in Gaston or Cleveland County without turning it over first. We buy with tenants in place, damage and all. Written offer in 24 hours.",
-    "directAnswer": "You can sell a tenant-occupied rental in North Carolina without ending the lease. The buyer takes the property subject to the existing lease, which transfers with the sale. This means you do not have to evict, turn the unit, or wait for a vacancy to sell.",
+    "directAnswer": "You can sell a tenant-occupied rental in North Carolina without ending the lease. The buyer takes the property subject to the existing lease, which transfers with the sale, so you do not have to evict, turn the unit, or wait for a vacancy. Most landlords who call us do not have a horror story. They are simply done being landlords.",
     "formVariant": "full",
     "painPoints": [
       "The tenant has stopped paying and you do not want to run an eviction.",
@@ -195,6 +211,10 @@
       "The repair list has grown faster than the rent."
     ],
     "processSteps": [
+      {
+        "title": "We'll treat this as a business conversation",
+        "body": "Most of the situations on this site are emotional. This one usually is not. You are looking at a number, a turn cost you do not want to fund, and a decision. We will talk to you that way rather than commiserating about tenants."
+      },
       {
         "title": "Send the rent roll and the lease",
         "body": "Current rent, lease end date, deposit held, payment history. That plus the address is usually enough for a first number."
@@ -213,6 +233,10 @@
       }
     ],
     "faq": [
+      {
+        "q": "There's nothing dramatic going on. I'm just done. Is that enough of a reason?",
+        "a": "It is the most common reason we hear. No eviction, no disaster, no bad tenant story. Just an owner who has worked out that the return no longer justifies the management and would rather have the money than the property. You do not need a crisis to sell, and we are not going to ask you to justify it."
+      },
       {
         "q": "Can I sell with a tenant still living there?",
         "a": "Yes. In North Carolina a lease generally survives the sale, and the buyer takes subject to it. We buy tenant-occupied properties regularly and do not require you to deliver the property vacant."
@@ -347,7 +371,7 @@
     "h1": "Sell a Vacant House in Gaston or Cleveland County",
     "metaTitle": "Sell a Vacant House Fast in NC | No Repairs, No Cleanout",
     "metaDescription": "A vacant house costs you every month in taxes, insurance, and risk. We buy vacant and neglected houses in Gaston and Cleveland County as-is. Written offer in 24 hours.",
-    "directAnswer": "A vacant house is expensive to hold. Most standard homeowner policies restrict or void coverage once a property has been vacant for 30 to 60 days, and vacant-property insurance costs considerably more. Meanwhile taxes, utilities, and lawn maintenance continue, and vacancy itself accelerates deterioration through copper theft, vandalism, and undetected water damage.",
+    "directAnswer": "A vacant house is expensive to hold, and vacancy itself tells us very little about condition. There are really two situations under this label. A house that is simply empty after a death or a move is usually intact and priced mainly for time on market. A house that has had people getting in is a different property: copper and fixtures stripped, and a rehab bill to match. What vacancy does mean either way is that there is no tenant to negotiate around.",
     "formVariant": "full",
     "painPoints": [
       "Your insurer has flagged it as vacant or is refusing to renew.",
@@ -360,6 +384,10 @@
       {
         "title": "Tell us how long it has been empty",
         "body": "It matters for what we will find inside, and we would rather know than be surprised."
+      },
+      {
+        "title": "We find out which kind of vacant it is",
+        "body": "Empty but intact, or empty and stripped. It is the single biggest variable in the number, and it is the reason we will not quote you a figure over the phone before anybody has been inside."
       },
       {
         "title": "We will meet you there, or use a lockbox",
@@ -378,6 +406,10 @@
       {
         "q": "The house has been empty for years. Will you still buy it?",
         "a": "Yes. Long-vacant houses are a large share of what we buy. Expect the number to reflect condition, because years of vacancy usually mean water damage, and water damage is the expensive kind."
+      },
+      {
+        "q": "The house is empty but nothing has happened to it. Is that different from a stripped house?",
+        "a": "Completely, and it is worth saying because people assume vacant means ruined. A house that has been sitting since a death or a move is usually fine. It gets priced for the time it will take and the condition it is actually in, not punished for being empty. A house where people have been getting in is a different property: copper gone out of the walls, fixtures gone, sometimes water damage from cut lines. Tell us which one you have and we will tell you roughly where the number lands."
       },
       {
         "q": "There is still furniture and belongings inside. Do I have to clear it?",

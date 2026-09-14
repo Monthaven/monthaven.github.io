@@ -16,6 +16,16 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/.nojekyll": ".nojekyll" });
 
   // ---------------------------------------------------------------------------
+  // Markdown: wrap tables so they scroll instead of overflowing on a phone.
+  // Nunjucks templates do this by hand with .table-scroll; markdown can't, so
+  // the renderer does it here and blog tables behave like every other table.
+  // ---------------------------------------------------------------------------
+  eleventyConfig.amendLibrary("md", (md) => {
+    md.renderer.rules.table_open = () => '<div class="table-scroll"><table>';
+    md.renderer.rules.table_close = () => "</table></div>";
+  });
+
+  // ---------------------------------------------------------------------------
   // Filters
   // ---------------------------------------------------------------------------
 
