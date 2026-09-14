@@ -2,6 +2,7 @@
 title: "The North Carolina Foreclosure Timeline: How Much Time You Actually Have"
 description: "How power of sale foreclosure works in NC, what each notice means, when the sale becomes final, and the 10-day upset bid period most people don't know exists."
 date: 2026-02-14
+directAnswerQ: "How long does foreclosure take in North Carolina?"
 directAnswer: "Most North Carolina foreclosures proceed by power of sale through the Clerk of Superior Court. You generally receive a notice of hearing at least 10 days before a hearing, the sale is advertised and held after that, and North Carolina then provides a 10-day upset bid period during which the sale is not yet final. You own the house and can sell it until that process completes."
 faq:
   - q: "How long does foreclosure take in North Carolina?"

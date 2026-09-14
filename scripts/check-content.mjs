@@ -165,6 +165,42 @@ if (site.twoNumberPromise && site.twoNumberPromise.enabled) {
   }
 }
 
+// ------------------------------------------------- market-data staleness gate
+// Published market statistics rot. A median sale price from eighteen months ago is
+// not a stale detail on this site, it is a credibility hole: the whole argument here
+// is that our numbers are real and checkable. So any city carrying market data must
+// carry a date, and the build fails once that date goes stale. Nothing silently ages.
+const MARKET_DATA_MAX_AGE_MONTHS = 6;
+const cityData = JSON.parse(fs.readFileSync(path.join(process.cwd(), "src/_data/cities.json"), "utf8"));
+const now = new Date();
+for (const c of cityData) {
+  const hasMarketData = c.medianHomeValue || c.medianDaysOnMarket || c.monthsInventory;
+  if (!hasMarketData) continue;
+
+  if (!c.marketDataSource) {
+    errors.push(`${c.name}: has market data but no marketDataSource. Cite it or drop it.`);
+  }
+  if (!c.marketDataAsOf) {
+    errors.push(`${c.name}: has market data but no marketDataAsOf date.`);
+    continue;
+  }
+  // YYYY-MM is required. A bare year gives no freshness signal and reads oddly mid-year.
+  if (!/^\d{4}-\d{2}$/.test(c.marketDataAsOf)) {
+    errors.push(
+      `${c.name}: marketDataAsOf is "${c.marketDataAsOf}", expected YYYY-MM (e.g. "2026-09").`
+    );
+    continue;
+  }
+  const [y, m] = c.marketDataAsOf.split("-").map(Number);
+  const ageMonths = (now.getFullYear() - y) * 12 + (now.getMonth() + 1 - m);
+  if (ageMonths > MARKET_DATA_MAX_AGE_MONTHS) {
+    errors.push(
+      `${c.name}: market data is ${ageMonths} months old (${c.marketDataAsOf}), over the ` +
+        `${MARKET_DATA_MAX_AGE_MONTHS}-month limit. Refresh it from a real source or null the fields.`
+    );
+  }
+}
+
 // -------------------------------------------------------------- US spelling
 // The audience is North Carolina homeowners. British spellings read as foreign
 // and undercut the "we're local" claim the whole site rests on.

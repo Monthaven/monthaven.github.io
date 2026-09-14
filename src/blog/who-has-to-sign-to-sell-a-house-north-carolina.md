@@ -2,6 +2,7 @@
 title: "Who Actually Has to Sign to Sell a House in North Carolina"
 description: "Spouses who aren't on the deed, siblings who own 25% each, heirs nobody told you about. Two deals where the signature problem surfaced late — one at the closing table — and how to find out before it happens to you."
 date: 2026-02-14
+directAnswerQ: "Who has to sign to sell a house in North Carolina?"
 directAnswer: "In North Carolina, more people may have to sign than are named on the deed. Under NCGS §39-7 a married person generally cannot convey good title without their spouse joining the deed, even if that spouse is not an owner, because of the marital life estate created by NCGS §29-30. Where several people inherited a property as tenants in common, every co-owner must sign. Finding this out at the closing table is common and entirely avoidable."
 faq:
   - q: "Does my spouse have to sign if the house is only in my name?"

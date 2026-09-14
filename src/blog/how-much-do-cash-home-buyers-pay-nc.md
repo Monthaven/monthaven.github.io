@@ -2,6 +2,7 @@
 title: "How Much Do Cash Home Buyers Actually Pay in North Carolina?"
 description: "The real formula behind every cash offer, why the discount is bigger on some houses than others, and how to check whether the number you were given is fair."
 date: 2026-02-14
+directAnswerQ: "How much do cash home buyers pay?"
 directAnswer: "Cash home buyers typically offer below full retail value, and the size of the discount depends almost entirely on how much work the house needs. Every buyer uses the same four-part formula: after-repair value, minus repair cost, minus carrying and selling costs, minus margin. A buyer who will not show you those four numbers is hiding one of them."
 faq:
   - q: "Is 70% of market value the standard cash offer?"

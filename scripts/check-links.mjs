@@ -143,6 +143,51 @@ if (fs.existsSync(textPage)) {
   }
 }
 
+// --- llms.txt is what LLM crawlers read directly. It is generated from src/_data/
+// (src/llms.njk), but it is also the file most likely to rot unnoticed, because
+// nothing renders it in a browser. It previously shipped the direct-mail-only phone
+// number and listed 10 of 28 cities. These checks make that impossible.
+const llmsPath = path.join(SITE, "llms.txt");
+if (!fs.existsSync(llmsPath)) {
+  errors.push("llms.txt was not built — LLM crawlers have no machine-readable summary");
+} else {
+  const llms = fs.readFileSync(llmsPath, "utf8");
+  const siteData = JSON.parse(fs.readFileSync(path.join(process.cwd(), "src/_data/site.json"), "utf8"));
+  const cityData = JSON.parse(fs.readFileSync(path.join(process.cwd(), "src/_data/cities.json"), "utf8"));
+
+  // The memorable number is for direct mail only. On the website — and this file is
+  // part of the website — it breaks NAP consistency against the Google Business Profile.
+  if (siteData.phoneMemorable && llms.includes(siteData.phoneMemorable)) {
+    errors.push(
+      `llms.txt publishes phoneMemorable (${siteData.phoneMemorable}). That number is for ` +
+        `direct mail only; the site number is ${siteData.phoneDisplay}.`
+    );
+  }
+  if (!llms.includes(siteData.phoneDisplay)) {
+    errors.push(`llms.txt does not contain the site phone number ${siteData.phoneDisplay}`);
+  }
+  if (!llms.includes(siteData.email)) {
+    errors.push(`llms.txt does not contain the site email ${siteData.email}`);
+  }
+
+  // Every city the site builds must be listed, or the crawler's picture of the service
+  // area is smaller than the site's.
+  for (const c of cityData) {
+    if (!llms.includes(c.name)) {
+      errors.push(`llms.txt omits ${c.name}, ${c.county} County — the site builds a page for it`);
+    }
+  }
+
+  // Every URL it advertises must actually resolve in this build.
+  for (const m of llms.matchAll(/https:\/\/monthavencapital\.com(\/[^\s)]*)/g)) {
+    const urlPath = m[1].replace(/\/$/, "") || "/";
+    const target = urlPath === "/" ? "/index.html" : urlPath + "/index.html";
+    if (!fileSet.has(target) && !fileSet.has(urlPath)) {
+      errors.push(`llms.txt links ${m[0]} which does not exist in this build`);
+    }
+  }
+}
+
 // --- zero third-party requests on the critical path
 for (const rel of htmlFiles) {
   const html = fs.readFileSync(path.join(SITE, rel.slice(1)), "utf8");

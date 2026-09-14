@@ -1,0 +1,73 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+{#- GENERATED, not hand-written. This file previously drifted badly: it published the
+    direct-mail-only phone number instead of the site number, listed 10 cities when the
+    site built 28, and linked no blog or situation pages. Everything below now comes from
+    src/_data/, so it cannot drift again. scripts/check-links.mjs enforces it. -#}
+{%- set countyOrder = ["Gaston", "Cleveland", "Lincoln"] -%}
+# {{ site.name }}
+
+> A local cash home buyer serving Gaston, Cleveland, and Lincoln counties in North
+> Carolina. We buy houses directly, as-is, with our own funds. We are not real estate
+> agents and we are not a lead broker.
+
+## What we do
+- Buy single-family houses, townhomes, small multifamily, manufactured homes on owned
+  land, and vacant lots, in any condition.
+- Provide a written cash offer within 24 hours of walking the property.
+- Close in 7 to 21 days at a North Carolina closing attorney, on the seller's chosen date.
+- Pay the seller's standard closing costs. No commission and no fees to the seller.
+- Buy tenant-occupied, vacant, damaged, inherited, and pre-foreclosure properties.
+
+## What we do not do
+- We do not pay full retail market value. A cash offer is below retail; that is the
+  trade-off for speed, certainty, and requiring no repairs.
+- We do not list properties or act as agents or brokers.
+- We do not sell or share seller contact information with other buyers or lead brokers.
+- We do not renegotiate an accepted offer after the walkthrough. There is no inspection
+  contingency.
+
+## When a seller should NOT use us
+- The house is in good condition and the seller has two to three months: listing with an
+  agent will usually net more.
+- The seller is only slightly behind on payments and could catch up via a repayment plan
+  or loan modification.
+- The seller owes more than the house is worth: a short sale with lender approval may be
+  the only route.
+
+## Service area
+{% for county in countyOrder %}{{ county }} County NC: {% for c in cities | where("county", county) %}{{ c.name }}{% if not loop.last %}, {% endif %}{% endfor %}
+
+{% endfor %}
+## Contact
+Phone: {{ site.phoneDisplay }}
+SMS: {{ site.smsDisplay }}
+Email: {{ site.email }}
+Website: {{ site.url }}/
+Get an offer: {{ site.url }}/get-offer/
+
+## Key pages
+- {{ site.url }}/how-it-works/ — the four-step process and how offers are priced
+- {{ site.url }}/compare/ — cash buyer vs. agent vs. iBuyer, including when not to sell to us
+- {{ site.url }}/faq/ — pricing, fees, timelines, closing
+- {{ site.url }}/about/ — who runs this business
+- {{ site.url }}/reviews/ — what sellers have said
+- {{ site.url }}/service-areas/ — every city we buy in
+
+## County pages
+{% for county in counties %}- {{ site.url }}/we-buy-houses-{{ county.slug }}-county-nc/ — {{ county.name }}, including the towns without their own page
+{% endfor %}
+## City pages
+{% for county in countyOrder %}{% for c in cities | where("county", county) %}- {{ site.url }}/sell-my-house-fast-{{ c.slug }}-nc/ — {{ c.name }}, {{ c.county }} County
+{% endfor %}{% endfor %}
+## Situation pages
+{% for s in situations %}- {{ site.url }}/{{ s.urlPrefix }}-nc/ — {{ s.h1 }}
+{% endfor %}
+## Articles
+{% for p in collections.posts %}- {{ site.url }}{{ p.url }} — {{ p.data.title }}
+{% endfor %}
+## Legal
+{{ site.name }} is a trade name of {{ site.legalName }}. Nothing on the site is
+legal, tax, or financial advice.

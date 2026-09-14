@@ -11,7 +11,10 @@ layout: layouts/base.njk
       &middot; by {{ site.name }}
     </p>
     {% if directAnswer %}
-    <div class="answer-box"><p>{{ directAnswer }}</p></div>
+    {#- The bolded-question lead-in is the stronger extraction pattern for AI answer
+        engines, and index.njk and city.njk already use it. Optional so a post can
+        omit it, but every post should have one. -#}
+    <div class="answer-box"><p>{% if directAnswerQ %}<strong>{{ directAnswerQ }}</strong> {% endif %}{{ directAnswer }}</p></div>
     {% endif %}
     {{ content | safe }}
   </div>

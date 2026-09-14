@@ -172,6 +172,8 @@ eleventyComputed:
 
     {% if city.localDetail %}<p>{{ city.localDetail }}</p>{% endif %}
 
+    {% if city.unincorporatedNote %}<p>{{ city.unincorporatedNote }}</p>{% endif %}
+
     {% if city.medianHomeValue %}
     <p>
       As of {{ city.marketDataAsOf }}, the median home value in {{ city.name }} is around
@@ -182,6 +184,20 @@ eleventyComputed:
       Those are averages across the whole city, though, and they include renovated houses.
       A house that needs a roof, a system, or structural work does not sell at the median,
       which is the gap a cash offer is actually priced against.
+    </p>
+    {% endif %}
+
+    {% if city.housingUnits %}
+    <p>
+      Some context most buyers working this market never look up. {{ city.name }} has about
+      {{ city.housingUnits }} housing units in total{% if city.population %} and a population
+      near {{ city.population }}{% endif %}{% if city.ownerOccupiedPct %}, roughly
+      {{ city.ownerOccupiedPct }}% of them owner-occupied{% endif %}{% if city.medianHouseholdIncome %},
+      against a median household income of {{ city.medianHouseholdIncome | usd }}{% endif %}.
+      <span class="small muted">(Source: {{ city.censusAsOf }}.)</span>
+      Those two numbers together explain more about how long a house sits here than any
+      price chart does: the pool of local buyers who can get a loan on your house is
+      small, and it shrinks fast as the price goes up.
     </p>
     {% endif %}
 

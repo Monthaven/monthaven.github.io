@@ -17,8 +17,8 @@
     "medianHomeValue": 255000,
     "medianDaysOnMarket": 21,
     "monthsInventory": 1.4,
-    "marketDataAsOf": "2026",
-    "marketDataSource": "Redfin / Gastonia housing market",
+    "marketDataAsOf": "2026-09",
+    "marketDataSource": "Redfin, Gastonia housing market",
     "schoolDistrict": "Gaston County Schools",
     "courthouse": "Gaston County Courthouse, 325 Dr. Martin Luther King Jr. Way, Gastonia",
     "neighborhoods": [
@@ -43,10 +43,6 @@
       "belmont",
       "cherryville"
     ],
-    "combos": [
-      "foreclosure",
-      "inherited-probate"
-    ],
     "housingStock": "There are two very different kinds of older house in Gastonia and it matters which one you own. The one we buy most is the 1950s to 1970s mill-adjacent stock: generally solid foundations, but wood paneling and wallpaper nobody wants, HVAC that should have been replaced two owners ago, and galvanized supply piping that is a genuine recurring risk for leaks where the house is tied to public water. Sewer is city-connected here so that is not a variable. The real wildcard is whatever the last forty years of owners did themselves, because a lot of it was done without a permit. Behind that sits the much older cohort: the Loray Mill village and York Chester, built between about 1900 and 1922 and on the National Register. Those carry a different failure list entirely, closer to knob-and-tube wiring, cast iron drain lines, single-pane windows and pier foundations that have moved.",
     "whyWeBuyHere": "We buy in Gastonia more than anywhere else in the county, and it is because of the housing stock rather than in spite of it. A house that an agent has to list \"as-is, cash only\" is a house we can simply buy.",
     "sellerProfile": "The Gastonia sellers who call us are usually one of three people: an heir who inherited a mill-village house they cannot afford to rehab, a landlord who bought a cheap rental in the 2010s and is tired of turning it, or an owner who has been quoted $40,000 in repairs by an agent who then suggested listing it as-is, cash only.",
@@ -58,7 +54,7 @@
       },
       {
         "q": "My Gastonia house is in good shape. Should I still get a cash offer?",
-        "a": "Get the number so you can compare, but be prepared for us to tell you to list it. Gastonia has been running about 1.4 months of inventory with homes selling near 99% of list price in roughly three weeks. In a market that tight, a move-in-ready house almost always nets more through an agent, even after commission."
+        "a": "Get the number so you can compare, but be prepared for us to tell you to list it. Gastonia has been running thin inventory with houses going under contract quickly and selling very close to asking price — the current figures are above. In a market that tight, a move-in-ready house almost always nets more through an agent, even after commission."
       },
       {
         "q": "Why did two houses on the same street in Gastonia sell for such different numbers?",
@@ -105,10 +101,6 @@
       "gastonia",
       "lincolnton",
       "cherryville"
-    ],
-    "combos": [
-      "foreclosure",
-      "inherited-probate"
     ],
     "housingStock": "Shelby's older neighborhoods around Uptown and the Central Shelby Historic District are full of 1910-1950 homes, many of them large, and many of them held by the same family for two or three generations. Cleveland County's foreclosure and estate filings run through the courthouse on Justice Place, which means probate and pre-foreclosure sales here tend to be on a clock.",
     "whyWeBuyHere": "Shelby is the county seat, so it is where most Cleveland County estates get settled. A lot of what we buy here comes from heirs who live out of state and have no practical way to clean out, repair, and list a house from three hours away.",
@@ -163,9 +155,6 @@
       "bessemer-city",
       "gastonia"
     ],
-    "combos": [
-      "foreclosure"
-    ],
     "housingStock": "Kings Mountain is a former mill town with the housing to match: compact frame houses from the Margrace and Bonnie mill villages, plus post-war ranches out toward Grover Road and Oak Grove. Many have had additions built without permits over the years, which is a problem for an appraiser and not a problem for us.",
     "whyWeBuyHere": "The Catawba Two Kings Casino has changed what land and houses near I-85 are worth, and it has also brought a lot of speculative offers to people's mailboxes. If you are getting those letters and want an actual written offer from someone who will put their name on it, that is what we do.",
     "sellerProfile": "Kings Mountain sellers are often people who have been receiving unsolicited letters and postcards for two years and have finally decided to find out what the house is actually worth. The casino development near I-85 kicked off a wave of speculative mail into 28086, and a lot of it comes from buyers who have never set foot in Cleveland County.",
@@ -173,7 +162,7 @@
     "cityFaq": [
       {
         "q": "Land near me is being asked at wild prices. What is my house actually worth?",
-        "a": "Land and houses are behaving completely differently here right now. We have seen comparable acreage asked anywhere from about $10,000 to near $100,000 an acre, because the casino is not finished and nobody has settled on what proximity is worth. Houses are far more predictable, generally $200,000 to $250,000 for 1,400 to 1,600 square feet. If somebody is quoting you a land number based on what a neighbor is asking rather than what has actually closed, be careful. Asking prices are not comps."
+        "a": "Land and houses are behaving completely differently here right now. Comparable acreage is being asked at wildly different numbers because the casino is not finished and nobody has settled on what proximity is worth. Houses are far more predictable — the typical range is described above. If somebody is quoting you a land number based on what a neighbor is asking rather than what has actually closed, be careful. Asking prices are not comps."
       },
       {
         "q": "Part of my house was added on without a permit. Is that a problem?",
@@ -219,7 +208,6 @@
       "gastonia",
       "stanley"
     ],
-    "combos": [],
     "housingStock": "Belmont has appreciated faster than anywhere else in Gaston County because it is the closest thing the county has to a Charlotte suburb with a real downtown. That cuts both ways: the newer neighborhoods sell themselves, while the older mill housing off Catawba Street and around the Chronicle and Imperial mill sites still needs the same work it always did.",
     "whyWeBuyHere": "We will tell you plainly: if your Belmont house is in good condition and near downtown, you will probably net more listing it with an agent, and we will say so on the call. Where we make sense here is the older, unrenovated, or inherited houses that would need $40,000 of work before they would show well.",
     "sellerProfile": "Belmont is the one city on our list where we turn people away most often. Sellers here frequently call assuming a cash sale is the fast route, and for a tidy house within walking distance of Main Street it usually is not. The Belmont sellers we genuinely help are the ones with older unrenovated houses off Catawba Street, or with inherited property near the former Chronicle and Imperial mill sites.",
@@ -272,7 +260,6 @@
       "stanley",
       "gastonia"
     ],
-    "combos": [],
     "housingStock": "Mount Holly sits right on the Mecklenburg County line, so it draws Charlotte commuters, and prices have followed. The older housing along the river and around the former Mount Holly mill is a different story: mid-century ranches and earlier frame houses, often with original systems and deferred maintenance.",
     "whyWeBuyHere": "A lot of what we see in Mount Holly is landlords getting out. Long-term rentals that have been through several tenants need a full turn before they can be listed, and most owners would rather not fund one.",
     "sellerProfile": "A large share of our Mount Holly calls come from landlords. The town's proximity to Charlotte made it a popular buy-and-hold market, and a decade later a lot of those owners are looking at a unit that needs a full turn before it could be listed and deciding they would rather be done.",
@@ -322,7 +309,6 @@
       "kings-mountain",
       "cherryville"
     ],
-    "combos": [],
     "housingStock": "Small-town Gaston County housing stock: modest frame houses and post-war ranches, priced low enough that a $25,000 repair bill can exceed what a retail buyer's lender will allow against the appraisal. That gap is exactly where cash sales happen.",
     "whyWeBuyHere": "Bessemer City is small enough that most cash buyers skip it, which is a mistake. We buy here on the same terms as Gastonia.",
     "sellerProfile": "Bessemer City sellers are frequently owners of modest houses where the repair bill has caught up with the value. When a house is worth well under the Gaston County median, a new roof and an HVAC system are not a percentage of value, they are a large fraction of it.",
@@ -379,7 +365,6 @@
       "shelby",
       "lincolnton"
     ],
-    "combos": [],
     "housingStock": "Cherryville's older housing runs from turn-of-the-century frame homes near downtown to 1960s and 70s ranches on larger lots toward the county line. Larger lots are common here, which matters: an outbuilding or an old mobile home on the property can complicate a conventional sale and doesn't complicate a cash one.",
     "whyWeBuyHere": "Cherryville is far enough from Charlotte that it gets ignored by the buyers who only work the I-85 corridor. We drive out here.",
     "sellerProfile": "Cherryville sellers often own a house plus land, or a house with outbuildings that have been there for decades. They are frequently people whose families have been in western Gaston County a long time and who are dealing with a property that has passed down rather than one they bought.",
@@ -434,7 +419,6 @@
       "stanley",
       "cherryville"
     ],
-    "combos": [],
     "housingStock": "Dallas was the original Gaston County seat, and the housing around the old Courthouse Square reflects it — 19th and early 20th century homes, several of them large and several of them in need of serious structural and systems work. Gaston College keeps a steady rental market going, so there is also a supply of tired small rentals.",
     "whyWeBuyHere": "Historic houses are the hardest thing in the county to sell retail, because the repair list is long and the buyer pool is small. We are comfortable with them.",
     "sellerProfile": "Two kinds of Dallas sellers call us. The first has an old, often large house near the Courthouse Square that has become more building than one household can maintain. The second is a small-scale landlord renting to Gaston College students who has decided the returns no longer justify the management.",
@@ -491,7 +475,6 @@
       "belmont",
       "lincolnton"
     ],
-    "combos": [],
     "housingStock": "Stanley is small, semi-rural, and increasingly a commuter town for people priced out of Mount Holly and Belmont. Housing ranges from older frame homes near the depot to manufactured homes on acreage, which most conventional lenders treat very differently than site-built houses.",
     "whyWeBuyHere": "Land-and-house combinations and manufactured homes on owned land are common here, and both are harder to finance retail. Those are straightforward cash purchases for us.",
     "sellerProfile": "Stanley sellers often own a manufactured home on land they own, or an older house on a larger semi-rural lot. Many are long-time owners in a town that has changed around them as people priced out of Mount Holly and Belmont moved further out.",
@@ -548,7 +531,6 @@
       "stanley",
       "shelby"
     ],
-    "combos": [],
     "housingStock": "Lincolnton is the Lincoln County seat, with a historic downtown and a ring of early-1900s housing around it, plus mill-era housing from the old Lincolnton textile operations. Lincoln County probate and foreclosure matters run through the courthouse on Court Square.",
     "whyWeBuyHere": "Lincolnton sits just outside Gaston and Cleveland, and we buy here because the drive is short and the situations are the same: estates, pre-foreclosures, and houses that need more work than the owner wants to fund.",
     "sellerProfile": "Lincolnton sellers reach us through the same channels as Cleveland and Gaston County: estates being settled at the Court Square courthouse, owners who have fallen behind, and people who have inherited a house in a county they no longer live in.",
@@ -604,7 +586,6 @@
       "lowell",
       "gastonia"
     ],
-    "combos": [],
     "housingStock": "McAdenville is a mill village that stayed a mill village. Rufus Y. McAden founded it in 1883 around McAden Mills, on the South Fork Catawba River, and Pharr Yarns — founded here in 1939 — was the economic anchor until it was sold in 2019. The whole town became a National Register Historic District in 2009, which matters if you own here: historic district status affects what can be changed on a property, and therefore what a buyer or a renovator can do with it.",
     "whyWeBuyHere": "There are barely 600 people here, so almost nothing comes up for sale. When something does, it usually comes from a family that has held it a long time, and the condition reflects that.",
     "sellerProfile": "Long-tenure owners and their heirs, mostly. This is not a town people move in and out of, which means when a house sells it has usually been in the same hands for decades and has decades of deferred maintenance to match.",
@@ -657,7 +638,6 @@
       "lowell",
       "mount-holly"
     ],
-    "combos": [],
     "housingStock": "Cramerton began as Maysworth, a model mill village built by textile magnate Stuart W. Cramer around the Mays and Mayflower plants, and was renamed Cramerton in 1922. That original mill housing is still the core of the town. Around it sits considerably newer and more expensive development, including the gated Cramer Mountain community, so the price range here is wider than anywhere else of comparable size in the county. Which end of that range your house sits in matters far more than square footage does.",
     "whyWeBuyHere": "Cramerton has genuine retail demand, so we turn people away here more than most places. Where we are useful is the original mill housing that has not been touched, and inherited property where the family is not in a position to renovate.",
     "sellerProfile": "Two distinct groups: owners of unrenovated mill-village houses near the river, and families settling an estate. The newer end of town rarely needs us and we say so.",
@@ -709,7 +689,6 @@
       "gastonia",
       "ranlo"
     ],
-    "combos": [],
     "housingStock": "Lowell is unusual in this county because it was planned. Before it incorporated in 1879 an engineer was hired to lay the town out, and it was named after Lowell, Massachusetts, the textile city outside Boston. The industry came earlier than the town: the Woodlawn Mill went up on the South Fork Catawba River in 1848, with the railroad arriving soon after. That planning is still visible in the street grid and in lot sizes more consistent than the organic mill villages either side of it.",
     "whyWeBuyHere": "Lowell sits right on Highway 7 just east of Gastonia, which makes it convenient for us and easy for sellers to underestimate, since it gets less attention than Belmont or Cramerton on either side of it.",
     "sellerProfile": "Mostly long-tenure owners and heirs, plus a steady supply of small rentals. It is an affordable town between two expensive ones, which historically made it good buy-and-hold territory and now produces landlords who are ready to be done.",
@@ -760,7 +739,6 @@
       "dallas",
       "mount-holly"
     ],
-    "combos": [],
     "housingStock": "Ranlo takes its name from a contraction of two industrialists' surnames, John Calvin Rankin and William Thomas Love, and it grew up around their mills: Rex Spinning in 1915, Ranlo Manufacturing in 1916, Priscilla Spinning in 1921. Many of the original 1920s and 1930s mill-village row houses are still standing, individually owned now, alongside newer subdivisions. It did not incorporate until 1963, which makes it one of the newer municipalities in a county that already had more incorporated towns than any other in North Carolina.",
     "whyWeBuyHere": "Ranlo runs right up against Gastonia's eastern edge, so it shares Gastonia's economics without Gastonia's attention. Prices are lower and the housing is the kind we work on.",
     "sellerProfile": "Owners of mid-century houses that have not been meaningfully updated since they were built, and landlords with small rentals that need a complete turn.",
@@ -811,7 +789,6 @@
       "lincolnton",
       "gastonia"
     ],
-    "combos": [],
     "housingStock": "High Shoals has been an industrial town since before there was a Gaston County. Swiss immigrant and Revolutionary War veteran John Fulenwider established the High Shoals Iron Works here around 1795, and during the War of 1812 it produced cannonballs for the US Army; the ironworks ran until 1875. A cotton mill followed at the turn of the century and eventually owned the entire town, houses included, until those houses were sold off to private buyers. Housing built and maintained by one owner for decades tends to share a problem: it was all built to the same spec, it all aged at the same rate, and it all needs the same things at the same time.",
     "whyWeBuyHere": "Very little comes up here and when it does it is usually a long-held house that needs everything. That is straightforward for us and difficult for almost everyone else.",
     "sellerProfile": "Families who bought from the mill or inherited from someone who did. Tenure here is measured in decades.",
@@ -863,7 +840,6 @@
       "kings-mountain",
       "cherryville"
     ],
-    "combos": [],
     "housingStock": "Boiling Springs is a college town, and the housing splits accordingly. There is owner-occupied stock, much of it long-held, and there is a substantial student-rental market serving Gardner-Webb, which has over 3,000 students. Those two categories age very differently. A student rental that has cycled tenants for fifteen years needs flooring, paint, a kitchen and usually HVAC before it could be listed at all.",
     "whyWeBuyHere": "The student-rental inventory here produces more tired landlords per capita than anywhere else we work. That is the most common call we get from Boiling Springs.",
     "sellerProfile": "Landlords, predominantly. Someone bought a house near campus years ago, rented it to students, and has reached the point where the turn cost exceeds what they want to spend on a property they were planning to exit anyway.",
@@ -890,7 +866,7 @@
     "zips": [
       "28073"
     ],
-    "population": 800,
+    "population": 802,
     "medianHomeValue": null,
     "medianDaysOnMarket": null,
     "monthsInventory": null,
@@ -914,7 +890,6 @@
       "shelby",
       "boiling-springs"
     ],
-    "combos": [],
     "housingStock": "Grover was incorporated in 1885 and named in honor of President Grover Cleveland, having previously been called Whitaker — and, for a period, having legally been in South Carolina. It is a railroad town first: the Atlanta and Charlotte Air-Line Railway put an engine turntable here, and mail was caught off a hook by trains passing at speed. The housing runs to single-story ranches, Craftsman bungalows and Minimal Traditional homes, with land and acreage common once you leave the center.",
     "whyWeBuyHere": "Grover is at the far edge of where most buyers working this market will drive, which means owners here get fewer and lazier offers. It is a short drive for us.",
     "sellerProfile": "Long-tenure rural owners and heirs, often with land attached to the house, and often managing the property from somewhere else.",
@@ -928,8 +903,16 @@
       {
         "q": "I keep getting low offers by mail. Is that what Grover property is worth?",
         "a": "Not necessarily. Grover is at the outer edge of where most buyers working this market will drive, and mailer offers made from a distance are priced for the fact that the sender has never seen the property and does not intend to. Houses here also rarely come up for sale, which makes comps thin and gives a lazy buyer cover for a low number. Get a written offer from somebody who has actually walked it before you conclude anything about value."
+      },
+      {
+        "q": "There are almost no houses for sale in Grover right now. Does that help me?",
+        "a": "If your house is financeable, yes, and we will say so plainly: list it rather than selling it to us. A town with roughly 307 housing units and only a handful on the market at any time means a buyer who wants to live in Grover has very little to choose from, and that is leverage you only have while inventory stays thin. Where it stops helping is if your house cannot pass a lender's inspection — a failed septic, a manufactured home whose title was never converted, major structural work. Scarcity does not help you if the buyers who want your house cannot get a loan on it. That is the honest dividing line, and it is worth finding out which side you are on before you take anybody's offer, ours included."
       }
-    ]
+    ],
+    "housingUnits": 307,
+    "medianHouseholdIncome": 36736,
+    "ownerOccupiedPct": 64.1,
+    "censusAsOf": "2020 Census / ACS"
   },
   {
     "county": "Cleveland",
@@ -943,7 +926,6 @@
     "marketDataSource": null,
     "schoolDistrict": "Cleveland County Schools",
     "courthouse": "Cleveland County Courthouse, 100 Justice Place, Shelby",
-    "combos": [],
     "slug": "kingstown",
     "name": "Kingstown",
     "zips": [
@@ -992,7 +974,6 @@
     "marketDataSource": null,
     "schoolDistrict": "Cleveland County Schools",
     "courthouse": "Cleveland County Courthouse, 100 Justice Place, Shelby",
-    "combos": [],
     "slug": "lattimore",
     "name": "Lattimore",
     "zips": [
@@ -1040,7 +1021,6 @@
     "marketDataSource": null,
     "schoolDistrict": "Cleveland County Schools",
     "courthouse": "Cleveland County Courthouse, 100 Justice Place, Shelby",
-    "combos": [],
     "slug": "fallston",
     "name": "Fallston",
     "zips": [
@@ -1089,7 +1069,6 @@
     "marketDataSource": null,
     "schoolDistrict": "Cleveland County Schools",
     "courthouse": "Cleveland County Courthouse, 100 Justice Place, Shelby",
-    "combos": [],
     "slug": "lawndale",
     "name": "Lawndale",
     "zips": [
@@ -1139,7 +1118,6 @@
     "marketDataSource": null,
     "schoolDistrict": "Cleveland County Schools",
     "courthouse": "Cleveland County Courthouse, 100 Justice Place, Shelby",
-    "combos": [],
     "slug": "casar",
     "name": "Casar",
     "zips": [
@@ -1188,7 +1166,6 @@
     "marketDataSource": null,
     "schoolDistrict": "Cleveland County Schools",
     "courthouse": "Cleveland County Courthouse, 100 Justice Place, Shelby",
-    "combos": [],
     "slug": "belwood",
     "name": "Belwood",
     "zips": [
@@ -1237,7 +1214,6 @@
     "marketDataSource": null,
     "schoolDistrict": "Cleveland County Schools",
     "courthouse": "Cleveland County Courthouse, 100 Justice Place, Shelby",
-    "combos": [],
     "slug": "patterson-springs",
     "name": "Patterson Springs",
     "zips": [
@@ -1286,7 +1262,6 @@
     "marketDataSource": null,
     "schoolDistrict": "Cleveland County Schools",
     "courthouse": "Cleveland County Courthouse, 100 Justice Place, Shelby",
-    "combos": [],
     "slug": "polkville",
     "name": "Polkville",
     "zips": [
@@ -1335,7 +1310,6 @@
     "marketDataSource": null,
     "schoolDistrict": "Lincoln County Schools",
     "courthouse": "Lincoln County Courthouse, 1 Court Square, Lincolnton",
-    "combos": [],
     "unincorporated": true,
     "slug": "denver",
     "name": "Denver",
@@ -1375,7 +1349,8 @@
         "q": "Is Denver actually a town?",
         "a": "Not in the legal sense. It is an unincorporated community in Lincoln County, which matters more than people expect: it affects which services you receive, how your taxes are assessed, and occasionally what shows up in a title search. Worth confirming exactly what your parcel sits in before you sell."
       }
-    ]
+    ],
+    "unincorporatedNote": "Denver is not a town. It is an unincorporated community, which surprises people given how much has been built here — there is no town hall, no municipal government and no town tax, and every deed, permit and tax record runs through Lincoln County in Lincolnton. That matters more here than in the other unincorporated parts of the county, because Denver has grown fast enough to look and price like a town while still being served like countryside. Practically: confirm whether your property is on county water or a private well before a buyer's lender asks, and expect a septic system on anything outside the newer subdivisions."
   },
   {
     "county": "Lincoln",
@@ -1389,7 +1364,6 @@
     "marketDataSource": null,
     "schoolDistrict": "Lincoln County Schools",
     "courthouse": "Lincoln County Courthouse, 1 Court Square, Lincolnton",
-    "combos": [],
     "unincorporated": true,
     "slug": "iron-station",
     "name": "Iron Station",
@@ -1427,7 +1401,8 @@
         "q": "Is a cash sale even the right route for an Iron Station property?",
         "a": "Sometimes yes and often no. Prices here are solid and there is real retail demand from the Charlotte commuter belt. Where cash genuinely helps is when the parcel is large and hard to appraise, when there is a well or septic issue a lender will condition on, or when the property is inherited and being managed from out of town. If none of those apply and the house is sound, list it."
       }
-    ]
+    ],
+    "unincorporatedNote": "Iron Station is an unincorporated community rather than an incorporated town, so there is no town government and no municipal water and sewer — the paperwork runs through Lincoln County in Lincolnton. On a place with real acreage that is not a technicality. It means a well and a septic system are the default rather than the exception, both of which a lender will want inspected, and a failed septic can end a financed sale outright. It also means the mailing address a buyer types into a search may not line up with the jurisdiction the deed sits in."
   },
   {
     "county": "Lincoln",
@@ -1441,7 +1416,6 @@
     "marketDataSource": null,
     "schoolDistrict": "Lincoln County Schools",
     "courthouse": "Lincoln County Courthouse, 1 Court Square, Lincolnton",
-    "combos": [],
     "unincorporated": true,
     "slug": "vale",
     "name": "Vale",
@@ -1479,6 +1453,7 @@
         "q": "Why is property in Vale worth so much less than Denver, in the same county?",
         "a": "Lake Norman and the commute. The east side of Lincoln County is priced as a Charlotte commuter and lake market; the west side is priced as farm country roughly an hour out. It is the clearest example in our service area of geography inside one county producing completely different markets, and it is why a county-level estimate of your property's value is close to useless here."
       }
-    ]
+    ],
+    "unincorporatedNote": "Vale is an unincorporated community with no town government, and it straddles a county line — parts of it run into Catawba County. That is worth establishing before anything else, because which county your parcel actually sits in determines where the deed is recorded, who assesses the taxes and which permit office matters. We have seen sellers genuinely unsure, and it is the kind of thing that surfaces late and slows a closing. Add the wells, septic systems and outbuildings that come with farmland and the paperwork matters more here than the house does."
   }
 ]

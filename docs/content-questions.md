@@ -22,8 +22,8 @@ to **67.1%** even after adding 18 new town pages against a 72% ceiling.
    This is one of two remaining launch blockers and the cheapest one to clear.
 2. **The GBP URL**, once the new profile is verified (see `docs/gbp-setup.md`). The other
    launch blocker.
-3. **Group 5 (Q21–Q24)** — the industry memos. These become the competitor-comparison posts
-   that get cited by AI assistants. Highest-leverage remaining content on the site.
+3. **Group 5 (Q21–Q24)** — the industry memos. **Q24 now has a roster attached** (see below),
+   so it is the easiest one to record and the highest-leverage content left on the site.
 4. **The three missing locations** listed under Group 1 below.
 5. **Two dollar figures** for the value stack: what a cleanout and haul-away actually costs
    you, and what taxes + insurance + utilities run on a house during a 60-day listing. Both
@@ -152,6 +152,29 @@ markers; knob-and-tube and cast iron are 1900s–30s. Both are written, yours le
 24. **Who else is genuinely good in this market,** and what are they better at than you?
     (I'm publishing this honestly — it's why ChatGPT cites J&B and not us.)
 
+### Q24 now has a roster — this is the easiest memo on the list
+
+You chose to name everyone, and `/blog/best-cash-home-buyers-cleveland-county-nc/` is live with
+each company described **only from its own public material**. Here is exactly what is published
+and what is still missing:
+
+| Company | What's on the page | What I need from you |
+|---|---|---|
+| J&B Homebuyers | Shelby, several years, strongest local review presence | **Their site is blocked from my environment.** I could not read a word of their own copy, so they get the thinnest entry of the three — which is backwards, since they're the closest competitor. Paste their About page, or tell me what they're genuinely good at. |
+| Harmony Home Buyers | Founded 2018, Charlotte, 150+ houses across the Carolinas, BBB accredited | Have you dealt with them? Anything true and positive is publishable. |
+| John Buys Your House | John Swann, since 2015, Uptown Charlotte, buys houses/condos/townhomes/land | Same. |
+| Offerpad | Published exclusions, fee, 1,210 homes on 100,000+ requests in 2025 | Nothing — all verifiable from their own terms and filings. |
+| Mark Spain / Livlyte | Described as advertisers, no claims about outcomes | If you know how their offers actually land, that's worth a memo on its own. |
+
+**The rule I applied, and I'd like you to hold me to it:** anything published about a *local*
+operator is either a verifiable public fact or positive. Nothing negative about a local
+competitor goes up on my inference — that needs your first-hand experience. Nationals with
+published terms are fair game for factual critique. You live in this county; I don't.
+
+**One thing I deliberately left out: review counts and star ratings.** They move weekly, and
+quoting them would make the page stale within a month — exactly the thing the site accuses other
+people of. They're in `docs/gbp-setup.md` as a dated competitive snapshot instead.
+
 ## Group 6 — You → becomes `/about/` and `proof.team`  ✅ ANSWERED, page is live
 
 **Do these first if you do nothing else.** The About page is currently empty and it is the
@@ -206,6 +229,11 @@ single biggest E-E-A-T signal the site has. It needs to be in your voice, first 
 - **Kings Mountain land asks.** You said comparable parcels are running anywhere from roughly
   $10K to $100K an acre because the casino hasn't settled the market. That spread is on the
   page as-is. If you see it tighten, tell me and I'll update it.
+- **Market data for the other 27 towns.** Every city page has a market-statistics block built
+  into it that renders on Gastonia alone. I can't fill the rest — every real-estate data source
+  is blocked from my environment, and a search snippet isn't a source I can stand behind. You
+  have MLS access. `docs/market-data-request.md` has a table to fill and send back, and the
+  build now fails if any published figure goes more than 6 months stale.
 - **Read the Kingstown page before it goes live.** A "we buy houses" page aimed at a
   majority-Black, self-incorporated town with the lowest home values in the region needs
   different handling than the other 27, and I wrote it with the site's strongest

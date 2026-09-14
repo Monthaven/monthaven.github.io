@@ -44,7 +44,7 @@ eleventyComputed:
 
 <section class="section">
   <div class="wrap--narrow">
-    <div class="answer-box"><p>{{ situation.directAnswer }}</p></div>
+    <div class="answer-box"><p>{% if situation.directAnswerQ %}<strong>{{ situation.directAnswerQ }}</strong> {% endif %}{{ situation.directAnswer }}</p></div>
   </div>
 </section>
 

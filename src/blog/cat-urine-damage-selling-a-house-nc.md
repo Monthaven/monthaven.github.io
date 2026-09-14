@@ -2,6 +2,8 @@
 title: "What Cat Urine Actually Does to a House (And Why It Stops a Sale)"
 description: "Why pet urine damage is different from a mess, what it does to subfloor and framing, why FHA and VA appraisals flag it, and what it actually takes to fix — from a buyer who has gutted one."
 date: 2026-02-14
+directAnswerQ: "Can you sell a house with cat urine damage?"
+directAnswer: "Yes, but usually not to a buyer who needs a loan. Uric acid in cat urine forms water-insoluble crystals that soak into subfloor and framing and reactivate with humidity, so cleaning rarely fixes it. FHA appraisal standards require a property to be free of hazards, odors and physical defects, and VA appraisals require it to be safe, structurally sound and sanitary — which is why a house that smells strongly will often be flagged and the lender will want it addressed before funding. That is what pushes these houses to cash buyers."
 faq:
   - q: "Can you get cat urine smell out of a house permanently?"
     a: "Yes, but usually not by cleaning. Uric acid in cat urine forms crystals that are insoluble in water, so mopping, shampooing and household cleaners do not remove them — they sit in the material and reactivate with humidity. Permanent removal generally means taking up the flooring, treating the subfloor with an enzymatic cleaner that breaks down the uric acid, letting it dry completely, and then sealing it with a shellac-based stain-blocking primer to encapsulate whatever is left. Where staining is dark, the boards usually get replaced."
