@@ -98,8 +98,8 @@
         "a": "Often yes. In North Carolina real property generally vests in the heirs or devisees at death, so the heirs may be able to convey it directly. It gets more complicated if the estate has debts that require the personal representative to sell the property to create assets. Your estate attorney should confirm which applies before you sign anything, and we are happy to work directly with them."
       },
       {
-        "q": "What if my siblings and I do not agree?",
-        "a": "Every heir who holds an interest has to sign the deed. We cannot buy without all of them. What we can do is put one written number in front of everyone at once, which is usually more productive than each person estimating what the house is worth."
+        "q": "What if my siblings and I do not agree, or one of us won't sign?",
+        "a": "When property passes to several heirs they usually hold it as tenants in common, meaning separate undivided shares in the same house. Every co-owner has to sign to convey the whole property in a private sale, so one heir cannot sell it out from under the others and one heir who refuses can stop the sale. Where co-owners cannot agree, the route is a partition proceeding before the Clerk of Superior Court, which can appoint a commissioner to sell the property, sign the deed, and distribute the proceeds by share. That is slower and more expensive than everyone signing, which is why it is worth finding out early exactly who has to. What we can do is put one written number in front of everybody at once, which is usually more productive than each person guessing what the house is worth."
       },
       {
         "q": "Do we have to clean the house out first?",
@@ -112,6 +112,14 @@
       {
         "q": "What if the house has a reverse mortgage or a lien on it?",
         "a": "Both are common on inherited houses and neither is a dealbreaker. Reverse mortgages have a payoff deadline after the borrower's death, which usually makes speed more valuable, not less. The closing attorney will identify every lien in the title search and they are paid at closing."
+      },
+      {
+        "q": "Does the executor have to sign too, or just the heirs?",
+        "a": "It depends on timing and on whether the estate has debts. Within two years of the death and before the estate's final account is approved, a private sale may require the personal representative to join the deed, or the sale can be ineffective as to the estate and its creditors. If the estate needs funds to pay debts, the personal representative may also have to seek a court-authorized sale. The estate attorney should confirm which applies before anybody signs anything, and we will work directly with them."
+      },
+      {
+        "q": "How do I find out who is actually on the deed?",
+        "a": "Read the last recorded deed at the county Register of Deeds, not the tax card and not the county GIS map. GIS and tax records show who receives the tax bill, which is regularly not the same as who holds title. We have seen a seller who believed she was the sole owner turn out to hold a quarter interest alongside three other people. Ten minutes with the actual deed would have shown it."
       }
     ]
   },
@@ -153,7 +161,7 @@
     "faq": [
       {
         "q": "Do both spouses have to agree to sell?",
-        "a": "Generally both parties on the deed must sign to convey. In North Carolina, a spouse may also have marital interest considerations even if not on the deed. Your family law attorney is the right person to confirm what applies to you, and we will not proceed without the signatures the closing attorney requires."
+        "a": "In North Carolina, usually yes, and it goes further than most people expect. Under NCGS 39-7 a married person generally cannot convey good title without their spouse joining the deed, even when that spouse is not an owner, because of the marital life estate created by NCGS 29-30. Being separated or mid-divorce does not remove it by itself. We have had a closing stop at the table because a seller had not told her husband she was selling and he had to execute paperwork from another state before it could finish. Your family law attorney is the right person to confirm what applies to you, and we will not proceed without the signatures the closing attorney requires."
       },
       {
         "q": "Can we sell before the divorce is final?",

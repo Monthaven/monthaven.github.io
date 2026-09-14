@@ -22,6 +22,13 @@ the single biggest trust signal on the site), then **Q1–Q5** (case studies), t
 
 ## Group 1 — War stories → becomes `proof.caseStudies` and blog posts
 
+**Q2 and Q3 answered** (the Virginia-spouse closing and the Grover tenants-in-common deal) → `/blog/who-has-to-sign-to-sell-a-house-north-carolina/`.
+**Q1 partly answered** (Oak Ridge cat house) → published as a closed deal, labeled out-of-area.
+
+**Two things still needed on these:**
+- **Where was the Virginia-spouse house?** It closed, so it can be a second case study — but a closed deal without a checkable location is just a claim, so it stays a story until you say where.
+- **Oak Ridge seller testimonial.** One or two sentences, first name, city, permission. This is the last real launch blocker.
+
 These are the highest-value memos. Real addresses, real numbers, real outcomes.
 
 1. **Walk me through the last house you bought, start to finish.** How they found you, what
