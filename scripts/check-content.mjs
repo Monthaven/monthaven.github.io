@@ -168,7 +168,8 @@ if (site.twoNumberPromise && site.twoNumberPromise.enabled) {
 // -------------------------------------------------------------- US spelling
 // The audience is North Carolina homeowners. British spellings read as foreign
 // and undercut the "we're local" claim the whole site rests on.
-const UK_SPELLINGS = /\b(centre|neighbour|colour|favour|organis[ei]|realis[ei]|behaviour|licence)\b/gi;
+const UK_SPELLINGS =
+  /\b(centre|neighbour|colour|favour|organis[ei]|realis[ei]|behaviour|licence|maths|whilst|amongst|practise|cheque|storey|kerb|tyre|aluminium)\b/gi;
 for (const p of pages) {
   const text = textOf(fs.readFileSync(p.file, "utf8"));
   const hits = [...new Set((text.match(UK_SPELLINGS) || []).map((h) => h.toLowerCase()))];

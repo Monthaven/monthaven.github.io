@@ -228,32 +228,53 @@
 {% endmacro %}
 
 
+{#- Out-of-area deals never render in a city-page slot. On a city page we filter by
+    citySlug, which excludes them by construction; elsewhere they carry an explicit
+    label saying where they actually were. Showing a Triad deal as if it were local
+    is exactly the thing this site accuses competitors of. -#}
 {% macro caseStudies(citySlug=null) %}
 {% set real = [] %}
 {% for c in proof.caseStudies %}
-  {% if not c.placeholder and (not citySlug or c.citySlug == citySlug) %}
-    {% set real = (real.push(c), real) %}
+  {% if not c.placeholder %}
+    {% if citySlug %}
+      {% if c.citySlug == citySlug and not c.outOfArea %}{% set real = (real.push(c), real) %}{% endif %}
+    {% else %}
+      {% set real = (real.push(c), real) %}
+    {% endif %}
   {% endif %}
 {% endfor %}
 {% if real.length %}
-<div class="grid grid--3">
+<div class="stack-lg">
   {% for c in real %}
   <article class="case-study">
-    <p class="case-study__addr">{{ c.address }}</p>
+    <p class="case-study__addr">
+      {{ c.location }}
+      {% if c.outOfArea %}<span class="tag tag--warn">Outside our current service area</span>{% endif %}
+    </p>
+    {% if c.outOfAreaNote %}<p class="small muted">{{ c.outOfAreaNote }}</p>{% endif %}
     <dl>
       <dt>Situation</dt><dd>{{ c.situation }}</dd>
       <dt>Condition</dt><dd>{{ c.condition }}</dd>
+      {% if c.size %}<dt>Size</dt><dd>{{ c.size }}</dd>{% endif %}
+      {% if c.timeline %}<dt>Timeline</dt><dd>{{ c.timeline }}</dd>{% endif %}
       {% if c.daysToClose %}<dt>Closed in</dt><dd>{{ c.daysToClose }} days</dd>{% endif %}
       <dt>Outcome</dt><dd>{{ c.outcome }}</dd>
     </dl>
+    {% if c.scope and c.scope.length %}
+    <details class="mt-4">
+      <summary><strong>Everything we did to it</strong></summary>
+      <ul class="mt-3">{% for s in c.scope %}<li>{{ s }}</li>{% endfor %}</ul>
+    </details>
+    {% endif %}
+    {% if c.lesson %}<p class="mt-4"><strong>{{ c.lesson }}</strong></p>{% endif %}
   </article>
   {% endfor %}
 </div>
 {% else %}
 <p class="placeholder-note">
-  <strong>Awaiting real closed deals.</strong> This block stays empty until Alec supplies
-  actual addresses and outcomes. Invented case studies would be the single most damaging
-  thing we could put on this site. Add them to <code>src/_data/proof.json</code>.
+  <strong>{% if citySlug %}No closed deal published for this city yet.{% else %}Awaiting real closed deals.{% endif %}</strong>
+  Nothing appears here until Alec supplies actual properties and outcomes.
+  Add them to <code>src/_data/proof.json</code>.
 </p>
 {% endif %}
 {% endmacro %}

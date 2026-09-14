@@ -384,5 +384,63 @@
         "a": "That is normal and rarely a problem. The closing attorney searches title at the Register of Deeds and establishes the chain of ownership. Missing paperwork on your end is not usually the obstacle people expect it to be."
       }
     ]
+  },
+  {
+    "slug": "pet-damage",
+    "urlPrefix": "sell-house-pet-damage",
+    "label": "Pet damage or hoarding",
+    "navLabel": "Pet damage",
+    "h1": "Sell a House With Pet Damage or Hoarding Conditions in North Carolina",
+    "metaTitle": "Sell a House With Pet Damage in NC | Cat Urine, Odor, Hoarding | No Cleanup",
+    "metaDescription": "Cat urine, pet odor, or a house that's been let go. We buy in Gaston and Cleveland County as-is, with no cleanup and no judgment. Written cash offer in 24 hours.",
+    "directAnswer": "A house with heavy pet urine damage often cannot be financed by a retail buyer. FHA appraisers are required to assess whether a property is free of hazards, odors and physical defects, and VA appraisals require a property to be safe, structurally sound and sanitary. A house that smells strongly of cat urine gets flagged, the loan stalls, and the buyer pool collapses to cash. That is why these houses sell to cash buyers, and it is not a reflection on you.",
+    "formVariant": "full",
+    "painPoints": [
+      "The smell has gotten into the floors and you can't get it out.",
+      "You're embarrassed to let an agent walk through it.",
+      "A relative's house was let go further than anyone outside the family knew.",
+      "You've been quoted more to clean and repair it than you think it's worth.",
+      "You've already had a buyer walk after they opened the front door."
+    ],
+    "processSteps": [
+      {
+        "title": "You don't have to clean anything first",
+        "body": "Not the carpet, not the litter boxes, not the rooms you've been keeping shut. We have walked houses in worse shape than yours and we are not going to react."
+      },
+      {
+        "title": "We look at what's underneath, not what's on top",
+        "body": "With pet damage the question is always how far down it went: carpet and pad, then subfloor, then framing. That's what sets the number, and we can usually tell within twenty minutes."
+      },
+      {
+        "title": "Written offer within 24 hours, cleanout included",
+        "body": "Whatever is in the house stays. Furniture, belongings, anything you don't want to sort through. Clearing it is our cost, not a deduction from your offer."
+      },
+      {
+        "title": "Nobody else walks through",
+        "body": "No showings, no open house, no parade of strangers reacting to the smell of your family member's home. One walkthrough with us and that's the last one."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Why can't I just clean it and list it?",
+        "a": "Sometimes you can, and if that's the right answer we'll say so. The problem with cat urine specifically is that the uric acid forms crystals that don't dissolve in water, so mopping and carpet cleaning don't remove them. They sit in the subfloor and reactivate with humidity, which is why a house can smell fine in February and awful in July. Proper remediation usually means pulling the flooring, treating and sealing the subfloor with a shellac-based stain-blocking primer, and often replacing boards where it soaked through. It is real work, not a deep clean."
+      },
+      {
+        "q": "Will pet odor really stop someone getting a mortgage?",
+        "a": "It can. FHA appraisal standards require the appraiser to consider whether the property is free of hazards, odors and physical defects, and VA appraisals require a property to be safe, structurally sound and sanitary. A strong odor is exactly the kind of thing that gets called out, and once it is in the appraisal the lender wants it fixed before they will fund. That is the mechanism that pushes these houses to cash."
+      },
+      {
+        "q": "How much does pet damage take off the offer?",
+        "a": "It depends entirely on depth. Surface-level odor in a house with tile floors is close to nothing, because tile doesn't absorb. Urine that has gone through carpet, through pad, into subfloor and up the bottom of the drywall is a floor replacement plus sealing plus trim and doors, and that is a real number. We'll show you the arithmetic rather than just handing you a lower figure."
+      },
+      {
+        "q": "The house was a hoarding situation. Is that different?",
+        "a": "Same answer: leave it. Take out what matters to your family and we handle the rest. Hoarding and pet situations usually travel together and we treat both the same way, without commentary. You are not the first person to call us about this and you will not be the last."
+      },
+      {
+        "q": "Do I have to tell buyers about it if I clean it up myself?",
+        "a": "North Carolina has disclosure obligations for sellers, and a material defect you know about does not stop being material because you painted over it. This is a question for a North Carolina real estate attorney, not for us. What we can tell you is that when you sell to us as-is, the condition is already priced in and there is nothing to disclose around."
+      }
+    ]
   }
 ]

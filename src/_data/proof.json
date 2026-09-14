@@ -3,34 +3,31 @@
   "reviewsPending": true,
   "caseStudies": [
     {
-      "placeholder": true,
-      "citySlug": "gastonia",
-      "address": "PLACEHOLDER — street and city, e.g. 'Elm Street, Gastonia'",
-      "situation": "PLACEHOLDER — why they sold",
-      "condition": "PLACEHOLDER — what was wrong with the house",
-      "daysToClose": null,
-      "paidClosingCosts": null,
-      "outcome": "PLACEHOLDER — what the seller walked away with or avoided"
-    },
-    {
-      "placeholder": true,
-      "citySlug": "shelby",
-      "address": "PLACEHOLDER — street and city",
-      "situation": "PLACEHOLDER",
-      "condition": "PLACEHOLDER",
-      "daysToClose": null,
-      "paidClosingCosts": null,
-      "outcome": "PLACEHOLDER"
-    },
-    {
-      "placeholder": true,
-      "citySlug": "kings-mountain",
-      "address": "PLACEHOLDER — street and city",
-      "situation": "PLACEHOLDER",
-      "condition": "PLACEHOLDER",
-      "daysToClose": null,
-      "paidClosingCosts": null,
-      "outcome": "PLACEHOLDER"
+      "placeholder": false,
+      "citySlug": null,
+      "outOfArea": true,
+      "location": "Oak Ridge, NC",
+      "outOfAreaNote": "This one was in Oak Ridge, up in Guilford County, not in Gaston or Cleveland. It's where Alec worked before, and it's the first house he bought and resold. We're showing it because the work is the point, not the zip code.",
+      "situation": "Estate sale. A family member had passed away and the property was held in a trust, so title was clean and there was no probate fight to work through.",
+      "condition": "Four or five cats had been living in the house. Cat urine does not just smell, it eats into everything porous it touches, and by the time we walked it the floors, doors, walls and carpet were all compromised. Add a pool and hot tub out of service, poison oak through the yard, rotted wood around the windows, three HVAC units needing work, a failed water pump, and cracked driveway.",
+      "scope": [
+        "Floors torn out and redone to the baseboards; anything eaten away was replaced, then refinished",
+        "Around 30 interior doors replaced",
+        "Whole house painted inside and out",
+        "Corkboard countertops replaced with granite; all bathroom stone replaced",
+        "Entire exterior pressure washed and bleached",
+        "Pool and hot tub returned to service",
+        "Garage fully redone",
+        "Rotted wood around the windows cut out and replaced",
+        "Three HVAC units repaired, water pump replaced",
+        "Driveway cracks filled",
+        "New outdoor living area built with lighting and a fireplace, plus a new path around it",
+        "Poison oak cleared from roughly two acres"
+      ],
+      "timeline": "Three months, start to finish",
+      "size": "About 5,000 sq ft on roughly two acres",
+      "outcome": "Sold. The seller came to us because a family member had died and they needed somebody to take the whole problem, not just buy a house. They didn't clean it, didn't repair anything, and didn't deal with the cats.",
+      "lesson": "The thing worth knowing: cat urine is one of the few conditions that can make a house genuinely unfinanceable. FHA appraisers are required to assess whether a property is free of hazards, odors and physical defects, and a house that smells like this one did will get flagged. That is why these houses sell for cash."
     }
   ],
   "testimonials": [

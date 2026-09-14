@@ -103,3 +103,23 @@
   font-size: var(--step--1);
   color: #7a4d00;
 }
+
+.tag {
+  display: inline-block;
+  margin-left: var(--sp-2);
+  padding: 2px var(--sp-2);
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.tag--warn {
+  background: #fff1d6;
+  color: #7a4d00;
+  border: 1px solid #e8c37a;
+}
+.case-study details summary {
+  cursor: pointer;
+}
