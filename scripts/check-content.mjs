@@ -77,6 +77,22 @@ const realTeam = proof.team.filter((t) => !t.placeholder);
 // Rows carry either a sourced percentage or a fixed amount; either counts as real.
 const stackRows = proof.valueStack.rows.filter((r) => r.pct || r.amount);
 
+// agentReviews is Alec's brokerage work: buyer-side, out of area, and from a public
+// third-party profile. It is real proof of something, but it is NOT seller proof, and it must
+// never be able to clear the launch blocker below. Kept deliberately out of realQuotes.
+const agentReviews = (proof.agentReviews && proof.agentReviews.reviews) || [];
+for (const r of agentReviews) {
+  if (!r.source) {
+    errors.push(`agentReviews entry (${r.location}) has no source platform named.`);
+  }
+  if (!r.sourceUrl) {
+    warnings.push(
+      `agentReviews entry (${r.location}, ${r.source}) has no sourceUrl, so it renders nothing. ` +
+        `A quoted review is a claim; a linked one is checkable. Paste the profile URL.`
+    );
+  }
+}
+
 if (!realCases.length) gaps.push("no real closed-deal case studies (proof.caseStudies)");
 if (!realQuotes.length) gaps.push("no real testimonials (proof.testimonials)");
 if (!realTeam.length) gaps.push("no real team bio or photo (proof.team) — the biggest E-E-A-T signal on the site");
@@ -165,6 +181,23 @@ if (site.twoNumberPromise && site.twoNumberPromise.enabled) {
   }
 }
 
+// -------------------------------------- agent reviews must stay off city pages
+// caseStudies gets this protection structurally via outOfArea; agentReviews gets it here,
+// enforced rather than trusted. Showing a Thomasville buyer review on a Gastonia page is
+// exactly the thing this site accuses competitors of.
+for (const r of agentReviews) {
+  const fingerprint = r.quote.slice(0, 60);
+  for (const pg of pages) {
+    if (!/\/sell-my-house-fast-[a-z-]+-nc\//.test(pg.rel)) continue;
+    if (fs.readFileSync(pg.file, "utf8").includes(fingerprint)) {
+      errors.push(
+        `${pg.rel}: an agentReviews quote (${r.location}, ${r.side}-side) is rendering on a ` +
+          `city page. Agent-side, out-of-area reviews belong on /about/ and /reviews/ only.`
+      );
+    }
+  }
+}
+
 // ------------------------------------------------- market-data staleness gate
 // Published market statistics rot. A median sale price from eighteen months ago is
 // not a stale detail on this site, it is a credibility hole: the whole argument here
@@ -205,7 +238,7 @@ for (const c of cityData) {
 // The audience is North Carolina homeowners. British spellings read as foreign
 // and undercut the "we're local" claim the whole site rests on.
 const UK_SPELLINGS =
-  /\b(centre|neighbour|colour|favour|organis[ei]|realis[ei]|behaviour|licence|maths|whilst|amongst|practise|cheque|storey|kerb|tyre|aluminium)\b/gi;
+  /\b(centre|neighbour|colour|favour|organis[ei]|realis[ei]|incentivis[ei]|apologis[ei]|recognis[ei]|behaviour|licence|maths|whilst|amongst|practise|cheque|storey|kerb|tyre|aluminium|travelling|labour|honour)\b/gi;
 for (const p of pages) {
   const text = textOf(fs.readFileSync(p.file, "utf8"));
   const hits = [...new Set((text.match(UK_SPELLINGS) || []).map((h) => h.toLowerCase()))];

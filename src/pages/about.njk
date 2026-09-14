@@ -59,6 +59,38 @@ breadcrumbs:
       above.
     </p>
 
+    {#- All-or-nothing: this section reads as finished first-person copy, so it must not
+        render its build-time placeholder to a visitor. No live review, no section. The
+        placeholder still shows on /reviews/, where gaps are shown deliberately. -#}
+    {% set liveAgentReviews = [] %}
+    {% for r in proof.agentReviews.reviews %}
+      {% if r.sourceUrl %}{% set liveAgentReviews = (liveAgentReviews.push(r), liveAgentReviews) %}{% endif %}
+    {% endfor %}
+    {% if liveAgentReviews.length %}
+    <h3 class="mt-6">Somebody else's account of that, rather than mine</h3>
+    <p>
+      Here is the part I would rather you heard from a client than from me. Read the caveats
+      first, because they matter: <strong>this is from my agent work, not a house we bought.
+      It is from January 2023, and Thomasville is about ninety miles from here &mdash; Davidson
+      County, not Gaston.</strong> It is not evidence that we have bought houses in your
+      neighborhood, and I am not going to dress it up as though it were.
+    </p>
+    <p>
+      I am showing it for one reason. This couple's house had been damaged by Hurricane Ian,
+      they were still in Florida, and health problems made traveling to see houses genuinely
+      hard. So I went and walked the houses for them. They bought one without ever standing in
+      it, on my word about what I had seen.
+    </p>
+    {{ b.agentReviews() }}
+    <p class="mt-5">
+      If you are handling a property here from another state &mdash; an inherited house, a place
+      you moved away from, a parent's home you are trying to sort out at a distance &mdash;
+      that is the same job. You cannot get here, and you need somebody whose eyes you can
+      trust when you are not in the room. That part transfers. The zip code does not, and I
+      am not claiming it does.
+    </p>
+    {% endif %}
+
     <h2>Why Gaston and Cleveland County</h2>
     <p>
       We moved out here during the pandemic. We had kids, we were locked down in the city, and

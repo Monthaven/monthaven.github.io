@@ -46,6 +46,27 @@
       "city": "Shelby, NC"
     }
   ],
+  "agentReviews": {
+    "_README": "DIFFERENT STANDARD FROM testimonials, deliberately. proof.testimonials holds private quotes given to us with permission. agentReviews holds PUBLICLY POSTED third-party reviews of Alec's agent work, quoted with attribution and linked to the original. That is honest only if the page says which it is and links the source, so sourceUrl is REQUIRED and check-content.mjs enforces it — an unlinked quote does not render. These are agent-side and out-of-area: they must NEVER appear in a city-page testimonial slot and they must NEVER clear the seller-testimonial launch blocker. Both are enforced in the build.",
+    "reviews": [
+      {
+        "quote": "My wife and I would highly recommend Alec Clausen to help a client purchase their next home. Alec went out of his way to help my family find a home when we needed it the most. We were living in Florida and Hurricane Ian damaged our house pretty badly. I called Alec and explained to him our situation, he immediately started sending us listings. We told him what we were looking for and explained that we have some health issues that make it difficult for us to travel so he said he would be more than happy to check out homes for us on our behalf. After numerous calls back and forth, Alec found us the perfect home! We bought the house sight unseen because we knew that we could trust Alec's judgment, and when we did finally go see the house, my wife started to cry she was ecstatic with how perfect the house is for our family.",
+        "reviewerName": null,
+        "_reviewerName_note": "PENDING: a first name would strengthen this. Alec to ask the client.",
+        "location": "Thomasville, NC",
+        "county": "Davidson",
+        "date": "2023-01-07",
+        "rating": 5,
+        "source": "Realtor.com",
+        "sourceUrl": null,
+        "_sourceUrl_note": "PENDING and BLOCKING: Alec's Realtor.com agent profile URL. The macro renders nothing until this is set. A quoted review is a claim; a linked one is checkable, which is the whole argument of this site.",
+        "side": "buyer",
+        "outOfArea": true,
+        "compensated": false,
+        "verified": true
+      }
+    ]
+  },
   "team": [
     {
       "placeholder": false,

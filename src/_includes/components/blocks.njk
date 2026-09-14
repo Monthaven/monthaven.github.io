@@ -232,6 +232,46 @@
     citySlug, which excludes them by construction; elsewhere they carry an explicit
     label saying where they actually were. Showing a Triad deal as if it were local
     is exactly the thing this site accuses competitors of. -#}
+{#- Agent-side reviews. Deliberately a SEPARATE macro from testimonials(), with no
+    citySlug parameter at all, so there is no way to render one in a city slot even by
+    mistake. These are Alec's brokerage work, not houses we bought; they are out of area;
+    and they do not count as seller proof. The framing on the page has to say all three.
+    sourceUrl is required — an unlinked quote is a claim, and this site's whole argument
+    is that our claims are checkable. -#}
+{% macro agentReviews() %}
+{% set real = [] %}
+{% for r in proof.agentReviews.reviews %}
+  {% if r.sourceUrl %}{% set real = (real.push(r), real) %}{% endif %}
+{% endfor %}
+{% if real.length %}
+<div class="stack-lg">
+  {% for r in real %}
+  <figure class="testimonial">
+    <blockquote><p>{{ r.quote }}</p></blockquote>
+    <figcaption>
+      {% if r.reviewerName %}{{ r.reviewerName }} &mdash; {% endif %}{{ r.location }}
+      {% if r.outOfArea %}<span class="tag tag--warn">Outside our current service area</span>{% endif %}
+      <br>
+      <span class="small muted">
+        {{ r.side | capitalize }}-side review of Alec's agent work, {{ r.date | readableDate }}.
+        <a href="{{ r.sourceUrl }}" rel="nofollow noopener" target="_blank">Verified on {{ r.source }}</a>.
+        Not a paid or incentivized review.
+      </span>
+    </figcaption>
+  </figure>
+  {% endfor %}
+</div>
+{% else %}
+<p class="placeholder-note">
+  <strong>Agent review held back pending its source link.</strong>
+  There is a real, verified five-star Realtor.com review in
+  <code>src/_data/proof.json</code> under <code>agentReviews</code>, but it does not render
+  until <code>sourceUrl</code> points at the profile it came from. A quoted review is a claim;
+  a linked one is checkable. One URL from Alec and this goes live.
+</p>
+{% endif %}
+{% endmacro %}
+
 {% macro caseStudies(citySlug=null) %}
 {% set real = [] %}
 {% for c in proof.caseStudies %}

@@ -18,8 +18,13 @@ to **67.1%** even after adding 18 new town pages against a 72% ceiling.
 
 **What's left, in order:**
 
-1. **The Oak Ridge seller testimonial.** One or two sentences, first name, city, permission.
-   This is one of two remaining launch blockers and the cheapest one to clear.
+1. **Run the review campaign.** `docs/review-request-campaign.md`. You told me you forgot to
+   ask for reviews — six years, 40+ transactions, nobody asked. That is the answer to the
+   0-versus-70 review gap that decides the Google local pack, and it is the highest-value thing
+   on this entire list. Needs the GBP verified first.
+2. **The Oak Ridge seller testimonial.** One or two sentences, first name, city, permission.
+   One of two remaining launch blockers and the cheapest one to clear. Note the Thomasville
+   Realtor.com review does **not** clear it and cannot — the build enforces that.
 2. **The GBP URL**, once the new profile is verified (see `docs/gbp-setup.md`). The other
    launch blocker.
 3. **Group 5 (Q21–Q24)** — the industry memos. **Q24 now has a roster attached** (see below),
@@ -218,6 +223,31 @@ single biggest E-E-A-T signal the site has. It needs to be in your voice, first 
 | 6 — You | `/about/`; `src/_data/proof.json` → `team` |
 
 ---
+
+## The Thomasville review — what's published and what's missing
+
+The verified five-star Realtor.com review is in `proof.json` under `agentReviews`, rendering on
+`/about/` and `/reviews/` only. It is labelled as buyer-side, agent work, out of area, and
+dated, because it is all four of those things.
+
+**It does not render yet.** It needs `sourceUrl` — your Realtor.com profile link. The macro
+returns a placeholder until then, by design: a quoted review is a claim and a linked one is
+checkable, and checkability is the whole argument of this site. One paste and it goes live.
+
+Also worth getting while you're there:
+
+- **The client's first name.** "Verified review — Thomasville, NC" is decent; a name is better.
+- **Their OK to quote it on the site.** Not strictly blocking — it is public, on Realtor.com
+  rather than Zillow, and we attribute and link it. But it is a two-minute text and it makes the
+  question disappear.
+- **Your individual broker license number**, for `/about/`. Separate from the firm license.
+
+**On the firm license:** you confirmed you hold an individual broker license and no firm. I have
+corrected the note in `site.json` accordingly — the Two-Number Promise is not one missing field
+away from shipping, it needs a firm license and a broker-in-charge first. Under 21 NCAC 58A
+.0105 the site cannot advertise brokerage services with no firm to name, which is why the
+Thomasville review is framed strictly as past-tense biography and sits nowhere near a service
+offer.
 
 ## Open research items (things I can't resolve without you)
 

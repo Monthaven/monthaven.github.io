@@ -52,7 +52,7 @@
     "closer": "If one of those ends the contract, it is void and you owe us nothing. No fee, no penalty, no hard feelings."
   },
   "twoNumberPromise": {
-    "_README": "OFF BY DEFAULT. Do not set enabled:true until (1) the firm license is placed with the LLC, (2) licenseNumber above is filled in, (3) an NC real estate attorney or your BIC has reviewed the two-stage structure, and (4) proof.team carries a real bio. check-content.mjs enforces 2 and 4. Nothing about this feature renders while enabled is false.",
+    "_README": "OFF BY DEFAULT, and further away than it looks. Confirmed September 2026: Alec holds an INDIVIDUAL broker license only. Monthaven Capital LLC is NOT a licensed real estate brokerage, so prerequisite (1) is not a form to file, it is obtaining a firm license and placing a broker-in-charge. Until that exists the site cannot advertise brokerage services at all: 21 NCAC 58A .0105 requires brokerage advertising to identify the broker as such and name the affiliated firm, and there is no firm to name. Do not set enabled:true until (1) a firm license is issued to the LLC with a BIC, (2) licenseNumber above is filled in, (3) an NC real estate attorney has reviewed the two-stage structure, and (4) proof.team carries a real bio. check-content.mjs enforces 2 and 4; nobody but Alec can confirm 1 and 3. Nothing about this feature renders while enabled is false.",
     "enabled": false,
     "name": "The Two-Number Promise",
     "summary": "We'll give you more than one number. What we'll pay in cash today, and what we think the house lists for. If listing nets you more, we'll say so. And if you'd rather it go to a family than to an investor, we can find that family.",
