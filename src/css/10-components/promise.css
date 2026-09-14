@@ -40,3 +40,67 @@
 .promise__stages li {
   color: var(--c-body);
 }
+
+.margin-disclosure {
+  background: var(--c-green-800);
+  color: #dfeae4;
+  border-radius: var(--r-lg);
+  padding: var(--sp-6);
+}
+.margin-disclosure h3 {
+  color: #fff;
+  font-size: var(--step-2);
+  margin-bottom: var(--sp-5);
+}
+.margin-disclosure p {
+  color: #c9ded4;
+}
+.margin-disclosure p + p {
+  margin-top: var(--sp-4);
+}
+.margin-disclosure__point {
+  margin-top: var(--sp-5);
+  padding-top: var(--sp-5);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff !important;
+}
+.margin-figures {
+  display: grid;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-5);
+}
+@media (min-width: 640px) {
+  .margin-figures {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.margin-figure {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: var(--r);
+  padding: var(--sp-4);
+}
+.margin-figure--punch {
+  background: var(--c-cta);
+}
+.margin-figure__label {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #a9c6b8;
+}
+.margin-figure--punch .margin-figure__label {
+  color: var(--c-cta-ink);
+  opacity: 0.75;
+}
+.margin-figure__value {
+  display: block;
+  margin-top: var(--sp-1);
+  font-size: var(--step-3);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+}
+.margin-figure--punch .margin-figure__value {
+  color: var(--c-cta-ink);
+}

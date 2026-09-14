@@ -46,6 +46,29 @@ Gaston County house this is commonly 8 to 12% of ARV. It is real, and it is not 
 The buyer's profit. Anyone who claims not to have one is lying to you about something
 else too.
 
+## What a margin actually looks like
+
+Here are real numbers from a house we bought and resold.
+
+**We paid $140,000. It resold for $265,000. We made about $10,000.**
+
+That $125,000 gap is the number sellers assume goes in our pocket. What it actually covered:
+all new drywall, every bathroom, a roof, a water heater, every door, and replacing the copper
+plumbing that had been stripped out of the walls. There was no refrigerator and no oven —
+both had been sold. There was graffiti throughout, holes in nearly everything, and around 45
+shopping carts of debris to clear before any work could start.
+
+Then, partway through, the water heater failed and flooded the house, and a good part of the
+interior had to be done a second time.
+
+Sometimes there's a healthy margin in a house. Sometimes a water heater eats it. **The gap
+between what a cash buyer pays and what a house resells for is not profit — it is the cost of
+the work, plus the risk that the work goes wrong.**
+
+We publish this because the most common thing sellers believe about cash buyers is that
+we're making a killing on their house. Sometimes the answer is yes. On that one, the answer
+was $10,000 for three months and a flood.
+
 ## Why the discount varies so much
 
 This is the part most articles get wrong by quoting a flat percentage.

@@ -120,5 +120,17 @@
         "body": "Cancel any time before closing, for any reason or for no reason. No fee, no penalty, no pressure. If you change your mind the day before, you change your mind."
       }
     ]
+  },
+  "marginDisclosure": {
+    "_README": "Real figures from a real flip, published deliberately. This is the answer to 'you're going to make a fortune off my house' and it only works because the numbers are true. Do not adjust them to look better or worse.",
+    "enabled": true,
+    "headline": "What we actually made on the last house we flipped",
+    "purchase": 140000,
+    "sale": 265000,
+    "net": 10000,
+    "netApprox": true,
+    "body": "We bought it for $140,000 and sold it for $265,000. That looks like a $125,000 win, and it is the number people assume we're making on every house. We walked away with about $10,000.",
+    "why": "The house needed everything. All the drywall, every bathroom, the roof, the water heater, every door. The copper had been stripped out. There was no refrigerator and no oven; they'd been sold. There was graffiti on the walls, holes in everything, and roughly 45 shopping carts' worth of debris to clear before we could start. Then, partway through the remodel, the water heater failed and flooded the house, and a good part of the interior had to be done a second time.",
+    "point": "We're showing you this because the biggest objection we hear is that cash buyers make a killing on your house. Sometimes there's a good margin in one. Sometimes a water heater eats it. What you should take from it is that the gap between what we pay and what a house resells for is not profit, it's the cost of the work plus the risk that the work goes wrong. That's also why we'd rather show you the arithmetic than ask you to trust a number."
   }
 }

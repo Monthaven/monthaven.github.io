@@ -377,3 +377,32 @@
 {% endif %}
 {% endif %}
 {% endmacro %}
+
+
+{#- Real numbers from a real flip. The whole value of this block is that the third
+    number is small. Do not "improve" it. -#}
+{% macro marginDisclosure() %}
+{% set m = proof.marginDisclosure %}
+{% if m.enabled %}
+<div class="margin-disclosure">
+  <h3>{{ m.headline }}</h3>
+  <div class="margin-figures">
+    <div class="margin-figure">
+      <span class="margin-figure__label">We paid</span>
+      <span class="margin-figure__value">{{ m.purchase | usd }}</span>
+    </div>
+    <div class="margin-figure">
+      <span class="margin-figure__label">It resold for</span>
+      <span class="margin-figure__value">{{ m.sale | usd }}</span>
+    </div>
+    <div class="margin-figure margin-figure--punch">
+      <span class="margin-figure__label">We made</span>
+      <span class="margin-figure__value">{% if m.netApprox %}about {% endif %}{{ m.net | usd }}</span>
+    </div>
+  </div>
+  <p>{{ m.body }}</p>
+  <p>{{ m.why }}</p>
+  <p class="margin-disclosure__point">{{ m.point }}</p>
+</div>
+{% endif %}
+{% endmacro %}

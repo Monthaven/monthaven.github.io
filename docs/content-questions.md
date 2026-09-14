@@ -25,9 +25,18 @@ the single biggest trust signal on the site), then **Q1–Q5** (case studies), t
 **Q2 and Q3 answered** (the Virginia-spouse closing and the Grover tenants-in-common deal) → `/blog/who-has-to-sign-to-sell-a-house-north-carolina/`.
 **Q1 partly answered** (Oak Ridge cat house) → published as a closed deal, labeled out-of-area.
 
-**Two things still needed on these:**
+**Q4 and Q5 answered** (the gutted drug house, and the six-acre country house Alec told the
+owner to list instead) → margin disclosure on `/how-it-works/` and in the pricing post; the
+six-acre story on `/compare/`.
+
+**Three things still needed on these:**
 - **Where was the Virginia-spouse house?** It closed, so it can be a second case study — but a closed deal without a checkable location is just a claim, so it stays a story until you say where.
-- **Oak Ridge seller testimonial.** One or two sentences, first name, city, permission. This is the last real launch blocker.
+- **Which cities** the $140K/$265K house and the six-acre house were in. Alec confirmed both
+  are inside the Gaston/Cleveland/Lincoln footprint but did not name them. Without a city they
+  stay as stories; with one they become local closed-deal case studies on those city pages,
+  which is worth considerably more.
+- **Oak Ridge seller testimonial.** One or two sentences, first name, city, permission. This is
+  the last real launch blocker.
 
 These are the highest-value memos. Real addresses, real numbers, real outcomes.
 
