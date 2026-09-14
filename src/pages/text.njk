@@ -35,7 +35,9 @@ breadcrumbs:
   <div class="wrap--narrow">
     <form class="lead-form" id="sms-opt-in" data-lead-form data-variant="sms"
           data-phone="{{ site.phoneDisplay }}" data-offer-hours="{{ site.offerWindowHours }}"
-          action="{{ site.leadEndpoint }}" method="POST" novalidate>
+          action="{{ site.leadEndpoint }}"
+          {% if site.leadEndpointFallback %}data-fallback-action="{{ site.leadEndpointFallback }}"{% endif %}
+          method="POST" novalidate>
 
       <div class="hp" aria-hidden="true">
         <label for="sms-gotcha">Leave this field empty</label>

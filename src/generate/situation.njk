@@ -32,8 +32,9 @@ eleventyComputed:
         {% for p in situation.painPoints | limit(4) %}<li>{{ p }}</li>{% endfor %}
       </ul>
       <p class="hero__trust">
-        Call or text <a href="tel:{{ site.phoneRaw }}" style="color:#fff"><strong>{{ site.phoneDisplay }}</strong></a>
-        &mdash; {{ site.businessHours }}.
+        Call <a href="tel:{{ site.phoneRaw }}" style="color:#fff"><strong>{{ site.phoneDisplay }}</strong></a>
+        or text <a href="sms:{{ site.smsRaw }}" style="color:#fff"><strong>{{ site.smsDisplay }}</strong></a>,
+        {{ site.businessHours }}.
       </p>
     </div>
     <div>
