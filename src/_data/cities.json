@@ -327,8 +327,13 @@
       {
         "q": "Do you actually come out to Bessemer City?",
         "a": "Yes. We walk every property we make an offer on, including here. Any buyer who will quote you a number for a Bessemer City house without seeing it is planning to revise it later."
+      },
+      {
+        "q": "Why do so few buyers seem to work Bessemer City?",
+        "a": "Because the numbers are smaller and the drive is the same. A buyer working the Charlotte corridor makes more per trip in Belmont or Mount Holly, so Bessemer City gets skipped. We would rather buy four modest houses here than compete with six other buyers over one house closer to the county line."
       }
-    ]
+    ],
+    "localDetail": "Bessemer City grew up around mining and then textiles, and the housing followed the payroll: compact, close together, built for people walking to work. That layout is why lots here are narrow and why so many houses sit within a few feet of a neighbor, which matters when a buyer's surveyor goes looking for the property line. Sitting right off I-85 between Gastonia and Kings Mountain, it gets passed through far more than it gets stopped in, and most of the buyers advertising in this county treat it as a drive-by. Price point is the other half of the story: on a house well under the county median, a failed HVAC system is not a line item, it is a meaningful fraction of the whole sale."
   },
   {
     "slug": "cherryville",
@@ -377,8 +382,13 @@
       {
         "q": "The house is on a well and septic. Does that change anything?",
         "a": "Not for us. It does for a retail buyer, because lenders often require water testing and septic inspection and will condition the loan on the results. A failed septic can end a financed sale outright and does not end ours."
+      },
+      {
+        "q": "My Cherryville property has a workshop or a detached garage. Does that help or hurt?",
+        "a": "With us it helps, because we are valuing the whole parcel. With a financed retail buyer it frequently hurts, because an appraiser will not give full credit to an unpermitted structure and a lender may require it be brought up to code or removed before the loan funds. That gap is a large part of why houses out here sit."
       }
-    ]
+    ],
+    "localDetail": "Cherryville is a trucking town before it is anything else. Carolina Freight Carriers was founded here and ran out of Cherryville for decades, and a lot of the housing stock was built for the families that company employed. That history shows up in the properties we look at: deeper lots, detached garages and workshops built for people who worked on vehicles, and a surprising number of outbuildings that were put up without anybody pulling a permit. The town still holds its New Year's Shooters tradition, which is a genuinely local thing you will not find anywhere else, and it tells you something about how long families have stayed put here. Long tenure means deferred maintenance and it means estates."
   },
   {
     "slug": "dallas",
@@ -427,8 +437,13 @@
       {
         "q": "I own a small rental near Gaston College. Do you buy those?",
         "a": "Yes, occupied or vacant, and we will look at several at once if you want out of more than one. Send the rent roll and the leases with the addresses."
+      },
+      {
+        "q": "Do you buy the older homes around the Dallas Courthouse Square?",
+        "a": "Yes, and they are some of the most interesting properties in the county. Tell us early if the property carries any historic district restrictions, because those affect what can be changed and therefore what we can pay. We would rather price that in at the start than discover it during due diligence."
       }
-    ]
+    ],
+    "localDetail": "Dallas was the Gaston County seat until the courthouse moved to Gastonia, and the town never quite lost the shape of it. The old Courthouse Square is still the center, the Gaston County Museum occupies the historic courthouse building, and the housing ringing that square is older and grander than anything else in western Gaston County. Those are the hardest houses in the county to sell retail, because the repair list runs long and the pool of buyers who both want that project and can finance it is very small. Gaston College sits just outside town, which sustains a steady supply of small rentals that get hard use and need a complete turn before they would ever photograph well enough to list."
   },
   {
     "slug": "stanley",
@@ -477,8 +492,13 @@
       {
         "q": "My property is a few acres outside town. Is that a problem?",
         "a": "No. Land with the house is common in Stanley and we are comfortable with it. It is worth telling us about any easements, shared driveways, or right-of-way arrangements early, since the title search will surface them anyway."
+      },
+      {
+        "q": "How do I know whether my manufactured home was converted to real property?",
+        "a": "The short version is whether the DMV title was retired and the home was recorded as an improvement to the land at the Register of Deeds. If that never happened, most conventional and FHA lenders will not finance it, which removes nearly every retail buyer. A closing attorney can tell you in a phone call, and either answer is fine with us."
       }
-    ]
+    ],
+    "localDetail": "Stanley started life as Brevard Station on the rail line and still has the depot to show for it. It is the quietest place we buy, and it has been changing fast: people priced out of Mount Holly and Belmont keep moving one town further out, which has pulled values up without changing the housing stock much. What is actually here is a mix of older frame houses near the center of town and manufactured homes on owned acreage further out. That second category is the one that catches people, because lenders treat a manufactured home completely differently from a site-built house, and most sellers do not find that out until they are already under contract."
   },
   {
     "slug": "lincolnton",
@@ -529,7 +549,12 @@
       {
         "q": "I have gotten low offers from out-of-town buyers. Why would yours be different?",
         "a": "It might not be, and you should compare. What we will do that most mailer buyers will not is walk the house, show you the four numbers behind the offer, and commit in writing that the price will not drop because of the condition of the house after you have signed."
+      },
+      {
+        "q": "Is it worth listing a Lincolnton house that needs work, or should I take a cash offer?",
+        "a": "It depends entirely on how much work. Lincolnton has real retail demand for houses that are ready to live in. What it does not have is a deep pool of buyers willing to take on a project this far from Charlotte. If your house needs a roof or a system, the retail buyer pool shrinks to cash buyers anyway, and at that point you are choosing between cash offers rather than between cash and retail."
       }
-    ]
+    ],
+    "localDetail": "Lincolnton has a claim most towns its size do not: the first cotton mill in North Carolina was built here on the South Fork, and the Battle of Ramsour's Mill was fought on ground that is now inside the town. The practical effect is a downtown core of genuinely old housing surrounded by later mill-era construction, all of it carrying the systems of its era. Lincoln County sits just outside the two counties most cash buyers concentrate on, and that cuts both ways. There is less competition, so the unsolicited offers that land in mailboxes here tend to be lower and lazier. But there are also fewer retail buyers willing to drive out from Charlotte, so a house that needs work can sit a very long time before the right person appears."
   }
 ]

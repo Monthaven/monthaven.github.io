@@ -1,0 +1,45 @@
+.guarantees {
+  display: grid;
+  gap: var(--sp-4);
+}
+.guarantee {
+  background: #fff;
+  border: 1px solid var(--c-line);
+  border-top: 4px solid var(--c-cta);
+  border-radius: var(--r);
+  padding: var(--sp-5);
+}
+.guarantee__name {
+  font-size: var(--step-1);
+  margin-bottom: var(--sp-2);
+}
+.guarantee p {
+  color: var(--c-body);
+  margin: 0;
+}
+@media (min-width: 720px) {
+  .guarantees {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.cost-list {
+  columns: 2;
+  column-gap: var(--sp-6);
+  padding-left: 1.15em;
+}
+.cost-list li {
+  break-inside: avoid;
+  margin-bottom: var(--sp-2);
+  color: var(--c-body);
+}
+@media (max-width: 640px) {
+  .cost-list {
+    columns: 1;
+  }
+}
+
+.team-photo {
+  border-radius: var(--r-lg);
+  max-width: 320px;
+}

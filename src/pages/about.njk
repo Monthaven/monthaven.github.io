@@ -1,7 +1,7 @@
 ---
 pageType: page
-title: "About Monthaven Home Buyers | Who We Are & Why We Buy Houses Here"
-description: "Who Monthaven is, how we operate in Gaston and Cleveland County NC, and what we will and won't do. Real people, real offers, no call center."
+title: "About Monthaven Home Buyers | Alec Clausen, Gaston & Cleveland County NC"
+description: "Who actually buys your house. Eleven years turning around failing businesses, six years a licensed NC broker, and a straight answer about where I am with the buying side."
 breadcrumbs:
   - name: "Home"
     url: "/"
@@ -10,61 +10,133 @@ breadcrumbs:
 ---
 {% from "components/lead-form.njk" import leadForm with context %}
 {% import "components/blocks.njk" as b with context %}
+{% set me = proof.team[0] %}
 
 <section class="section section--soft">
   <div class="wrap--narrow">
-    <p class="eyebrow">About us</p>
-    <h1>We're local buyers, not a lead broker.</h1>
+    <p class="eyebrow">About</p>
+    <h1>I've spent my whole career fixing things that weren't working.</h1>
     <p class="lead mt-5">
-      A lot of the "we buy houses" sites you'll find for Gastonia and Shelby aren't buyers
-      at all. They collect your address and sell it to whoever pays most for the lead, which
-      is why you get eleven calls. We buy the houses ourselves.
+      You're going to be dealing with one person, not a call center. So here's who that is.
     </p>
   </div>
 </section>
 
+{% if me and not me.placeholder %}
 <section class="section">
   <div class="wrap--narrow stack-lg">
-    {% set realTeam = [] %}
-    {% for t in proof.team %}{% if not t.placeholder %}{% set realTeam = (realTeam.push(t), realTeam) %}{% endif %}{% endfor %}
-
-    {% if realTeam.length %}
-    <h2>Who you'll be dealing with</h2>
-    {% for t in realTeam %}
-    <div class="card">
-      <h3>{{ t.name }}{% if t.role %} &mdash; {{ t.role }}{% endif %}</h3>
-      <p>{{ t.bio }}</p>
-    </div>
-    {% endfor %}
-    {% else %}
-    <p class="placeholder-note">
-      <strong>Team bios and photos pending.</strong> This is the highest-value trust block on the
-      whole site and the single biggest E-E-A-T signal we have. It stays empty rather than
-      carrying a stock photo and invented copy. Add real names, roles, photos and first-person
-      bios to <code>src/_data/proof.json</code>.
-    </p>
+    {% if me.photo %}
+    <img src="{{ me.photo }}" alt="{{ me.name }}, {{ me.role }} at {{ site.name }}"
+         width="320" height="320" class="team-photo" loading="lazy" decoding="async">
     {% endif %}
+
+    <p>
+      I got into business at eighteen, running Smoothie King locations. For eleven years my
+      job was to walk into a store that was losing money &mdash; sometimes four at once &mdash;
+      put the right team in, cut what was bleeding, and rebuild it from the bottom up until it
+      turned a profit and the people working there were glad to be there. Service with a smile,
+      and actually meaning it.
+    </p>
+    <p>Same job now. The asset changed; the work didn't.</p>
+
+    <h2>Where I am with this, honestly</h2>
+    <p>
+      I've been licensed since 2020 &mdash; six years as a broker, 40+ transactions listing,
+      selling and renovating, and named Top Producer and #1 Rookie at my previous brokerage in
+      2023 and 2024.
+    </p>
+    <p>
+      <strong>Most of that is agent-side. I'm building the buying side now, and I'd rather tell
+      you that than pad a number.</strong> What you get from me is somebody who has been inside
+      40+ of these transactions and knows exactly where they go wrong &mdash; and who will show
+      you the arithmetic behind any offer I make, because I don't have a long buying record to
+      hide behind yet.
+    </p>
+    <p>
+      I've also done the unglamorous end of this. I've cut grass and mowed lawns to get
+      somebody's house ready to show. I've looked after people's houses while they were out of
+      town, because they trusted me with the keys. There isn't a part of this I think I'm
+      above.
+    </p>
+
+    <h2>Why Gaston and Cleveland County</h2>
+    <p>
+      We moved out here during the pandemic. We had kids, we were locked down in the city, and
+      it was not the funnest experience. So we went to the country &mdash; space, a dog, room
+      to spread out. Crowders Mountain, Kings Mountain National Military Park, Lake Wylie, Lake
+      Norman. Local farms, the farmers market, little events for the kids. Less traffic, and
+      people who'll actually talk to you.
+    </p>
+    <p>
+      I've lived in North Carolina 23 years and worked all over the middle of it &mdash;
+      Greensboro, High Point, Thomasville, Randleman, Asheboro, Salisbury, Kannapolis,
+      Albemarle, Charlotte, Gastonia, Kings Mountain, Shelby. This is the part I chose to live
+      in.
+    </p>
+
+    <h2>What I actually want out of a call</h2>
+    <p>
+      I want you to hang up better informed than you were, whether or not you ever sell me
+      anything. If the answer is list it, I'll say list it. If the answer is call your servicer
+      before you call anybody else, I'll say that. And if you go a different direction and it
+      goes sideways six months later, call me anyway and ask what I'd do.
+    </p>
+    <p>What I'm after is being somebody you can lean on. That's the part of this I like.</p>
   </div>
 </section>
 
 <section class="section section--warm">
+  <div class="wrap--narrow">
+    <h2 class="mb-5">What I won't do</h2>
+    <div class="promise">
+      <ul class="promise__limits">
+        <li><strong>Work with someone who lies about owning the property.</strong> If you're not
+        on the deed and not willing to sign it, we're done.</li>
+        <li><strong>Touch a house that's already been sold</strong> to somebody else.</li>
+        <li><strong>Do business with somebody who shows up to the walkthrough drunk.</strong>
+        Been there.</li>
+        <li><strong>Chase you.</strong> If you've got a better offer, take it &mdash; just tell
+        me, and tell me why, so I can get better at this. No hard feelings either way. Be
+        straight with me and I'll be straight with you.</li>
+      </ul>
+      <p class="promise__closer">God first, then family, then business. That's the order, and it doesn't move.</p>
+    </div>
+  </div>
+</section>
+{% else %}
+<section class="section">
+  <div class="wrap--narrow">
+    <p class="placeholder-note">
+      <strong>Team bio pending.</strong> Add a real first-person bio to
+      <code>src/_data/proof.json</code> &rarr; <code>team</code>. Nothing is invented here.
+    </p>
+  </div>
+</section>
+{% endif %}
+
+<section class="section">
+  <div class="wrap--narrow">
+    <h2 class="mb-5">What I'll put in writing</h2>
+    {{ b.guarantee() }}
+  </div>
+</section>
+
+<section class="section section--soft">
   <div class="wrap--narrow stack-lg">
     <h2>How we operate</h2>
-    <p><strong>We look at the house.</strong> Someone from Monthaven walks every property in
+    <p><strong>We look at the house.</strong> Somebody from Monthaven walks every property in
     person before we make an offer. We don't send algorithmic numbers and then "adjust" after
     the walkthrough.</p>
-    <p><strong>We put it in writing.</strong> Verbal offers are how people get moved off a number
-    later. Ours comes in writing with the math behind it.</p>
-    <p><strong>We don't re-trade you on condition.</strong> We walk the house before we price
-    it, and once you sign, the number doesn't move because of what's in it. No repair
-    renegotiation, no inspection deduction. This is the most common complaint about cash
-    buyers and it's the one thing we won't do. The only things that can void a contract are
-    outside both our hands, and we name them up front rather than bury them.</p>
+    <p><strong>We put it in writing.</strong> Verbal offers are how people get moved off a
+    number later. Ours comes in writing with the math behind it.</p>
+    <p><strong>We don't re-trade you on condition.</strong> The number doesn't move because of
+    what's in the house. The only things that can void a contract are outside both our hands,
+    and we name them up front.</p>
     <p><strong>We tell you when to walk away.</strong> If listing with an agent would net you
     more, or if a repayment plan with your servicer solves the problem, we'll say so. We'd
     rather lose the deal.</p>
-    <p><strong>We don't sell your information.</strong> Your address and phone number go to us,
-    not to a list.</p>
+    <p><strong>We don't sell your information.</strong> Your address and phone number come to
+    us, not to a list.</p>
   </div>
 </section>
 
@@ -73,14 +145,10 @@ breadcrumbs:
     <h2>What we are not</h2>
     <p>
       We're a real estate investment company. We buy houses directly with our own funds,
-      renovate them, and either sell or hold them. We are not real estate agents, we don't
-      list properties, and we don't represent you in a transaction. We're not attorneys,
-      accountants, or financial advisors, and nothing on this site is legal, tax, or
-      financial advice.
+      renovate them, and either sell or hold them. We're not attorneys, accountants, or
+      financial advisors, and nothing on this site is legal, tax, or financial advice.
     </p>
-    <p class="small muted">
-      {{ site.name }} is a trade name of {{ site.legalName }}.
-    </p>
+    <p class="small muted">{{ site.name }} is a trade name of {{ site.legalName }}.</p>
   </div>
 </section>
 

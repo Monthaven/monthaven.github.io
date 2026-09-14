@@ -12,7 +12,9 @@ Two or three a day gets us through this in two weeks.
 not publish anything you flagged as uncertain, and a hedge from you costs nothing while a
 wrong fact on a live page costs a lot.
 
-**Priority order if you only do a few:** start with **Q25–Q30** (that's the About page and
+**Q25–Q29 are done and the About page is written.** Next up: **Q1–Q5** (case studies — unblocks the biggest remaining launch blocker), then **Q16–Q20** (local detail for the city pages).
+
+**Original priority order:** start with **Q25–Q30** (that's the About page and
 the single biggest trust signal on the site), then **Q1–Q5** (case studies), then
 **Q16–Q20** (the local content that pushes the city pages apart).
 
@@ -84,7 +86,7 @@ competitor has; this is what none of them do.
 24. **Who else is genuinely good in this market,** and what are they better at than you?
     (I'm publishing this honestly — it's why ChatGPT cites J&B and not us.)
 
-## Group 6 — You → becomes `/about/` and `proof.team`
+## Group 6 — You → becomes `/about/` and `proof.team`  ✅ ANSWERED, page is live
 
 **Do these first if you do nothing else.** The About page is currently empty and it is the
 single biggest E-E-A-T signal the site has. It needs to be in your voice, first person.

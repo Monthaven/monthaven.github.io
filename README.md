@@ -44,8 +44,12 @@ a legal exposure and the fastest way to lose the trust these pages exist to buil
 3. **Real team bio and photo** — `proof.team`. Biggest E-E-A-T signal on the site.
 4. **Verified value-stack figures** — `proof.valueStack.rows`
 5. **A guarantee you will actually honor** — `proof.guarantee`, then set `enabled: true`
-6. **Google Business Profile URL** — `site.social.gbp`, and confirm the site's phone and
-   business name match the GBP **character for character**
+6. **Google Business Profile URL** — `site.social.gbp`. See `docs/gbp-setup.md`: this needs a
+   **new** profile, not the existing Greensboro agent one.
+
+Also enforced: the site's phone area code must be local to the service area (704/980/828).
+`(272) 777-1020` lives in `site.phoneMemorable` for direct mail and yard signs and must stay
+off the website.
 
 Until then the site builds and is fully reviewable; the proof blocks render a visible
 "awaiting real material" note rather than anything invented.
@@ -159,6 +163,15 @@ docs/archive/    the previous capital-advisory site
   publishing an out-of-market address is a real ranking and trust risk.
 - **Redirect stubs** use meta-refresh + canonical + `noarchive`. Not `noindex`, which would
   conflict with the canonical and block signal consolidation.
+- **Value-stack figures are percentages with sources**, not fixed dollars — they scale to the
+  seller's own house and each is individually checkable. `check-content.mjs` fails the build
+  if any percentage row lacks a `source`. The published NC figures are commission 5.5%,
+  seller closing costs 2.58% excluding commission, repairs/prep 1–3%; the site uses the
+  conservative end. Do not round these up.
+- **`npm run build` cleans `_site` first.** Eleventy does not empty its output directory, so
+  without this a file from a previous build survives after the template stops emitting it —
+  which is precisely how a flag-gated page leaks into a deploy. It happened once; that's why
+  `scripts/clean.mjs` exists.
 - **Partial lead capture** (posting step 1 before step 2 completes) is built but **off** by
   default — `site.partialCapture`. It doubles submissions against the form provider's quota.
   Turn it on when the endpoint is Monthaven's own.

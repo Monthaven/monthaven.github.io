@@ -1,8 +1,6 @@
 {
   "_README": "REAL PROOF ONLY. Nothing in this file may be invented. Every entry must be a real closed transaction or a real testimonial given with permission. The build check (scripts/check-content.mjs) counts PLACEHOLDER entries and blocks the launch check until they are replaced. Set placeholder:true on anything not yet verified.",
-
   "reviewsPending": true,
-
   "caseStudies": [
     {
       "placeholder": true,
@@ -35,7 +33,6 @@
       "outcome": "PLACEHOLDER"
     }
   ],
-
   "testimonials": [
     {
       "placeholder": true,
@@ -52,36 +49,79 @@
       "city": "Shelby, NC"
     }
   ],
-
   "team": [
     {
-      "placeholder": true,
+      "placeholder": false,
       "name": "Alec Clausen",
-      "role": "PLACEHOLDER — title",
+      "role": "Broker / Owner",
       "photo": null,
-      "bio": "PLACEHOLDER — who you are, why you buy houses here, how long you have been doing it. This is the single highest-value block on the site for trust and for E-E-A-T. Write it in first person.",
+      "_photo_note": "PENDING: headshot or working shot at src/assets/img/team/. The bio without a face is worth a fraction of the bio with one.",
+      "bio": "I got into business at eighteen, running Smoothie King locations. For eleven years my job was to walk into a store that was losing money, sometimes four at once, put the right team in, cut what was bleeding, and rebuild it from the bottom up until it turned a profit and the people working there were glad to be there. Same job now. The asset changed; the work didn't. I've been licensed since 2020, six years as a broker, and most of my experience is agent-side. I'm building the buying side now and I'd rather tell you that than pad a number.",
       "phone": null,
       "email": null
     }
   ],
-
   "valueStack": {
-    "_README": "Real numbers only, sourced to Alec's own closings or to Gaston County market data. Leave null until verified; the template omits any row whose amount is null and hides the table entirely if none are set.",
-    "basisPrice": null,
-    "basisNote": "PLACEHOLDER — e.g. 'Based on a $250,000 sale price in Gaston County'",
+    "_README": "Percentages with a stated basis price, not fixed dollars: they scale to the seller's own house, survive market drift, and each one is individually sourceable. Every pct row MUST carry a source string. Rows with neither pct nor amount render nothing.",
+    "basisPrice": 255000,
+    "basisNote": "Based on a $255,000 sale price, the 2026 median for Gastonia, NC.",
     "rows": [
-      { "label": "Agent commission (6%)", "amount": null },
-      { "label": "Seller-paid closing costs", "amount": null },
-      { "label": "Pre-sale repairs and inspection items", "amount": null },
-      { "label": "Cleanout and haul-away", "amount": null },
-      { "label": "Carrying costs during a 60-day listing", "amount": null }
+      {
+        "label": "Agent commission",
+        "pct": 5.5,
+        "source": "North Carolina average, 2026"
+      },
+      {
+        "label": "Seller closing costs",
+        "pct": 2.58,
+        "source": "NC average excluding commission, 2026"
+      },
+      {
+        "label": "Pre-sale repairs and prep",
+        "pct": 2.0,
+        "source": "Conservative end of the published 1-3% range"
+      },
+      {
+        "label": "Cleanout and haul-away",
+        "amount": null,
+        "_note": "PENDING: Alec's real cost from his own jobs. Renders nothing until set."
+      },
+      {
+        "label": "Carrying costs during a 60-day listing",
+        "amount": null,
+        "_note": "PENDING: taxes, insurance, utilities. Renders nothing until set."
+      }
+    ],
+    "hiddenCosts": [
+      "Showings on the buyer's schedule, not yours",
+      "Keeping the lawn cut and the house clean for every one of them",
+      "Maid service or a cleaning crew before photos",
+      "Photography",
+      "A survey, if the lender or buyer wants one",
+      "HVAC, plumbing, roof and foundation repairs a buyer's inspector finds",
+      "Title search problems that surface late",
+      "Loan processing delays on the buyer's side",
+      "FHA and VA appraisal conditions that have to be fixed before the loan funds",
+      "The lender's own inspection, separate from the buyer's",
+      "Renegotiation after the inspection report comes back",
+      "A buyer walking away after inspection, putting you back at day one",
+      "Having to disclose that inspection report to every buyer who comes after",
+      "Every month the house sits, still costing you money",
+      "The market moving while you wait"
     ]
   },
-
   "guarantee": {
-    "_README": "Alec must choose one and confirm he will honor it. Do not publish an unhonored guarantee. Set enabled:true only after confirmation.",
-    "enabled": false,
-    "headline": "PLACEHOLDER",
-    "body": "PLACEHOLDER"
+    "_README": "Alec confirmed both. Do not publish a guarantee he has not agreed to honor.",
+    "enabled": true,
+    "items": [
+      {
+        "name": "The 24-Hour Offer Guarantee",
+        "body": "You'll have a written offer within 24 business hours of us walking the property. If we miss it, we pay you $100. Not a credit, not a discount off something else. We send you $100."
+      },
+      {
+        "name": "The Walk-Away Guarantee",
+        "body": "Cancel any time before closing, for any reason or for no reason. No fee, no penalty, no pressure. If you change your mind the day before, you change your mind."
+      }
+    ]
   }
 }

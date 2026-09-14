@@ -38,6 +38,7 @@
 
 
 {% macro comparison(city=null) %}
+{% set tn = site.twoNumberPromise.enabled %}
 <div class="table-scroll">
   <table>
     <caption>What each route actually costs you{% if city %} in {{ city.name }}{% endif %}. Figures are typical for North Carolina; your situation may differ.</caption>
@@ -46,18 +47,76 @@
         <th scope="col">&nbsp;</th>
         <th scope="col">Selling to Monthaven</th>
         <th scope="col">Listing with an agent</th>
+        {% if tn %}<th scope="col">Brokerage cash-offer programs</th>{% endif %}
       </tr>
     </thead>
     <tbody>
-      <tr><th scope="row">Commission</th><td>None</td><td>Typically 5&ndash;6% of the sale price</td></tr>
-      <tr><th scope="row">Seller closing costs</th><td>We pay them</td><td>You pay them</td></tr>
-      <tr><th scope="row">Repairs before sale</th><td>None &mdash; we buy as-is</td><td>Usually required to show and to pass inspection</td></tr>
-      <tr><th scope="row">Price changes after inspection</th><td>None &mdash; we don't re-trade on condition</td><td>Commonly renegotiated after the buyer's inspection</td></tr>
-      <tr><th scope="row">Cleanout</th><td>Included &mdash; leave what you want</td><td>Your cost</td></tr>
-      <tr><th scope="row">Showings</th><td>One walkthrough</td><td>Ongoing, on the buyer's schedule</td></tr>
-      <tr><th scope="row">Financing falls through?</th><td>Can't &mdash; there is no loan</td><td>A real risk right up to closing day</td></tr>
-      <tr><th scope="row">Time to close</th><td>{{ site.closeDaysMin }}&ndash;{{ site.closeDaysMax }} days, your date</td><td>Often 60&ndash;90 days from listing to funding</td></tr>
-      <tr><th scope="row">Sale price</th><td>Below full retail &mdash; that's the trade</td><td>Full retail, if it appraises and closes</td></tr>
+      <tr>
+        <th scope="row">Commission</th>
+        <td>None</td>
+        <td>Typically 5&ndash;6% of the sale price</td>
+        {% if tn %}<td>A listing fee still applies, commonly around 3%, even on the cash offer</td>{% endif %}
+      </tr>
+      <tr>
+        <th scope="row">Do you sign before you see a number?</th>
+        <td>No &mdash; you see our offer first, with no agreement</td>
+        <td>Yes &mdash; a listing agreement comes first</td>
+        {% if tn %}<td>Yes &mdash; typically an exclusive listing agreement before any offer is shown</td>{% endif %}
+      </tr>
+      <tr>
+        <th scope="row">Seller closing costs</th>
+        <td>We pay them</td>
+        <td>You pay them</td>
+        {% if tn %}<td>Usually you pay them</td>{% endif %}
+      </tr>
+      <tr>
+        <th scope="row">Repairs before sale</th>
+        <td>None &mdash; we buy as-is</td>
+        <td>Usually required to show and to pass inspection</td>
+        {% if tn %}<td>Depends on which buyer in their network takes it</td>{% endif %}
+      </tr>
+      <tr>
+        <th scope="row">Price changes after inspection</th>
+        <td>None &mdash; we don't re-trade on condition</td>
+        <td>Commonly renegotiated after the buyer's inspection</td>
+        {% if tn %}<td>Depends on the end buyer's terms</td>{% endif %}
+      </tr>
+      <tr>
+        <th scope="row">Who actually buys the house?</th>
+        <td>We do, with our own funds</td>
+        <td>A retail buyer, usually with a mortgage</td>
+        {% if tn %}<td>An investor from their buyer network, not the brokerage</td>{% endif %}
+      </tr>
+      <tr>
+        <th scope="row">Cleanout</th>
+        <td>Included &mdash; leave what you want</td>
+        <td>Your cost</td>
+        {% if tn %}<td>Usually your cost</td>{% endif %}
+      </tr>
+      <tr>
+        <th scope="row">Showings</th>
+        <td>One walkthrough</td>
+        <td>Ongoing, on the buyer's schedule</td>
+        {% if tn %}<td>Usually one assessment</td>{% endif %}
+      </tr>
+      <tr>
+        <th scope="row">Financing falls through?</th>
+        <td>Can't &mdash; there is no loan</td>
+        <td>A real risk right up to closing day</td>
+        {% if tn %}<td>Depends on the end buyer</td>{% endif %}
+      </tr>
+      <tr>
+        <th scope="row">Time to close</th>
+        <td>{{ site.closeDaysMin }}&ndash;{{ site.closeDaysMax }} days, your date</td>
+        <td>Often 60&ndash;90 days from listing to funding</td>
+        {% if tn %}<td>Commonly around 21 days</td>{% endif %}
+      </tr>
+      <tr>
+        <th scope="row">Sale price</th>
+        <td>Below full retail &mdash; that's the trade</td>
+        <td>Full retail, if it appraises and closes</td>
+        {% if tn %}<td>Near retail, before the listing fee comes out</td>{% endif %}
+      </tr>
     </tbody>
   </table>
 </div>
@@ -71,19 +130,48 @@
 
 {% macro valueStack() %}
 {% set vs = proof.valueStack %}
-{% set hasNumbers = false %}
-{% for r in vs.rows %}{% if r.amount %}{% set hasNumbers = true %}{% endif %}{% endfor %}
-{% if hasNumbers %}
+{% set shown = [] %}
+{% for r in vs.rows %}{% if r.pct or r.amount %}{% set shown = (shown.push(r), shown) %}{% endif %}{% endfor %}
+{% if shown.length %}
 <div class="table-scroll">
   <table>
-    <caption>{{ vs.basisNote }}</caption>
-    <thead><tr><th scope="col">What you skip</th><th scope="col">What it normally costs</th></tr></thead>
+    <caption>{{ vs.basisNote }} Percentages are published North Carolina figures, not our estimates.</caption>
+    <thead>
+      <tr>
+        <th scope="col">What you skip by not listing</th>
+        <th scope="col">Typical cost</th>
+      </tr>
+    </thead>
     <tbody>
-      {% for r in vs.rows %}{% if r.amount %}
-      <tr><th scope="row">{{ r.label }}</th><td>{{ r.amount | usd }}</td></tr>
-      {% endif %}{% endfor %}
+      {% for r in shown %}
+      <tr>
+        <th scope="row">
+          {{ r.label }}
+          {% if r.source %}<br><span class="small muted">{{ r.pct }}% &mdash; {{ r.source }}</span>{% endif %}
+        </th>
+        <td>{% if r.pct %}{{ (vs.basisPrice * r.pct / 100) | round | usd }}{% else %}{{ r.amount | usd }}{% endif %}</td>
+      </tr>
+      {% endfor %}
     </tbody>
   </table>
+</div>
+{% endif %}
+
+{% if vs.hiddenCosts and vs.hiddenCosts.length %}
+<div class="mt-6">
+  <h3>What the percentages don't show</h3>
+  <p class="mt-4">
+    The numbers above are the ones you can put in a spreadsheet. These are the ones sellers
+    tell us about afterward, and they're usually what made them pick up the phone:
+  </p>
+  <ul class="cost-list mt-4">
+    {% for c in vs.hiddenCosts %}<li>{{ c }}</li>{% endfor %}
+  </ul>
+  <p class="mt-5">
+    None of that is an argument that you shouldn't list your house. Plenty of people should,
+    and we'll tell you when you're one of them. It's just the part of the comparison that
+    doesn't show up until you're already three weeks into it.
+  </p>
 </div>
 {% endif %}
 {% endmacro %}
@@ -227,6 +315,7 @@
   <ol class="promise__stages">
     <li><strong>First, the cash offer.</strong> {{ tn.stage1 }}</li>
     <li><strong>Only if you'd rather list.</strong> {{ tn.stage2 }}</li>
+    <li><strong>{{ tn.stage3Heading }}.</strong> {{ tn.stage3 }}</li>
   </ol>
   <p class="small muted">{{ tn.disclosure }}</p>
   <p class="mt-4"><a href="/two-number-promise/">How the Two-Number Promise works &rarr;</a></p>
@@ -239,5 +328,31 @@
 {% macro licenseeDisclosure() %}
 {% if site.twoNumberPromise.enabled %}
 <p class="footer__disclaimer">{{ site.twoNumberPromise.disclosure }}{% if site.licenseNumber %} NC real estate license #{{ site.licenseNumber }}.{% endif %}</p>
+{% endif %}
+{% endmacro %}
+
+
+{#- compact=true renders names only. Used on city pages: the full bodies are ~90
+    words of identical text and repeating them across 10 city pages pushes them over
+    the duplicate-content ceiling. The full version lives on /how-it-works/. -#}
+{% macro guarantee(compact=false) %}
+{% if proof.guarantee.enabled and proof.guarantee.items.length %}
+{% if compact %}
+<ul class="pill-links">
+  {% for g in proof.guarantee.items %}<li><a href="/how-it-works/">{{ g.name }}</a></li>{% endfor %}
+</ul>
+{% else %}
+<div class="guarantees">
+  {% for g in proof.guarantee.items %}
+  <div class="guarantee">
+    <h3 class="guarantee__name">{{ g.name }}</h3>
+    <p>{{ g.body }}</p>
+  </div>
+  {% endfor %}
+</div>
+<p class="small muted mt-4">
+  Both of these are in writing on every offer we make. Ask us to point them out.
+</p>
+{% endif %}
 {% endif %}
 {% endmacro %}

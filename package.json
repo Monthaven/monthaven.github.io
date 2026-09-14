@@ -5,8 +5,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "eleventy",
-    "serve": "eleventy --serve",
+    "build": "node scripts/clean.mjs && eleventy",
+    "serve": "node scripts/clean.mjs && eleventy --serve",
     "check": "node scripts/check-links.mjs && node scripts/check-content.mjs",
     "lint": "node scripts/check-links.mjs",
     "typecheck": "echo \"no typecheck for this project\"",

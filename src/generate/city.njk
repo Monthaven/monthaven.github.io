@@ -97,6 +97,7 @@ eleventyComputed:
     <h2 class="mb-5">The one thing we won't do to you</h2>
     {{ b.noRetradePromise() }}
     {{ b.twoNumberPromise(true) }}
+    <div class="mt-6">{{ b.guarantee(true) }}</div>
   </div>
 </section>
 
@@ -136,6 +137,8 @@ eleventyComputed:
 
     <h3>What makes a {{ city.name }} house hard to sell the normal way</h3>
     <p>{{ city.localChallenges }}</p>
+
+    {% if city.localDetail %}<p>{{ city.localDetail }}</p>{% endif %}
 
     {% if city.medianHomeValue %}
     <p>

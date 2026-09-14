@@ -74,14 +74,42 @@ const gaps = [];
 const realCases = proof.caseStudies.filter((c) => !c.placeholder);
 const realQuotes = proof.testimonials.filter((t) => !t.placeholder);
 const realTeam = proof.team.filter((t) => !t.placeholder);
-const stackRows = proof.valueStack.rows.filter((r) => r.amount);
+// Rows carry either a sourced percentage or a fixed amount; either counts as real.
+const stackRows = proof.valueStack.rows.filter((r) => r.pct || r.amount);
 
 if (!realCases.length) gaps.push("no real closed-deal case studies (proof.caseStudies)");
 if (!realQuotes.length) gaps.push("no real testimonials (proof.testimonials)");
 if (!realTeam.length) gaps.push("no real team bio or photo (proof.team) — the biggest E-E-A-T signal on the site");
 if (!stackRows.length) gaps.push("no verified value-stack figures (proof.valueStack.rows)");
+// A percentage without a citation is an assertion, not a figure.
+for (const r of proof.valueStack.rows) {
+  if (r.pct && !r.source) {
+    errors.push(`valueStack row "${r.label}" has a percentage but no source. Cite it or drop it.`);
+  }
+}
 if (!proof.guarantee.enabled) gaps.push("no guarantee confirmed (proof.guarantee)");
 if (!site_gbp()) gaps.push("Google Business Profile URL not set (site.social.gbp) — needed for sameAs and NAP matching");
+
+// The site's phone must carry an area code local to the service area. An out-of-market
+// area code reads as a call centre to a Gastonia seller and is a weak local signal to
+// Google. 704/980 are Charlotte metro; 828 covers the western edge.
+const LOCAL_AREA_CODES = ["704", "980", "828"];
+const phoneAreaCode = (site_phone() || "").replace(/\D/g, "").replace(/^1/, "").slice(0, 3);
+if (!LOCAL_AREA_CODES.includes(phoneAreaCode)) {
+  gaps.push(
+    `site.phoneRaw area code ${phoneAreaCode || "(unset)"} is outside the service area ` +
+      `(${LOCAL_AREA_CODES.join("/")}). Use a local number on the site and keep the memorable ` +
+      `one for direct mail.`
+  );
+}
+
+function site_phone() {
+  try {
+    return JSON.parse(fs.readFileSync(path.join(process.cwd(), "src/_data/site.json"), "utf8")).phoneRaw;
+  } catch (e) {
+    return "";
+  }
+}
 
 function site_gbp() {
   try {
@@ -135,6 +163,16 @@ if (site.twoNumberPromise && site.twoNumberPromise.enabled) {
       errors.push(`${p.rel}: Two-Number Promise content leaked while the flag is OFF`);
     }
   }
+}
+
+// -------------------------------------------------------------- US spelling
+// The audience is North Carolina homeowners. British spellings read as foreign
+// and undercut the "we're local" claim the whole site rests on.
+const UK_SPELLINGS = /\b(centre|neighbour|colour|favour|organis[ei]|realis[ei]|behaviour|licence)\b/gi;
+for (const p of pages) {
+  const text = textOf(fs.readFileSync(p.file, "utf8"));
+  const hits = [...new Set((text.match(UK_SPELLINGS) || []).map((h) => h.toLowerCase()))];
+  if (hits.length) errors.push(`${p.rel}: British spelling(s) - ${hits.join(", ")}`);
 }
 
 // ---------------------------------------------------------- thin content check
