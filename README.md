@@ -22,10 +22,33 @@ from a data file.
 
 Commit and push to `main`; GitHub Actions builds and deploys. You never run `npm`.
 
-### Switching the lead system
+### Where the lead goes
 
-One line. `src/_data/site.json` → `"leadEndpoint"`. The next build rewrites every form on
-every page. There is no second copy of the endpoint anywhere.
+Two endpoints in `src/_data/site.json`, and both matter.
+
+`leadEndpoint` is Monthaven's own intake: `POST /api/sms/web-lead` on SONA. A submission
+there records the TCPA consent evidence, creates the lead and its ledger row, texts the
+seller a confirmation, and alerts Alec on push and SMS. The lead lands as `INTERESTED` with
+`call` as its next action, assigned to Alec.
+
+`leadEndpointFallback` is Formspree, and it is not decoration. SONA runs on a local Windows
+box behind a Cloudflare tunnel. When that box is down the primary POST fails and
+`src/js/main.js` re-posts the same submission to Formspree, so a dead tunnel costs us a
+confirmation text, never the lead. Failover happens on transport and 5xx errors only: a 4xx
+means the primary read the submission and rejected it (bot trap, bad input, rate limit), and
+re-posting that would just duplicate a bad lead.
+
+Two things about the primary that are easy to break:
+
+- **It takes JSON, not multipart.** SONA parses JSON and urlencoded bodies only. Handing a
+  bare `FormData` to `fetch` sends `multipart/form-data`, which arrives as an empty body with
+  no error on either side. `main.js` serializes to JSON for the primary and keeps `FormData`
+  for the Formspree fallback, which does want multipart.
+- **The origin is allowlisted server-side.** `https://monthavencapital.com` and the `www.`
+  form are listed in SONA's CORS config. A new domain or subdomain fronting this site will
+  fail its preflight until it is added there too.
+
+Swapping either endpoint is still a one-line change. There is no second copy anywhere.
 
 ```bash
 npm run build && npm run check   # confirm before pushing

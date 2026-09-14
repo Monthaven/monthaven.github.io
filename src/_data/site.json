@@ -12,8 +12,10 @@
   "smsRaw": "+18444829105",
   "email": "offers@monthavencapital.com",
   "emailFallback": "info@monthavencapital.com",
-  "_comment_lead": "ONE-LINE SWAP: replace leadEndpoint when the Monthaven lead system is live. Nothing else changes.",
-  "leadEndpoint": "https://formspree.io/f/xpwvbwno",
+
+  "_comment_lead": "leadEndpoint is Monthaven's own intake (SONA, /api/sms/web-lead). It creates the lead, records TCPA consent evidence, texts the seller a confirmation, and alerts Alec. leadEndpointFallback is the safety net: SONA runs on a local box behind a Cloudflare tunnel, so if that box is down the primary POST fails and the browser re-posts to Formspree instead. A lead is never lost to a dead tunnel. Do not remove the fallback.",
+  "leadEndpoint": "https://sona-webhook.monthavencapital.com/api/sms/web-lead",
+  "leadEndpointFallback": "https://formspree.io/f/xpwvbwno",
   "partialCapture": false,
   "gaId": "G-CFGZGFMX9G",
   "themeColor": "#1d5c46",

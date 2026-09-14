@@ -16,6 +16,7 @@
   data-offer-hours="{{ site.offerWindowHours }}"
   {% if site.partialCapture %}data-partial-capture{% endif %}
   action="{{ site.leadEndpoint }}"
+  {% if site.leadEndpointFallback %}data-fallback-action="{{ site.leadEndpointFallback }}"{% endif %}
   method="POST"
   novalidate
 >
@@ -151,7 +152,12 @@
 
   <p class="form-note">
     No fees. No obligation. We'll never sell your information.<br>
-    Prefer to talk? <a href="tel:{{ site.phoneRaw }}">Call or text {{ site.phoneDisplay }}</a>.
+    {#- Call and text are DIFFERENT numbers and must stay that way. phoneRaw is
+        the voice line; smsRaw is the toll-free that is registered with the
+        carriers for messaging and wired to the system that answers texts. A
+        text sent to the voice number reaches a different inbox. -#}
+    Prefer to talk? <a href="tel:{{ site.phoneRaw }}">Call {{ site.phoneDisplay }}</a>
+    or <a href="sms:{{ site.smsRaw }}">text {{ site.smsDisplay }}</a>.
   </p>
 
   <div class="form-status" data-form-status role="status" aria-live="polite" tabindex="-1" hidden></div>

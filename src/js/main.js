@@ -153,15 +153,55 @@
       return true;
     }
 
-    function post(stage) {
+    // Monthaven's own intake (SONA) parses JSON and urlencoded bodies. It does
+    // NOT parse multipart, which is what the browser sends when you hand a bare
+    // FormData to fetch — every field would arrive empty with no error anywhere.
+    // So serialize to JSON for the primary, and keep FormData for the Formspree
+    // fallback, which expects multipart.
+    function fields(stage) {
       var data = new FormData(form);
       data.set("stage", stage);
       data.set("elapsed_ms", String(Date.now() - loadedAt));
+      return data;
+    }
+
+    function postPrimary(stage) {
+      var data = fields(stage);
+      var body = {};
+      data.forEach(function (v, k) { body[k] = typeof v === "string" ? v : String(v); });
       return fetch(form.getAttribute("action"), {
         method: "POST",
-        headers: { Accept: "application/json" },
-        body: data
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(body)
       });
+    }
+
+    // SONA runs on a local box behind a Cloudflare tunnel. If that box is down,
+    // the primary POST fails and this catches the lead instead of losing it.
+    function postFallback(stage) {
+      var url = form.getAttribute("data-fallback-action");
+      if (!url) return Promise.reject(new Error("no fallback configured"));
+      return fetch(url, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: fields(stage)
+      });
+    }
+
+    function post(stage) {
+      return postPrimary(stage)
+        .then(function (res) {
+          if (res.ok) return res;
+          // 4xx means the primary received it and rejected it (bad input, bot
+          // trap, rate limit). Re-posting that to the fallback just duplicates
+          // a bad lead, so only fail over on a server/transport failure.
+          if (res.status >= 400 && res.status < 500) throw new Error("rejected");
+          return postFallback(stage);
+        })
+        .catch(function (err) {
+          if (err && err.message === "rejected") throw err;
+          return postFallback(stage);
+        });
     }
 
     if (nextBtn && step1 && step2) {
