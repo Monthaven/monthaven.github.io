@@ -74,26 +74,52 @@ form sit on Formspree while everything passed green.
   exactly once as multipart, and that a 4xx does not fail over at all. Verified to fail
   when the primary is collapsed onto the FormData path.
 
-**What stays manual is the CORS preflight, and it is the part that matters.** Items 1
-to 4 below are still yours to run.
+### The preflight: DONE, and now repeatable
+
+**Run 2026-09-15 by Alec against the live endpoint. It passes. The production origin is
+in SONA's allowlist and that assumption is retired.**
+
+Two corrections he made to this list while running it, both of which are now folded in:
+
+**`/get-offer/` 404s on the live site**, because the rebuild is not live, so "open it on
+the live site" was impossible as written. The way through: serve the built page by
+route interception while the **document origin stays `https://monthavencapital.com`**,
+and leave the SONA requests un-intercepted so they hit the real tunnel. The allowlist
+keys on the `Origin` header and Playwright's routes do not intercept the browser's
+preflight, so that is the production preflight, not an approximation of it.
+
+**Email only cannot prove INTERESTED.** No phone means no ledger row, so "use email
+only" and "confirm the seller shows on the Caller desk" were mutually exclusive
+instructions sitting two lines apart. The number to use is an **unassigned 999 area code
+with a non-555 exchange**, e.g. `999-201-0100`: the endpoint's rejection rule is on the
+555 exchange so this is accepted, 999 can never route, and the send path forces shadow.
+That satisfies both checks at once.
+
+Both are now encoded, so nobody has to rediscover them:
+
+```bash
+LEAD_TEST_LIVE=1 npm run test:lead-path
+```
+
+It serves `_site` at the production origin, posts for real, and asserts the preflight was
+accepted, that SONA answered 2xx, and that **Formspree was never touched**. That last one
+is the whole point: a rejected preflight looks like success from the outside, because the
+lead still lands in email while SONA has no row, no consent evidence and nothing on the
+Caller desk.
+
+**It creates a real lead row on every run.** Opt-in only, never in CI. Afterwards check
+the row in `sfh_leads` has the right city, county and source and shows INTERESTED, then
+delete it.
+
+### Still worth doing by hand
 
 1. **Confirm SONA is alive.** `curl -X POST <leadEndpoint>` with an empty body. Healthy
    is **400 "Property address is required"**. A 200 means the validator let an empty
    body through and is a bug. A timeout means the tunnel is down.
-2. **Submit the form from a real browser**, not curl, with the network tab open.
-   - The `OPTIONS` preflight must return 200 with `Access-Control-Allow-Headers:
-     Content-Type` and an allowed origin.
-   - The POST must go to SONA and return 2xx. **If it fell through to Formspree, the
-     seam is broken** and it will look like it works, because the lead still lands
-     somewhere.
-   - Use **email only, no phone** so no confirmation text goes out. The endpoint
-     rejects any 555 exchange.
-3. **Check the row landed** in `sfh_leads` with the right city, county and source, and
-   that the seller shows on the Caller desk as INTERESTED. Delete the test row.
-4. **CORS caveat that matters.** A staging origin is a different origin from
-   `monthavencapital.com`. Passing on staging does not prove production passes, unless
-   SONA allows both explicitly. Whatever the allowlist is, it needs the production
-   origin in it before launch.
+2. **Re-run the live mode after any change to the origin**, whether that is a new
+   subdomain, a CDN in front, or a staging host. A staging origin is a different origin
+   from `monthavencapital.com`, and passing on one proves nothing about the other unless
+   SONA allows both explicitly.
 
 ## Step 3: click through on a phone
 

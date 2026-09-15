@@ -36,9 +36,23 @@ answers **400 "Property address is required"** and creates nothing. A 200 would
 mean the validator let an empty body through, which is a bug. SONA's monitor
 runs exactly this probe every 30 minutes and pages Alec after two misses.
 
-If you need a test lead, send **email only with no phone**. No phone means no
-text goes out. The endpoint rejects any 555 exchange, so test numbers of the
-`999-555-xxxx` shape will not work.
+For a test lead, use a phone with an **unassigned 999 area code and a non-555
+exchange**, e.g. `999-201-0100`. The rejection rule is on the 555 exchange, so
+this is accepted; 999 can never route; and the send path forces it to shadow.
+
+**Corrected 2026-09-15, found by Alec while running the live test.** This file
+used to say to send email only with no phone. That is safe but it cannot prove
+the lead path works, because **no phone means no ledger row at all**, so there is
+nothing on the Caller desk to check and the half of the system that matters most
+goes unverified. Email-only and "confirm the seller shows as INTERESTED" were
+mutually exclusive instructions and they sat next to each other in the runbook
+for days. The 999 recipe satisfies both at once.
+
+The preflight test is now encoded rather than remembered:
+`LEAD_TEST_LIVE=1 npm run test:lead-path` serves `_site` at the production
+origin, posts for real, and fails if the lead reaches Formspree instead of SONA.
+It creates a real lead row every run, so it is opt-in and never in CI.
+`docs/go-live-runbook.md` step 2 has the detail.
 
 ## The phone numbers are not interchangeable
 
