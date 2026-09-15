@@ -10,8 +10,11 @@ export default function (eleventyConfig) {
   // ---------------------------------------------------------------------------
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/js": "js" });
-  eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
-  eleventyConfig.addPassthroughCopy({ "src/CNAME": "CNAME" });
+  // CNAME claims monthavencapital.com. A staging build must never ship it: two Pages
+  // sites claiming the same custom domain will fight over it.
+  if ((process.env.SITE_ENV || "production").toLowerCase() !== "staging") {
+    eleventyConfig.addPassthroughCopy({ "src/CNAME": "CNAME" });
+  }
   eleventyConfig.addPassthroughCopy({ "src/.nojekyll": ".nojekyll" });
 
   // ---------------------------------------------------------------------------

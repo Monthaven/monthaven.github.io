@@ -42,3 +42,18 @@
 .nowrap {
   white-space: nowrap;
 }
+
+/* Staging builds only. Deliberately loud: a staging site that looks like the live
+   site is how somebody reviews the wrong thing, or worse, links a customer to it. */
+.staging-flag {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #7a1212;
+  color: #fff;
+  text-align: center;
+  padding: var(--sp-2) var(--sp-3);
+  font-size: var(--step--1);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}

@@ -92,7 +92,33 @@ opt-in form must keep its exact value.
   taking this branch's `.github/workflows/static.yml` would publish `src/` and
   break the site. The workflow on this branch is already correct: it runs
   `npm ci && npm run build && npm run check` and uploads `_site` only.
-- Work on a branch. Going live is Alec's call.
+- Work on a branch. Going live is Alec's call. `docs/go-live-runbook.md` is the
+  ordered checklist.
+- **The deploy job runs `npm run check:launch`, not `npm run check`.** It used to run
+  the latter, which reports unfilled proof as a warning and exits zero, so the gate
+  meant to hold the site back was not wired to the job that publishes it.
+
+## Build environments
+
+`src/_data/env.js` reads `SITE_ENV`. The default is **production**, deliberately, so a
+build with no env var set can never leak internal copy.
+
+| | `npm run build` | `build:review` / `serve` | `build:staging` |
+|---|---|---|---|
+| Review notices | hidden | visible | visible |
+| Indexable | yes | yes | **no**, noindex + robots Disallow |
+| CNAME | ships | ships | **withheld** |
+| Staging banner | no | no | yes |
+
+Review notices are the dashed orange boxes that say things like "Awaiting real
+testimonials, add them to src/\_data/proof.json". They are scaffolding. Every one of
+the 63 pages was shipping them to visitors, including two on the homepage, before this
+existed. `check-content.mjs` now fails a production build that contains a review
+notice, an instruction addressed to the site owner, or a source-file path in visible
+copy. Guard anything of that kind with `{% if env.showReviewNotices %}`.
+
+Staging must never ship a CNAME: two Pages sites claiming monthavencapital.com will
+fight over it. The staging workflow hard-fails if one appears.
 
 Before any push: `npm run build && npm run check`. Both gates block on dead
 links, missing assets, canonical and sitemap disagreement, a published internal

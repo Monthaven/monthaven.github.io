@@ -218,12 +218,13 @@
   {% endfor %}
 </div>
 {% else %}
-<p class="placeholder-note">
+{% if env.showReviewNotices %}<p class="placeholder-note">
   <strong>Awaiting real testimonials.</strong> Nothing is published here until Alec supplies
   real quotes from real sellers with permission to use them. Fabricated reviews are both a
   legal problem and the fastest way to lose the trust this page exists to build.
   Add them to <code>src/_data/proof.json</code>.
 </p>
+{% endif %}
 {% endif %}
 {% endmacro %}
 
@@ -262,13 +263,14 @@
   {% endfor %}
 </div>
 {% else %}
-<p class="placeholder-note">
+{% if env.showReviewNotices %}<p class="placeholder-note">
   <strong>Agent review held back pending its source link.</strong>
   There is a real, verified five-star Realtor.com review in
   <code>src/_data/proof.json</code> under <code>agentReviews</code>, but it does not render
   until <code>sourceUrl</code> points at the profile it came from. A quoted review is a claim;
   a linked one is checkable. One URL from Alec and this goes live.
 </p>
+{% endif %}
 {% endif %}
 {% endmacro %}
 
@@ -311,11 +313,12 @@
   {% endfor %}
 </div>
 {% else %}
-<p class="placeholder-note">
+{% if env.showReviewNotices %}<p class="placeholder-note">
   <strong>{% if citySlug %}No closed deal published for this city yet.{% else %}Awaiting real closed deals.{% endif %}</strong>
   Nothing appears here until Alec supplies actual properties and outcomes.
   Add them to <code>src/_data/proof.json</code>.
 </p>
+{% endif %}
 {% endif %}
 {% endmacro %}
 

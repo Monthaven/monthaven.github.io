@@ -5,6 +5,7 @@
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
+{% if env.staging %}<div class="staging-flag" role="status">STAGING BUILD, not the live site. Not indexed. Forms post to the real intake.</div>{% endif %}
 {% include "partials/header.njk" %}
 
 {% if breadcrumbs and breadcrumbs.length > 1 %}

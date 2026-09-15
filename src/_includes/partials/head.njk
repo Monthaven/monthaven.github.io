@@ -8,7 +8,10 @@
 <title>{{ pageTitle }}</title>
 <meta name="description" content="{{ pageDesc }}">
 <link rel="canonical" href="{{ canonical }}">
-{% if robots %}<meta name="robots" content="{{ robots }}">{% endif %}
+{# Staging overrides every page's own robots value. A staging build that gets indexed
+   competes with production for the same content. #}
+{% if env.staging %}<meta name="robots" content="noindex, nofollow">
+{% elif robots %}<meta name="robots" content="{{ robots }}">{% endif %}
 
 <meta property="og:type" content="{{ ogType or 'website' }}">
 <meta property="og:site_name" content="{{ site.name }}">

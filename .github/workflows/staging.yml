@@ -1,0 +1,71 @@
+# Staging build. Manual only, never on push, and it never touches the live site.
+#
+# Produces a build that is safe to publish anywhere:
+#   - noindex, nofollow on every page, overriding each page's own robots value
+#   - robots.txt disallows everything
+#   - no CNAME, so it cannot fight production for monthavencapital.com
+#   - a red STAGING banner on every page
+#   - internal review notices visible, which is the point of a review build
+#
+# Two ways to use the output. Download the artifact and open it, or point a
+# second GitHub Pages site at the gh-pages-staging branch this pushes to.
+name: Staging build
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish_branch:
+        description: "Also push the build to gh-pages-staging for a second Pages site"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  staging:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build (staging)
+        run: npm run build:staging
+
+      # check, not check:launch. A staging build is explicitly allowed to have
+      # unfilled proof; that is what it is for. Dead links and missing frozen
+      # URLs still block it.
+      - name: Verify build
+        env:
+          SITE_ENV: staging
+        run: npm run check
+
+      - name: Refuse to ship a CNAME from staging
+        run: |
+          if [ -f _site/CNAME ]; then
+            echo "::error::_site/CNAME exists in a staging build. It would contest the live domain."
+            exit 1
+          fi
+          echo "No CNAME. Safe to publish."
+
+      - name: Upload build
+        uses: actions/upload-artifact@v4
+        with:
+          name: monthaven-staging
+          path: _site
+          retention-days: 14
+
+      - name: Push to gh-pages-staging
+        if: inputs.publish_branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages-staging
+          force_orphan: true

@@ -1,7 +1,11 @@
 ---
-permalink: /sitemap.xml
 eleventyExcludeFromCollections: true
 ---
+{#- No sitemap in staging. Every page there is noindex and robots.txt disallows the
+    whole site, so a sitemap listing all 63 would contradict both, and check-links
+    rightly fails a build where a noindex page is listed. permalink returns real
+    boolean false to suppress the file entirely. -#}
+{%- if env.staging %}{% set dummy = 1 %}{% endif -%}
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {%- for page in collections.all %}

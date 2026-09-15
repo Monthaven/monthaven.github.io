@@ -93,8 +93,13 @@ for (const rel of htmlFiles) {
 }
 
 // --- sitemap must agree with canonicals and contain no junk
+// Staging deliberately ships no sitemap: every page there is noindex and robots.txt
+// disallows the site, so listing them would contradict both.
+const IS_STAGING = (process.env.SITE_ENV || "production").toLowerCase() === "staging";
 const smPath = path.join(SITE, "sitemap.xml");
-if (!fs.existsSync(smPath)) {
+if (IS_STAGING && !fs.existsSync(smPath)) {
+  // correct for staging, nothing to check
+} else if (!fs.existsSync(smPath)) {
   errors.push("sitemap.xml was not generated");
 } else {
   const sm = fs.readFileSync(smPath, "utf8");

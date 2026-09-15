@@ -234,6 +234,32 @@ for (const c of cityData) {
   }
 }
 
+// ------------------------------------------- no build scaffolding in production
+// Every one of the 63 pages once shipped a dashed orange box addressed to Alec by
+// name, telling him to add testimonials to src/_data/proof.json. It rendered on the
+// homepage. Review notices are scaffolding; they belong in review and staging builds
+// and nowhere else. src/_data/env.js gates them, and this makes the gate load-bearing.
+const SITE_ENV = (process.env.SITE_ENV || "production").toLowerCase();
+if (SITE_ENV === "production") {
+  const SCAFFOLD = [
+    ["review notice", /placeholder-note">/],
+    ["an instruction addressed to the site owner", /Alec supplies|Add them to <code>|One URL from Alec/],
+    ["a source-file path in visible copy", /src\/_data\/[a-z]+\.json/],
+  ];
+  for (const p of pages) {
+    const raw = fs.readFileSync(p.file, "utf8");
+    const body = raw.replace(/<style[\s\S]*?<\/style>/g, " ");
+    for (const [label, re] of SCAFFOLD) {
+      if (re.test(body)) {
+        errors.push(
+          `${p.rel}: ships ${label} to visitors. Guard it with env.showReviewNotices, or ` +
+            `build with SITE_ENV=review to see it locally.`
+        );
+      }
+    }
+  }
+}
+
 // ------------------------------------------------------------- house typography
 // Standing Monthaven rule: no em dashes and no curly quotes in seller-facing copy.
 // It reads robotic and it is an AI tell. 183 of them accumulated before the rule was

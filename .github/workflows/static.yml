@@ -36,10 +36,13 @@ jobs:
       - name: Build site
         run: npm run build
 
-      # Blocks the deploy on dead links, missing assets, canonical/sitemap
-      # disagreement, published internal docs, or a missing A2P-frozen URL.
+      # check:launch, not check. `check` alone reports missing proof as a warning and
+      # exits zero, so the gate that is supposed to hold the site back was not wired
+      # into the job that publishes it. This blocks the deploy on dead links, missing
+      # assets, canonical/sitemap disagreement, published internal docs, a missing
+      # A2P-frozen URL, build scaffolding in production copy, AND unfilled proof.
       - name: Verify build
-        run: npm run check
+        run: npm run check:launch
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
