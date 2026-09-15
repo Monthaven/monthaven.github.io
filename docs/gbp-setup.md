@@ -27,11 +27,55 @@ A GBP is painful to change after verification, so get these right the first time
 | **Primary category** | `Real estate investor`. Fall back to `Property management company` if unavailable. **Not** "Real estate agent" — that's the other profile and the wrong search intent. |
 | **Secondary category** | `Real estate consultant` (optional) |
 | **Address** | **Hidden.** Choose "I deliver goods and services to my customers" and do not display a street address. We buy at the seller's property; there is no office to visit. |
-| **Service areas** | All 28 towns the site builds a page for, plus Gaston County, Cleveland County and Lincoln County:<br>Gastonia · Shelby · Kings Mountain · Belmont · Mount Holly · Bessemer City · Cherryville · Dallas · Stanley · Lincolnton · McAdenville · Cramerton · Lowell · Ranlo · High Shoals · Boiling Springs · Grover · Kingstown · Lattimore · Fallston · Lawndale · Casar · Belwood · Patterson Springs · Polkville · Denver · Iron Station · Vale |
+| **Service areas** | Three entries, nothing more:<br>`Gaston County, NC` &middot; `Cleveland County, NC` &middot; `Lincoln County, NC`<br>See the note below before you type anything else into that box. |
 | **Phone** | `(704) 481-6298` — the same number on the site. Not the 336, not the 272. |
 | **Website** | `https://monthavencapital.com` |
+| **Chat / text message** | `(844) 482-9105`, the toll-free. **Not the 704.** See the note below. |
 | **Hours** | **Open 24 hours.** See the note below — this is a change from what was here, and it requires `site.businessHours` to change too. |
 | **Description** | "We buy houses for cash in Gaston, Cleveland and Lincoln County, North Carolina. Any condition, no repairs, no commission, no closing costs. Written offer within 24 hours." |
+
+### On the chat field: this one has a real trap in it
+
+The setup flow offers "Add chat (optional)" with a Text message option and its own contact
+phone number. That number is where Google sends texts from people who find you on Maps or
+Search.
+
+**It must be the toll-free, `(844) 482-9105`.** It is the only Monthaven number whose webhook
+points at SONA, the system that reads a seller's text and answers it. The 704 goes to the
+portal, where nothing replies.
+
+Getting this wrong is worse than leaving chat off entirely, because Google enforces a
+**24-hour response standard and auto-disables the message button** if you consistently miss
+it. Point it at the 704 and the sequence is: a seller texts, it lands somewhere nobody is
+watching, nobody answers, Google turns the button off, and you never find out why. Point it at
+the 844 and SONA answers automatically, which is exactly what it was built to do.
+
+This mirrors the website, where the copy is call the 704 and text the 844. Same split, same
+reason.
+
+### On service areas: three entries, not twenty-eight
+
+An earlier version of this file told you to enter all 28 towns plus the three counties. That
+was wrong and it would have wasted your time on a phone.
+
+**Google caps service areas at 20.** The cap is enforced in the dashboard: the 21st entry
+errors and blocks the save. 28 towns plus 3 counties is 31, so the long list was never going to
+fit, and you would have found that out after typing twenty of them one at a time.
+
+**Three county entries cover all 28 towns and leave 17 slots spare.** Do not fill the rest.
+Testing by Sterling Sky found the service area does not affect ranking for a service-area
+business: the map pack runs on relevance, proximity to the searcher, and prominence. Listing a
+town in that box does not make you rank in that town, so there is no return on stuffing it. If
+you want to move the map pack, the number that does it is the review count in the table below,
+where the scoreboard is 23, 64, 70 and zero.
+
+**The towns still matter, just not here.** They matter on the website, where 28 city pages
+target `sell my house fast <town>` in organic search. Profile and website are different
+surfaces with different mechanics, and confusing the two is what produced the original error in
+this file.
+
+Kings Mountain, Shelby, Grover and the rest are all inside one of the three counties, so naming
+them individually adds nothing a reader or a crawler can use.
 
 ### On hours: every competitor is open 24 hours
 

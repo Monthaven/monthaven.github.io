@@ -52,7 +52,10 @@ So this has to be done properly or it does real damage:
 
 The profile has to exist before anyone can review it. `docs/gbp-setup.md` has the exact fields.
 **Do not send a single one of these texts until the GBP is verified and you have the review
-link in hand** — a request that lands somewhere confusing gets ignored, and you only get to ask
+link in hand.** To be precise about which step that is: creating the profile and filling in the
+service areas is not the gate. **Verification is** — the postcard, phone or video step where
+Google confirms the business is real. A profile that exists but is unverified does not show in
+the map pack and cannot collect reviews, so a request sent before then has nowhere to land — a request that lands somewhere confusing gets ignored, and you only get to ask
 these people once.
 
 Grab the short review link from the profile dashboard ("Ask for reviews" → copy link).
