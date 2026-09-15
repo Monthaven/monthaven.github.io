@@ -268,6 +268,10 @@
       {
         "q": "What will selling actually cost me in tax?",
         "a": "More than most landlords expect, and the surprise is usually depreciation recapture rather than the gain. The depreciation you claimed over the years you rented it out, or could have claimed even if you did not, is taxed when you sell at up to 25%, separately from any capital gain. The Section 121 exclusion that shelters most home sales does not apply to a pure rental. A 1031 exchange into another investment property can defer the whole thing, but it has strict deadlines and has to be set up before closing rather than after. Run the numbers with your CPA before you agree a price with anyone, because the recapture figure is often the one that changes whether the deal makes sense at all."
+      },
+      {
+        "q": "I am not sure I want to sell. Should I just keep renting it?",
+        "a": "Possibly, and we would rather you worked that out properly than sold to us for the wrong reason. The short test: if the rent covers the mortgage, taxes, landlord insurance, vacancy, maintenance and a reserve for the roof and the HVAC, with something left over, you have a rental worth keeping. If it only works at full occupancy with nothing breaking, you have a second job that pays nothing. The thing most people miss is that the decision has a deadline: once you have been out of the property more than three years you fail the two-of-five-year test and lose the Section 121 exclusion entirely. Renting while you decide is fine. Leaving it open-ended is what costs money. We wrote the whole comparison out, including the cases where the answer is keep it."
       }
     ]
   },
@@ -276,11 +280,11 @@
     "urlPrefix": "sell-house-needs-repairs",
     "label": "House needs major repairs",
     "navLabel": "Needs repairs",
-    "h1": "Sell a House That Needs Major Repairs in North Carolina",
-    "metaTitle": "Sell a House As-Is That Needs Repairs | Gaston & Cleveland County NC",
-    "metaDescription": "Foundation, roof, fire or water damage, mold, failed septic. We buy houses in Gaston and Cleveland County in any condition, as-is, with no repairs and no repair renegotiation after you sign.",
-    "directAnswerQ": "Can you sell a house that needs major repairs?",
-    "directAnswer": "A house with major structural, roof, electrical, or water damage often cannot be financed by a retail buyer, because most conventional and FHA lenders will not lend against a property in that condition. That is why these houses sell for cash. We buy as-is, we walk it before we price it, and we do not come back afterward asking for a repair credit.",
+    "h1": "Sell Your House As-Is in North Carolina, Repairs or No Repairs",
+    "metaTitle": "Sell My House As-Is in NC | No Repairs, No Repair Credits | Gaston & Cleveland County",
+    "metaDescription": "Selling as-is means you fix nothing and the price does not move afterward. Works whether your house needs a roof or just needs nothing done to it. Gaston, Cleveland and Lincoln County, NC.",
+    "directAnswerQ": "Can I sell my house as is?",
+    "directAnswer": "Yes. Selling as-is means you make no repairs and give no repair credits, and it is a statement about the terms of the sale rather than about how bad the house is. You can list as-is with an agent, and if your house is sound and financeable that usually nets you more. Where a cash sale becomes the realistic route is when the condition itself blocks a loan, because most conventional and FHA lenders will not lend against major structural, roof, electrical or water damage. We buy as-is either way, we walk it before we price it, and we do not come back afterward asking for a repair credit.",
     "formVariant": "full",
     "painPoints": [
       "The roof is at the end of its life and insurance has already been out.",
@@ -308,6 +312,14 @@
       }
     ],
     "faq": [
+      {
+        "q": "Will a buyer still get an inspection if I sell as-is?",
+        "a": "Often yes, and the distinction confuses people. As-is does not mean nobody looks at the house. A financed buyer's lender will still send an appraiser, and most buyers will still inspect. What as-is is supposed to mean is that you will not fix what they find. In practice on a retail sale that promise gets tested the moment the report comes back, which is where deals fall apart. With us there is no inspection contingency at all: we walk the property before we price it, and the number in the written offer is the number at closing unless something changes that is not about condition."
+      },
+      {
+        "q": "My house is not falling down, I just do not want to fix anything. Is as-is still for me?",
+        "a": "Yes, and this is most of the people who ask. As-is is about terms, not damage. It means you will not be repainting, replacing the carpet, fixing what an inspector finds, or negotiating a credit afterward. Here is the honest part though: if your house is sound and could pass a lender's inspection, listing it as-is with an agent will usually net you more than we can pay, because you keep access to every financed buyer in the county rather than just the cash ones. We will tell you that on the call. Where selling to us wins for a sound house is when time matters more than the last few thousand dollars."
+      },
       {
         "q": "Do I need to fix anything before you will buy?",
         "a": "No. Not the roof, not the HVAC, not the floors. If we wanted a renovated house we would buy a renovated house."
