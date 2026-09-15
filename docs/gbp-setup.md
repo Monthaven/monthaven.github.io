@@ -24,15 +24,42 @@ A GBP is painful to change after verification, so get these right the first time
 | Field | Value |
 |---|---|
 | **Business name** | `Monthaven Home Buyers` — character for character, matching `site.name`. No "LLC", no city, no keywords. Keyword-stuffed names get suspended. |
-| **Primary category** | `Real estate investor`. Fall back to `Property management company` if unavailable. **Not** "Real estate agent" — that's the other profile and the wrong search intent. |
-| **Secondary category** | `Real estate consultant` (optional) |
+| **Primary category** | `Real estate consultant`. See the correction below: `Real estate investor` is not a Google category and typing it blocks the form. |
+| **Secondary category** | None. Nothing else in the list is true, and an untrue category dilutes relevance and invites a suspension review. |
 | **Address** | **Hidden.** Choose "I deliver goods and services to my customers" and do not display a street address. We buy at the seller's property; there is no office to visit. |
 | **Service areas** | Three entries, nothing more:<br>`Gaston County, NC` &middot; `Cleveland County, NC` &middot; `Lincoln County, NC`<br>See the note below before you type anything else into that box. |
 | **Phone** | `(704) 481-6298` — the same number on the site. Not the 336, not the 272. |
 | **Website** | `https://monthavencapital.com` |
 | **Chat / text message** | `(844) 482-9105`, the toll-free. **Not the 704.** See the note below. |
-| **Hours** | **Open 24 hours.** See the note below — this is a change from what was here, and it requires `site.businessHours` to change too. |
+| **Hours** | **Open 24 hours** on the profile. `site.businessHours` deliberately does NOT match, and must not be changed to match. See the note below. |
 | **Description** | "We buy houses for cash in Gaston, Cleveland and Lincoln County, North Carolina. Any condition, no repairs, no commission, no closing costs. Written offer within 24 hours." |
+
+### Correction: "Real estate investor" is not a Google category
+
+An earlier version of this file named `Real estate investor` as the primary category. **It does
+not exist in Google's taxonomy.** Typing it returns "We didn't understand your category" and
+blocks the form, which cost a restart mid-setup.
+
+The category is **`Real estate consultant`**, and the evidence was already in hand. From the
+Grover local pack: John Buys Your House (70 reviews), Harmony Home Buyers (64) and J&B
+Homebuyers (23) all use exactly that. Every company actually ranking in the pack we are trying
+to enter is a Real estate consultant.
+
+It is also the right call on compliance. `Real estate agent` and `Real estate agency` both
+assert licensed brokerage, and Monthaven Capital LLC is not a licensed brokerage. Same wall as
+"Seller's agent services" on the services screen, which must stay unchecked for the same reason.
+
+### On hours: the profile and the site say different things on purpose
+
+The profile is set to **Open 24 hours**, matching every competitor in the pack. That is a
+lead-capture convention, not a claim that somebody picks up at 3am.
+
+**Do not copy that phrase onto the website.** `site.businessHours` reads
+"Calls Monday to Saturday, 8am to 8pm ET. Texts answered any time", which is the honest version
+of the same thing and is true, because SONA answers texts automatically around the clock while
+calls reach a person during real hours. Hours are not part of NAP (name, address, phone), so
+the two saying different things costs nothing, whereas promising a human overnight would be a
+promise broken on the first 3am call.
 
 ### On the chat field: this one has a real trap in it
 

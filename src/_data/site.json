@@ -12,7 +12,6 @@
   "smsRaw": "+18444829105",
   "email": "offers@monthavencapital.com",
   "emailFallback": "info@monthavencapital.com",
-
   "_comment_lead": "leadEndpoint is Monthaven's own intake (SONA, /api/sms/web-lead). It creates the lead, records TCPA consent evidence, texts the seller a confirmation, and alerts Alec. leadEndpointFallback is the safety net: SONA runs on a local box behind a Cloudflare tunnel, so if that box is down the primary POST fails and the browser re-posts to Formspree instead. A lead is never lost to a dead tunnel. Do not remove the fallback.",
   "leadEndpoint": "https://sona-webhook.monthavencapital.com/api/sms/web-lead",
   "leadEndpointFallback": "https://formspree.io/f/xpwvbwno",
@@ -30,7 +29,7 @@
   ],
   "serviceAreaState": "North Carolina",
   "serviceAreaStateCode": "NC",
-  "businessHours": "Monday to Saturday, 8am to 8pm ET",
+  "businessHours": "Calls Monday to Saturday, 8am to 8pm ET. Texts answered any time",
   "social": {
     "gbp": "",
     "facebook": "",
@@ -63,5 +62,6 @@
     "disclosure": "Monthaven Capital LLC is a licensed North Carolina real estate brokerage. When we buy a house we are acting as a buyer for our own account, not as your agent, and we have no fiduciary duty to you in that transaction. We tell you this up front because you are entitled to know it.",
     "stage3": "Some houses shouldn't go to an investor, and we'll tell you when yours is one of them. If you'd rather your house go to somebody who's actually going to live in it, we can list it and find that buyer. If you want to meet them before you sign, we'll set it up.",
     "stage3Heading": "Or, if you'd rather it go to a family"
-  }
+  },
+  "_comment_hours": "The Google Business Profile is set to Open 24 hours, which is what every competitor in this local pack does and is a lead-capture setting rather than a claim that a human answers overnight. Do NOT copy that phrase onto the site: it would promise a person at 3am. This value is the honest version of the same thing, and it is true because SONA answers texts automatically around the clock. Hours are not part of NAP (name, address, phone), so the difference between the two costs nothing."
 }
