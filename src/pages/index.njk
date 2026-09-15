@@ -120,9 +120,12 @@ breadcrumbs:
 
 <section class="section section--soft">
   <div class="wrap">
-    <h2 class="mb-5">What sellers say</h2>
-    {{ b.testimonials() }}
+    {{ b.sellerVoice() }}
+    {#- Only worth a "read more" when there are quotes to read more of. The
+        honest-absence block already links where it needs to. -#}
+    {% if proof.testimonials | realTestimonials | length %}
     <p class="mt-6"><a href="/reviews/">Read more &rarr;</a></p>
+    {% endif %}
   </div>
 </section>
 

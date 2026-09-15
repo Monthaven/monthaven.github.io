@@ -151,8 +151,7 @@ eleventyComputed:
 
 <section class="section section--soft">
   <div class="wrap">
-    <h2 class="mb-5">What {{ city.name }} sellers say</h2>
-    {{ b.testimonials(city.slug) }}
+    {{ b.sellerVoice(city.slug, city.name, true) }}
   </div>
 </section>
 

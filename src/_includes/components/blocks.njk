@@ -202,12 +202,7 @@
 
 
 {% macro testimonials(citySlug=null) %}
-{% set real = [] %}
-{% for t in proof.testimonials %}
-  {% if not t.placeholder and (not citySlug or t.citySlug == citySlug) %}
-    {% set real = (real.push(t), real) %}
-  {% endif %}
-{% endfor %}
+{% set real = proof.testimonials | realTestimonials(citySlug) %}
 {% if real.length %}
 <div class="grid grid--2">
   {% for t in real %}
@@ -225,6 +220,58 @@
   Add them to <code>src/_data/proof.json</code>.
 </p>
 {% endif %}
+{% endif %}
+{% endmacro %}
+
+
+{#- The seller-voice slot: the heading AND whatever belongs under it, in one macro,
+    because the two have to agree. Before this existed the pages hardcoded
+    "What sellers say" and then called testimonials(), which renders nothing in
+    production while proof.testimonials is empty. So every page shipped that heading
+    above a blank space. Against competitors showing 70, 64 and 23 reviews, a blank
+    reads as something being hidden, which is worse than the zero it was hiding.
+
+    The honest-absence block is a DISCLOSURE, not proof, and it is the thing that
+    clears the launch blocker in a testimonial's place. It is also temporary: the day
+    a real quote lands in proof.testimonials this branch stops running on its own.
+    Do not grow it into a permanent feature. -#}
+{% macro sellerVoice(citySlug=null, cityName=null, short=false) %}
+{% set real = proof.testimonials | realTestimonials(citySlug) %}
+{% set n = proof.noSellerReviews %}
+{% if real.length %}
+<h2 class="mb-5">What {% if cityName %}{{ cityName }} {% endif %}sellers say</h2>
+{{ testimonials(citySlug) }}
+{% elif n.enabled %}
+<h2 class="mb-5">{{ n.heading }}</h2>
+{% if short %}
+<div class="card card--accent stack">
+  <p>{{ n.short }}</p>
+  <p><a href="/reviews/">{{ n.shortLinkText }} &rarr;</a></p>
+</div>
+{% else %}
+{#- The held-back line clears itself. It is gated on the agent review having no source
+    link, which is the actual condition, so the moment Alec pastes the URL the sentence
+    stops being printed without anyone remembering to delete it. -#}
+{% set linkedAgentReviews = [] %}
+{% for r in proof.agentReviews.reviews %}
+  {% if r.sourceUrl %}{% set linkedAgentReviews = (linkedAgentReviews.push(r), linkedAgentReviews) %}{% endif %}
+{% endfor %}
+<div class="card card--accent stack">
+  {% for para in n.body %}<p>{{ para }}</p>{% endfor %}
+  <p><strong>{{ n.checkableIntro }}</strong></p>
+  <ul>
+    {#- The link is a short phrase after the sentence, not the sentence itself. A whole
+        underlined paragraph is harder to read and tells you nothing about where it goes. -#}
+    {% for c in n.checkable %}
+    <li>{{ c.text }}{% if c.href %} <a href="{{ c.href }}">{{ c.linkText }}&nbsp;&rarr;</a>{% endif %}</li>
+    {% endfor %}
+    {% if not linkedAgentReviews.length %}<li>{{ n.heldBack }}</li>{% endif %}
+  </ul>
+  <p>{{ n.closing }}</p>
+</div>
+{% endif %}
+{% else %}
+{{ testimonials(citySlug) }}
 {% endif %}
 {% endmacro %}
 

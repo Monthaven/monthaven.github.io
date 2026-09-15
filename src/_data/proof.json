@@ -1,6 +1,5 @@
 {
   "_README": "REAL PROOF ONLY. Nothing in this file may be invented. Every entry must be a real closed transaction or a real testimonial given with permission. The build check (scripts/check-content.mjs) counts PLACEHOLDER entries and blocks the launch check until they are replaced. Set placeholder:true on anything not yet verified. NOTE ON WHAT BLOCKS WHAT: testimonials needs a real quote and permission to use it, and nothing else. It does NOT wait on the Google Business Profile. Those are two separate tracks and conflating them held the launch blocker up for no reason: the GBP gates Google reviews and the local pack, it does not gate this file. See docs/review-request-campaign.md.",
-  "reviewsPending": true,
   "caseStudies": [
     {
       "placeholder": false,
@@ -46,6 +45,32 @@
       "city": "Shelby, NC"
     }
   ],
+  "noSellerReviews": {
+    "_README": "NOT PROOF, AND THE ONE EXCEPTION IN THIS FILE. Every other entry here exists because something happened. This one exists because something has not happened yet, and it is a disclosure rather than a claim, which is why it is allowed to clear the launch blocker when proof.testimonials is empty. A fabricated quote never clears it and never will. DELETE ON ARRIVAL: the day a real seller quote lands in testimonials, add it and set enabled false. This block is scaffolding with an expiry date, not a feature. See docs/review-request-campaign.md for the two texts that end it.",
+    "enabled": true,
+    "heading": "We have no seller reviews yet",
+    "body": [
+      "Zero, and we would rather print that than fill this space with something you cannot check. We have not asked a seller to review us yet, and we are not going to publish a review we did not earn.",
+      "That is a fair reason to be careful with us. It is also the reason the rest of this site is built the way it is. If we cannot hand you somebody else's word, we can hand you ours in writing with the numbers still attached."
+    ],
+    "checkableIntro": "What you can check instead:",
+    "checkable": [
+      {
+        "text": "One closed deal, written up in full, including what we paid, what it resold for and what we actually made on it.",
+        "linkText": "Read the whole thing",
+        "href": "/reviews/"
+      },
+      {
+        "text": "Who Alec is, how long he has held a license, and the honest version of how much of that work is buying rather than selling.",
+        "linkText": "Read the bio",
+        "href": "/about/"
+      }
+    ],
+    "heldBack": "There is also a five star review of Alec's agent work on Realtor.com. We are not showing it anywhere on this site yet, because we do not have the link to the original and a review you cannot go and read for yourself is a claim. It waits until we can link it.",
+    "closing": "If you sell us your house we are going to ask you for a review. If it went badly, say so. That is the only kind worth having.",
+    "short": "We have not asked a seller to review us yet, and we are not going to publish one we did not earn.",
+    "shortLinkText": "What you can check instead"
+  },
   "agentReviews": {
     "_README": "DIFFERENT STANDARD FROM testimonials, deliberately. proof.testimonials holds private quotes given to us with permission. agentReviews holds PUBLICLY POSTED third-party reviews of Alec's agent work, quoted with attribution and linked to the original. That is honest only if the page says which it is and links the source, so sourceUrl is REQUIRED and check-content.mjs enforces it, an unlinked quote does not render. These are agent-side and out-of-area: they must NEVER appear in a city-page testimonial slot and they must NEVER clear the seller-testimonial launch blocker. Both are enforced in the build.",
     "reviews": [

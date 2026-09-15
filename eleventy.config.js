@@ -88,6 +88,15 @@ export default function (eleventyConfig) {
     return (list || []).slice(0, n);
   });
 
+  // Real quotes only, optionally narrowed to one city. Placeholder rows exist so the
+  // shape stays documented in proof.json; they must never reach a page. This lives here
+  // rather than inside a macro because two macros need the same answer, and a second
+  // copy of this filter drifting out of step is exactly how a placeholder ships.
+  eleventyConfig.addFilter("realTestimonials", function (list, citySlug) {
+    const real = (list || []).filter((t) => !t.placeholder);
+    return citySlug ? real.filter((t) => t.citySlug === citySlug) : real;
+  });
+
   // ---------------------------------------------------------------------------
   // Collections
   // ---------------------------------------------------------------------------

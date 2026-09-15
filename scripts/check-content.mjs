@@ -94,7 +94,28 @@ for (const r of agentReviews) {
 }
 
 if (!realCases.length) gaps.push("no real closed-deal case studies (proof.caseStudies)");
-if (!realQuotes.length) gaps.push("no real testimonials (proof.testimonials)");
+// A missing testimonial blocks launch only while the site stays silent about it.
+// This gate exists to stop absent proof shipping dressed as proof. A published
+// "we have none yet" block does that honestly and clears the blocker; a fabricated
+// quote does the opposite, which is why proof.testimonials still admits real quotes
+// only and always will. Decided with Alec 2026-09-15: he has zero reviews today, so a
+// hard block on a quote he cannot manufacture was a block on ever shipping at all.
+const disclosesNoReviews = proof.noSellerReviews && proof.noSellerReviews.enabled === true;
+if (!realQuotes.length) {
+  if (disclosesNoReviews) {
+    warnings.push(
+      "no real testimonials (proof.testimonials). proof.noSellerReviews is live in that " +
+        "slot, so this does not block launch. That block is scaffolding with an expiry " +
+        "date: the day a real quote arrives, add it here and set noSellerReviews.enabled " +
+        "false. docs/review-request-campaign.md has the two texts that end it."
+    );
+  } else {
+    gaps.push(
+      "no real testimonials (proof.testimonials), and proof.noSellerReviews is not enabled " +
+        "either, so the seller-voice slot renders empty. Publish one or the other."
+    );
+  }
+}
 if (!realTeam.length) gaps.push("no real team bio or photo (proof.team) — the biggest E-E-A-T signal on the site");
 if (!stackRows.length) gaps.push("no verified value-stack figures (proof.valueStack.rows)");
 // A percentage without a citation is an assertion, not a figure.
