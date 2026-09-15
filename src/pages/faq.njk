@@ -17,7 +17,8 @@ breadcrumbs:
     <p class="eyebrow">Frequently asked</p>
     <h1>Questions we get asked, answered straight.</h1>
     <p class="lead mt-5">
-      If your question isn't here, call {{ site.phoneDisplay }} or text {{ site.smsDisplay }} and ask it.
+      If your question isn't here, call <a href="tel:{{ site.phoneRaw }}">{{ site.phoneDisplay }}</a>
+      or text <a href="sms:{{ site.smsRaw }}">{{ site.smsDisplay }}</a> and ask it.
       We'd rather answer it than have you guess.
     </p>
   </div>

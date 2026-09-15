@@ -26,7 +26,7 @@ breadcrumbs:
     <h2>How to opt in</h2>
     <p>
       Enter your mobile number on a form on this site and check the consent box, or text
-      START to <a href="tel:{{ site.smsRaw }}">{{ site.smsDisplay }}</a>. Our opt-in page is
+      START to <a href="sms:{{ site.smsRaw }}">{{ site.smsDisplay }}</a>. Our opt-in page is
       at <a href="/text/">monthavencapital.com/text</a>.
     </p>
 
@@ -55,7 +55,8 @@ breadcrumbs:
     <h2>Help</h2>
     <p>
       Reply <strong>HELP</strong> to any message for assistance, or contact us at
-      <a href="mailto:{{ site.email }}">{{ site.email }}</a> or
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>, by text to
+      <a href="sms:{{ site.smsRaw }}">{{ site.smsDisplay }}</a>, or by phone on
       <a href="tel:{{ site.phoneRaw }}">{{ site.phoneDisplay }}</a>.
     </p>
 

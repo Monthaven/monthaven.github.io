@@ -5,7 +5,11 @@
       <div>
         <h2>{{ site.name }}</h2>
         <ul>
-          <li><a href="tel:{{ site.phoneRaw }}">{{ site.phoneDisplay }}</a></li>
+          {#- Call and text are different numbers. phoneRaw is the voice line; smsRaw is the
+              toll-free registered with the carriers and wired to the system that reads and
+              answers seller texts. Labelled so nobody has to guess which is which. -#}
+          <li>Call <a href="tel:{{ site.phoneRaw }}">{{ site.phoneDisplay }}</a></li>
+          <li>Text <a href="sms:{{ site.smsRaw }}">{{ site.smsDisplay }}</a></li>
           <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
           <li>{{ site.businessHours }}</li>
         </ul>

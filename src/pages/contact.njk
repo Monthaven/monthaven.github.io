@@ -15,7 +15,8 @@ breadcrumbs:
     <p class="eyebrow">Contact</p>
     <h1>Get in touch</h1>
     <p class="lead mt-5">
-      The fastest way to get an answer is to call or text. A person picks up.
+      The fastest way to get an answer is to call or send a text. A person picks up.
+      Calls and texts go to two different numbers, both below.
     </p>
   </div>
 </section>
@@ -24,9 +25,17 @@ breadcrumbs:
   <div class="wrap grid grid--split">
     <div class="stack-lg">
       <div>
-        <h2>Call or text</h2>
+        <h2>Call</h2>
         <p class="lead"><a href="tel:{{ site.phoneRaw }}">{{ site.phoneDisplay }}</a></p>
         <p class="small muted">{{ site.businessHours }}</p>
+      </div>
+      <div>
+        <h2>Text</h2>
+        <p class="lead"><a href="sms:{{ site.smsRaw }}">{{ site.smsDisplay }}</a></p>
+        <p class="small muted">
+          A different number from the one above, and not a mistake. Texts go to the line that
+          is set up to read and answer them, so a message here gets to us properly.
+        </p>
       </div>
       <div>
         <h2>Email</h2>

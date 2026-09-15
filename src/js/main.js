@@ -189,6 +189,16 @@
     }
 
     function post(stage) {
+      // The fallback may run at most ONCE per submission. Without this latch, a 5xx from
+      // the primary followed by a transport failure on the fallback POST reaches the outer
+      // .catch and posts to the fallback a second time - the duplicate lead the 4xx guard
+      // below exists to prevent.
+      var fallbackUsed = false;
+      function fallbackOnce(stage) {
+        if (fallbackUsed) return Promise.reject(new Error("fallback spent"));
+        fallbackUsed = true;
+        return postFallback(stage);
+      }
       return postPrimary(stage)
         .then(function (res) {
           if (res.ok) return res;
@@ -196,11 +206,11 @@
           // trap, rate limit). Re-posting that to the fallback just duplicates
           // a bad lead, so only fail over on a server/transport failure.
           if (res.status >= 400 && res.status < 500) throw new Error("rejected");
-          return postFallback(stage);
+          return fallbackOnce(stage);
         })
         .catch(function (err) {
-          if (err && err.message === "rejected") throw err;
-          return postFallback(stage);
+          if (err && (err.message === "rejected" || err.message === "fallback spent")) throw err;
+          return fallbackOnce(stage);
         });
     }
 
@@ -251,10 +261,16 @@
           if (note) note.hidden = true;
           var hours = form.getAttribute("data-offer-hours") || "24";
           var tel = form.getAttribute("data-phone") || "";
+          var sms = form.getAttribute("data-sms") || "";
+          // Call and text are different numbers here. Name them separately, never joined.
+          var reach = "";
+          if (tel && sms) reach = "If you need us right now, call " + tel + " or text " + sms + ".";
+          else if (tel) reach = "If you need us right now, call " + tel + ".";
+          else if (sms) reach = "If you need us right now, text " + sms + ".";
           status(
             form,
             "Got it. We'll have a written offer to you within " + hours + " hours, usually sooner. " +
-              (tel ? "If you need us right now, call or text " + tel + "." : ""),
+              reach,
             "ok"
           );
           if (window.gtag) {
@@ -265,7 +281,7 @@
         .catch(function () {
           status(
             form,
-            "That didn't go through. Please call or text us instead — we'd rather hear from you than lose you to a form error.",
+            "That didn't go through. Please reach us directly instead. We'd rather hear from you than lose you to a form error.",
             "err"
           );
           if (btn) { btn.disabled = false; btn.textContent = "Send It — Get My Offer"; }

@@ -34,7 +34,9 @@ breadcrumbs:
 <section class="section">
   <div class="wrap--narrow">
     <form class="lead-form" id="sms-opt-in" data-lead-form data-variant="sms"
-          data-phone="{{ site.phoneDisplay }}" data-offer-hours="{{ site.offerWindowHours }}"
+          data-phone="{{ site.phoneDisplay }}"
+          data-sms="{{ site.smsDisplay }}"
+          data-offer-hours="{{ site.offerWindowHours }}"
           action="{{ site.leadEndpoint }}"
           {% if site.leadEndpointFallback %}data-fallback-action="{{ site.leadEndpointFallback }}"{% endif %}
           method="POST" novalidate>
@@ -136,8 +138,9 @@ breadcrumbs:
     </ul>
     <p>
       Full details are in our <a href="/legal/sms/">SMS Terms</a> and
-      <a href="/privacy/">Privacy Policy</a>. Questions: call or text
-      <a href="tel:{{ site.phoneRaw }}">{{ site.phoneDisplay }}</a> or email
+      <a href="/privacy/">Privacy Policy</a>. Questions: call
+      <a href="tel:{{ site.phoneRaw }}">{{ site.phoneDisplay }}</a>, text
+      <a href="sms:{{ site.smsRaw }}">{{ site.smsDisplay }}</a>, or email
       <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
     </p>
   </div>

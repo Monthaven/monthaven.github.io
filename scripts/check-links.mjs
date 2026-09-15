@@ -188,6 +188,55 @@ if (!fs.existsSync(llmsPath)) {
   }
 }
 
+// --- call and text are DIFFERENT numbers, and the site must never say otherwise
+// phoneDisplay is a voice line whose SMS webhook points at a different system; smsDisplay
+// is the toll-free that is A2P-registered and wired to the machine that reads and answers
+// seller texts. A text sent to the voice number lands in an inbox nobody is replying from.
+// This regressed once already: a pass fixed four templates and left the site-wide header
+// saying "Call or text <voice>" on all 63 pages, so the same page said both things.
+{
+  const siteData = JSON.parse(fs.readFileSync(path.join(process.cwd(), "src/_data/site.json"), "utf8"));
+  const voice = siteData.phoneDisplay;
+  const voiceRaw = siteData.phoneRaw;
+  const smsRaw = siteData.smsRaw;
+  const voiceDigits = (voiceRaw || "").replace(/\D/g, "");
+
+  for (const rel of htmlFiles) {
+    const html = fs.readFileSync(path.join(SITE, rel.slice(1)), "utf8");
+    const text = html.replace(/<[^>]+>/g, " ").replace(/&[a-z]+;/g, " ").replace(/\s+/g, " ");
+
+    // "call or text" / "text or call" joins the two into one number, whichever follows.
+    if (/\b(call or text|text or call)\b/i.test(text)) {
+      errors.push(
+        `${rel}: says "call or text" as though one number did both. Call ${voice}; text ` +
+          `${siteData.smsDisplay}. Name them separately.`
+      );
+    }
+
+    // An invitation to text the voice number, however worded. Directional on purpose:
+    // "text <voice>" is wrong, while "call <voice> or text <toll-free>" is the correct
+    // copy and puts the voice number BEFORE the word text. Matching both directions
+    // flagged every correct page on the site.
+    if (voice) {
+      const esc = voice.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      if (new RegExp("\\btext(ing)?\\b[^.]{0,25}" + esc, "i").test(text)) {
+        errors.push(`${rel}: invites a text to the voice number ${voice}.`);
+      }
+    }
+
+    // sms: hrefs must point at the toll-free and nothing else.
+    for (const m of html.matchAll(/href="sms:([^"]+)"/g)) {
+      const target = m[1].replace(/\D/g, "");
+      if (target !== (smsRaw || "").replace(/\D/g, "")) {
+        errors.push(
+          `${rel}: sms: link points at ${m[1]}, not the A2P-registered toll-free ${siteData.smsDisplay}.` +
+            (target === voiceDigits ? " That is the voice line." : "")
+        );
+      }
+    }
+  }
+}
+
 // --- zero third-party requests on the critical path
 for (const rel of htmlFiles) {
   const html = fs.readFileSync(path.join(SITE, rel.slice(1)), "utf8");

@@ -6,7 +6,10 @@
     </a>
 
     <a class="header-phone" href="tel:{{ site.phoneRaw }}" data-cta="header-call">
-      <span class="header-phone__label">Call or text</span>
+      {#- "Call" only, deliberately. This anchor is a tel: link wrapping both lines, so a
+          text invitation here would point at the voice number. The toll-free is the number
+          wired to the system that answers texts; the footer carries it on every page. -#}
+      <span class="header-phone__label">Call</span>
       <span class="header-phone__num">{{ site.phoneDisplay }}</span>
     </a>
 
