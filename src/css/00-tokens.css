@@ -27,6 +27,11 @@
   --c-ok-bg: #e7f4ec;
 
   /* Type: system stack only. No webfont, no third-party request. */
+  /* Newsreader 600, one weight only, self-hosted and subset to latin at 23KB.
+     One weight is deliberate: hierarchy comes from size, color and space rather
+     than from piling on weights, and it keeps the payload honest. Body stays on
+     the system stack, which costs nothing and reads well at small sizes. */
+  --font-display: Newsreader, Georgia, "Times New Roman", serif;
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
     Arial, "Noto Sans", sans-serif;
 

@@ -22,10 +22,11 @@
   margin-right: auto;
 }
 .brand__name {
+  font-family: var(--font-display);
   font-size: var(--step-1);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--c-green-800);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
 }
 .brand__sub {
   font-size: 0.7rem;
@@ -37,9 +38,9 @@
 .header-phone {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   text-decoration: none;
-  line-height: 1.15;
+  line-height: 1.12;
 }
 .header-phone__label {
   font-size: 0.68rem;
@@ -71,7 +72,10 @@
 .nav {
   display: none;
 }
-.nav a {
+/* :not(.btn) because the CTA anchor lives inside the nav. Without it, .nav a
+   (0,1,1) beat .btn (0,1,0) and zeroed the button's horizontal padding, so
+   "Get My Cash Offer" rendered with its text touching both edges sitewide. */
+.nav a:not(.btn) {
   text-decoration: none;
   white-space: nowrap;
   color: var(--c-ink);
@@ -108,4 +112,17 @@ body.nav-open .nav {
   .site-header__bar {
     gap: var(--sp-6);
   }
+}
+
+/* The CTA is a flex item in the nav row, so without these it shrinks and wraps
+   its label onto four lines at desktop width. */
+.site-header .btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* Keep the wordmark on one line only where there is room. Forcing nowrap at every
+   width pushed a 45 to 73px horizontal scroll onto every page on a phone. */
+@media (min-width: 900px) {
+  .brand__name { white-space: nowrap; }
 }

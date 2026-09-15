@@ -31,6 +31,7 @@
 
 {#- Entire stylesheet inlined: zero render-blocking requests, no FOUC.
     Budget enforced in src/_data/css.js (throws over 20KB). -#}
+<link rel="preload" href="/assets/fonts/newsreader-600.woff2" as="font" type="font/woff2" crossorigin>
 <style>{{ css | safe }}</style>
 
 {% include "partials/schema.njk" %}

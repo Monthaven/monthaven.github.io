@@ -1,6 +1,8 @@
 /* No image above the fold. LCP is a text node. */
 .hero {
-  background: linear-gradient(165deg, var(--c-green-800) 0%, var(--c-green-900) 100%);
+  background:
+    radial-gradient(120% 90% at 12% 0%, rgba(39, 119, 91, 0.42) 0%, rgba(39, 119, 91, 0) 62%),
+    linear-gradient(168deg, var(--c-green-800) 0%, var(--c-green-900) 78%);
   color: #dfeae4;
   padding-block: clamp(2rem, 5vw, 3.5rem) clamp(2.5rem, 6vw, 4rem);
 }

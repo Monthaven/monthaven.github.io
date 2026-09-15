@@ -14,11 +14,19 @@
 .card--link {
   text-decoration: none;
   display: block;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  background: none;
+  border: 0;
+  border-top: 2px solid var(--c-line);
+  border-radius: 0;
+  padding: var(--sp-4) 0 var(--sp-2);
+  transition: border-color 0.15s ease;
 }
-.card--link:hover {
-  border-color: var(--c-green-600);
-  box-shadow: var(--shadow);
+.card--link:hover,
+.card--link:focus-visible {
+  border-top-color: var(--c-cta);
+}
+.card--link:hover h3 {
+  color: var(--c-green-600);
 }
 .card--link h3 {
   color: var(--c-green-800);
