@@ -20,6 +20,26 @@ Two things, and only one of them was on the launch-blocker list.
 Both are fixed. `src/_data/env.js` now gates review notices, and `check-content.mjs`
 fails a production build that ships any of them.
 
+## Step 0: check what `main` is serving right now
+
+Found 2026-09-15 while answering "are we ready to push". `main`'s workflow uploads
+`path: "."`, the whole repo root, and `.nojekyll` is present so files are served as-is.
+`main` carries `SMS-IMPLEMENTATION-GUIDE.md`, `TOLL-FREE-VERIFICATION-ANSWERS.md` and
+`docs/` at its root.
+
+That means those are almost certainly public at monthavencapital.com today. Open
+
+```
+https://monthavencapital.com/TOLL-FREE-VERIFICATION-ANSWERS.md
+```
+
+If it loads, the carrier verification answers are readable by anyone. Merging this
+branch is the fix, because this branch's `static.yml` uploads `_site` only and
+`check-links.mjs` fails the build on a published internal doc.
+
+This was not verifiable from the build container: its network policy denies outbound to
+both `monthavencapital.com` and the SONA host, so it is a browser check, not a script.
+
 ## Step 1: staging
 
 ```
@@ -37,6 +57,25 @@ download the `monthaven-staging` artifact and open it locally.
 ## Step 2: the lead path, which is the whole point
 
 Everything else on this list is cosmetic next to this.
+
+**Two thirds of this is now automated.** Added 2026-09-15, because every check in
+`scripts/` gated content and none gated where a lead goes, which is the gap that let the
+form sit on Formspree while everything passed green.
+
+- `scripts/check-lead-path.mjs`, in `npm run check` and `check:launch`, ahead of
+  `check-content` so its result is never hidden behind the proof gate. Asserts the
+  primary is SONA and not Formspree, that the fallback exists and differs, that all 87
+  rendered forms agree with `site.json`, that the shipped bundle still contains both
+  halves of the JSON/FormData split and the 4xx guard and the fallback latch, and that
+  `/text/`'s `opt_in_url` still carries its exact filed value.
+- `scripts/lead-path-browser-test.mjs` (`npm run test:lead-path`, and in CI) drives real
+  Chromium through a real form fill with both endpoints stubbed. Proves the primary
+  leaves as `application/json` carrying the fields, that a 5xx fails over to Formspree
+  exactly once as multipart, and that a 4xx does not fail over at all. Verified to fail
+  when the primary is collapsed onto the FormData path.
+
+**What stays manual is the CORS preflight, and it is the part that matters.** Items 1
+to 4 below are still yours to run.
 
 1. **Confirm SONA is alive.** `curl -X POST <leadEndpoint>` with an empty body. Healthy
    is **400 "Property address is required"**. A 200 means the validator let an empty

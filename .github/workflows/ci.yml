@@ -24,5 +24,26 @@ jobs:
       - name: Verify links, assets, canonicals and frozen URLs
         run: node scripts/check-links.mjs
 
+      # Before content, deliberately. check-content is the gate that fails on unfilled
+      # proof, and with `&&` semantics it would hide the lead-path result behind itself
+      # exactly when someone is debugging why the deploy is blocked.
+      - name: Verify the lead path
+        run: node scripts/check-lead-path.mjs
+
       - name: Verify content depth and uniqueness
         run: node scripts/check-content.mjs
+
+      # The browser half of the lead seam: proves the primary POST really leaves as JSON
+      # and that failover happens on 5xx but not 4xx. Every request is stubbed, so this
+      # never touches SONA or Formspree and never creates a lead. It cannot cover the
+      # CORS preflight against the live endpoint; nothing automated can.
+      # --no-save: playwright is a test-time tool, not something this static site should
+      # carry in its dependency tree. Installed into node_modules here so the script's
+      # default PLAYWRIGHT_DIR (the working directory) resolves it.
+      - name: Install Playwright and Chromium
+        run: |
+          npm i --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Lead path, in a real browser
+        run: node scripts/lead-path-browser-test.mjs

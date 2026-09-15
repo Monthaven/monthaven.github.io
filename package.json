@@ -7,13 +7,14 @@
   "scripts": {
     "build": "node scripts/clean.mjs && eleventy",
     "serve": "node scripts/clean.mjs && SITE_ENV=review eleventy --serve",
-    "check": "node scripts/check-links.mjs && node scripts/check-content.mjs",
+    "check": "node scripts/check-links.mjs && node scripts/check-lead-path.mjs && node scripts/check-content.mjs",
     "lint": "node scripts/check-links.mjs",
     "typecheck": "echo \"no typecheck for this project\"",
     "test": "npm run build && npm run check",
-    "check:launch": "node scripts/check-links.mjs && node scripts/check-content.mjs --launch",
+    "check:launch": "node scripts/check-links.mjs && node scripts/check-lead-path.mjs && node scripts/check-content.mjs --launch",
     "build:review": "node scripts/clean.mjs && SITE_ENV=review eleventy",
-    "build:staging": "node scripts/clean.mjs && SITE_ENV=staging eleventy"
+    "build:staging": "node scripts/clean.mjs && SITE_ENV=staging eleventy",
+    "test:lead-path": "node scripts/lead-path-browser-test.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "3.1.2"
