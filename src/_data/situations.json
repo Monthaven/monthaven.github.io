@@ -59,6 +59,10 @@
       {
         "q": "Do I have to pay anything to sell this way?",
         "a": "No. There is no commission, no fee to us, and we pay the standard closing costs. If the payoff exceeds what the house is worth, we will tell you that too rather than waste your time."
+      },
+      {
+        "q": "Will I owe tax on the debt the bank forgives?",
+        "a": "Possibly, and this changed on 1 January 2026. Forgiven mortgage debt can be treated as taxable income and reported to you on Form 1099-C. The Qualified Principal Residence Indebtedness exclusion, which protected homeowners from exactly this, expired at the start of 2026, although it can still apply where the forgiveness follows a written agreement entered into before that date. The main protection left is the insolvency exclusion under IRC Section 108: to the extent your debts exceeded the value of everything you owned immediately before the discharge, the cancelled debt is excluded. You claim it on Form 982. Most people in foreclosure are insolvent on that test, so it often applies, but it is not automatic. Also be careful with the common claim that North Carolina is a non-recourse state: NCGS 45-21.38 kills deficiency judgments only on seller-financed purchase money notes, and an ordinary bank mortgage here is recourse. This is a question for a CPA, and it is worth asking before the discharge rather than at tax time."
       }
     ]
   },
@@ -130,6 +134,10 @@
       {
         "q": "How do I find out who is actually on the deed?",
         "a": "Read the last recorded deed at the county Register of Deeds, not the tax card and not the county GIS map. GIS and tax records show who receives the tax bill, which is regularly not the same as who holds title. We have seen a seller who believed she was the sole owner turn out to hold a quarter interest alongside three other people. Ten minutes with the actual deed would have shown it."
+      },
+      {
+        "q": "Will we owe a fortune in capital gains tax on a house we inherited?",
+        "a": "Almost certainly not, and this is the single most common thing heirs get wrong. Under IRC Section 1014 the cost basis of inherited property resets to its fair market value on the date of death. Everything the house gained in value during your relative's lifetime is never taxed. If your father paid $58,000 in 1978, the house was worth $240,000 the day he died, and you sell it for $245,000, the taxable gain is about $5,000 before selling costs, not $187,000. The gain also counts as long term no matter how briefly you held it. One practical instruction: get the date-of-death value documented, ideally with an appraisal, and keep it, because that number is what protects you and it is much harder to establish three years later. We mention this because we have watched people rush a sale out of fear of a tax bill that was never going to arrive. Confirm it with a CPA, but do not let the fear drive the decision."
       }
     ]
   },
@@ -256,6 +264,10 @@
       {
         "q": "Do you buy small portfolios?",
         "a": "Yes. If you have several properties you want out of at once, tell us on the first call. It is usually simpler for everyone to handle them together."
+      },
+      {
+        "q": "What will selling actually cost me in tax?",
+        "a": "More than most landlords expect, and the surprise is usually depreciation recapture rather than the gain. The depreciation you claimed over the years you rented it out, or could have claimed even if you did not, is taxed when you sell at up to 25%, separately from any capital gain. The Section 121 exclusion that shelters most home sales does not apply to a pure rental. A 1031 exchange into another investment property can defer the whole thing, but it has strict deadlines and has to be set up before closing rather than after. Run the numbers with your CPA before you agree a price with anyone, because the recapture figure is often the one that changes whether the deal makes sense at all."
       }
     ]
   },

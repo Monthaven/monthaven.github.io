@@ -13,6 +13,8 @@ faq:
     a: "Yes. Until the sale is final, you still own the property and can sell it. The proceeds pay off the lender and stop the foreclosure, and any equity above the payoff is yours rather than being lost at auction. The closer to the sale date, the fewer options, so the sale date is the first thing to establish."
   - q: "What happens to my equity in a foreclosure?"
     a: "The lender is paid first, along with fees and costs. Any surplus is supposed to be returned to you, but foreclosure auctions routinely bring less than market value, so there is frequently little or nothing left. Selling before the sale is how homeowners protect equity they actually built."
+  - q: "Will I owe tax on the debt the bank forgives?"
+    a: "Possibly, and this changed on 1 January 2026. Forgiven mortgage debt can be treated as taxable income and reported to you on Form 1099-C. The Qualified Principal Residence Indebtedness exclusion, which protected homeowners from exactly this, expired at the start of 2026, although it can still apply where the forgiveness follows a written agreement entered into before that date. The main protection left is the insolvency exclusion under IRC Section 108: to the extent your debts exceeded the value of everything you owned immediately before the discharge, the cancelled debt is excluded. You claim it on Form 982. Most people in foreclosure are insolvent on that test, so it often applies, but it is not automatic. Also be careful with the common claim that North Carolina is a non-recourse state: NCGS 45-21.38 kills deficiency judgments only on seller-financed purchase money notes, and an ordinary bank mortgage here is recourse. This is a question for a CPA, and it is worth asking before the discharge rather than at tax time."
   - q: "Will foreclosure hurt my credit more than selling?"
     a: "A completed foreclosure is among the most damaging entries on a credit report and generally remains for seven years. A sale that pays the loan in full is reported as a satisfied loan. We are not credit counselors, but the difference is substantial. Confirm specifics with a HUD-approved housing counselor."
 ---
@@ -76,6 +78,33 @@ the only route, and that is a conversation with your lender.
 90 days and depends on a buyer's financing. If your sale date is six weeks out, that is
 not a plan. A cash sale with no financing contingency can close in 7 to 21 days, which
 is why it exists as an option at all.
+
+## One thing that changed in January 2026
+
+Most articles about foreclosure tax were written while a protection existed that no longer
+does, so this is worth stating plainly.
+
+If the lender forgives part of what you owe, whether through a short sale, a deed in lieu or a
+deficiency after the auction, **that forgiveness can be taxable income to you** and arrives as
+a Form 1099-C. The **Qualified Principal Residence Indebtedness** exclusion covered exactly
+this for homeowners. **It expired on 1 January 2026.** It can still reach forgiveness that
+follows a written agreement entered into before that date, but do not assume it applies to
+something being negotiated now.
+
+What remains is the **insolvency exclusion** under IRC Section 108: to the extent your debts
+exceeded the value of everything you owned immediately before the discharge, the cancelled debt
+is excluded. It is claimed on **Form 982**, supported by the insolvency worksheet in **IRS
+Publication 4681**. Most people going through foreclosure are insolvent on that test, so it
+frequently applies. It is not automatic and it has to be claimed.
+
+And a correction to something you will read elsewhere: **North Carolina is not simply a
+non-recourse state.** NCGS 45-21.38 abolishes deficiency judgments on **seller-financed**
+purchase money notes, where the seller of the property took back the mortgage. An ordinary bank
+mortgage in North Carolina is recourse debt and a deficiency is possible.
+
+None of that is tax advice and it is a genuine CPA question, best asked before the discharge
+rather than the following April. [The fuller version, including what happens with inherited
+property and rentals, is here](/blog/do-i-pay-taxes-when-i-sell-my-house-nc/).
 
 ## What we do in these situations
 
