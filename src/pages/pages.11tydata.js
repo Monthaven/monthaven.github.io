@@ -10,7 +10,7 @@ export default {
   // directory data in the cascade), which is how the A2P-frozen URLs pin themselves.
   //
   // A page may also declare `requiresFlag: "someSiteFlag"`. If that flag is off in
-  // site.json, we return boolean false and Eleventy writes NO FILE AT ALL — there is
+  // site.json, we return boolean false and Eleventy writes NO FILE AT ALL, there is
   // nothing to crawl, leak, or land on from a stale link. Returning a string here
   // (including "false") would be treated as a path, so this has to be real JS.
   permalink: (data) => {

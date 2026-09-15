@@ -3,7 +3,7 @@
 
     Step 1 is address-only plus one contact method: lowest possible friction.
     The SMS consent checkbox MUST stay on step 1 with the phone field and the
-    submit that sends it — otherwise a partial POST transmits a phone number
+    submit that sends it, otherwise a partial POST transmits a phone number
     with no captured consent, which breaks the A2P record. -#}
 
 {% macro leadForm(id, variant="full", city=null, situation=null, title=null, sub=null, onDark=false) %}
@@ -55,7 +55,7 @@
   <input type="hidden" name="consent_version" value="{{ site.consentVersion }}">
   <input type="hidden" name="consent_text" value="{{ site.consentText }}">
   <input type="hidden" name="opt_in_url" value="">
-  <input type="hidden" name="_subject" value="New cash offer request{% if city %} — {{ city.name }}, NC{% endif %}">
+  <input type="hidden" name="_subject" value="New cash offer request{% if city %}. {{ city.name }}, NC{% endif %}">
 
   {#- ---------------- STEP 1 ---------------- -#}
   <div data-step="1">
@@ -123,7 +123,7 @@
         <label for="{{ id }}-timeline">Timeline</label>
         <select id="{{ id }}-timeline" name="timeline">
           <option value="">Select</option>
-          <option>ASAP — I have a deadline</option>
+          <option>ASAP, I have a deadline</option>
           <option>Within 30 days</option>
           <option>30 to 90 days</option>
           <option>Just exploring options</option>
@@ -147,7 +147,7 @@
     </div>
 
     <div class="mt-5">
-      <button class="btn btn--cta btn--block" type="submit">Send It — Get My Offer</button>
+      <button class="btn btn--cta btn--block" type="submit">Send It and Get My Offer</button>
     </div>
   </div>
 

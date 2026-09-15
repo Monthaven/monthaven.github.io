@@ -59,9 +59,9 @@
       </tr>
       <tr>
         <th scope="row">Do you sign before you see a number?</th>
-        <td>No &mdash; you see our offer first, with no agreement</td>
-        <td>Yes &mdash; a listing agreement comes first</td>
-        {% if tn %}<td>Yes &mdash; typically an exclusive listing agreement before any offer is shown</td>{% endif %}
+        <td>No, you see our offer first, with no agreement</td>
+        <td>Yes, a listing agreement comes first</td>
+        {% if tn %}<td>Yes, typically an exclusive listing agreement before any offer is shown</td>{% endif %}
       </tr>
       <tr>
         <th scope="row">Seller closing costs</th>
@@ -71,13 +71,13 @@
       </tr>
       <tr>
         <th scope="row">Repairs before sale</th>
-        <td>None &mdash; we buy as-is</td>
+        <td>None, we buy as-is</td>
         <td>Usually required to show and to pass inspection</td>
         {% if tn %}<td>Depends on which buyer in their network takes it</td>{% endif %}
       </tr>
       <tr>
         <th scope="row">Price changes after inspection</th>
-        <td>None &mdash; we don't re-trade on condition</td>
+        <td>None, we don't re-trade on condition</td>
         <td>Commonly renegotiated after the buyer's inspection</td>
         {% if tn %}<td>Depends on the end buyer's terms</td>{% endif %}
       </tr>
@@ -89,7 +89,7 @@
       </tr>
       <tr>
         <th scope="row">Cleanout</th>
-        <td>Included &mdash; leave what you want</td>
+        <td>Included, leave what you want</td>
         <td>Your cost</td>
         {% if tn %}<td>Usually your cost</td>{% endif %}
       </tr>
@@ -101,7 +101,7 @@
       </tr>
       <tr>
         <th scope="row">Financing falls through?</th>
-        <td>Can't &mdash; there is no loan</td>
+        <td>Can't, there is no loan</td>
         <td>A real risk right up to closing day</td>
         {% if tn %}<td>Depends on the end buyer</td>{% endif %}
       </tr>
@@ -113,7 +113,7 @@
       </tr>
       <tr>
         <th scope="row">Sale price</th>
-        <td>Below full retail &mdash; that's the trade</td>
+        <td>Below full retail, that's the trade</td>
         <td>Full retail, if it appraises and closes</td>
         {% if tn %}<td>Near retail, before the listing fee comes out</td>{% endif %}
       </tr>
@@ -123,7 +123,7 @@
 <p class="small muted mt-4">
   We're not going to pretend a cash offer beats a retail sale on price. It doesn't.
   It beats it on certainty, speed, and everything you don't have to do. If your house
-  shows well and you have three months, list it &mdash; and we'll tell you that on the call.
+  shows well and you have three months, list it, and we'll tell you that on the call.
 </p>
 {% endmacro %}
 
@@ -147,7 +147,7 @@
       <tr>
         <th scope="row">
           {{ r.label }}
-          {% if r.source %}<br><span class="small muted">{{ r.pct }}% &mdash; {{ r.source }}</span>{% endif %}
+          {% if r.source %}<br><span class="small muted">{{ r.pct }}%, {{ r.source }}</span>{% endif %}
         </th>
         <td>{% if r.pct %}{{ (vs.basisPrice * r.pct / 100) | round | usd }}{% else %}{{ r.amount | usd }}{% endif %}</td>
       </tr>
@@ -213,7 +213,7 @@
   {% for t in real %}
   <figure class="testimonial">
     <blockquote><p>{{ t.quote }}</p></blockquote>
-    <figcaption>{{ t.name }} &mdash; {{ t.city }}</figcaption>
+    <figcaption>{{ t.name }}, {{ t.city }}</figcaption>
   </figure>
   {% endfor %}
 </div>
@@ -236,7 +236,7 @@
     citySlug parameter at all, so there is no way to render one in a city slot even by
     mistake. These are Alec's brokerage work, not houses we bought; they are out of area;
     and they do not count as seller proof. The framing on the page has to say all three.
-    sourceUrl is required — an unlinked quote is a claim, and this site's whole argument
+    sourceUrl is required. An unlinked quote is a claim, and this site's whole argument
     is that our claims are checkable. -#}
 {% macro agentReviews() %}
 {% set real = [] %}
@@ -249,7 +249,7 @@
   <figure class="testimonial">
     <blockquote><p>{{ r.quote }}</p></blockquote>
     <figcaption>
-      {% if r.reviewerName %}{{ r.reviewerName }} &mdash; {% endif %}{{ r.location }}
+      {% if r.reviewerName %}{{ r.reviewerName }}, {% endif %}{{ r.location }}
       {% if r.outOfArea %}<span class="tag tag--warn">Outside our current service area</span>{% endif %}
       <br>
       <span class="small muted">
@@ -456,7 +456,7 @@
     <caption>
       What these items actually run, against what a padded estimate says. These are our own
       figures from our own renovations, not published data. A contractor may quote you
-      differently and that is a fair argument to have &mdash; which is the point.
+      differently and that is a fair argument to have, which is the point.
     </caption>
     <thead>
       <tr>

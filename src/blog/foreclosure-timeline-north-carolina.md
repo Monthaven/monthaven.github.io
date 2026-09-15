@@ -25,7 +25,7 @@ counties have legal aid, and HUD-approved housing counseling is free.
 
 Most North Carolina residential foreclosures are **power of sale** foreclosures, handled
 administratively through the **Clerk of Superior Court** in the county where the property
-sits — Gaston County's courthouse in Gastonia, Cleveland County's in Shelby, Lincoln
+sits. Gaston County's courthouse in Gastonia, Cleveland County's in Shelby, Lincoln
 County's in Lincolnton.
 
 Roughly, it runs:
@@ -91,9 +91,9 @@ than tie up your last six weeks.
 
 ## Free help, before you call any buyer
 
-- **HUD-approved housing counseling** — free, nationwide, and genuinely useful.
-- **Legal Aid of North Carolina** — free civil legal help for those who qualify.
-- **The NC Housing Finance Agency** — administers state assistance programs.
-- **Your servicer's loss mitigation department** — the number is on your statement.
+- **HUD-approved housing counseling**. Free, nationwide, and genuinely useful.
+- **Legal Aid of North Carolina**, free civil legal help for those who qualify.
+- **The NC Housing Finance Agency**, administers state assistance programs.
+- **Your servicer's loss mitigation department**, the number is on your statement.
 
 Talk to them before you talk to us. We mean that.

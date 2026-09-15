@@ -49,24 +49,24 @@ Website: {{ site.url }}/
 Get an offer: {{ site.url }}/get-offer/
 
 ## Key pages
-- {{ site.url }}/how-it-works/ — the four-step process and how offers are priced
-- {{ site.url }}/compare/ — cash buyer vs. agent vs. iBuyer, including when not to sell to us
-- {{ site.url }}/faq/ — pricing, fees, timelines, closing
-- {{ site.url }}/about/ — who runs this business
-- {{ site.url }}/reviews/ — what sellers have said
-- {{ site.url }}/service-areas/ — every city we buy in
+- {{ site.url }}/how-it-works/ : the four-step process and how offers are priced
+- {{ site.url }}/compare/ : cash buyer vs. agent vs. iBuyer, including when not to sell to us
+- {{ site.url }}/faq/ : pricing, fees, timelines, closing
+- {{ site.url }}/about/ : who runs this business
+- {{ site.url }}/reviews/ : what sellers have said
+- {{ site.url }}/service-areas/ : every city we buy in
 
 ## County pages
-{% for county in counties %}- {{ site.url }}/we-buy-houses-{{ county.slug }}-county-nc/ — {{ county.name }}, including the towns without their own page
+{% for county in counties %}- {{ site.url }}/we-buy-houses-{{ county.slug }}-county-nc/ : {{ county.name }}, including the towns without their own page
 {% endfor %}
 ## City pages
-{% for county in countyOrder %}{% for c in cities | where("county", county) %}- {{ site.url }}/sell-my-house-fast-{{ c.slug }}-nc/ — {{ c.name }}, {{ c.county }} County
+{% for county in countyOrder %}{% for c in cities | where("county", county) %}- {{ site.url }}/sell-my-house-fast-{{ c.slug }}-nc/ : {{ c.name }}, {{ c.county }} County
 {% endfor %}{% endfor %}
 ## Situation pages
-{% for s in situations %}- {{ site.url }}/{{ s.urlPrefix }}-nc/ — {{ s.h1 }}
+{% for s in situations %}- {{ site.url }}/{{ s.urlPrefix }}-nc/ : {{ s.h1 }}
 {% endfor %}
 ## Articles
-{% for p in collections.posts %}- {{ site.url }}{{ p.url }} — {{ p.data.title }}
+{% for p in collections.posts %}- {{ site.url }}{{ p.url }} : {{ p.data.title }}
 {% endfor %}
 ## Legal
 {{ site.name }} is a trade name of {{ site.legalName }}. Nothing on the site is

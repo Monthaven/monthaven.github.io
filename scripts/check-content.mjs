@@ -234,6 +234,39 @@ for (const c of cityData) {
   }
 }
 
+// ------------------------------------------------------------- house typography
+// Standing Monthaven rule: no em dashes and no curly quotes in seller-facing copy.
+// It reads robotic and it is an AI tell. 183 of them accumulated before the rule was
+// written down; the gate exists so the count stays at zero rather than creeping back.
+const TYPO = [
+  ["em dash", /\u2014|&mdash;|&#8212;/g, "a comma, a colon, or a full stop"],
+  ["curly apostrophe", /\u2019|&rsquo;|&lsquo;/g, "a straight apostrophe"],
+  ["curly quote", /\u201c|\u201d|&ldquo;|&rdquo;/g, "straight quotes"],
+  ["ellipsis character", /\u2026/g, "three full stops"],
+];
+// Scan the RAW html, not textOf() output: textOf strips &entity; forms, so an
+// &mdash; would be invisible to a check that ran on the stripped text. En dashes
+// (&ndash;) are left alone - they are correct typography in a numeric range.
+for (const p of pages) {
+  const raw = fs.readFileSync(p.file, "utf8");
+  for (const [label, re, fix] of TYPO) {
+    const hits = raw.match(re);
+    if (hits) {
+      errors.push(`${p.rel}: ${hits.length} ${label}(s) in rendered copy. Use ${fix}.`);
+    }
+  }
+}
+// The JS bundle is seller-facing too: its strings render as status messages and button
+// labels, and a template-only scan never reaches them.
+const bundle = path.join(SITE, "js/main.js");
+if (fs.existsSync(bundle)) {
+  const js = fs.readFileSync(bundle, "utf8");
+  for (const [label, re, fix] of TYPO) {
+    const hits = js.match(re);
+    if (hits) errors.push(`js/main.js: ${hits.length} ${label}(s). Use ${fix}.`);
+  }
+}
+
 // -------------------------------------------------------------- US spelling
 // The audience is North Carolina homeowners. British spellings read as foreign
 // and undercut the "we're local" claim the whole site rests on.

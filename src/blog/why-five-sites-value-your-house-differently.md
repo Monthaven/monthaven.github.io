@@ -6,11 +6,11 @@ directAnswerQ: "Why do websites disagree on my home's value?"
 directAnswer: "Real estate sites disagree because they publish different measurements under similar-sounding labels. A median list price, a median sold price, a trailing twelve-month median, a current-month median, and an automated value estimate are five different statistics, and on a small town with few sales they can differ by tens of thousands of dollars. None is lying. For deciding what your house will sell for, the number you want is the median sold price of comparable homes, in the last six months, in your condition."
 faq:
   - q: "Why is Zillow's estimate different from what Redfin says my house is worth?"
-    a: "Because they are different automated models, trained on different data, and neither has been inside your house. Both assume average condition for the area. On a house that needs a roof, a system, or structural work, both will be high — sometimes dramatically — because the condition they assumed does not exist. On a small-town house with few nearby sales, both get less reliable, because there is less for the model to learn from."
+    a: "Because they are different automated models, trained on different data, and neither has been inside your house. Both assume average condition for the area. On a house that needs a roof, a system, or structural work, both will be high, sometimes dramatically, because the condition they assumed does not exist. On a small-town house with few nearby sales, both get less reliable, because there is less for the model to learn from."
   - q: "What is the difference between median list price and median sold price?"
     a: "List price is what sellers are asking. Sold price is what buyers actually paid. They are not the same number and the gap between them tells you about negotiating power: when sold prices sit well under list prices, sellers are cutting to move houses. Asking prices are not comps. A neighbor's optimistic listing tells you nothing about your value until it closes."
   - q: "Which number should I actually use?"
-    a: "The median sold price of genuinely comparable homes — similar size, similar condition, within about a mile, closed in the last six months. Everything else is either a forecast, an asking price, or an average across houses that are nothing like yours. If your house needs work, you also need to know what comparable renovated homes sold for, because that is the number a cash offer is calculated backwards from."
+    a: "The median sold price of genuinely comparable homes. Similar size, similar condition, within about a mile, closed in the last six months. Everything else is either a forecast, an asking price, or an average across houses that are nothing like yours. If your house needs work, you also need to know what comparable renovated homes sold for, because that is the number a cash offer is calculated backwards from."
   - q: "Why are the numbers less reliable in a small town?"
     a: "Sample size. A town with a few hundred housing units may see only a handful of sales in a given month, so one unusual property moves the median hard. It also means automated models have very little to learn from. This is exactly where a local buyer who has walked houses on your street knows more than any national website does."
   - q: "Do these sites include foreclosures and auction listings?"
@@ -19,8 +19,7 @@ faq:
 
 Here is a real example, from one small North Carolina town, in one month.
 
-Somebody in Grover — population about 800, roughly 307 housing units in the whole town —
-searched for what their house was worth. Five sources answered:
+Somebody in Grover, population about 800, roughly 307 housing units in the whole town, searched for what their house was worth. Five sources answered:
 
 | Source | Figure | What it actually measures |
 |---|---|---|
@@ -60,7 +59,7 @@ $600,000 property and one $40,000 auction lot will pull an average in opposite d
 neither tells you anything about a normal house. **Anywhere you see "average" rather than
 "median" on a small town, be suspicious.**
 
-**Automated estimates** — the Zestimate and its equivalents. Built from comparable sales plus an
+**Automated estimates**, the Zestimate and its equivalents. Built from comparable sales plus an
 assumption that your house is in average condition. The model has never been inside. It does not
 know about the roof, the drywall, the HVAC that should have been replaced two owners ago, or what
 pets did to the floors. It is not lying to you; it is answering a different question than the one
@@ -82,15 +81,14 @@ the "market."**
 ## One more thing that quietly distorts these numbers
 
 Check what the source counts. Foreclosure-focused sites mix distressed and auction inventory into
-their figures — which is how a town ends up with a published "cheapest home" of eleven thousand
+their figures, which is how a town ends up with a published "cheapest home" of eleven thousand
 dollars. That is not a house anybody is living in at that price; it is an auction lot or a
 distressed filing. Useful if you are buying at the courthouse steps. Meaningless as a read on
 what your house is worth.
 
 ## So which number do you use?
 
-For **what your house will sell for as-is**: the median sold price of genuinely comparable homes
-— similar size, similar condition, within about a mile, closed in the last six months.
+For **what your house will sell for as-is**: the median sold price of genuinely comparable homes. Similar size, similar condition, within about a mile, closed in the last six months.
 
 For **evaluating a cash offer**: you need a second number, the after-repair value. Comparable
 *renovated* homes, closed sales, same radius and window. Every cash offer in North Carolina is
@@ -108,7 +106,7 @@ that is where a cash sale stops being a discount and starts being the only reali
 1. **Go to the county Register of Deeds or the GIS sales records** and look up what actually
    closed near you in the last six months. Gaston County's is in Gastonia, Cleveland County's in
    Shelby, Lincoln County's in Lincolnton.
-2. **Filter to houses like yours** — size, age, condition, land. Throw out the ones that are not.
+2. **Filter to houses like yours**. Size, age, condition, land. Throw out the ones that are not.
 3. **Ask a local agent what it would list for as-is**, and what it would net after commission and
    closing costs. Most will tell you for free.
 4. **Get a written cash offer** from somebody who has walked the property, and ask them to show
@@ -116,4 +114,4 @@ that is where a cash sale stops being a discount and starts being the only reali
 
 Do those four and you will know more about your house's value than any five websites put
 together. We will walk you through our own numbers on the phone whether or not you ever sell to
-us — [that is the whole process, written out](/how-it-works/).
+us. [that is the whole process, written out](/how-it-works/).

@@ -57,13 +57,23 @@ with the carriers for A2P messaging and the one filed on the consent page. A
 text sent to any other number lands in a different inbox from the one that
 replies.
 
-**Open question for Alec, not for either agent to decide:** most of the site
-says "call or text (704) 481-6298". A text there is not lost, but it lands in
-the portal rather than the machine. The fix is one of two things and they point
-opposite ways: repoint the 704's SMS webhook at SONA so the copy becomes true,
-or split every mention into call-one-number, text-the-other. A few pages
-already do the split. Do not standardize this in either direction until Alec
-picks one.
+**Decided 2026-09-15: the split. Copy is now call the 704, text the toll-free,
+everywhere.** `check-links.mjs` fails the build on "call or text", on any text
+invitation next to the voice number, and on any `sms:` href that is not the
+toll-free. Do not undo this without reading the next paragraph.
+
+Repointing the 704's SMS webhook at SONA is **not** the one-setting fix it
+looks like, and the reason matters. Carriers treat all Twilio traffic as
+application traffic, and Twilio **blocks** outbound messages from a +1 10DLC
+number that is not attached to an approved A2P 10DLC campaign (error 30034).
+Inbound is not blocked. So repointing today would mean a seller's text arrives,
+SONA processes it, SONA's reply is blocked, and the seller hears nothing: a
+silent failure, which is the exact thing this whole system exists to prevent.
+Toll-free numbers are exempt from 10DLC, which is why the 844 works. Note also
+that a Sole Proprietor campaign permits only **one** 10DLC number, and Monthaven
+owns three. Unifying onto the 704 is a real possibility, but it needs brand and
+campaign registration first, and the number has to reach `REGISTERED` before the
+webhook moves. When that happens the copy change is a find-and-replace.
 
 ## Frozen URLs
 
@@ -100,6 +110,17 @@ launchable.
 ## House style
 
 No em dashes and no curly quotes in seller-facing copy. It reads robotic and it
-is a standing rule across everything Monthaven sends. There are still 67 em
-dashes in the templates and blog posts from earlier rounds; cleaning them is
-welcome.
+is a standing rule across everything Monthaven sends.
+
+Done as of 2026-09-15, and the real count was higher than the 67 recorded here:
+**131 literal em dashes plus 52 `&mdash;` entities**, 183 in all, and 16 curly
+quote entities. All are gone, and `check-content.mjs` now fails the build on an
+em dash, a curly quote or an ellipsis character, in both literal and entity
+form, and in the JS bundle as well as the HTML. En dashes (`&ndash;`) are left
+alone; they are correct in a numeric range and are not what the rule is about.
+
+Two notes for whoever automates this next. A blind swap to a comma produces
+comma splices and fragments: the pass here needed a hand-edit afterwards, and it
+had broken the main CTA button and one sentence on /about/. And `textOf()`
+strips `&entity;` forms, so a typography check written against the stripped text
+silently misses every `&mdash;`; scan the raw HTML.

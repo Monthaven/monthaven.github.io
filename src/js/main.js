@@ -1,4 +1,4 @@
-/* Monthaven Home Buyers — site JS.
+/* Monthaven Home Buyers site JS.
    One file, deferred, no dependencies.
 
    Responsibilities:
@@ -155,7 +155,7 @@
 
     // Monthaven's own intake (SONA) parses JSON and urlencoded bodies. It does
     // NOT parse multipart, which is what the browser sends when you hand a bare
-    // FormData to fetch — every field would arrive empty with no error anywhere.
+    // FormData to fetch, every field would arrive empty with no error anywhere.
     // So serialize to JSON for the primary, and keep FormData for the Formspree
     // fallback, which expects multipart.
     function fields(stage) {
@@ -250,7 +250,7 @@
       }
 
       var btn = form.querySelector('[type="submit"]');
-      if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
+      if (btn) { btn.disabled = true; btn.textContent = "Sending..."; }
 
       post("complete")
         .then(function (res) {
@@ -284,7 +284,7 @@
             "That didn't go through. Please reach us directly instead. We'd rather hear from you than lose you to a form error.",
             "err"
           );
-          if (btn) { btn.disabled = false; btn.textContent = "Send It — Get My Offer"; }
+          if (btn) { btn.disabled = false; btn.textContent = "Send It and Get My Offer"; }
         });
     });
   });

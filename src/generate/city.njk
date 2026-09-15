@@ -9,7 +9,7 @@ layout: layouts/base.njk
 pageType: city
 eleventyComputed:
   title: "Sell My House Fast in {{ city.name }}, NC | Cash Offer in {{ site.offerWindowHours }} Hours"
-  description: "Need to sell a house fast in {{ city.name }}, NC? We buy houses in {{ city.county }} County as-is — no repairs, no commission, no closing costs. Written cash offer in {{ site.offerWindowHours }} hours."
+  description: "Need to sell a house fast in {{ city.name }}, NC? We buy houses in {{ city.county }} County as-is. No repairs, no commission, no closing costs. Written cash offer in {{ site.offerWindowHours }} hours."
   breadcrumbs:
     - name: "Home"
       url: "/"
@@ -33,11 +33,11 @@ eleventyComputed:
         and you pick the closing date.
       </p>
       <ul class="hero__points">
-        <li>No repairs &mdash; we buy {{ city.name }} houses exactly as they stand</li>
+        <li>No repairs, we buy {{ city.name }} houses exactly as they stand</li>
         <li>No commission and no closing costs, ever</li>
         <li>Close in {{ site.closeDaysMin }}&ndash;{{ site.closeDaysMax }} days, or later if you need it</li>
-        <li>Leave what you don't want &mdash; cleanout is on us</li>
-        <li>We don't re-trade you on condition &mdash; the number doesn't move after you sign</li>
+        <li>Leave what you don't want, cleanout is on us</li>
+        <li>We don't re-trade you on condition, the number doesn't move after you sign</li>
       </ul>
       <p class="hero__trust">
         Prefer to talk it through? Call <a href="tel:{{ site.phoneRaw }}" style="color:#fff"><strong>{{ site.phoneDisplay }}</strong></a>
@@ -130,7 +130,7 @@ eleventyComputed:
     {% if small %}
     <p>
       No commission, no seller closing costs, no repairs, no showings, and no financing that can
-      fall through &mdash; against a price below what a retail sale would bring if your house is
+      fall through, against a price below what a retail sale would bring if your house is
       sound and you can wait for it. That is the whole trade, and in a market as thin as
       {{ city.name }}'s the waiting is the part worth thinking hardest about.
     </p>

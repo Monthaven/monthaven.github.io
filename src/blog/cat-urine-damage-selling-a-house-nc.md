@@ -1,12 +1,12 @@
 ---
 title: "What Cat Urine Actually Does to a House (And Why It Stops a Sale)"
-description: "Why pet urine damage is different from a mess, what it does to subfloor and framing, why FHA and VA appraisals flag it, and what it actually takes to fix — from a buyer who has gutted one."
+description: "Why pet urine damage is different from a mess, what it does to subfloor and framing, why FHA and VA appraisals flag it, and what it actually takes to fix, from a buyer who has gutted one."
 date: 2026-02-14
 directAnswerQ: "Can you sell a house with cat urine damage?"
-directAnswer: "Yes, but usually not to a buyer who needs a loan. Uric acid in cat urine forms water-insoluble crystals that soak into subfloor and framing and reactivate with humidity, so cleaning rarely fixes it. FHA appraisal standards require a property to be free of hazards, odors and physical defects, and VA appraisals require it to be safe, structurally sound and sanitary — which is why a house that smells strongly will often be flagged and the lender will want it addressed before funding. That is what pushes these houses to cash buyers."
+directAnswer: "Yes, but usually not to a buyer who needs a loan. Uric acid in cat urine forms water-insoluble crystals that soak into subfloor and framing and reactivate with humidity, so cleaning rarely fixes it. FHA appraisal standards require a property to be free of hazards, odors and physical defects, and VA appraisals require it to be safe, structurally sound and sanitary, which is why a house that smells strongly will often be flagged and the lender will want it addressed before funding. That is what pushes these houses to cash buyers."
 faq:
   - q: "Can you get cat urine smell out of a house permanently?"
-    a: "Yes, but usually not by cleaning. Uric acid in cat urine forms crystals that are insoluble in water, so mopping, shampooing and household cleaners do not remove them — they sit in the material and reactivate with humidity. Permanent removal generally means taking up the flooring, treating the subfloor with an enzymatic cleaner that breaks down the uric acid, letting it dry completely, and then sealing it with a shellac-based stain-blocking primer to encapsulate whatever is left. Where staining is dark, the boards usually get replaced."
+    a: "Yes, but usually not by cleaning. Uric acid in cat urine forms crystals that are insoluble in water, so mopping, shampooing and household cleaners do not remove them, they sit in the material and reactivate with humidity. Permanent removal generally means taking up the flooring, treating the subfloor with an enzymatic cleaner that breaks down the uric acid, letting it dry completely, and then sealing it with a shellac-based stain-blocking primer to encapsulate whatever is left. Where staining is dark, the boards usually get replaced."
   - q: "Why does the smell come back in summer?"
     a: "Because humidity reactivates the uric acid crystals. This is the single most common reason people believe they have fixed the problem and then find out in July that they have not. It also means a house can show fine to a buyer in winter and fail badly a few months later."
   - q: "Will pet odor fail an FHA or VA appraisal?"
@@ -32,10 +32,10 @@ them out. Carpet cleaning removes what is on the surface and leaves what soaked 
 
 And it soaks through in a predictable order:
 
-1. **Carpet** — absorbs and holds it.
-2. **Pad** — acts like a sponge, holds far more than the carpet above it.
-3. **Subfloor** — plywood or OSB wicks it in and holds it indefinitely.
-4. **Framing and the bottom of the drywall** — where it has been going on long enough.
+1. **Carpet**, absorbs and holds it.
+2. **Pad**. Acts like a sponge, holds far more than the carpet above it.
+3. **Subfloor**, plywood or OSB wicks it in and holds it indefinitely.
+4. **Framing and the bottom of the drywall**, where it has been going on long enough.
 
 By the time you can smell it from the front door, it is usually at level three.
 
@@ -59,7 +59,7 @@ structurally sound and sanitary. A strong odor is exactly the kind of condition 
 notes, and once it is written down, the lender generally wants it addressed before they will
 fund the loan.
 
-That is the mechanism. It is not that buyers are squeamish — though some are. It is that
+That is the mechanism. It is not that buyers are squeamish, though some are. It is that
 the people lending them the money have written standards, and a house that trips those
 standards loses every financed buyer at once. What is left is cash.
 
@@ -70,7 +70,7 @@ excluded as a maintenance issue rather than a covered peril.
 
 Not a deep clean. Roughly:
 
-- Remove carpet and pad entirely — they are not salvageable.
+- Remove carpet and pad entirely, they are not salvageable.
 - Find the extent. A UV light shows where it went; dark staining on the subfloor means it
   went deep.
 - Treat the subfloor with an **enzymatic cleaner** that breaks down uric acid. Household
@@ -78,7 +78,7 @@ Not a deep clean. Roughly:
 - Let it dry completely. Sealing over damp material traps the problem.
 - **Seal with a shellac-based stain-blocking primer** to encapsulate whatever the enzyme did
   not reach. This is the step that makes the result permanent, and the step most people skip.
-- Replace boards where staining is dark — sealing is not enough once it has gone that far.
+- Replace boards where staining is dark, sealing is not enough once it has gone that far.
 - Expect to deal with baseboards, trim, and often interior doors, which absorb more than
   people expect.
 - Check the HVAC. Ductwork moves odor through the whole house.
@@ -88,7 +88,7 @@ replaced, and the whole place painted. It took three months.
 
 I am deliberately not putting cost figures on this. They vary enormously with depth and
 square footage, and a number I made up would be worse than no number. **Get a real quote
-from a local remediation company before you decide anything** — it is the single most
+from a local remediation company before you decide anything**, it is the single most
 useful thing you can do, and it tells you whether you are looking at a weekend or a gut.
 
 ## So: fix it, or sell it as-is?
