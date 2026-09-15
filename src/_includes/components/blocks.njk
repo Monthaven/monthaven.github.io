@@ -40,7 +40,7 @@
 {% macro comparison(city=null) %}
 {% set tn = site.twoNumberPromise.enabled %}
 <div class="table-scroll">
-  <table>
+  <table class="table--compare">
     <caption>What each route actually costs you{% if city %} in {{ city.name }}{% endif %}. Figures are typical for North Carolina; your situation may differ.</caption>
     <thead>
       <tr>

@@ -107,3 +107,11 @@ blockquote {
 .skip-link:focus {
   left: 0;
 }
+
+/* Our column in a three-way comparison. Scoped to .table--compare so the pricing,
+   repair-padding and value-stack tables, whose second column means something else
+   entirely, are untouched. */
+.table--compare th:nth-child(2),
+.table--compare td:nth-child(2) {
+  background: var(--c-green-100);
+}

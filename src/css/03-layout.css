@@ -16,6 +16,20 @@
 .section--soft {
   background: var(--c-bg-soft);
 }
+/* The page opener. Warm rather than the cold grey, because it is the first thing a
+   seller sees on ~70 interior pages and grey reads as unfinished. The h1 gets more
+   measure than the body copy below it: at the narrow width it was breaking three
+   lines where two will do. */
+.section--opener {
+  background: var(--c-bg-warm);
+  border-bottom: 1px solid var(--c-line);
+}
+.section--opener h1 {
+  max-width: 16ch;
+}
+@media (min-width: 700px) {
+  .section--opener h1 { max-width: 22ch; }
+}
 .section--warm {
   background: var(--c-bg-warm);
 }

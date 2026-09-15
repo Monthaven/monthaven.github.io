@@ -131,3 +131,11 @@
 .case-study details summary {
   cursor: pointer;
 }
+
+/* Call / Text / Email are labels sitting over a value, so they were reading at page
+   title scale next to a phone number. Same element, correct weight in the hierarchy. */
+.contact-methods h2 {
+  font-size: var(--step-1);
+  letter-spacing: 0;
+  margin-bottom: var(--sp-1);
+}
