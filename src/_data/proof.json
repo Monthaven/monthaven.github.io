@@ -1,5 +1,5 @@
 {
-  "_README": "REAL PROOF ONLY. Nothing in this file may be invented. Every entry must be a real closed transaction or a real testimonial given with permission. The build check (scripts/check-content.mjs) counts PLACEHOLDER entries and blocks the launch check until they are replaced. Set placeholder:true on anything not yet verified.",
+  "_README": "REAL PROOF ONLY. Nothing in this file may be invented. Every entry must be a real closed transaction or a real testimonial given with permission. The build check (scripts/check-content.mjs) counts PLACEHOLDER entries and blocks the launch check until they are replaced. Set placeholder:true on anything not yet verified. NOTE ON WHAT BLOCKS WHAT: testimonials needs a real quote and permission to use it, and nothing else. It does NOT wait on the Google Business Profile. Those are two separate tracks and conflating them held the launch blocker up for no reason: the GBP gates Google reviews and the local pack, it does not gate this file. See docs/review-request-campaign.md.",
   "reviewsPending": true,
   "caseStudies": [
     {

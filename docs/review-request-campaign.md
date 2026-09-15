@@ -41,21 +41,78 @@ So this has to be done properly or it does real damage:
 - **Spread it out.** Ten honest reviews over three weeks beats forty in one day. The second
   version gets filtered and can put a new profile at risk.
 - **Never offer anything for a review.** NCREC requires disclosing compensated testimonials, and
-  Google prohibits incentivised ones outright. The simplest way never to have that problem is
+  Google prohibits incentivized ones outright. The simplest way never to have that problem is
   never to create it.
 - **Ask, and then leave it.** One follow-up at most. A review chased twice is worth less than no
   review.
 
 ---
 
-## Do this first
+## Two different asks. Only one of them needs the GBP.
+
+An earlier version of this file said not to send a single message until the Google
+profile was verified. That is right for Google reviews and **wrong for the thing
+actually blocking launch**, and the conflation cost time.
+
+| Ask | Needs the GBP? | Blocks |
+|---|---|---|
+| A **website testimonial** for `proof.json` | **No.** A text and a reply, nothing else. | `npm run check:launch`, so going live |
+| A **Google review** | **Yes**, verification must be finished | The local pack |
+
+Send the two below today. Google waits for verification.
+
+---
+
+## Send today: the two people most likely to say yes
+
+Neither of these needs the profile. Both clear the launch blocker outright.
+
+### 1. The Oak Ridge seller
+
+The cat-urine house is already published as a closed deal on `/reviews/`. Two or three
+sentences and a first name is all `proof.testimonials` needs, and it is the single
+highest-value text message available right now.
+
+> Hey [name], it's Alec. Hope the move went smoothly and you're settled.
+>
+> Quick favor if you have two minutes. I've started my own company and I'm building
+> the website. Would you be alright with me quoting a couple of lines from you about
+> what the sale was like? Just what you actually remember, good or bad. I'd use your
+> first name only, nothing else.
+>
+> No worries at all if you'd rather not.
+
+When they reply, send me the quote and the first name and I will put it live.
+
+### 2. The Thomasville couple
+
+They already wrote you five stars on Realtor.com without being asked, so they are the
+warmest name you have. This ask is narrower: permission to quote what they already
+wrote, plus a first name. That also fills the `reviewerName` currently sitting null in
+`proof.agentReviews`.
+
+> Hi [name], it's Alec Clausen. I hope the house is still treating you well.
+>
+> You left me a review on Realtor.com back in 2023 and I've never properly thanked you
+> for it. I'm building a website for my own company now. Would you mind if I quoted it,
+> with your first name? And if you'd rather I didn't, that's completely fine.
+
+While you're there, ask for the profile URL if you don't have it to hand. The review
+does not render without a link to its source.
+
+**Neither message offers anything in return.** NCREC requires disclosing compensated
+testimonials, and the simplest way never to have that problem is never to create one.
+
+---
+
+## The Google campaign: after verification
 
 The profile has to exist before anyone can review it. `docs/gbp-setup.md` has the exact fields.
 **Do not send a single one of these texts until the GBP is verified and you have the review
 link in hand.** To be precise about which step that is: creating the profile and filling in the
 service areas is not the gate. **Verification is** — the postcard, phone or video step where
 Google confirms the business is real. A profile that exists but is unverified does not show in
-the map pack and cannot collect reviews, so a request sent before then has nowhere to land — a request that lands somewhere confusing gets ignored, and you only get to ask
+the map pack and cannot collect reviews, so a request sent before then has nowhere to land, and a request that lands somewhere confusing gets ignored, and you only get to ask
 these people once.
 
 Grab the short review link from the profile dashboard ("Ask for reviews" → copy link).
@@ -83,7 +140,7 @@ Short. No pitch, no link-dump, no explanation of your new business model.
 
 > Hey [name] — Alec Clausen. Hope you're doing well and still happy in the house.
 >
-> Quick favour, and no worries at all if you'd rather not: I've started my own company and I'm
+> Quick favor, and no worries at all if you'd rather not: I've started my own company and I'm
 > building it up from scratch. If you've got two minutes, a short Google review about working
 > with me would genuinely help.
 >
@@ -93,7 +150,7 @@ Short. No pitch, no link-dump, no explanation of your new business model.
 
 ## The email, if a text is too familiar
 
-> Subject: A quick favour, if you have two minutes
+> Subject: A quick favor, if you have two minutes
 >
 > Hi [name],
 >
