@@ -27,7 +27,10 @@
 .section--dark h3 {
   color: #fff;
 }
-.section--dark a {
+/* :not(.btn) for the same reason as .nav a: a descendant link rule (0,1,1) beats
+   .btn--cta (0,1,0), so inside a dark section the amber CTA rendered its label in
+   mint on amber. Buttons carry their own colour and must be left alone. */
+.section--dark a:not(.btn) {
   color: #b8e0cd;
 }
 
